@@ -1,0 +1,73 @@
+<app-header-padre [page]="true"></app-header-padre>
+<ion-content>
+  
+  <ion-grid class="gridcard">
+    <ion-row>
+      <ion-col class="padding1">
+        <ion-label class="label1">{{ticket.ticketEVENTO.eventoTITULO}}</ion-label>
+      </ion-col>
+      <ion-col class="padding2">
+        <ion-label class="label2">{{ticket.ticketVOUCHER.voucherPRECIO | formattNumber}} €</ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="padding3">
+        <ion-label class="label3">
+          {{ticket.ticketEVENTO.eventoFECHAINICIO | dateTimeFormatFilter : "DD MMM YYYY" }}  |
+          {{ticket.ticketEVENTO.eventoFECHAINICIO | dateTimeFormatFilter : "HH:mm" }}
+        </ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="padding4">
+        <ion-label class="label4">{{'TICKETTYPE3' | translate}}:</ion-label><br>
+        <ion-label class="label5">{{ticket.ticketCATEGORIA.evento_ticket_categoriaNOMBRE}}</ion-label>
+      </ion-col>
+      <ion-col class="padding5">
+        <ion-label class="label4">{{'NOTE3' | translate}}:</ion-label><br>
+        <ion-label class="label5">{{ticket.ticketDETALLE.evento_ticket_detalleNOTA}}</ion-label>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <form (ngSubmit)="regalar_voucher()" [formGroup]="formulario">
+    <ion-grid class="grid2">
+      <ion-row>
+        <ion-col class="paddingleft0">
+          <ion-label class="label6">{{'RECIPIENT2' | translate}}</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="paddingleft0">
+          <ion-input class="input" placeholder="{{'INSERTRECIPIENT2' | translate}}"
+          [formControl]="formulario.controls.recipiente" name="recipiente"></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="paddingleft0">
+          <ion-label class="label6">{{'MESSAGE' | translate}}</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="paddingleft02">
+          <ion-textarea class="input2" placeholder="{{'TYPESOMETHING' | translate}}....." rows="8" cols="20"
+          [formControl]="formulario.controls.mensage" name="mensage"></ion-textarea>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="paddingleft02">
+          <ion-item lines="none">
+            <ion-checkbox [formControl]="formulario.controls.check" name="check"></ion-checkbox>&nbsp;{{'SENDASAGIFT' | translate}}
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="paddingtop paddingleft02">
+          <button [ngClass]="{'buttonsend': formulario.valid && formulario.controls.check.value, 'buttonsendf': !formulario.valid || !formulario.controls.check.value}"
+          type="submit" [disabled]="!formulario.valid || !formulario.controls.check.value">{{'SEND4' | translate}}</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+
+</ion-content>

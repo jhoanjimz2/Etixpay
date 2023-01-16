@@ -1,0 +1,33 @@
+<ion-content>
+  <ion-card>
+    <ion-grid>
+      <ion-row>
+        <ion-col class="padding_uno">
+          <ion-label class="label_uno">
+            {{'CONFIRMTHERECEIPT' | translate}}<br>
+            {{'OFTHEPAYMENTAND' | translate}}<br>
+            {{'GENERATETHEPR' | translate}}
+          </ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-label class="label_dos">
+            {{'HAVEYOUSUCCESSFULLY' | translate}}<br>
+            {{'RECEIVEDTHEPAYMENT' | translate}}
+          </ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="padding_dos">
+          <button (click)="salir_con_argumentos()">{{'CONFIRM12' |translate}}</button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-label class="label_tres" (click)="salir_sin_argumentos()">{{'CANCEL15' | translate}}</ion-label>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+</ion-content>

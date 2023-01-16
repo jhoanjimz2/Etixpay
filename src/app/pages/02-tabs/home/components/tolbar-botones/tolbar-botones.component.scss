@@ -1,0 +1,84 @@
+.div-contenedor {
+  position: relative;
+  width: 100%;
+  display: flex;
+}
+.w-25 {
+  width: 25%;
+  text-align: center;
+}
+ion-grid {
+  width: 100%;
+  padding: 0px;
+  padding-top: 8px;
+}
+ion-col {
+  text-align: center;
+  padding: 0px;
+}
+label {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  left: 0px;
+  font-size: 13px;
+  background-color: #fff;
+  font-weight: 400;
+}
+.div-button {
+  width: 90%;
+  height: 102px;
+  border-radius: 10px;
+  position: relative;
+  background: white;
+  margin: auto;
+}
+.div-button-dos {
+  width: 100%;
+  height: 65px;
+  border-radius: 7px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 2;
+}
+ion-icon {
+  font-size: 25px;
+}
+.boton_uno {
+  color: #F5ED2C;
+  border: 2px solid #F5ED2C;
+}
+.boton_dos {
+  color: #78FFF6;
+  border: 2px solid #78FFF6;
+}
+.boton_tres {
+  color: #AC7AE6;
+  border: 2px solid #AC7AE6;
+}
+.boton_cuatro {
+  color: #F3A95F;
+  border: 2px solid #F3A95F;
+}
+.background-uno {
+  background-image: linear-gradient(#F5ED2C, #F6D02D);
+}
+.background-dos {
+  background-image: linear-gradient(#78FFF6, #3EBCE4);
+}
+.background-tres {
+  background-image: linear-gradient(#AC7AE6, #664BC4);
+}
+.background-cuatro {
+  background-image: linear-gradient(#F3A95F, #DF7000);
+}
+.centrar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.icon-button {
+  width: 45px;
+  height: 45px;
+}

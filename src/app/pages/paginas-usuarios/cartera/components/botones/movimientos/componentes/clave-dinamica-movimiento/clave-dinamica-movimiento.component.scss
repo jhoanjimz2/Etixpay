@@ -1,0 +1,55 @@
+.padding {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.col1 {
+  position: relative;
+  font-size: 100%;
+  font-weight: bold;
+  color: #000;
+  text-align: center;
+}
+.iconclose {
+  position: absolute !important;
+  top: calc(50% - 12px) !important;
+  right: 5px !important;
+  color: #000 !important;
+  font-size: 150% !important;
+}
+.col2 {
+  text-align: justify;
+  font-size: 100%;
+  color: #000;
+}
+.botonConfirm {
+  height: 35px !important;
+  width: 100%;
+  border: 1px solid #664bc4;
+  background-color: #664bc4;
+  border-radius: 10px;
+  font-size: 90%;
+  color: #fff;
+  font-weight: bold;
+}
+.botonConfirmF {
+  height: 35px !important;
+  width: 100%;
+  border: 1px solid #664bc4;
+  background-color: #fff;
+  border-radius: 10px;
+  font-size: 90%;
+  color: #664bc4;
+  font-weight: bold;
+}
+.inputs {
+  border: 1px solid #f0f4f7ce;
+  width: 100%;
+  height: 35px;
+  border-radius: 10px;
+  background-color: #f0f4f7ce;
+  --placeholder-color: #d8dcdf;
+  --placeholder-opacity: 1;
+  font-size: 90%;
+  font-weight: bold;
+  text-align: center;
+}

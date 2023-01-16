@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="38px" height="38px" viewBox="0 0 38 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>community_etix_citizen</title>
+    <defs>
+        <polygon id="path-1" points="0 0.0001 14.774 0.0001 14.774 18.987 0 18.987"></polygon>
+    </defs>
+    <g id="Community" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="my-community" transform="translate(-294.000000, -122.000000)">
+            <g id="community_etix_citizen" transform="translate(294.000000, 122.000000)">
+                <circle id="viola-scuro-copy-3" fill="#664BC4" cx="19" cy="19" r="19"></circle>
+                <g id="Group-3" transform="translate(12.000000, 9.000000)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g id="Clip-2"></g>
+                    <path d="M7.387,8.3261 C3.307,8.3261 0,12.8501 0,18.4311 C0,18.6171 0.004,18.8031 0.012,18.9871 L14.762,18.9871 C14.77,18.8031 14.774,18.6171 14.774,18.4311 C14.774,12.8501 11.467,8.3261 7.387,8.3261 M7.456,7.2861 C9.515,7.2861 11.185,5.6541 11.185,3.6421 C11.185,1.6311 9.515,0.0001 7.456,0.0001 C5.397,0.0001 3.727,1.6311 3.727,3.6421 C3.727,5.6541 5.397,7.2861 7.456,7.2861" id="Fill-1" fill="#FFFFFF" mask="url(#mask-2)"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

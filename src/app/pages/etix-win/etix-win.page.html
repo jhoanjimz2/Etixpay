@@ -1,0 +1,24 @@
+<app-header-padre [page]="true"></app-header-padre>
+<ion-content>
+
+
+  <ion-grid class="no-padding padding-top">
+    <ion-row>
+      <ion-col class="no-padding izquierda">
+        <ion-label [ngClass]="{'label-select': !segment, 'label-no-select': segment}" (click)="segment = 0">Panoramica</ion-label>
+      </ion-col>
+      <ion-col class="no-padding derecha">
+        <ion-label [ngClass]="{'label-select': segment, 'label-no-select': !segment}">History</ion-label>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <app-panoramica *ngIf="!segment" [sorteo]="sorteo"></app-panoramica>
+
+  <app-history *ngIf="segment"></app-history>
+  
+
+</ion-content>
+<ion-toolbar *ngIf="segment">
+  <app-paginacion-history></app-paginacion-history>
+</ion-toolbar>

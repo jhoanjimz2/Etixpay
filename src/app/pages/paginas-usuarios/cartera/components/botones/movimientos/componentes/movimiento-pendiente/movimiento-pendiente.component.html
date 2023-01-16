@@ -1,0 +1,23 @@
+<ion-row class="row1">
+  <ion-col class="ion-text-left">
+    <div class="divInformacion"><ion-label class="label1">{{movimiento.wallet_h_a_c_i_a.walletCODIGO}}</ion-label></div>
+    <ion-label  class="label2">{{movimiento.created_at | dateTimeFormatFilter : "h:mm a"}}</ion-label>
+  </ion-col>
+  <ion-col class="ion-text-end">
+    <ion-label *ngIf="!movimiento.proyecto && movimiento.solicitudEnvioTransaccionSENTIDO == 'OUT'" class="label3"> - {{movimiento.solicitudEnvioTransaccionCANTIDADATM | formattNumber2}} TIX</ion-label>
+    <ion-label *ngIf="movimiento.proyecto && movimiento.solicitudEnvioTransaccionSENTIDO == 'OUT'" class="label3"> - {{movimiento.solicitudEnvioTransaccionCANTIDATICKET | formattNumber2}} {{movimiento.proyecto.proyectoSIGLATOK}}</ion-label>
+    <ion-label *ngIf="!movimiento.proyecto && movimiento.solicitudEnvioTransaccionSENTIDO == 'IN'" class="label4"> + {{movimiento.solicitudEnvioTransaccionCANTIDADATM | formattNumber2}} TIX</ion-label>
+    <ion-label *ngIf="movimiento.proyecto && movimiento.solicitudEnvioTransaccionSENTIDO == 'IN'" class="label4"> + {{movimiento.solicitudEnvioTransaccionCANTIDATICKET | formattNumber2}} {{movimiento.proyecto.proyectoSIGLATOK}}</ion-label>
+    <br>
+    <ion-label  class="label2" >{{movimiento.created_at | dateTimeFormatFilter : "MMMM DD, yyyy" }}</ion-label>
+  </ion-col> 
+</ion-row>
+<ion-row class="row2">
+  <ion-col></ion-col>
+  <ion-col>
+    <button class="botonAccept"  (click)="ap(movimiento.uuid, movimiento.solicitudEnvioTransaccionSENTIDO)">{{'ACCEPT' | translate}}</button>
+  </ion-col>
+  <ion-col>
+    <button class="botonDecline" (click)="den(movimiento.uuid, movimiento.solicitudEnvioTransaccionSENTIDO)">{{'DENY' | translate}}</button>
+  </ion-col> 
+</ion-row>

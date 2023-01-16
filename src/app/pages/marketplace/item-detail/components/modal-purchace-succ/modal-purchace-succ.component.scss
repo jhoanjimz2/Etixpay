@@ -1,0 +1,61 @@
+.btn-back {
+    width: 268px;
+    height: 47px;
+    color: #2A2A2A;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: capitalize;
+    --background: #F6F02D;
+    --border-radius: 10px;
+    --box-shadow: none;
+}
+
+.m-t-100 {
+    margin-top: 100px;
+}
+
+.icon-success {
+    color: #00D56A; 
+    font-size: 120px;
+}
+
+.m-t-30 {
+    margin-top: 30px;
+}
+
+.text-title {
+    font-size: 24px; 
+    font-weight: 500; 
+    color: #000000;
+}
+
+.m-t-10 {
+    margin-top: 10px;
+}
+
+.text-info {
+    font-size: 14px; 
+    color: #B4BBCB;
+}
+
+.center-text-info {
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
+
+.w-300 {
+    width: 300px;
+}
+
+.text-receive {
+    font-size: 14px; 
+    color: #000000; 
+    font-weight: bold;
+}
+
+.text-pr {
+    font-size: 50px; 
+    font-weight: 500; 
+    color: #664BC0;
+}

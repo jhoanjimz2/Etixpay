@@ -1,0 +1,34 @@
+.divInformacion {
+  width: 172px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: #000000;
+}
+.label1 {
+  font-size: 90%;
+  font-weight: bold;
+  color: black;
+}
+.label2 {
+  font-size: 70%;
+  color: rgb(205, 207, 209);
+  font-weight: bold;
+}
+.label3 {
+  font-size: 90%;
+  color: rgb(243, 93, 122);
+  font-weight: bold;
+}
+.label4 {
+  font-size: 90%;
+  color: rgb(109, 213, 180);
+  font-weight: bold;
+}
+ion-row {
+  padding: 5px;
+  border-bottom: 1px solid rgb(205, 207, 209);
+}
+.col_line {
+  line-height: 1.5;
+}

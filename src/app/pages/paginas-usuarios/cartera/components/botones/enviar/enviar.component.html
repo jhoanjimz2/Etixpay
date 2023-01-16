@@ -1,0 +1,124 @@
+<app-header-padre [page]="true"></app-header-padre>
+<ion-content>
+
+
+  <ion-grid class="padding1">
+    <ion-row>
+      <ion-col class="ion-text-left col1">
+        <button  class="boton1" (click)="lectorQr()" >
+          <img src="assets/tabs/wallet/componentes/botones/pagos/scan.png" class="img1" ><br>
+          {{'SCANQRCODE' | translate}}   
+        </button>
+      </ion-col>
+      <ion-col class="ion-text-left col2">
+        <ion-label class="label1" *ngIf="!scann">{{'NAME' | translate}}</ion-label>
+        <ion-label class="label1" *ngIf="scann">{{receptor.nombre}}</ion-label><br><br>
+        <ion-label class="label3" *ngIf="!scann">{{'STREET' | translate}}</ion-label>
+        <ion-label class="label2" *ngIf="scann">{{receptor.direccion}}</ion-label><br>
+        <ion-label class="label3" *ngIf="!scann">{{'CITY2' | translate}}</ion-label>
+        <ion-label class="label2" *ngIf="scann">{{receptor.ciudad}}</ion-label><br>
+        <ion-label class="label3" *ngIf="!scann">{{'COUNTRY4' | translate}}</ion-label>
+        <ion-label class="label2" *ngIf="scann">{{receptor.pais}}</ion-label><br>   
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <form  [formGroup]="fmEnviar" id="fmEnviar" (ngSubmit)="generarClaveDinamica()">
+    <ion-grid class="padding2">
+      <ion-row class="padding3">
+        <ion-col class="ion-text-left">
+          <ion-label class="label4">{{'RECIPIENT' | translate}}</ion-label>  
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <input placeholder="{{'INSERTRECIPIENT' | translate}}"  class="bordes ion-padding"        
+          [formControl]="fmEnviar.controls.recipiente"  name="recipiente">
+        </ion-col>
+      </ion-row>
+      <ion-row class="padding3">
+        <ion-col class="ion-text-left">
+          <ion-label class="label4">{{'AMOUNT' | translate}}</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <input placeholder="{{'INSERTAMOUNT' | translate}}" class="bordes ion-padding" name="cantidad"    
+          [formControl]="fmEnviar.controls.cantidad" mask="separator.2" thousandSeparator=".">
+        </ion-col>
+      </ion-row>
+      <ion-row class="padding3" *ngIf="ticketSelect">
+        <ion-col class="ion-text-left">
+          <ion-label class="label4">{{'CONVERSION' | translate}} {{ticketSelect.proyectoSIGLATOK}} {{'TOE' |  translate}} TIX</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="ticketSelect">
+        <ion-col>
+          <div class="bordes ion-padding">
+            {{conversion | formattNumber}}
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row class="padding3">
+        <ion-col class="ion-text-left">
+          <ion-label class="label4">{{'CHOOSETICKET' | translate}}</ion-label>  
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-select   mode="md"  okText="OK" cancelText="" 
+                        (ionChange)="selectTicket()"
+                        placeholder="{{'SELECTTICKET' | translate}}" class="bordes" 
+                        [formControl]="fmEnviar.controls.ticket" name="ticket" >
+            <ion-list *ngFor="let ti of tickets ">
+              <ion-select-option value="{{ti.uuid}}">{{ti.proyectoNOMBRE}} ({{ti.pivot.wallet_proyectoSALDOTOK | formattNumber}})</ion-select-option>
+            </ion-list>
+            <ion-select-option value="TIX" >TIX ({{saldo_tix | formattNumber}})</ion-select-option>
+          </ion-select>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+  
+
+  <form [formGroup]="fmClaveDinamica" id="fmClaveDinamica"  *ngIf="botonClaveDinamica"  (ngSubmit)="hacerTransferencia()">
+    <ion-grid class="padding2">
+      <ion-row>
+        <ion-col>
+          <ion-label class="label4">{{'ENTERTHE2' | translate}}</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <input placeholder="{{'ENTERDYNAMIC2' | translate}}" class="bordes ion-padding ion-text-center" name="clave"    
+          [formControl]="fmClaveDinamica.controls.clave">
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+
+</ion-content>
+<ion-toolbar>
+  <ion-grid class="padding2" *ngIf="!botonClaveDinamica">
+    <ion-row>
+      <ion-col class="col4 nopadding1">
+        <button class="botonReset"  type="button" (click)="reset()">{{'RESET' | translate}}</button>
+      </ion-col>
+      <ion-col class="nopadding2">
+        <button 
+        [ngClass]="{'botonConfirm': fmEnviar.valid, 'botonConfirmF': !fmEnviar.valid}"type="submit" form="fmEnviar"
+        [disabled]="!fmEnviar.valid">{{'CONFIRM' | translate}}</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid class="padding2" *ngIf="botonClaveDinamica">
+    <ion-row>
+      <ion-col class="ion-no-padding">
+        <button 
+        [ngClass]="{'botonConfirm': fmClaveDinamica.valid, 'botonConfirmF': !fmClaveDinamica.valid}"
+        type="submit" form="fmClaveDinamica"
+        [disabled]="!fmClaveDinamica.valid">{{'CONFIRM' | translate}}</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-toolbar>

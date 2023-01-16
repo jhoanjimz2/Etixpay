@@ -1,0 +1,91 @@
+<div class="contenedor ion-text-center">
+  <div>
+    <h1 class="ion-text-center primary-c">CIAO</h1>
+    <h5 class="ion-text-center primary-c">{{email}}</h5>
+    <p class="ion-text-center dark-label">Stai creando un account esperto. Sei tu l'esperto?</p>
+
+
+    <ion-row>
+      <ion-col class="ion-text-center" size="6">
+        <button class="btn-button wth-90p" [ngClass]="preRegistro.isRepresentative === 1 ? 'primary' : 'light'" (click)="preRegistro.isRepresentative = 1">
+          <label [ngClass]="preRegistro.isRepresentative === 1 ? 'blanco' : 'negro'">SI, l'account è per me</label>
+        </button>
+      </ion-col>
+      <ion-col class="ion-text-center" size="6">
+        <button class="btn-button wth-90p" [ngClass]="preRegistro.isRepresentative === 0 ? 'primary' : 'light'" (click)="preRegistro.isRepresentative = 0">
+          <label [ngClass]="preRegistro.isRepresentative === 0 ? 'blanco' : 'negro'">NO, non sono io</label>
+        </button>
+      </ion-col>
+    </ion-row>
+
+
+    <p class="label-come">Come svolgi principalmente la tua attività?</p>
+
+
+
+    <ion-row>
+      <ion-col class="ion-text-center" size="6">
+        <button class="btn-button whb" [ngClass]="preRegistro.profesionalisSERVICEVIRTUAL === 1 ? 'primary' : 'light'" (click)="preRegistro.profesionalisSERVICEVIRTUAL = 1">
+          <label [ngClass]="preRegistro.profesionalisSERVICEVIRTUAL === 1 ? 'blanco' : 'negro'">Online</label>
+        </button>
+      </ion-col>
+      <ion-col class="ion-text-center" size="6">
+        <button class="btn-button whb" [ngClass]="preRegistro.profesionalisSERVICEVIRTUAL === 0 ? 'primary' : 'light'" (click)="preRegistro.profesionalisSERVICEVIRTUAL = 0; preRegistro.profesionalWEB = ''">
+          <label [ngClass]="preRegistro.profesionalisSERVICEVIRTUAL === 0 ? 'blanco' : 'negro'">Di presenza</label>
+        </button>
+      </ion-col>
+    </ion-row>
+
+
+
+
+
+
+
+    <form ngNativeValidate #formProfeServi="ngForm">
+      <p class="s-titule">Scegli la tua categoria</p>
+      <ion-select (ionChange)="getServiceByProfesions();" required mode="ios"
+                  placeholder="scegli dalla lista"
+                  [(ngModel)]="preRegistro.proffesions[0].proffesionID" name="proffesionID" class="input-select">
+        <ion-select-option *ngFor="let profesion of profesions" value="{{profesion.id}}">{{profesion.profession_name}}</ion-select-option>
+      </ion-select>
+      <p class="s-titule">Scegli la subcategoria</p>
+      <ion-select required multiple="true" mode="ios"
+                  placeholder="scegli dalla lista"
+                  [(ngModel)]="preRegistro.proffesions[0].services" name="services" class="input-select">
+        <ion-select-option *ngFor="let service of services" value="{{service.id}}">{{service.service_name}}</ion-select-option>
+      </ion-select>
+      <p class="s-titule" *ngIf="preRegistro.profesionalisSERVICEVIRTUAL == 1">Link website</p>
+      <ion-input *ngIf="preRegistro.profesionalisSERVICEVIRTUAL == 1" type="website" required mode="ios" [(ngModel)]="preRegistro.profesionalWEB" name="profesionalWEB" class="input-select">
+      </ion-input>
+    </form>
+
+
+
+    <ion-row class="p-t-80" *ngIf="final.final">
+      <ion-col class="ion-text-center">
+      </ion-col>
+      <ion-col class="ion-text-center">
+        <ion-button (click)="volverAlFinal()" [ngClass]="formProfeServi.form.valid ? 'primary' : 'medium'" class="btn-button wth-90p" [disabled]="!formProfeServi.form.valid">
+          <ion-label color="light" class="txt-capitalize">
+            Avanti
+            <i class="mdi mdi-arrow-right m-l-15"></i>
+          </ion-label>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="p-t-80" *ngIf="!final.final">
+      <ion-col class="ion-text-center">
+      </ion-col>
+      <ion-col class="ion-text-center">
+        <ion-button (click)="authorizar()" [ngClass]="formProfeServi.form.valid ? 'primary' : 'medium'" class="btn-button wth-90p" [disabled]="!formProfeServi.form.valid">
+          <ion-label color="light" class="txt-capitalize">
+            Avanti
+            <i class="mdi mdi-arrow-right m-l-15"></i>
+          </ion-label>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </div>
+</div>

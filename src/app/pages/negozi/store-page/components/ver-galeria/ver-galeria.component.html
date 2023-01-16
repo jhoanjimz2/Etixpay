@@ -1,0 +1,6 @@
+<ion-content>
+  <div *ngFor="let img of galery">
+    <ion-icon name="trash" class="icon-menu" *ngIf="editar" (click)="eliminarImg(img.uuid)"></ion-icon>
+    <img  src="{{img.empresa_imagenURL}}"  (click)="back()">
+  </div>
+</ion-content>

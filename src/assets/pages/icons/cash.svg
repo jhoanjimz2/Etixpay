@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
+  <g id="Raggruppa_3" data-name="Raggruppa 3" transform="translate(-224 -585)">
+    <circle id="Ellisse_3" data-name="Ellisse 3" cx="60" cy="60" r="60" transform="translate(224 585)" fill="#00beff"/>
+    <text id="CASH" transform="translate(258 675)" fill="#fff" font-size="20" font-family="Roboto-Bold, Roboto" font-weight="700"><tspan x="0" y="0">CASH</tspan></text>
+    <g id="Raggruppa_2" data-name="Raggruppa 2" transform="translate(-0.722 -2.287)">
+      <rect id="Rettangolo_3" data-name="Rettangolo 3" width="21" height="31" rx="5" transform="translate(266.137 620.374) rotate(-17)" fill="#fff"/>
+      <rect id="Rettangolo_4" data-name="Rettangolo 4" width="21" height="33.818" rx="5" transform="translate(281.053 618.613) rotate(13)" fill="#00beff"/>
+      <rect id="Rettangolo_5" data-name="Rettangolo 5" width="21" height="31" rx="5" transform="matrix(0.966, 0.259, -0.259, 0.966, 284.023, 619.909)" fill="#fff"/>
+      <text id="_" data-name="€" transform="matrix(0.966, 0.259, -0.259, 0.966, 282.839, 643.591)" fill="#00beff" font-size="20" font-family="Roboto-Bold, Roboto" font-weight="700"><tspan x="0" y="0">€</tspan></text>
+    </g>
+  </g>
+</svg>

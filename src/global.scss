@@ -1,0 +1,439 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import "~@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+a[href^="http://maps.google.com/maps"]{display:none !important}
+a[href^="https://maps.google.com/maps"]{display:none !important}
+
+.gmnoprint a, .gmnoprint span, .gm-style-cc {
+    display:none;
+}
+.gmnoprint div {
+    background:none !important;
+}
+.native-input[disabled] {
+  opacity: 1 !important;
+}
+.searchbar-left-aligned.sc-ion-searchbar-ios-h
+  .searchbar-input.sc-ion-searchbar-ios {
+  background-color: #ffffff !important;
+  width: 100%;
+  font-size: 70%;
+  padding-right: 0px;
+}
+
+// .swiper-pagination-bullet-active {
+//   background: #ffffff !important;
+//   width: 30px !important;
+//   border-radius: 4px !important;
+// }
+// .swiper-pagination-bullet {
+//   width: 30px !important;
+//   border-radius: 4px !important;
+// }
+// .swiper-container-horizontal > .swiper-pagination-bullets {
+//   bottom: 40%;
+//   left: 0;
+//   width: 100%;
+// }
+
+.searchbar-clear-button.sc-ion-searchbar-ios {
+  right: 30px !important;
+}
+.sc-ion-buttons-ios-s ion-button:not(.button-round) {
+  opacity: 1 !important;
+}
+.sc-ion-buttons-ios-s ion-button {
+  --padding-start: 0px !important;
+  --padding-end: 0px !important;
+}
+.sc-ion-buttons-md-s ion-button:not(.button-round) {
+  opacity: 1 !important;
+}
+.sc-ion-buttons-md-s ion-button {
+  --padding-start: 0px !important;
+  --padding-end: 0px !important;
+}
+.select-icon-inner ion-select {
+  display: none !important;
+}
+// ionic-selectable div.ionic-selectable-icon {
+//   display: none  !important;
+// }
+.ionic-selectable-ios .ionic-selectable-value {
+  padding-bottom: 8.2px !important;
+}
+.alert-radio-group.sc-ion-alert-ios,
+.alert-checkbox-group.sc-ion-alert-ios {
+  border-top: 0px !important;
+}
+.alert-button.sc-ion-alert-ios {
+  border-top: 0px !important;
+  border-right: 0px !important;
+}
+.sc-ion-buttons-ios-s ion-icon[slot="icon-only"] {
+  color: #d8dcdf;
+}
+.sc-ion-buttons-md-s ion-icon[slot="icon-only"] {
+  color: #d8dcdf;
+}
+.modalInvFriend {
+  --height: 95% !important;
+  align-items: flex-end !important;
+  --backdrop-opacity: 0.3;
+  --border-radius: 20px;
+}
+.modalRecargaAutomatica {
+  --height: 410px !important;
+  align-items: flex-end !important;
+  --backdrop-opacity: 0.3;
+  --border-radius: 20px;
+}
+.modal-wrapper.sc-ion-modal-ios {
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+.modal-wrapper.sc-ion-modal-md {
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+.popoverCantidad .popover-content {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  width: 90%;
+  box-shadow: 0px 0px 15px -4px #000;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+}
+.popover_card_menu .popover-content {
+  width: 90%;
+}
+.color_boton_foto ion-icon {
+  color: #3ec0e8 !important;
+  font-size: 100%;
+  position: absolute;
+  right: 10px;
+}
+.color_boton_foto span {
+  color: #000;
+  font-size: 90%;
+  font-weight: 500;
+  text-align: left !important;
+  padding-right: calc(100% - 110px);
+}
+.color_boton_foto button {
+  border-bottom: 1px solid #d8dcdf !important;
+  height: 45px !important;
+  padding-bottom: 0px !important;
+  padding-top: 0px !important;
+}
+.color_boton_cancel span {
+  font-size: 90%;
+  font-weight: 500;
+}
+.iconclosetutorial {
+  color: #fff;
+  font-size: 200%;
+  font-weight: bold;
+  position: absolute;
+  top: 40px;
+  right: 15px;
+}
+.modalpay {
+  --height: 360px !important;
+  align-items: flex-end !important;
+  --backdrop-opacity: 0.3;
+  --border-radius: 30px;
+}
+.modalpayOrden {
+  --height: 220px !important;
+  align-items: flex-end !important;
+  --backdrop-opacity: 0.3;
+  --border-radius: 30px;
+}
+.modalpagarabierto {
+  --height: 85% !important;
+  align-items: flex-end !important;
+  --backdrop-opacity: 0.3;
+  --border-radius: 30px;
+}
+.sharingClass {
+  --height: 150px !important;
+  align-items: flex-end !important;
+  --backdrop-opacity: 0.3;
+  --border-radius: 30px;
+}
+.modalPagos {
+  --height: 320px !important;
+  align-items: flex-end !important;
+  --backdrop-opacity: 0.3;
+  --border-radius: 10px;
+}
+.modal_recargas_tipos {
+  --height: 330px !important;
+  align-items: flex-end !important;
+  --backdrop-opacity: 0.3;
+  --border-radius: 10px;
+}
+.modal_recargas {
+  --height: 330px !important;
+  align-items: flex-end !important;
+  --backdrop-opacity: 0.3;
+  --border-radius: 10px;
+}
+.modal_recargas_cerrado {
+  --height: 230px !important;
+  align-items: flex-end !important;
+  --backdrop-opacity: 0.3;
+  --border-radius: 10px;
+}
+.modal_recargas_abierto {
+  --height: 95% !important;
+  align-items: flex-end !important;
+  --backdrop-opacity: 0.3;
+  --border-radius: 10px;
+}
+.modal_recargas_abierto_top_up {
+  --height: 50% !important;
+  align-items: flex-end !important;
+  --backdrop-opacity: 0.3;
+  --border-radius: 10px;
+}
+.componente_elegir_especializacion {
+  --height: 330px !important;
+  align-items: flex-end !important;
+  --backdrop-opacity: 0.3;
+  --border-radius: 20px;
+}
+.componente_amigos {
+  --height: 85% !important;
+  align-items: flex-end !important;
+  --backdrop-opacity: 0.8;
+  --border-color: rgb(90, 87, 85);
+  --border-radius: 30px;
+}
+.lo_antes_posible {
+  --height: 60% !important;
+  align-items: flex-end !important;
+  --backdrop-opacity: 0.3;
+  --border-radius: 20px;
+}
+td {
+  border: 0px solid #ddd !important;
+}
+tr {
+  border: 0px solid #ddd !important;
+}
+th {
+  border: 0px solid #ddd !important;
+}
+tbody {
+  border: 0px solid #ddd !important;
+}
+table {
+  border: 0px solid #ddd !important;
+}
+.event-detail-container {
+  border-top: 0px !important;
+  display: none;
+}
+div .monthview-container {
+  height: 270px !important;
+}
+div .monthview-primary-with-event {
+  background-color: rgb(245, 246, 248) !important;
+  color: #000 !important;
+}
+div .monthview-selected {
+  background-color: #ffae41 !important;
+  color: #fff !important;
+}
+.modal_selecionar {
+  --height: 55% !important;
+  align-items: flex-end !important;
+  --backdrop-opacity: 0.3;
+  --border-radius: 30px;
+}
+.modal_add_comentario_tienda {
+  --backdrop-opacity: 0.3;
+  --height: 451px !important;
+  --border-radius: 30px;
+  --background: transparent;
+  align-items: flex-end !important;
+}
+.modal_add_comentario_profesionales {
+  --backdrop-opacity: 0.3;
+  --height: 451px !important;
+  --border-radius: 30px;
+  --background: transparent;
+  align-items: flex-end !important;
+}
+.modal_add_metodo_pago {
+  --height: 90% !important;
+  align-items: flex-end !important;
+  --backdrop-opacity: 0.9;
+  --border-radius: 30px;
+  --background: rgb(245, 247, 250);
+}
+.rating_empresas .sc-ion-buttons-ios-s ion-button:not(.button-round) {
+  width: 15px;
+}
+.action_sheet_documentos {
+  --background: rgb(245, 246, 248);
+  font-size: 10px;
+  font-weight: 400;
+}
+.boton_selector {
+  --button-color: #fff;
+  --button-background: #3ec0e8;
+  --button-background-selected-opacity: 0;
+}
+.boton_cancel_action_sheet {
+  --button-color: #fff;
+  --button-background: rgb(102, 75, 196) !important;
+  --button-background-selected-opacity: 0;
+}
+.loading-progress {
+  --backdrop-opacity: 0.3;
+  --background: transparent;
+  --box-shadow: none;
+}
+
+.p-relative {
+  position: relative;
+}
+
+.modal-info .alert-wrapper {
+  border-radius: 20px !important;
+  max-width: 90% !important;
+}
+
+.modal-info .alert-title {
+  border-radius: 20px !important;
+  text-align: center !important;
+  margin-bottom: 40px;
+}
+
+.modal-info .alert-message {
+  font-size: 15px;
+}
+
+.modal-info .alert-sub-title {
+  margin-bottom: 40px;
+  font-size: 15px;
+}
+
+.modal-info .alert-button-group{
+  height: 80px !important;
+  margin-top:10px !important;
+  justify-content: center; 
+}
+
+.modal-info .alert-button-inner { 
+  width: 100%;
+}
+
+.modal-info .alert-button { 
+  -webkit-box-pack: center; 
+  -ms-flex-pack: center; 
+  max-width: 40% !important;
+  min-width: 40% !important;
+  background: #33BDEB;
+  color: #FFFFFF;
+  border-radius: 10px;
+}
+
+.actionAlert{
+  color: var(--ion-color-danger) !important;
+}
+
+.popover-commnunity-movements {
+  font-style: oblique;
+  --background: #EFEFEF;
+  ion-backdrop {
+    --backdrop-opacity: 0;
+  }
+}
+
+.alert-market-place-start .alert-wrapper {
+  width: 90%;
+  height: 50%;
+  border-radius: 20px;
+  background-image: url("assets/pages/market-place/market-place-start.png") ;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.modal-marketplace-payment {
+  --height: 95% !important;
+  align-items: flex-end !important;
+  --backdrop-opacity: 0.3;
+  --border-radius: 30px;
+}
+
+.modal-marketplace-payment-confir {
+  --height: 90% !important;
+  align-items: flex-end !important;
+  --backdrop-opacity: 0.3;
+  --border-radius: 10px;
+}
+.ion-no-color-barra {
+  --offset-bottom: auto !important;
+  --overflow: hidden;
+  overflow: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+.contenedor-app-web-principal {
+  background-color: white;
+  width: 100%;
+  height: 100%;
+}
+
+@media (min-width: 500px) {
+  .web-modo-app {
+    width: 381px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+  }
+}
+
+video {
+  border-radius: 20px !important;
+  width: 300px !important;
+  height: 400px !important;
+  object-fit: cover;
+}

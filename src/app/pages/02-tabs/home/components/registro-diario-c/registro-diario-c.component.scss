@@ -1,0 +1,56 @@
+.grid {
+  padding: 0px;
+  margin: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  padding-top: 7px;
+}
+.textoDCI {
+  font-size: 80%;
+  font-weight: bold;
+  color: #000;
+  text-shadow: 1px 1px 1px #d8dcdf;
+}
+.paddingdaily {
+  padding-top: 10px;
+  padding-bottom: 8px;
+}
+.textoDay {
+  font-size: 70%;
+  color: #d8dcdf;
+}
+.botonCkeck {
+  width: 40px;
+  height: 40px;
+  color: white;
+  border-radius: 20px;
+  font-size: 90%;
+  font-weight: bold;
+  background-color: rgb(181, 188, 204);
+  border: 1px solid rgb(181, 188, 204);
+}
+.botonCkeckF {
+  width: 40px;
+  height: 40px;
+  color: white;
+  border-radius: 20px;
+  font-size: 90%;
+  font-weight: bold;
+  background-color: rgb(237, 239, 243);
+  border: 1px solid rgb(237, 239, 243);
+}
+.botonRegalo {
+  width: 40px;
+  height: 40px;
+  color: white;
+  border-radius: 20px;
+  font-size: 150%;
+  background-color: rgb(232, 56, 69);
+  border: 1px solid rgb(232, 56, 69);
+}
+.centrar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}

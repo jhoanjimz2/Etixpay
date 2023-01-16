@@ -1,0 +1,69 @@
+<ion-content>
+  <ion-grid class="header_uno ios">
+    <ion-row class="padding_top">
+      <ion-col class="col padding_top_dos">
+        <ion-icon name="arrow-back-outline"  (click)="salir_sin_argumentos()" class="icon_back"></ion-icon>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <app-tipo-movimiento class="titulo_header" mensaje="{{movimiento.transaccionOBSERVACIONES}}"></app-tipo-movimiento>
+      </ion-col>
+    </ion-row>
+  </ion-grid> 
+  <div class="linea"></div>
+
+  <ion-grid class="grid_uno">
+    <ion-row>
+      <ion-col class="padding">
+        <ion-label class="label_category">{{'CATEGORY8' | translate}}</ion-label>
+      </ion-col>
+    </ion-row>
+    <div class="div_info">
+      <ion-grid>
+        <ion-row>
+          <ion-col class="col_name">
+            <ion-label class="label_name">{{movimiento.concepto}}</ion-label>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="col_valor">
+            <ion-label class="label_valor" *ngIf="!movimiento.proyecto && movimiento.transaccionCONCEPTO === 'RETIRO'"> - {{movimiento.proyectoCANTIDADATM | formattNumber2}}</ion-label>
+            <ion-label class="label_valor" *ngIf="movimiento.proyecto && movimiento.transaccionCONCEPTO === 'RETIRO'"> - {{movimiento.proyectoCANTIDADTOK | formattNumber2}}</ion-label>
+            <ion-label class="label_valor" *ngIf="!movimiento.proyecto && movimiento.transaccionCONCEPTO === 'INGRESO'"> + {{movimiento.proyectoCANTIDADATM | formattNumber2}}</ion-label>
+            <ion-label class="label_valor" *ngIf="movimiento.proyecto && movimiento.transaccionCONCEPTO === 'INGRESO'"> + {{movimiento.proyectoCANTIDADTOK | formattNumber2}}</ion-label>
+          </ion-col>
+        </ion-row>
+        <ion-row class="row_text_uno">
+          <ion-col class="col_data">
+            <ion-label class="label_uno">{{'DATE2' | translate}}</ion-label><br>
+            <ion-label class="label_dos">{{movimiento.transaccionFECHA | dateTimeFormatFilter : "DD MMM, YYYY"}}</ion-label>
+          </ion-col>
+          <ion-col class="col_data">
+            <ion-label class="label_uno">{{'LOCATION4' | translate}}</ion-label><br>
+            <!-- <ion-label class="label_dos">Address, City, Country</ion-label> -->
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="col_data_dos">
+            <ion-label class="label_uno">{{'REASON1' | translate}}</ion-label><br>
+            <!-- <app-tipo-movimiento class="label_dos" mensaje="{{movimiento.transaccionOBSERVACIONES}}"></app-tipo-movimiento> -->
+          </ion-col>
+        </ion-row>
+        <!-- <ion-row>
+          <ion-col class="col_data_dos">
+            <ion-label class="label_uno">{{'REWARDPOINTS4' | translate}}</ion-label><br>            
+             <ion-label class="label_dos">3,77 PR</ion-label>
+          </ion-col>
+        </ion-row> -->
+        <ion-row>
+          <ion-col class="col_data_dos">
+            <ion-label class="label_uno">{{'CONCEPT' | translate}}</ion-label><br>
+            <ion-label class="label_dos" *ngIf="!movimiento.proyecto && movimiento.transaccionCONCEPTO === 'RETIRO'">{{'RETIRO' | translate}} TIX</ion-label>
+            <ion-label class="label_dos" *ngIf="movimiento.proyecto && movimiento.transaccionCONCEPTO === 'RETIRO'">{{'RETIRO' | translate}} {{movimiento.proyecto.proyectoSIGLATOK}}</ion-label>
+            <ion-label class="label_dos" *ngIf="!movimiento.proyecto && movimiento.transaccionCONCEPTO === 'INGRESO'">{{'INGRESO' | translate}} TIX</ion-label>
+            <ion-label class="label_dos" *ngIf="movimiento.proyecto && movimiento.transaccionCONCEPTO === 'INGRESO'">{{'INGRESO' | translate}} {{movimiento.proyecto.proyectoSIGLATOK}}</ion-label>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </ion-grid>
+
+</ion-content>

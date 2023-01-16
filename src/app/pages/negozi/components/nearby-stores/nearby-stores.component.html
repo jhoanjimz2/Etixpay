@@ -1,0 +1,28 @@
+<div class="contenedor">
+  <div class="c-2">
+    <div class="s-6">
+      <ion-label  class="l-n">{{'NEARBYSTORES' | translate}}</ion-label> 
+    </div>
+    <div class="s-6 ion-text-end">
+      <ion-label class="l-v-a" (click)="irNegoziAll()">{{'VIEWALLN' | translate}}</ion-label>
+    </div>
+  </div>
+  <div class="d-c-s ion-no-color-barra">
+    <div *ngFor="let store of stores; let i = index" [ngClass]="{'m-l': i == 0}" class="d-s" (click)="irNegoziPage(store.uuid)">
+      <div class="c-img-c">
+        <img src="{{store.empresaFOTO}}" class="img-s">
+        <div class="d-c-c">{{store.cashbackCLIENTE | number: '1.0'}}% cashback</div>
+      </div>
+      <div class="d-i">
+        <ion-label class="l-n-s puntos">{{store.empresaNOMBREMAP}}</ion-label><br>
+        <ion-label class="l-c puntos">{{store.empresaCATEGORIA}}</ion-label>
+      </div>
+    </div>
+    <div class="d-s-n">
+      <ion-icon name="arrow-forward-outline" class="i-n" (click)="siguiente()" *ngIf="!cargar && paginaActual < paginasTotales"></ion-icon>
+      <ion-spinner name="circles"  class="i-s"  *ngIf="cargar"></ion-spinner>
+    </div>
+  </div>
+</div>
+
+

@@ -1,0 +1,116 @@
+.padding1 {
+  padding: 15px;
+  padding-top: 20;
+}
+.texto1 {
+  font-size: 110%;
+  font-weight: bold;
+  color: #000000;
+  text-shadow: 0px 0px 1px #d8dcdf;
+}
+.texto2 {
+  font-size: 85%;
+  color: #664bc4;
+}
+.texto3 {
+  zoom: 2.8;
+  color: #000000;
+  text-shadow: 0px 0px 1px #d8dcdf;
+}
+.colswipe {
+  line-height: 0.5;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.itemSliding {
+  width: 100%;
+  height: 50px;
+  border-radius: 30px;
+  background-color: rgb(245, 247, 250);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.itemSlidingTrue {
+  width: 100%;
+  height: 50px;
+  border-radius: 30px;
+  background-color: #664bc4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.slidOPTION {
+  width: 100%;
+}
+.slidOptionItem {
+  width: 100%;
+  background-color: #664bc4;
+  color: white;
+  font-size: 17px;
+}
+.itemMovible {
+  width: 42px;
+  height: 42px;
+  border-radius: 21px;
+  --ion-background-color: #664bc4;
+  position: absolute;
+  top: calc(50% - 21px);
+  left: 4px;
+}
+.itemMovibleTrue {
+  width: 42px;
+  height: 42px;
+  border-radius: 21px;
+  --ion-background-color: #664bc4;
+  position: absolute;
+  top: calc(50% - 21px);
+  left: 4px;
+  box-shadow: -1px 0px 10px -2px;
+}
+.flechaItem {
+  color: #ffffff;
+  font-size: 28px !important;
+  position: absolute;
+  top: calc(50% - 16px);
+  left: calc(50% - 13px);
+}
+ion-item {
+  --inner-padding-end: 0px;
+  --padding-start: 0px;
+}
+.labelItemSliding {
+  color: #664bc4;
+  font-weight: bold;
+  font-size: 85%;
+  text-shadow: 0px 0px 1px #d8dcdf;
+}
+.labelItemSlidingTrue {
+  color: #fff;
+  font-weight: bold;
+  font-size: 85%;
+  text-shadow: 0px 0px 1px #d8dcdf;
+}
+.textoError {
+  color: red;
+  font-size: 80%;
+}
+.textosTitulos {
+  font-size: 80%;
+  color: rgb(186, 191, 202);
+}
+.colporcentaje1 {
+  max-width: 30% !important;
+}
+.colporcentaje2 {
+  max-width: 25%;
+}
+.colporcentaje3 {
+  max-width: 15%;
+}
+.colporcentaje4 {
+  max-width: 30% !important;
+}
+.paddingleft {
+  padding-left: 5px;
+}

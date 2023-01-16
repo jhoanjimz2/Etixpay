@@ -1,0 +1,55 @@
+.p-l {
+    padding-left: 0%;
+}
+.p-0 {
+    padding: 0%;
+}
+.container-buttons-months {
+    overflow: hidden; 
+    white-space: nowrap;
+    ::-webkit-scrollbar {
+      display: none;
+    }
+    .scroll {
+      overflow: auto;
+    }
+    .item {
+        display: inline-block;
+        margin-right: 20px;
+    }
+}
+
+.btn-clas {
+    height: 25px;
+    min-width: 70px;
+    border-radius: 30px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    border: solid 1px #F6F02D;
+    text-align: center;
+    padding: 0%;
+    background-color: #FFFFFF;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 2px;
+}
+
+.item-all {
+    min-width: 70px !important;
+    position: sticky !important;
+    left: 0 !important;
+}
+
+.bg-yellow {
+    background-color: #F6F02D;
+}
+
+.p-10 {
+    padding: 10px;
+    padding-top: 25px;
+}
+
+
+
+

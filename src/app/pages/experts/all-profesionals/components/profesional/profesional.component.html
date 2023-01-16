@@ -1,0 +1,15 @@
+<div class="d-f d-boton" (click)="profesionalProfile()">
+  <div class="w-4">
+    <img [src]="profesional.main_image" class="img">
+  </div>
+  <div class="w-4 l-s">
+    <div>
+      <ion-label class="name">{{profesional.profesionalNAMEMAP}}</ion-label><br>
+      <ion-label class="name-s">{{profesional.professions_data[0]}}</ion-label><br>
+      <app-stars-valoration [valoracion]="profesional.rating"></app-stars-valoration>
+    </div>
+  </div>
+  <div class="w-4 l-e">
+    <ion-icon name="chevron-forward" class="icon"></ion-icon>
+  </div>
+</div>

@@ -1,0 +1,49 @@
+ion-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+}
+.div-slides  {
+    position: relative;
+    width: 50%;
+    margin: auto;
+}
+.item-contenido {
+    width: 25px;
+    height: 25px;
+    background-color: #d8dcdf;
+    border-radius: 5px;
+    color: grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.item-contenido-activo {
+    width: 30px;
+    height: 30px;
+    background-color: #ffaf41;
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.icon-back {
+    width: 30px;
+    height: 30px;
+    color: #000;
+    position: absolute;
+    top: calc(50% - 15px);
+    left: -10px;
+    z-index: 9;
+}
+.icon-next {
+    width: 30px;
+    height: 30px;
+    color: #000;
+    position: absolute;
+    top: calc(50% - 15px);
+    right: -10px;
+    z-index: 9;
+}

@@ -1,0 +1,329 @@
+<app-header-padre [page]="true"></app-header-padre>
+<ion-content>
+
+  <form ngNativeValidate #formItem="ngForm">
+    <ion-row class="card-row">
+      <ion-col>
+        <ion-label class="text-label">{{'ADDTITLE' | translate}}</ion-label>
+        <ion-input class="m-b-10" class="text-input" [(ngModel)]="product.title" name="title" placeholder="{{'ADDARTICLEPLACEHOLDER' | translate}}"></ion-input>
+        <ion-label class="text-label">{{'CATEGORYMP' | translate}}</ion-label>
+        <div>
+          <select [(ngModel)]="product.category" name="category" class="input-select" required>
+            <option value = "">Scegli la categoria</option>
+            <option *ngFor="let categorty of categories" value = "{{categorty.uuid}}">{{categorty.category_name}}</option>
+          </select>  
+        </div>
+        
+        <ion-label class="text-label">{{'DESCRIBEPRODUCT' | translate}}</ion-label>
+        <ion-textarea [(ngModel)]="product.description" name="description" rows="7" class="input-text-area" placeholder="{{'DESCRIPCIONPLACEHOLDER' | translate}}"></ion-textarea>
+      
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="card-row-dos">
+      <ion-col>
+        <ion-label class="label-commissions">{{'COMMISSIONMP' | translate}}</ion-label> 
+      </ion-col>
+      <ion-col class="ion-text-end" size="2">
+        <ion-toggle (ionChange)="commisions($event)" class="toggle-commissions" mode="ios"></ion-toggle>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="card-row-dos">
+      <ion-col size="8.5">
+        <ion-label class="text-label">{{'PRICEPRODUCT' | translate}}</ion-label>
+        <ion-row class="card-row-price">
+          <ion-col size="9">
+            <ion-input [(ngModel)]="product.price" name="price" type="number"></ion-input>
+          </ion-col>
+          <ion-col class="ion-text-right" class="p-t-14">
+            <ion-label class="text-price">€/TIX</ion-label>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+      <ion-col size="3.5" class="ion-text-center">
+        <ion-label class="text-label-dos">{{'COMMUNITYMP' | translate}}</ion-label>
+        <ion-row>
+          <ion-col class="ion-text-center card-community">
+            <ion-label class="text-community">{{product.community}}%</ion-label>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="content-pictures">
+      <ion-row class="w-100p">
+        <ion-col class="ion-text-center">
+          <ion-label class="text-pictures">{{'MAINPICTURE' | translate}}</ion-label>
+        </ion-col>
+      </ion-row>
+      
+      <ion-row class="w-100p p-10">
+        <ion-col class="ion-text-center" >
+          <div class="input-transparente"  [ngClass]="{'card-picture-main': !product.image1, 'card-picture-main-i': product.image1}">
+            <img class="img-main" *ngIf="product.image1" [src]="product.imageStr1">
+            <div class="p-t-90" *ngIf="!product.image1">
+              <i class="mdi mdi-inbox-arrow-up icon-main-picture"></i>
+              <div>
+                <ion-label class="text-main-picture">{{'CLICKTODOWLAND' | translate}}</ion-label>
+              </div>
+            </div>
+            <input type="file" (change)="add_img($event, 1)"   accept="image/png, image/jpeg" #myInput>
+          </div>
+        </ion-col>
+      </ion-row> 
+
+      <ion-row class="w-100p">
+        <ion-col class="ion-text-center">
+        <ion-label class="text-pictures">{{'SECONDADRYPICTURE' | translate}}</ion-label>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="w-100p p-10">
+        <ion-col class="ion-text-center" >
+
+          <div class="input-transparente"  [ngClass]="{'card-secondary-pictures': !product.image2, 'card-secondary-pictures-i': product.image2}">
+
+            <img class="img-secondary" *ngIf="product.image2" [src]="product.imageStr2">
+            <i class="mdi mdi-inbox-arrow-up icon-secondary-pictures"  *ngIf="!product.image2"></i>
+            <div  *ngIf="!product.image2">
+              <ion-label class="text-secondary-pictures">{{'CLICKTODOWLAND' | translate}}</ion-label>
+            </div>
+            <input type="file" (change)="add_img($event, 2)" accept="image/png, image/jpeg"  #myInput>
+          </div>
+        </ion-col>
+        <ion-col class="ion-text-center" >
+          <div class="input-transparente"  [ngClass]="{'card-secondary-pictures': !product.image3, 'card-secondary-pictures-i': product.image3}">
+
+            <img class="img-secondary" *ngIf="product.image3" [src]="product.imageStr3">
+            <i class="mdi mdi-inbox-arrow-up icon-secondary-pictures"  *ngIf="!product.image3"></i>
+            <div  *ngIf="!product.image3">
+              <ion-label class="text-secondary-pictures">{{'CLICKTODOWLAND' | translate}}</ion-label>
+            </div>
+            <input type="file" (change)="add_img($event, 3)"   accept="image/png, image/jpeg" #myInput>
+          </div>
+        </ion-col>
+        <ion-col class="ion-text-center" >
+          <div class="input-transparente"  [ngClass]="{'card-secondary-pictures': !product.image4, 'card-secondary-pictures-i': product.image4}">
+
+            <img class="img-secondary" *ngIf="product.image4" [src]="product.imageStr4">
+            <i class="mdi mdi-inbox-arrow-up icon-secondary-pictures"  *ngIf="!product.image4"></i>
+            <div  *ngIf="!product.image4">
+              <ion-label class="text-secondary-pictures">{{'CLICKTODOWLAND' | translate}}</ion-label>
+            </div>
+            <input type="file" (change)="add_img($event, 4)"   accept="image/png, image/jpeg" #myInput>
+          </div>
+        </ion-col>
+      </ion-row> 
+    </ion-row>
+
+    <ion-row class="card-row">
+      <ion-col>
+        <ion-label class="text-label">{{'INDICATELOCALITACION' | translate}}</ion-label>
+        <ion-row>
+          <ion-col class="ion-no-padding">
+            <ionic-selectable 
+              [items]="pais" 
+              class="input-select"
+              itemValueField="id" 
+              itemTextField="paisNOMBRE" 
+              [canSearch]="true"
+              placeholder="{{'COUNTRYMP' | translate}}"
+              searchFailText="{{'NOTFOUND3' | translate}}"
+              searchPlaceholder="{{'SEARCH' | translate}}"
+              [hasInfiniteScroll]="true"
+              (onInfiniteScroll)="obtenerPaises($event)"
+              (onChange)="cargar_ciudades($event)"
+              (onSearch)="buscarPais($event)"
+              [(ngModel)]="product.country"
+              name="country" required>                 
+            </ionic-selectable>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="ion-no-padding">
+            <ionic-selectable
+              #portComponent
+              [items]="ciudad" 
+              class="input-select"
+              itemValueField="id" 
+              itemTextField="ciudadNOMBRE" 
+              [canSearch]="true"
+              placeholder="{{'CITYMP' | translate}}"
+              searchFailText="{{ 'NOENCONTRADONR' | translate}}"
+              searchPlaceholder="{{ 'BUSCARNR' | translate}}"
+              [(ngModel)]="product.city"
+              name="city"
+              (onInfiniteScroll)="obtener_ciudades($event)"
+              (onSearch)="buscar_ciudad($event)"
+              [hasInfiniteScroll]="true" required>                  
+            </ionic-selectable>
+          </ion-col>
+        </ion-row>
+        <input [(ngModel)]="product.address" name="address" class="text-input m-b-10" placeholder="{{'ADDRESSMP' | translate}} *" 
+        ngx-google-places-autocomplete #placesRef="ngx-places" (onAddressChange)="handleAddressChange($event)"/>
+        <ion-label class="f-z-12 light-label">{{'NOTVISIBLEUSER' | translate }}</ion-label>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="card-row">
+      <ion-col>
+        <ion-label class="text-label">{{'YOUWANTDELIVERY' | translate}}</ion-label>
+        <div>
+          <ion-label class="f-z-12 dark-label">{{'OPTIONSYOUOFFER' | translate}}</ion-label>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="card-row">
+      <ion-col size="1.5">
+        <ion-checkbox (ionChange)="optionDelivery(1)"  class="card-checkbox" [(ngModel)]="product.directWithdraw" name="directWithdraw" [value]="product.directWithdraw"></ion-checkbox>
+      </ion-col>
+      <ion-col size="10.5">
+        <img class="icon-direct" src="assets/pages/market-place/handshake-o.svg">
+        <ion-label class="f-z-12 dark-label">{{'DIRECTCOLLECTION' | translate}}</ion-label>
+      </ion-col>
+    </ion-row>
+    
+    <ion-row class="card-row">
+      <ion-col size="1.5" class="p-t-13">
+        <ion-checkbox (ionChange)="optionDelivery(2)" class="card-checkbox" [(ngModel)]="product.shipping" name="shipping" [value]="product.shipping"></ion-checkbox>
+      </ion-col>
+      <ion-col size="6" class="p-t-14">
+        <i class="mdi mdi-truck-delivery icon-delivery"></i>
+        <ion-label class="f-z-12 dark-label">{{'COURRIER' | translate}} - {{'PICKUPPOINT' | translate}}</ion-label>
+      </ion-col>
+      <ion-col *ngIf="product.shipping" class="p-0p p-t-14">
+        <ion-label class="f-z-12 dark-label">{{'PRECIOENVIOSTANDART' | translate}}</ion-label>
+        <ion-input type="number" class="m-b-10" class="text-input-price" [(ngModel)]="product.priceShipping" name="priceShipping" required></ion-input>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="card-row">
+      <ion-col>
+        <ion-label class="text-label">{{'SIZEWEIGHT' | translate}}</ion-label>
+        <div>
+          <ion-label class="f-z-12 dark-label text-italic">{{'DATATOCALCULATE' | translate}}</ion-label>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="card-row">
+      <ion-col size="3">
+        <img class="m-l-10" src="assets/pages/market-place/cube-width.png">
+      </ion-col>
+      <ion-col size="3" class="p-l-5">
+        <img class="m-l-10" src="assets/pages/market-place/cube-height.png">
+      </ion-col>
+      <ion-col size="3" class="p-l-5">
+        <img class="m-l-10" src="assets/pages/market-place/cube-depth.png">
+      </ion-col>
+      <ion-col size="3">
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="card-row-data-item">
+      <ion-col size="3">
+        <ion-input type="number" class="text-input m-b-10 text-center" [(ngModel)]="product.width" name="width" placeholder="cm" required></ion-input>
+      </ion-col>
+      <ion-col size="3">
+        <ion-input type="number" class="text-input m-b-10 text-center" [(ngModel)]="product.height" name="height" placeholder="cm" required></ion-input>
+      </ion-col>
+      <ion-col size="3">
+        <ion-input type="number" class="text-input m-b-10 text-center" [(ngModel)]="product.depth" name="depth" placeholder="cm" required></ion-input>
+      </ion-col>
+      <ion-col size="3">
+        <ion-input type="number" class="text-input m-b-10 text-center" [(ngModel)]="product.weight" name="weight" placeholder="kg" required></ion-input>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="card-row-data-item">
+      <ion-col size="3" class="ion-text-center">
+        <ion-label class="text-info-art">{{'WIDTH' | translate}}</ion-label>
+      </ion-col>
+      <ion-col size="3" class="ion-text-center">
+        <ion-label class="text-info-art">{{'HEIGHT' | translate}}</ion-label>
+      </ion-col>
+      <ion-col size="3" class="ion-text-center">
+        <ion-label class="text-info-art">{{'DEPTH' | translate}}</ion-label>
+      </ion-col>
+      <ion-col size="3" class="ion-text-center">
+        <ion-label class="text-info-art">{{'WEIGHT' | translate}}</ion-label>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="row-hr"></ion-row>
+  
+    <ion-row class="card-row-term">
+      <ion-col size="1.5">
+        <ion-checkbox class="card-checkbox" [(ngModel)]="product.accepTerms" name="accepTerms" [value]="product.accepTerms"></ion-checkbox>
+      </ion-col>
+      <ion-col size="10.5">
+        <ion-label class="f-z-12 dark-label">{{'TERMSCONDITIONSMP' | translate}}</ion-label>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="card-row-term">
+      <ion-col size="1.5">
+        <ion-checkbox class="card-checkbox f-w-500" [(ngModel)]="product.infoConfor" name="infoConfor" [value]="product.infoConfor"></ion-checkbox>
+      </ion-col>
+      <ion-col size="10.5">
+        <ion-label class="f-z-12 dark-label f-w-500">{{'INFOARTICLE' | translate}}</ion-label>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="card-row m-b-100">
+      <ion-col class="ion-text-center">
+        <ion-button (click)="saveProduct()" class="btn-add" 
+                    [fill]="(!formItem.form.valid || 
+                            !this.product.imageStr1 ||
+                            !this.product.imageStr2 ||
+                            !this.product.imageStr3 ||
+                            !this.product.imageStr4 ||
+                            product.price == 0    || 
+                            product.width == 0    || 
+                            product.height == 0   || 
+                            product.depth == 0    ||
+                            product.weight == 0   ||
+                            product.priceShipping == 0   ||
+                            (!product.directWithdraw && !product.shipping) ||
+                            !product.accepTerms   ||
+                            !product.infoConfor) && 'outline'"
+                    [ngClass]="{'btn-add-disabled': 
+                                (!formItem.form.valid   || 
+                                !this.product.imageStr1 ||
+                                !this.product.imageStr2 ||
+                                !this.product.imageStr3 ||
+                                !this.product.imageStr4 ||
+                                product.price == 0      || 
+                                product.width == 0      || 
+                                product.height == 0     || 
+                                product.depth == 0      ||
+                                product.weight == 0     ||
+                                (product.priceShipping == 0 && product.shipping)   ||
+                                (!product.directWithdraw && !product.shipping) ||
+                                !product.accepTerms   ||
+                                !product.infoConfor)
+                    }"
+                    [disabled]="(!formItem.form.valid || 
+                                !this.product.imageStr1 ||
+                                !this.product.imageStr2 ||
+                                !this.product.imageStr3 ||
+                                !this.product.imageStr4 ||
+                                product.price == 0      || 
+                                product.width == 0      || 
+                                product.height == 0     || 
+                                product.depth == 0      ||
+                                product.weight == 0     ||
+                                (product.priceShipping == 0 && product.shipping)   ||
+                                (!product.directWithdraw && !product.shipping) ||
+                                !product.accepTerms   ||
+                                !product.infoConfor
+                    )"
+        >{{'SELLPRODUCT' | translate}}</ion-button>
+      </ion-col>
+    </ion-row>
+
+  </form>
+
+</ion-content>

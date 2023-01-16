@@ -1,0 +1,28 @@
+<form  [formGroup]="fmClaveDinamica">   
+  <ion-grid class="padding">
+    <ion-row>
+      <ion-col class="col1">
+        <ion-label>{{'ENTERDYNAMIC' | translate}}</ion-label>
+        <ion-icon name="close-outline" (click)="salirSinSeleccion()" class="iconclose"></ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="col2">
+        <ion-label>{{'ENTERTHE' | translate}}</ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-input class="inputs" [formControl]="fmClaveDinamica.controls.claveDinamica"   name="claveDinamica"></ion-input>
+      </ion-col>
+    </ion-row> 
+    <ion-row>
+      <ion-col>
+        <button  [ngClass]="{ 'botonConfirm': fmClaveDinamica.valid,  'botonConfirmF': !fmClaveDinamica.valid}"  
+                 (click)="salirConSeleccion()" [disabled]="!fmClaveDinamica.valid">
+          {{'SEND' | translate}}
+        </button>
+      </ion-col>
+    </ion-row>  
+  </ion-grid>   
+</form>

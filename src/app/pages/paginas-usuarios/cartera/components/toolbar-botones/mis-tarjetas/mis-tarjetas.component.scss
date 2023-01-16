@@ -1,0 +1,115 @@
+.div_mayor {
+  background: rgb(245, 246, 248);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+.header {
+  background: #fff;
+  position: relative;
+  border-bottom: 1px solid white;
+  border-bottom-left-radius: 25px !important;
+  border-bottom-right-radius: 25px !important;
+  box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  padding-top: 30px;
+  padding-bottom: 10px;
+}
+ion-header {
+  background: rgb(245, 246, 248);
+}
+.padding_top_cero {
+  padding-top: 0px !important;
+}
+.col_header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  padding-top: 5px;
+}
+.col_header_dos {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  padding-top: 5px;
+}
+.icon_menu {
+  font-weight: bold;
+  font-size: 25px;
+  color: #000;
+  padding-top: 0px !important;
+}
+.icon_close {
+  font-size: 26px;
+  color: #000;
+  padding-top: 0px !important;
+}
+.titulo {
+  font-weight: bold;
+  font-size: 20px;
+  color: #000;
+  padding-top: 0px !important;
+}
+.img_card {
+  width: 100%;
+  border-radius: 10px;
+}
+.div_info {
+  padding: 10px;
+}
+.col_info {
+  line-height: 1.5;
+}
+.label_uno {
+  color: #d8dcdf;
+  font-size: 15px;
+  font-weight: 400;
+}
+.img_edit {
+  width: 20px;
+}
+.label_dos {
+  color: #000;
+  font-size: 25px;
+  font-weight: bold;
+}
+.abajo {
+  background: #fff;
+  position: relative;
+  border-top-left-radius: 25px !important;
+  border-top-right-radius: 25px !important;
+  box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  flex: 1;
+  padding: 10px;
+}
+.buttons {
+  width: 100px;
+  height: 90px;
+  border-radius: 15px;
+  background-color: #fff;
+  border: 1px solid #d8dcdf;
+  font-size: 12px;
+  font-weight: 400;
+  color: #000;
+  line-height: 1.5;
+  text-shadow: 1px 1px 1px #d8dcdf;
+}
+.buttons img {
+  width: 45px;
+}
+.label_tres {
+  color: #000;
+  font-size: 17px;
+  font-weight: bold;
+}
+.img_card_dos {
+  width: 100%;
+  border-radius: 10px;
+}
+.col_butons {
+  text-align: center !important;
+}

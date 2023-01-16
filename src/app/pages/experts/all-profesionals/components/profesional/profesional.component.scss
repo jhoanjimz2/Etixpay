@@ -1,0 +1,50 @@
+.d-f {
+    display: flex;
+}
+.d-boton {
+    border: 1px solid #d3d3d3;
+    height: 120px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+}
+.img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+}
+.w-4 {
+  flex: 0 0 calc(calc(4 / var(--ion-grid-columns, 12)) * 100%);
+  width: calc(calc(4 / var(--ion-grid-columns, 12)) * 100%);
+  max-width: calc(calc(4 / var(--ion-grid-columns, 12)) * 100%);
+  padding: 10px;
+}
+.w-2 {
+  flex: 0 0 calc(calc(2 / var(--ion-grid-columns, 12)) * 100%);
+  width: calc(calc(2 / var(--ion-grid-columns, 12)) * 100%);
+  max-width: calc(calc(2 / var(--ion-grid-columns, 12)) * 100%);
+}
+.l-s {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.l-e {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.name {
+    color: #000;
+    font-size: 16px;
+    font-weight: 400;
+}
+.name-s {
+    color: grey;
+    font-size: 14px;
+    font-weight: 400;
+}
+.icon {
+    color: grey;
+    font-size: 25px;
+}

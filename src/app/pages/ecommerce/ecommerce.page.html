@@ -1,0 +1,44 @@
+<app-header-padre [page]="true" [color]="'#664BC4'"></app-header-padre>
+<ion-content>
+
+
+  <app-in-evidenza
+    [shoppingEvidenza]="shoppingEvidenza">
+  </app-in-evidenza>
+
+  <app-top-pr
+    (next)="nextTop()"
+    [paginasTotalesT]="paginasTotalesT"
+    [paginaActualT]="paginaActualT"
+    [cargarTops]="cargarTops"
+    [topPr]="topPr">
+  </app-top-pr>
+
+  <app-categories-shopping
+    (selectCategory)="selectCategory($event)"
+    [categorySelect]="categorySelect"
+    [categoriesShopping]="categoriesShopping">
+  </app-categories-shopping>
+
+  <app-search
+    [cargando]="cargando"
+    [noEncontrado]="noEncontrado"
+    [lista]="listaSearch"
+    (search)="buscar($event)">
+  </app-search>
+
+  <div *ngIf="listaSearch.length == 0 && !noEncontrado">
+    <app-shop
+      *ngFor="let shop of shops"
+      [shop]="shop">
+    </app-shop>
+  </div>
+    
+
+
+  <div class="divInfoNula" *ngIf="shops.length == 0 && listaSearch.length == 0">
+    <ion-label class="labelInfoNula">No online shops registered yet</ion-label>
+  </div>
+
+
+</ion-content>

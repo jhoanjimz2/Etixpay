@@ -1,0 +1,30 @@
+<ion-grid>
+  <ion-row>
+    <ion-col>
+      <ion-label  class="labelShopping">{{'SHOPPINGONLINE' | translate}}</ion-label> 
+    </ion-col>
+    <ion-col class="ion-text-end">
+      <ion-label class="labelViewAll" (click)="irEcommerce()">{{'VIEWALL3' | translate}}</ion-label>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+
+      <ion-slides [options]="slideNulo" *ngIf="shoppingOnline.length <= 0">
+        <ion-slide>
+          <div class="divInfoNula">
+            <ion-label class="labelInfoNula">{{'NOONLINESHOPS' | translate}}</ion-label>
+          </div>
+        </ion-slide>
+      </ion-slides>
+      <div class="divContenedor"  *ngIf="shoppingOnline.length > 0">
+        <div *ngFor="let shop of shoppingOnline" class="divShopping" (click)="irSitioWeb(shop.empresaPAGINAWEB)">
+          <img src="{{shop.empresaFOTO}}">
+          <div class="divTexto"></div>
+          <ion-label class="labelTitulo">{{shop.empresaNOMBREMAP}}</ion-label>
+          <ion-label class="labelTituloDos">{{shop.pr_base | formattNumber2}} PR / 100€</ion-label>
+        </div>
+      </div>
+    </ion-col>
+  </ion-row>
+</ion-grid>

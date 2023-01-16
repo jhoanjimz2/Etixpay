@@ -1,0 +1,29 @@
+<ion-grid class="margingrid">
+  <ion-row class="margin1">
+    <ion-col>
+      <ion-label class="labelInput">{{'ENTERTHEAMOUNT' | translate}}</ion-label>
+    </ion-col>
+  </ion-row>
+  <ion-row class="margin1">
+    <ion-col class="colinput">
+      <ion-label class="labelEuro">€</ion-label>
+      <form [formGroup]="fm_cantidad" id="fmCantidad" (ngSubmit)="salir_con_argumentos()">
+        <input
+        class="inputCantidad"
+        mask="separator.2"
+        thousandSeparator="."
+        [formControl]="fm_cantidad.controls.cantidad" name="cantidad" >
+      </form>
+    </ion-col>
+  </ion-row>
+  <ion-row class="margin1">
+    <ion-col class="margin2">
+      <button class="botonCan" (click)="salir_sin_argumentos()" type="button">{{'CANCEL2' | translate}}</button>
+    </ion-col>
+    <ion-col class="margin3">
+      <button [ngClass]="{'botonC': fm_cantidad.valid , 'botonCF': !fm_cantidad.valid}" 
+              type="submit" form="fmCantidad" [disabled]="!fm_cantidad.valid">{{'CONFIRM3' | translate}}</button>
+    </ion-col>
+  </ion-row>
+  
+</ion-grid>

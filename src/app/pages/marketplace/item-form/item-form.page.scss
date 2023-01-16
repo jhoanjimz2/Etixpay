@@ -1,0 +1,124 @@
+
+ion-content {
+    background-color: #FFFFFF;
+    --offset-bottom: auto!important;
+    --overflow: hidden;
+    overflow: auto;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+}
+
+.title {
+    color: #2A2A2A; 
+    text-align: left; 
+    font-size: 20px; 
+    font-weight: 500;
+}
+
+.btn-edit {
+    color: #2A2A2A;
+    font-size: 16px;
+    font-weight: 500;
+    height: 44px;
+    width: 138px;
+    --border-radius: 10px;
+    --background: #F6F02D;
+    --box-shadow: none;
+}
+
+.btn-delete {
+    color: #2A2A2A;
+    font-size: 16px;
+    font-weight: 500;
+    height: 44px;
+    width: 138px;
+    --border-radius: 10px;
+    --background: #f3f3f3;
+    --box-shadow: none;
+}
+
+
+.card-image {
+    // border: solid 1px;
+    box-shadow: none;
+    border-radius: 10px;
+    min-height: 329px;
+    min-width: 329px;
+}
+
+.card-image-small {
+    // border: solid 1px;
+    box-shadow: none;
+    border-radius: 10px;
+    min-height: 107px;
+    min-width: 107px;
+}
+
+.btn-buy {
+    color: #2A2A2A;
+    font-size: 16px;
+    font-weight: 500;
+    height: 47px;
+    min-width: 196px;
+    text-transform: capitalize;
+}
+
+.card-row {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.text-title {
+    color: #6D6D6D; 
+    font-size: 14px; 
+    font-weight: 500;
+}
+
+.m-t-5 {
+    margin-top: 5px;
+}
+
+.icon-address {
+    color: #446CE5; 
+    font-weight: 500;
+}
+
+.text-city {
+    color: #446CE5; 
+    font-size: 14px; 
+    font-weight: 500;
+
+}
+
+.text-addres {
+    color: #446CE5; 
+    font-size: 14px; 
+    font-weight: 500;
+    margin-top: 5px; 
+    margin-left: 5px;
+}
+
+.text-price {
+    color: #2A2A2A; 
+    font-size: 25px; 
+    font-weight: bold;
+}
+
+.text-description {
+    color: #000000; 
+    font-size: 12px; 
+    font-weight: 500;
+}
+
+.btn-back {
+    color: #2A2A2A;
+}
+
+.p-l-r-5 {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+
+

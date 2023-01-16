@@ -1,0 +1,30 @@
+<div class="d-c ion-no-color-barra">
+  <div class="d-c-2" *ngFor=" let proyecto of proyectos; let i = index;" [ngClass]="{'m-l': i == 0}">
+    <div class="d-c-i">
+      <img src="{{proyecto.proyectoIMAGENPREVIA}}" class="img-i">
+      <app-reloj-home [fechaFinal]="proyecto.proyectoFECHAFINAL" class="r-h"></app-reloj-home>
+    </div>
+    <div class="d-c-3">
+      <ion-label class="l-f">{{proyecto.proyectoCASHBACKCOLECTIVO| formattNumber}}% {{'SHAREDBILLING' | translate}}</ion-label><br>
+      <ion-label class="l-b">{{'PARTICIPATIVE' | translate}}</ion-label>&nbsp;<ion-label class="l-p">{{proyecto.proyectoCASHBACKINMEDIATO| formattNumber}}%</ion-label>
+    </div>
+    <div class="d-c-4">
+      <div class="d-b">
+        <img [src]="proyecto.proyectoLOGO">
+        <ion-icon name="checkmark-circle"></ion-icon></div>&nbsp;&nbsp;
+      <ion-label class="l-b-g">{{proyecto.proyectoNOMBRE}}</ion-label>
+    </div>
+    <div class="linea"></div>
+    <div class="d-c-5">
+      <div>
+        <ion-label class="l-e">{{proyecto.proyectoPRECIO | formattNumber}} € cad.</ion-label><br>
+        <ion-label class="l-p-q">{{'PRICERATE' | translate}}</ion-label>
+      </div>
+      <div class="d-b-i">
+        <button class="b-i-o" (click)="comprar_ticket_proyecto(proyecto)">
+          {{'INVESTNOW' | translate}}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

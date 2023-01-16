@@ -1,0 +1,97 @@
+.paddingGrid {
+  margin: 15px;
+  padding: 0px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.col_input {
+  position: relative;
+  padding: 0px;
+  margin: 5px;
+}
+.input_search {
+  --placeholder-color: #bdbdbd;
+  --clear-button-color: #bdbdbd;
+  --cancel-button-color: #bdbdbd;
+  --icon-color: #bdbdbd;
+  box-shadow: 0px 3px 8px -2px #bdbdbd;
+  --placeholder-font-weight: bold;
+  padding: 3px !important;
+  padding-left: 50px !important;
+  padding-right: 50px !important;
+  border-radius: 5px;
+  position: relative;
+}
+.boton_filtro {
+  background-color: rgb(0, 214, 106);
+  border-radius: 5px;
+  width: 45px;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.boton_filtro img {
+  width: 20px;
+  height: 20px;
+}
+.boton_filtro_dos {
+  background-color: #fff;
+  border-left: 1px solid rgb(222, 225, 232);
+  width: 45px;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.boton_filtro_dos img {
+  width: 20px;
+  height: 20px;
+}
+.boton_cancelar {
+  background-color: #fff;
+  width: 45px;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.boton_cancelar ion-icon {
+  width: 20px;
+  height: 20px;
+  color: #000;
+}
+.col_filtro {
+  padding: 0px;
+  margin: 5px;
+  border-bottom: 1px solid #d8dcdf;
+  padding-top: 5px;
+  padding-bottom: 15px;
+  margin-left: 50px;
+  position: relative;
+}
+.filtro_text {
+  font-size: 13px;
+  font-weight: 400;
+  color: #000;
+}
+.icon_check {
+  width: 20px;
+  height: 20px;
+  color: rgb(0, 214, 106);
+  position: absolute;
+  top: calc(50% - 15px);
+  left: -37px;
+}

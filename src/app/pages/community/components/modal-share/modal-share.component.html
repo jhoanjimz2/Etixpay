@@ -1,0 +1,48 @@
+<div class="main-div" (click)="hideModal()"></div>
+
+<ion-card class="card-info">
+  <ion-card-header class="ion-text-center">
+    <ion-text class="text-title">{{'INVITEFRIENDS' | translate}}</ion-text>
+  </ion-card-header>
+  <ion-card-content>
+      <p class="ion-text-center">
+        <ion-label class="dark-label">
+          {{'INVITEINFO1' | translate}}
+        </ion-label>
+      </p>
+  </ion-card-content>
+  <ion-card-content>
+      <p class="ion-text-center">
+        <ion-label class="dark-label">
+          <b>{{'INVITEINFO2' | translate}}</b>
+        </ion-label>
+      </p>
+  </ion-card-content>
+ 
+    <ion-row class="buttons">
+      <ion-col>
+        <ion-button (click)="share('IT')" class="btn-button">
+          <img src="../../../../../assets/lenguaje/italia.png" class="img-button">
+          <ion-label class="dark-label">
+            IT
+          </ion-label>
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button (click)="share('ES')" class="btn-button">
+          <img src="../../../../../assets/lenguaje/españa.png" class="img-button">
+          <ion-label class="dark-label">
+            ES
+          </ion-label>
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button (click)="share('EN')" class="btn-button">
+          <img src="../../../../../assets/lenguaje/usa.png" class="img-button">
+          <ion-label class="dark-label">
+            EN
+          </ion-label>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+</ion-card>

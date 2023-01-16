@@ -1,0 +1,6 @@
+<div *ngIf="evento.likes[0] && !cargando">
+  <img src="assets/tabs/home/componentes/eventos-locales/like.svg" (click)="dislike()" *ngIf="evento.likes[0].evento_likeESTADO == 'ACTIVO'">
+  <img src="assets/tabs/home/componentes/eventos-locales/likef.svg" (click)="like()" *ngIf="evento.likes[0].evento_likeESTADO == 'INACTIVO'">
+</div>
+<img src="assets/tabs/home/componentes/eventos-locales/likef.svg" (click)="like()" *ngIf="!evento.likes[0] && !cargando">
+<ion-spinner name="circles" *ngIf="cargando"></ion-spinner>

@@ -1,0 +1,17 @@
+<div>
+  <div class="d-c">
+    <ion-label class="l-1">{{'AMOUNTP' | translate}}</ion-label><br>
+    <ion-label class="l-2">{{cantidad | formattNumber2}}</ion-label>
+    <ion-label class="l-3">€</ion-label>
+  </div>
+  <div class="d-c-2" (click)="valid = !valid">
+    <ion-label *ngIf="valid" class="l-4">{{ saldo | formattNumber }}&nbsp;</ion-label>
+    <ion-label *ngIf="!valid" class="l-4">*****</ion-label>
+    <ion-label class="l-4">TIX</ion-label>
+  </div>
+  <div class="d-c-2-linea"></div>
+  <app-teclado
+    (teclado)="teclado($event)">
+  </app-teclado>
+  <button class="b-c" (click)="confirma()" [disabled]="!cantidad">{{'CONFIRMP' | translate}}</button>
+</div>

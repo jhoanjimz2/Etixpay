@@ -1,0 +1,23 @@
+.card-header-buttons {
+    margin-top: -2px;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+}
+
+.m-t-115 {
+    margin-top: 115px;
+}
+
+ion-content {
+    --offset-bottom: auto!important;
+    --overflow: hidden;
+    overflow: auto;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+}
+
+.main {
+    background-color: #FFFFFF;
+}

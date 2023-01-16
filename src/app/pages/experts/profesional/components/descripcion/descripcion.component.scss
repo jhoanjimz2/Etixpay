@@ -1,0 +1,21 @@
+.i {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.l-t-t {
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+}
+.t-d {
+    font-size: 14px;
+    font-weight: 300;
+    color: #000;
+    text-align: justify;
+}
+ion-textarea {
+    border: 1px solid #000;
+    border-radius: 10px;
+    --padding-start: 10px;
+}

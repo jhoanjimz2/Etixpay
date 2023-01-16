@@ -1,0 +1,88 @@
+ion-segment-button {
+  --color: rgb(195, 200, 213);
+  --color-checked: #000;
+  --indicator-color: #664ac5;
+  font-size: 80%;
+  font-weight: bold;
+  text-transform: capitalize;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.formulario {
+  padding-top: 10px;
+}
+ion-datetime {
+  color: #664bc4;
+  padding: 0px;
+}
+.botonNoSeleccionado {
+  height: 40px;
+  width: 100%;
+  border: 1px solid rgb(245, 247, 250);
+  background-color: rgb(245, 247, 250);
+  border-radius: 20px;
+  font-size: 85%;
+  font-weight: bold;
+  color: rgb(191, 197, 211);
+}
+.row1 {
+  padding: 5px;
+}
+.row2 {
+  border-bottom: 1px solid rgb(205, 207, 209);
+  padding: 5px;
+}
+.divInformacion {
+  width: 172px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: #000000;
+}
+.label1 {
+  font-size: 90%;
+  font-weight: bold;
+  color: black;
+}
+.label2 {
+  font-size: 70%;
+  color: rgb(205, 207, 209);
+}
+.label3 {
+  font-size: 90%;
+  color: rgb(243, 93, 122);
+  font-weight: bold;
+}
+.label4 {
+  font-size: 90%;
+  color: rgb(109, 213, 180);
+  font-weight: bold;
+}
+.botonAccept {
+  height: 30px;
+  width: 100%;
+  border: 1px solid #3ec0e8;
+  background-color: #3ec0e8;
+  border-radius: 25px;
+  color: white;
+}
+.botonDecline {
+  height: 30px;
+  width: 100%;
+  border: 1px solid #fb1a16;
+  background-color: #fb1a16;
+  border-radius: 25px;
+  color: white;
+}
+.linea {
+  width: 100%;
+  border-bottom: 1px solid rgb(205, 207, 209);
+}
+.line_hi {
+  line-height: 1.5;
+}
+.label_uno {
+  font-size: 16px;
+  font-weight: 400;
+  color: #d8dcdf;
+}

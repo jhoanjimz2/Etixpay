@@ -1,0 +1,95 @@
+ion-content {
+    --background: #F5F6F8;
+}
+ion-header {
+    --background: transparent;
+    border-bottom: 1px solid #CCCCCC;
+}
+ion-toolbar {
+    padding-top: 15px !important;
+    --background: transparent;
+}
+.iconBack {
+    width: 21px;
+    height: 13px;
+    margin-left: 7px;
+}
+.titulo {
+    font-size: 18px;
+    font-weight: 400;
+    color: #000;
+    margin-left: 18.5px;
+}
+.colImg {
+    max-width: 98px;
+}
+.imgStore {
+    width: 88px;
+    height: 88px;
+    border-radius: 44px;
+    object-fit: cover;
+}
+.divInfo {
+    width: 100%;
+    height: 25%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.labelNombre {
+    font-size: 18px;
+    font-weight: bold;
+    color: #000;
+}
+.labelTitulos {
+    font-size: 15px;
+    font-weight: 300;
+    color: #000;
+}
+.labelSubTitulos {
+    font-size: 15px;
+    font-weight: bold;
+    color: #000;
+}
+.labelSubTitulosBlue {
+    font-size: 15px;
+    font-weight: bold;
+    color: #2EBFEA;
+}
+.gridInfoStore {
+    padding-top: 21.5px;
+}
+.gridEmailTelefono {
+    padding-top: 12.44px;
+}
+.imgEmail {
+    width: 17.78px;
+    height: 13.33px;
+}
+.imgTelefono {
+    width: 16.26px;
+    height: 16.25px;
+}
+.labelTitulosDos {
+    font-size: 15px;
+    font-weight: bold;
+    color: #000;
+}
+.labelTitulosTres {
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+}
+.botonDireccion {
+    width: 262px;
+    height: 53px;
+    background-color: #53c0ea;
+    color: #fff;
+    border-radius: 12px;
+    font-size: 17px;
+}
+.col-texto-izquierda {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}

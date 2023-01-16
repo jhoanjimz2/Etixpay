@@ -1,0 +1,32 @@
+<ion-grid class="grid-imgs">
+  <ion-row>
+    <ion-col class="no-padding relative">
+      <div class="div-img relative">
+        <img src="assets/etixwin/marco.png" class="marco-img">
+        <div class="div-texto-uno">
+          <ion-label class="label-jackpot">Jackpot</ion-label><br>
+          <ion-label class="label-premio">{{sorteo.sorteo_etixCANTIDADATMSORTEADO | formattNumber}}</ion-label>
+        </div>
+      </div>
+      <div class="div-img-dos">
+        <img src="assets/etixwin/rectangulo.png" class="rectangulo-img">
+        <img src="assets/etixwin/rectangulo-dos.svg" class="rectangulo-img-dos">
+        <ion-label class="label-mes">{{sorteo.sorteo_etixFECHAINICIO | dateTimeFormatFilter : 'MMMM yyyy'}}</ion-label>
+      </div>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+
+<ion-grid class="grid-label">
+  <ion-row>
+    <ion-col class="no-padding relative center">
+      <ion-label class="label-tuo">I tuoi Win</ion-label>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col class="no-padding relative center col-label">
+      <ion-label class="label-number">{{sorteo.myWins | formattNumber}}</ion-label>
+    </ion-col>
+  </ion-row>
+</ion-grid>

@@ -1,0 +1,41 @@
+<ion-grid *ngIf="events.length">
+  <ion-row>
+    <ion-col>
+      <ion-label class="label">{{'UPCOMINGEVENTSN' | translate}}</ion-label>
+    </ion-col>
+    <ion-col class="ion-text-end" *ngIf="editar" >
+      <ion-label class="chipAdd" (click)="crearEvento()">+ {{'ADDEVENT' | translate}}</ion-label> 
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-slides [options]="option" #slider  class="slideEvents">
+          <ion-slide *ngFor="let evento of events">
+            <ion-grid class="gridEvents" (click)="eventos()">
+              <ion-row>
+                <ion-col class="colEventsImg">
+                  <img src="{{evento.eventoIMAGENDESTACADA}}" class="imgEvent">
+                </ion-col>
+                <ion-col>
+                  <div class="divInfoEvent">
+                    <ion-label class="labelTitulo">{{evento.eventoTITULO}}</ion-label>
+                  </div>
+                  <div class="divInfoEvent">
+                    <ion-label class="labelTitulos">{{'DISCOUNTRATE1' | translate}}: </ion-label>&nbsp;
+                    <ion-label class="labelSubTitulos">{{evento.eventoCOMISION | formattNumber}}%</ion-label>
+                  </div>
+                  <div class="divInfoEvent">
+                    <ion-label class="labelTitulos">
+                      {{evento.eventoFECHAINICIO | dateTimeFormatFilter: 'DD.MM.YY'}} - 
+                      {{evento.eventoFECHAFINAL | dateTimeFormatFilter: 'DD.MM.YY'}}
+                      {{evento.eventoFECHAFINAL | dateTimeFormatFilter: 'HH:mm'}}
+                    </ion-label>
+                  </div>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-slide>
+      </ion-slides>
+    </ion-col>
+  </ion-row>
+</ion-grid>

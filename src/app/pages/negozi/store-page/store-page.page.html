@@ -1,0 +1,127 @@
+<app-header-padre [page]="true" [color]="'#3EBCE4'"></app-header-padre>
+<ion-content>
+
+  <ion-grid class="gridInfoStore">
+    <ion-row>
+      <ion-col class="colImg">
+        <img src="{{tiendaImagenes.empresaFOTO}}" class="imgStore" (click)="opcionesImg(tiendaImagenes.empresaFOTO)">
+      </ion-col>
+      <ion-col>
+        <div class="divInfo">
+          <ion-label class="labelNombre">{{tiendaInfo.empresaNOMBREMAP}}</ion-label>
+        </div>
+        <div class="divInfo">
+          <ion-label class="labelTitulos">{{'CATEGORYN' | translate}}:</ion-label>&nbsp;
+          <ion-label class="labelSubTitulosBlue">{{tiendaInfo.empresaCATEGORIA}}</ion-label>
+        </div>
+        <div class="divInfo">
+          <ion-label class="labelTitulos">{{'REWARDPOINTSN' | translate}}:</ion-label>&nbsp;
+          <ion-label class="labelSubTitulos">{{tiendaInfo.pr_base}} / 100€</ion-label>
+        </div>
+        <div class="divInfo">
+          <ion-label class="labelTitulos">{{'CASHBACKN' | translate}}:</ion-label>&nbsp;
+          <ion-label class="labelSubTitulos">{{tiendaInfo.cashbackCLIENTE | formattNumber2}}%</ion-label>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <app-galeria-store
+    (actualizarGalery)="cargarGalery(true)"
+    [galery]="tiendaImagenes.galeria"
+    [imgRectangular]="tiendaImagenes.empresaFOTOPRINCIPALRECTANGULAR"
+    [imgCuadrada]="tiendaImagenes.empresaFOTOPRINCIPALCUADRADA"
+    [uuid]="uuid"
+    [editar]="editar">
+  </app-galeria-store>
+
+  <ion-grid class="gridEmailTelefono">
+    <ion-row>
+      <ion-col size="4">
+        <img src="assets/negozi/email-line.svg" class="imgEmail" (click)="openEmail()">&nbsp;&nbsp;
+        <ion-label class="labelTitulosDos" (click)="openEmail()">{{'EMAILN' | translate}}:</ion-label>
+        <br>
+        <br>
+        <img src="assets/negozi/phone.svg" class="imgTelefono" (click)="llamarTelefonoPrincipal()">&nbsp;&nbsp;
+        <ion-label class="labelTitulosDos" (click)="llamarTelefonoPrincipal()">{{'PHONE' | translate}}:</ion-label>
+        <br>
+        <br>
+        <img src="assets/negozi/phone.svg" class="imgTelefono" (click)="llamarTelefonoAlternativo()">&nbsp;&nbsp;
+        <ion-label class="labelTitulosDos" (click)="llamarTelefonoAlternativo()">{{'ALTERNATIVE' | translate}}:</ion-label>
+      </ion-col>
+      <ion-col>
+        <ion-label class="labelSubTitulosBlue" (click)="openEmail()">{{tiendaInfo.empresaEMAIL}}</ion-label>
+        <br>
+        <br>
+        <ion-label class="labelSubTitulosBlue" (click)="llamarTelefonoPrincipal()">{{tiendaInfo.empresaTELEFONO}}</ion-label>
+        <br>
+        <br>
+        <app-alternativo
+          (actualizarAlternativo)="cargarAlternativo(true)"
+          [alternativo]="telefonoAlternativo"
+          [uuid]="uuid"
+          [editar]="editar">
+        </app-alternativo>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <app-info-local-store
+    [informacionLocal]="informacionLocal"
+    [horarios]="horarios"
+    [uuid]="uuid"
+    [editar]="editar"
+    (actualizarInformation)="cargarInformation(true); cargarHorarios(true)">
+  </app-info-local-store>
+
+
+  <app-description
+    [editar]="editar"
+    [uuid]="uuid"
+    [descripcion]="descripcion"
+    (actualizarDescripcion)="cargarDescripcion(true)">
+  </app-description>
+
+  <app-mapa-store
+    direccion="{{tiendaInfo.empresaDIRECCION}}, {{tiendaInfo.ciudad.ciudadNOMBRE}}, {{tiendaInfo.pais.paisNOMBRE}}"
+    [latitud]="tiendaInfo.empresaLATITUD"
+    [longitud]="tiendaInfo.empresaLONGITUD">
+  </app-mapa-store>
+
+  <!-- <app-marketplace
+    [uuid]="uuid"   
+    [editar]="editar"
+    [categories]="categories"
+    [products]="products">
+  </app-marketplace> -->
+
+  <app-vouchers-store
+    (actualizarVouchers)="cargarVouchers()"
+    [editar]="editar"
+    [uuid]="uuid"
+    [vouchers]="vouchers">
+  </app-vouchers-store>
+
+  <app-events-store
+    (actualizarEvents)="cargarEvents()"
+    [editar]="editar"
+    [events]="events">
+  </app-events-store>
+
+  <app-coments-store
+    (actualizarComents)="cargarComents()"
+    [uuid]="uuid"
+    [ponderado]="ponderado"
+    [coments]="coments"
+    [emailStore]="tiendaInfo.empresaEMAIL">
+  </app-coments-store>
+
+  <ion-grid *ngIf="localEmail != tiendaInfo.empresaEMAIL">
+    <ion-row>
+      <ion-col class="ion-text-center">
+        <button class="botonDireccion" (click)="sacarPosicion()">{{'DIRECTION3' | translate}}</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

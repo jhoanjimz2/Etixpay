@@ -1,0 +1,37 @@
+
+<ion-row >
+  <ion-col>
+    <ion-label class="text-marketplace">Marketplace</ion-label>
+  </ion-col>
+</ion-row>
+<ion-row >
+  <ion-col size="10">
+    <ion-input [(ngModel)]="search" name="search" class="input-search"></ion-input>
+  </ion-col>
+  <ion-col size="2" class="ion-text-center">
+    <ion-button class="bnt-search">
+      <i class="fa fa-search"></i>
+    </ion-button>
+  </ion-col>
+</ion-row>
+
+<ion-row class="marginBottom">
+  <ion-col>
+    <div class="div-slide">
+      <div class="div-producto" *ngFor="let producto of products | productsMarkeplace: search" (click)="showDetail(producto.uuid)">
+        <img [src]="producto.main_image.file.fileURL" class="img-producto">
+        <div class="div-label">
+          <ion-label class="titulo-product">{{producto.productNAME}}</ion-label>
+        </div>
+        <div class="div-buttons">
+          <button class="button button-uno">€ {{producto.current_price.priceVALUE | numberFormat}} </button>
+          <button class="button button-dos">{{producto.reward_point | numberFormat}} RP</button>
+        </div>
+      </div>
+    </div>
+  </ion-col>
+</ion-row>
+
+
+
+

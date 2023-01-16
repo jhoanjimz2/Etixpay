@@ -1,0 +1,95 @@
+.no-padding {
+    padding: 0px;
+}
+.grid-imgs {
+    padding: 0px;
+    text-align: center;
+    padding-top: 25px !important;
+}
+.div-img {
+    width: 100%;
+}
+.div-img-dos {
+    width: 100%;
+    padding-bottom: 14%;
+}
+.marco-img {
+    width: 90%;
+}
+.rectangulo-img {
+    width: 90%;
+    z-index: 2;
+    position: relative;
+}
+.rectangulo-img-dos {
+    width: 90%;
+    z-index: 1;
+    position: absolute;
+    left: 5%;
+    bottom: 0px;
+}
+.relative {
+    position: relative;
+}
+.label-rectangulo {
+    font-size: 29px;
+    font-weight: 400;
+    color: #fff;
+    position: absolute;
+    bottom: 18px;
+    left: calc(50% - 77.65px);
+}
+.label-tuo {
+    color: #27187E;
+    font-size: 25px;
+    font-weight: 400;
+}
+.grid-label {
+    padding: 0px;
+    text-align: center;
+    padding-top: 32px !important;
+}
+.col-label {
+    padding: 0px;
+    padding-top: 10px;
+}
+.label-number {
+    color: #27187E;
+    font-size: 45px;
+    font-weight: bold;
+}
+.grid-label-dos {
+    padding: 15px 0px;
+    text-align: center;
+}
+.label-number-dos {
+    color: #27187E;
+    font-size: 25px;
+    font-weight: 400;
+}
+.div-texto-uno {
+    width: 100%;
+    position: absolute;
+    top: 27px;
+    left: 0px;
+    line-height: 1.8;
+}
+.label-jackpot {
+    font-size: 18px;
+    color: #4DCCBD;
+    font-weight: 400;
+}
+.label-premio {
+    font-size: 50px;
+    color: #4DCCBD;
+    font-weight: bold;
+}
+.label-mes {
+    position: absolute;
+    left: calc(50% - 80.33px);
+    bottom: 12px;
+    font-size: 30px;
+    color: #fff;
+    z-index: 3;
+    font-weight: 400;
+}

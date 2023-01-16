@@ -1,0 +1,26 @@
+<app-header-padre [page]="true"></app-header-padre>
+<ion-content>
+
+  <app-card-metodo-pago *ngFor="let cuenta of cuentas_bancarias" [cuenta]="cuenta"></app-card-metodo-pago>
+  <app-card-metodo-pago *ngFor="let cuenta of tarjetas_credito" [cuenta]="cuenta"></app-card-metodo-pago>
+</ion-content>
+<ion-toolbar>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <button class="boton" (click)="add_metodo_pago('bank')">
+          <img src="assets/tabs/componentes/banco_dos.png" class="img_button_uno">
+          {{'ADDNEWBANKACCOUNT' | translate}}
+        </button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="col_boton">
+        <button class="boton" (click)="add_metodo_pago('card')">
+          <img src="assets/tabs/componentes/tarjeta_dos.png" class="img_button_dos">
+          {{'ADDNEWCARD3' | translate}}
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-toolbar>

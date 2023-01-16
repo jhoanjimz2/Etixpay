@@ -1,0 +1,41 @@
+<div>
+  <ion-row class="m-t-100">
+    <ion-col class="ion-text-center">
+      <i class="mdi mdi-close-circle icon-error"></i>
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="m-t-30">
+    <ion-col class="ion-text-center">
+      <ion-label class="text-title">{{'ERROR' | translate}}</ion-label>
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="m-t-10">
+    <ion-col class="ion-text-center center-text-info">
+      <div class="w-250">
+        <ion-label class="text-info">{{'ERROROCURRED' | translate}}</ion-label>
+      </div>
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="m-t-10">
+    <ion-col class="ion-text-center center-text-info">
+      <div class="w-250">
+        <ion-label class="text-info">{{'ERROROCURRED2' | translate}}</ion-label>
+      </div>
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="m-t-10">
+    <ion-col class="ion-text-center">
+      <ion-button (click)="closeModal()" class="btn-back">{{'BACKTOPRODUCT' | translate}}</ion-button>
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="m-t-10">
+    <ion-col class="ion-text-center">
+      <ion-button (click)="trySave()" class="btn-try">{{'TRYAGAINNOW' | translate}}</ion-button>
+    </ion-col>
+  </ion-row>
+</div>

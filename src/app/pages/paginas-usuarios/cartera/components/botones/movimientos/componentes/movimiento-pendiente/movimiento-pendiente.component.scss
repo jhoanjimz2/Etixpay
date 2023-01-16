@@ -1,0 +1,50 @@
+.row1 {
+  padding: 5px;
+}
+.row2 {
+  border-bottom: 1px solid rgb(205, 207, 209);
+  padding: 5px;
+}
+.divInformacion {
+  width: 172px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: #000000;
+}
+.label1 {
+  font-size: 90%;
+  font-weight: bold;
+  color: black;
+}
+.label2 {
+  font-size: 70%;
+  color: rgb(205, 207, 209);
+}
+.label3 {
+  font-size: 90%;
+  color: rgb(243, 93, 122);
+  font-weight: bold;
+}
+.label4 {
+  font-size: 90%;
+  color: rgb(109, 213, 180);
+  font-weight: bold;
+}
+
+.botonAccept {
+  height: 30px;
+  width: 100%;
+  border: 1px solid #3ec0e8;
+  background-color: #3ec0e8;
+  border-radius: 25px;
+  color: white;
+}
+.botonDecline {
+  height: 30px;
+  width: 100%;
+  border: 1px solid #fb1a16;
+  background-color: #fb1a16;
+  border-radius: 25px;
+  color: white;
+}

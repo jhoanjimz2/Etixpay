@@ -1,0 +1,146 @@
+
+
+<div>
+  <ion-row>
+    <ion-col class="ion-text-center card-title-item">
+      <div (click)="closeModalPay()" class="card-line-clone"></div>
+      <div (click)="closeModalPay()" class="line-close"></div>
+      <!-- <i class="mdi mdi-close-circle-outline icon-close" (click)="closeModalPay()"></i> -->
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="p-t-30">
+    <ion-col class="ion-text-center">
+      <ion-label clkass="text-title">{{'PAYMENTMP' | translate}}</ion-label>
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="m-t-20">
+    <ion-col class="ion-text-center">
+      <img class="img-item" [src]="product.main_image.file.fileURL">
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="m-t-5">
+    <ion-col class="ion-text-center card-title-item">
+      <div class="w-title">
+        <ion-label class="text-title">{{product.productNAME}}</ion-label>
+      </div>
+    </ion-col>
+  </ion-row>
+
+  <div class="card-payment">
+    <ion-row>
+      <ion-col class="ion-text-center">
+          <ion-label class="text-title-payment">{{'SHIPPINGMETHOD' | translate}}</ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="ion-text-center card-title-item" (click)="delivery = 1; precioEnvio = metodo_envia.current_price.priceVALUE" *ngIf="metodo_envia">
+        <div class="card-ship-met" [ngClass]="{'card-ship-met-active': delivery === 1}">
+          <i class="mdi mdi-home-outline icon-address" [ngClass]="{'icon-address-active': delivery === 1}"></i>
+          <div class="m-t-m10">
+            <ion-label class="text-address" [ngClass]="{'text-address-active': delivery === 1}">{{'ADDRESSMP' | translate}}</ion-label>
+          </div>
+          <div>
+            <ion-label class="text-address-price" [ngClass]="{'text-address-price-active': delivery === 1}">+{{metodo_envia.current_price.priceVALUE| formattNumber}}€</ion-label>
+          </div>
+        </div>
+      </ion-col>
+      <ion-col class="ion-text-center card-title-item" (click)="delivery = 2;  precioEnvio = metodo_recogida.current_price.priceVALUE" *ngIf="metodo_recogida">
+        <div class="card-ship-met" [ngClass]="{'card-ship-met-active': delivery === 2}">
+          <div>
+            <img *ngIf="delivery === 0 || delivery === 1" class="icon-withdrawal" src="assets/pages/market-place/handshake-o.svg">
+            <img *ngIf="delivery === 2" class="icon-withdrawal" src="assets/pages/market-place/handshake-o-active.svg">
+          </div>
+          <div class="m-t-m10">
+            <ion-label class="text-address" [ngClass]="{'text-address-active': delivery === 2}">{{'DIRECTCOLLECTION' | translate}}</ion-label>
+          </div>
+          <div>
+            <ion-label class="text-withdraw-price" [ngClass]="{'text-withdraw-price-active': delivery === 2}">+{{ metodo_recogida.current_price.priceVALUE | formattNumber}}€</ion-label>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </div>
+
+  <div *ngIf="delivery > 0">
+    <ion-row class="margin-l-r-15 m-t-15">
+      <ion-col size="9">
+        <ion-label class="text-summary">{{'PRODUCT' | translate}}</ion-label>
+      </ion-col>
+      <ion-col size="3" class="ion-text-center">
+        <div class="div-text-price">
+          <ion-label class="text-summary-price">€ {{product.current_price.priceVALUE | formattNumber}}</ion-label>
+        </div>
+      </ion-col>
+    </ion-row>
+  
+    <ion-row class="margin-l-r-15 m-t-5">
+      <ion-col size="9">
+        <ion-label class="text-summary">{{'SHIPPING' | translate}}</ion-label>
+      </ion-col>
+      <ion-col size="3" class="ion-text-center">
+        <ion-label class="text-summary-price">€ {{precioEnvio| formattNumber}}</ion-label>
+      </ion-col>
+    </ion-row>
+  
+    <ion-row class="margin-l-r-15 m-t-5">
+      <ion-col size="9">
+        <ion-label class="text-summary">{{'PAYMENTMETHODMP' | translate}}</ion-label>
+      </ion-col>
+      <ion-col size="3" class="ion-text-center">
+        <ion-label class="text-tix">TIX</ion-label>
+      </ion-col>
+    </ion-row>
+  
+    <ion-row class="margin-l-r-15 m-t-m5" *ngIf="saldo_tix < product.current_price.priceVALUE">
+      <ion-col size="9">
+        <ion-label class="text-credit">{{'INSUFFICIENTAVAILABILITY' | translate}}</ion-label>
+      </ion-col>
+      <ion-col size="3" class="ion-text-center">
+        <ion-label class="text-credit">{{saldo_tix |  formattNumber}} {{'AVAILABILITY' | translate}}</ion-label>
+      </ion-col>
+    </ion-row>
+  
+    <ion-row class="margin-l-r-15 card-btn-recharge" *ngIf="saldo_tix < product.current_price.priceVALUE">
+      <ion-col size="8.5">
+      </ion-col>
+      <ion-col size="3.5" class="ion-text-center">
+        <ion-button  fill="outline" class="btn-recharge" (click)="goToRecharge()">{{'RECHARGEMP' | translate}}</ion-button>
+      </ion-col>
+    </ion-row>
+  </div>
+
+  <div style="position: absolute; bottom: 10px; width: 100%;">
+    <ion-row class="margin-l-r-15">
+      <ion-col size="9">
+        <ion-label class="text-total">{{'TOTALMP' | translate}}</ion-label>
+      </ion-col>
+      <ion-col size="3" class="ion-text-center">
+        <div class="div-text-price">
+          <ion-label class="text-totale-price">€ {{(product.current_price.priceVALUE + precioEnvio) | formattNumber}}</ion-label>
+        </div>
+      </ion-col>
+    </ion-row>
+  
+    <ion-row>
+      <ion-col class="ion-text-center">
+        <ion-button (click)="saveOrder()" class="btn-pay" [fill]="delivery === 0 && 'outline'" [ngClass]="{'btn-pay-active': delivery > 0}" [disabled]="delivery === 0 || saldo_tix < product.current_price.priceVALUE">{{'PAYMP' | translate}} {{(product.current_price.priceVALUE + precioEnvio) | formattNumber}} TIX</ion-button>
+      </ion-col>
+    </ion-row>
+  
+    <ion-row>
+      <ion-col class="ion-text-center">
+        <ion-label class="text-buy">{{'PURCHASEGIVES' | translate}}</ion-label>
+        <div class="m-t-5">
+          <ion-label class="text-rp">+{{product.reward_point | formattNumber}} PR</ion-label>
+        </div>
+      </ion-col>
+    </ion-row>
+  </div>
+
+</div>
+
+
+

@@ -1,0 +1,39 @@
+<app-header-padre [page]="true"></app-header-padre>
+<ion-content [ngClass]="{'background': metodPay, 'background-init': !metodPay}">
+
+  <app-cantidades
+    *ngIf="!metodPay"
+    [cantidadUno]="cantidadUno"
+    [formulario]="formulario"
+    [cantidadDos]="cantidadDos"
+    (seleccionar)="seleccionarCantidad($event)"
+    (formularioChange)="formularios($event)">
+  </app-cantidades>
+
+  <app-teclado 
+    *ngIf="!metodPay"
+    (teclado)="teclado($event)">
+  </app-teclado>
+
+  <app-metod-pay-ticket 
+    (cancelar)="reiniciar()"
+    [cantidadUno]="cantidadUno"
+    [cantidadDos]="cantidadDos"
+    *ngIf="metodPay == 'ticket'">
+  </app-metod-pay-ticket>
+
+  <app-metod-pay-wallet 
+    (cancelar)="reiniciar()"
+    [cantidadUno]="cantidadUno"
+    [cantidadDos]="cantidadDos"
+    *ngIf="metodPay == 'cash'">
+  </app-metod-pay-wallet>
+
+</ion-content>
+<ion-toolbar *ngIf="!metodPay" class="background-init">
+  <app-select-metod-pay 
+    [total]="total"
+    (select)="selectMetod($event)">
+  </app-select-metod-pay>
+
+</ion-toolbar>

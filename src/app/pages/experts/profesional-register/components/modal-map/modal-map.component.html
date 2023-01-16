@@ -1,0 +1,30 @@
+<ion-content>
+  <div class="card">
+    <div class="ion-text-center p-16">
+      <ion-text class="primary-label">{{'SELECTPOSITION' | translate}}</ion-text>
+    </div>
+    <div class="p-16 p-t-0">
+      <input [(ngModel)]="address" class="input-text" [placeholder]="'ADDRESSREGMAP' | translate" ngx-google-places-autocomplete #placesRef="ngx-places" (onAddressChange)="handleAddressChange($event)"/>
+    </div>
+    <div class="p-16 p-t-0">
+      <div #map id="map" [hidden]="cargando"></div>
+      <ion-skeleton-text class="skeleton" animated [hidden]="!cargando"></ion-skeleton-text>
+    </div>
+    <div class="p-16 d-f">
+      <div class="w-50">
+        <ion-button (click)="mapModal(true)" class="btn-button wth-90p primary" [disabled]="!(address || geo.lat === 0 || geo.lng === 0)">
+          <ion-label color="light">
+            OK
+          </ion-label>
+        </ion-button>
+      </div>
+      <div class="w-50">
+        <ion-button color="light" class="btn-button wth-90p"  (click)="mapModal(false)">
+          <ion-label color="medium">
+            {{'CANCELAUTHORIZED' | translate}}
+          </ion-label>
+        </ion-button>
+      </div> 
+    </div>
+  </div>
+</ion-content>

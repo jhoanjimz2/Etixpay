@@ -1,0 +1,15 @@
+<ion-grid>
+  <ion-row>
+    <ion-col class="izquierda">
+      <ion-label class="labelTitulosTres">{{'ABOUTN' | translate}}</ion-label>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-text class="textDescripcion" *ngIf="!editar">{{descripcion}}</ion-text>
+      <form  [formGroup]="formulario" *ngIf="editar">
+        <ion-textarea rows="6" [formControl]="formulario.controls.descripcion" name="descripcion" (input)="debounceInput()"></ion-textarea>
+      </form>
+    </ion-col>
+  </ion-row>
+</ion-grid>

@@ -1,0 +1,111 @@
+ion-title {
+    font-size: 16px;
+    color: #2A2A2A;
+    font-weight: 400;
+}
+.icon-close {
+    font-size: 30px;
+}
+.input-select {    
+    margin-top: 11px;
+    margin-left: 22px;
+    margin-right: 22px;
+    border-radius: 15px;
+    text-align: left;
+    height: 55px;
+    border: 1px solid #2a2a2a;
+    background-color: #fff;
+    width: auto;
+    --padding-start: 10px;
+    position: relative;
+}
+.input-select-telefono {   
+    border-radius: 15px;
+    text-align: left;
+    height: 55px;
+    border: 1px solid #2a2a2a;
+    background-color: #fff;
+    width: auto;
+    --padding-start: 10px;
+}
+.s-titule {
+    text-align: left;
+    margin-top: 20px;
+    margin-left: 22px;
+    margin-right: 22px;
+    margin-bottom: 0px;
+    font-size: 14px;
+    color: #2A2A2A;
+    font-weight: 400;
+}
+.input-textarea {    
+    margin-top: 11px;
+    margin-left: 22px;
+    margin-right: 22px;
+    border-radius: 15px;
+    text-align: left;
+    border: 1px solid #2a2a2a;
+    background-color: #fff;
+    width: auto;
+    --padding-start: 10px;
+}
+.mrlt {
+    margin-top: 11px;
+    margin-left: 22px;
+    margin-right: 22px;
+    display: flex;
+}
+.size-4 {
+    flex: 0 0 calc(calc(4 / var(--ion-grid-columns, 12)) * 100%);
+    width: calc(calc(4 / var(--ion-grid-columns, 12)) * 100%);
+    max-width: calc(calc(4 / var(--ion-grid-columns, 12)) * 100%);
+    padding-right: 10px;
+}
+.size-8 {
+    flex: 0 0 calc(calc(8 / var(--ion-grid-columns, 12)) * 100%);
+    width: calc(calc(8 / var(--ion-grid-columns, 12)) * 100%);
+    max-width: calc(calc(8 / var(--ion-grid-columns, 12)) * 100%);
+}
+.icon-locate {
+    top: calc(50% - 20px);
+    right: 5px;
+    position: absolute;
+    z-index: 999;
+    color: #F3A95F;
+}
+.f-z-40 {
+    font-size: 40px;
+}
+.pr50 {
+    --padding-end: 50px;
+}
+.buton {
+    margin: 22px;
+    height: 55px;
+    width: calc(100% - 44px);
+    text-transform: capitalize;
+    --border-radius: 15px;
+    --background: rgb(223, 112, 0);
+}
+ion-checkbox {
+    width: 27px;
+    height: 27px;
+    --border-radius: 5px;
+    --background-checked: #F3A95F;
+    --border-color-checked: #F3A95F;
+}
+.lh8 {
+    line-height: 0.8;
+}
+.subti {
+    font-size: 16px;
+    color: #2A2A2A;
+    font-weight: 300;
+}
+.alineado {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 20px;
+}

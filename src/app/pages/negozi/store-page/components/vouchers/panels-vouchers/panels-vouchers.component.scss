@@ -1,0 +1,44 @@
+.div_crear {
+  height: 100px;
+  border-radius: 15px;
+  border: 2px dashed #d8dcdf;
+  text-align: center !important;
+  margin-top: 20px;
+  margin: 10px;
+  margin-top: 20px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+.icon_uno {
+  font-size: 55px;
+  color: rgb(102, 74, 197);
+}
+.label_uno {
+  font-size: 15px;
+  color: #000;
+  font-weight: 500;
+  text-shadow: 0px 0px 1px #000;
+}
+.sombra_row {
+  box-shadow: 0px 0px 30px 0px #d8dcdf;
+  width: 100%;
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+}
+.padding {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.button_receive {
+  background-color: rgb(42, 192, 235);
+  color: #fff;
+  width: 100%;
+  height: 45px;
+  border-radius: 10px;
+  font-size: 100%;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}

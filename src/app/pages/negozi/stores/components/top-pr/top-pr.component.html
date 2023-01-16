@@ -1,0 +1,21 @@
+<ion-grid>
+  <ion-row>
+    <ion-col>
+      <ion-label  class="labelTop">Top PR/100€</ion-label> 
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <div class="divContenedor ion-no-color-barra">
+        <div *ngFor="let store of topPr" class="divStore" (click)="irNegoziPage(store.uuid)">
+          <img src="{{store.empresaFOTO}}"><br>
+          <ion-label class="labelPuntoRecompensa">{{store.pr_base}} PR</ion-label>
+        </div>
+        <div class="divStore-next">
+          <ion-icon name="arrow-forward-outline" class="icon-next" (click)="siguiente()" *ngIf="!cargarTops && paginaActualT < paginasTotalesT"></ion-icon>
+          <ion-spinner name="circles"  class="icon-spinner"  *ngIf="cargarTops"></ion-spinner>
+        </div>
+      </div>
+    </ion-col>
+  </ion-row>
+</ion-grid>

@@ -1,0 +1,103 @@
+<ion-grid>
+  <ion-row>
+    <ion-col class="ion-text-center">
+
+
+      <form (ngSubmit)="agregarJornada()">
+        <ion-label class="label-titulo">{{'CHANGESCHEDULE' | translate}}</ion-label>
+        <br><br>
+        <ion-select 
+          [formControl]="formulario.controls.dia" name="dia"
+          cancelText="{{'NON' | translate}}" okText="{{'OKN' | translate}}" placeholder="{{'SELECTDAY' | translate}}" mode="ios" (ionChange)="activarSelectJornadas = true;">
+          <ion-select-option *ngFor="let dia of dias" value="{{dia}}">{{dia | translate}}</ion-select-option>
+        </ion-select>
+        <br *ngIf="activarSelectJornadas">
+        <ion-select 
+          [formControl]="formulario.controls.jornada" name="jornada"
+          cancelText="{{'NON' | translate}}" okText="{{'OKN' | translate}}" placeholder="{{'SELECTTHEWORKING' | translate}}" mode="ios" (ionChange)="activarTipoDeJornada = $event.detail.value;" *ngIf="activarSelectJornadas">
+          <ion-select-option *ngFor="let jornada of jornadas" value="{{jornada}}">{{jornada | translate}}</ion-select-option>
+        </ion-select>
+        <br *ngIf="activarTipoDeJornada == 'CERRADO' || activarTipoDeJornada == 'COMPLETA'">
+        <button *ngIf="activarTipoDeJornada == 'CERRADO' || activarTipoDeJornada == 'COMPLETA'" [disabled]="!formulario.valid" type="submit">{{'OKN' | translate}}</button>
+      </form>
+
+
+
+
+      <div *ngIf="activarTipoDeJornada == 'JORNADAUNICA'">
+        <br>
+        <ion-select 
+          (ionChange)="jornadaUnica = $event.detail.value"
+          cancelText="{{'NON' | translate}}" okText="{{'OKN' | translate}}" placeholder="Am o Pm" mode="ios">
+          <ion-select-option value="am">Am</ion-select-option>
+          <ion-select-option value="pm">Pm</ion-select-option>
+        </ion-select> 
+  
+        <form *ngIf="jornadaUnica == 'am'" (ngSubmit)="agregarHorarioJornadaUnica()">
+          <br>
+          <ion-datetime   
+            [formControl]="formularioJUAM.controls.horaInicio" name="horaInicio"
+            minuteValues="0,30" hourValues="1,2,3,4,5,6,7,8,9,10,11,12" display-format="HH:mm" placeholder="{{'OPENINGTIME' | translate}}">
+          </ion-datetime>
+          <br>
+          <ion-datetime   
+            [formControl]="formularioJUAM.controls.horaFinal" name="horaFinal"
+            minuteValues="0,30" hourValues="1,2,3,4,5,6,7,8,9,10,11,12" display-format="HH:mm" placeholder="{{'CLOSINGTIMEN' | translate}}">
+          </ion-datetime>
+          <ion-label *ngIf="campoNoValidoUno('horaFinal')" class="label-error">*{{'CLOSINGTIME' | translate}}</ion-label>
+          <br>
+          <button [disabled]="!formularioJUAM.valid" type="submit">{{'OKN' | translate}}</button>
+        </form>
+  
+        <form *ngIf="jornadaUnica == 'pm'" (ngSubmit)="agregarHorarioJornadaUnica()">
+          <br>
+          <ion-datetime   
+            [formControl]="formularioJUPM.controls.horaInicio" name="horaInicio"
+            minuteValues="0,30" hourValues="13,14,15,16,17,18,19,20,21,22,23,24" display-format="HH:mm" placeholder="{{'OPENINGTIME' | translate}}">
+          </ion-datetime>
+          <br>
+          <ion-datetime   
+            [formControl]="formularioJUPM.controls.horaFinal" name="horaFinal"
+            minuteValues="0,30" hourValues="13,14,15,16,17,18,19,20,21,22,23,24" display-format="HH:mm" placeholder="{{'CLOSINGTIMEN' | translate}}">
+          </ion-datetime>
+          <ion-label *ngIf="campoNoValidoDos('horaFinal')" class="label-error">*{{'CLOSINGTIME' | translate}}</ion-label>
+          <br>
+          <button [disabled]="!formularioJUPM.valid" type="submit">{{'OKN' | translate}}</button>
+        </form>
+      </div>
+
+
+
+
+      <form *ngIf="activarTipoDeJornada == 'JORNADADOBLE'" (ngSubmit)="agregarHorarioJornadaDoble()">
+        <br>
+        <ion-datetime   
+          [formControl]="formularioJD.controls.horaInicioAM" name="horaInicioAM"
+          minuteValues="0,30" hourValues="1,2,3,4,5,6,7,8,9,10,11,12" display-format="HH:mm" placeholder="{{'OPENINGTIME' | translate}} AM">
+        </ion-datetime>
+        <br>
+        <ion-datetime   
+          [formControl]="formularioJD.controls.horaFinalAM" name="horaFinalAM"
+          minuteValues="0,30" hourValues="1,2,3,4,5,6,7,8,9,10,11,12" display-format="HH:mm" placeholder="{{'CLOSINGTIMEN' | translate}} AM">
+        </ion-datetime>
+        <ion-label *ngIf="campoNoValidoTres('horaFinalAM')" class="label-error">*{{'CLOSINGTIME' | translate}}</ion-label>
+        <br>
+        <ion-datetime   
+          [formControl]="formularioJD.controls.horaInicioPM" name="horaInicioPM"
+          minuteValues="0,30" hourValues="13,14,15,16,17,18,19,20,21,22,23,24" display-format="HH:mm" placeholder="{{'OPENINGTIME' | translate}} PM">
+        </ion-datetime>
+        <br>
+        <ion-datetime   
+          [formControl]="formularioJD.controls.horaFinalPM" name="horaFinalPM"
+          minuteValues="0,30" hourValues="13,14,15,16,17,18,19,20,21,22,23,24" display-format="HH:mm" placeholder="{{'CLOSINGTIMEN' | translate}} PM">
+        </ion-datetime>
+        <ion-label *ngIf="campoNoValidoTres('horaFinalPM')" class="label-error">*{{'CLOSINGTIME' | translate}}</ion-label>
+        <br>
+        <button [disabled]="!formularioJD.valid" type="submit">{{'OKN' | translate}}</button>
+      </form>
+
+
+
+    </ion-col>
+  </ion-row>
+</ion-grid>

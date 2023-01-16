@@ -1,0 +1,67 @@
+.col-horario {
+    text-align: center !important;
+    position: relative;
+}
+.botonVerde {
+    width: 60px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: transparent;
+    border: 1px solid #26B72B;
+    color: #26B72B;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+.botonRojo {
+    width: 60px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: transparent;
+    border: 1px solid #EC3759;
+    color: #EC3759;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+.imgReloj {
+    width: 16px;
+    height: 16px;
+}
+.labelSubtitulos {
+    font-size: 12px;
+    font-weight: 300;
+    color: #000;
+}
+.imgArrow {
+    width: 8px;
+    height: 4.6px;
+}
+
+
+.padding-cero {
+    padding: 0px;
+}
+.grid-horario {
+    position: absolute;
+    top: 40px;
+    left: calc(50% - 30px);
+    z-index: 10;
+    width: 290px;
+    border: 2px solid #26B72B;
+    border-radius: 10px;
+    padding: 10px 5px;
+    background: white;
+}
+.label-dia {
+    font-size: 13px;
+    font-weight: 300;
+    color: #000;
+}
+.label-horario {
+    font-size: 13px;
+    font-weight: 400;
+    color: #000;
+}

@@ -1,0 +1,66 @@
+ion-content {
+  --background: rgb(245, 247, 250);
+}
+.grid_uno {
+  padding-top: 15px;
+}
+.grid_dos {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.col_titulo {
+  position: relative;
+  text-align: center;
+}
+.label_titulo {
+  font-weight: 400;
+  font-size: 17px;
+  color: rgb(33, 32, 88);
+}
+.icon_alert {
+  color: grey;
+  font-size: 25px;
+  position: absolute;
+  top: calc(50% - 12.5px);
+  right: 10px;
+}
+.label_subti {
+  font-weight: 400;
+  font-size: 15px;
+  color: grey;
+}
+.input {
+  width: 100%;
+  height: 55px;
+  background-color: #fff;
+  border-radius: 10px;
+  border: 1px solid #fff;
+  padding-left: 15px;
+}
+.col_input {
+  line-height: 2.5;
+}
+.tolbar {
+  --background: rgb(235, 238, 241);
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+}
+.button {
+  width: 100%;
+  height: 40px;
+  border-radius: 15px;
+  background-color: #664bc4;
+  color: #fff;
+  font-weight: 400;
+  font-size: 15px;
+}
+.button_f {
+  width: 100%;
+  height: 40px;
+  border-radius: 15px;
+  border: 1px solid rgb(201, 203, 205);
+  background-color: rgb(201, 203, 205);
+  color: #fff;
+  font-weight: 400;
+  font-size: 15px;
+}

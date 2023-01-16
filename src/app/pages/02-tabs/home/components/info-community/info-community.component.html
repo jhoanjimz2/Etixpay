@@ -1,0 +1,75 @@
+<div class="d-c-m">
+  <div class="d-c h-52 m-b">
+    <div class="s-12">
+      <div class="d-c-2">
+        <img class="img" [src]="info.img | image" />
+
+        <div class="l-h-1-4 w-50-70px">
+          <div class="left">
+            <ion-label class="l-n sus"
+              >{{ "SALUDO2" | translate }} {{ info.nombre }}!</ion-label
+            >
+          </div>
+          <div class="left">
+            <ion-label class="l-b">{{ "GOODMORNING" | translate }}</ion-label>
+          </div>
+        </div>
+
+        <div class="l-h-1-4 w-50-70px">
+          <div>
+            <div class="ion-text-center">
+              <ion-label class="l-n">{{ "BALANCE2" | translate }}</ion-label>
+            </div>
+            <div class="centrar">
+              <ion-label class="l-s" *ngIf="!muestra">{{
+                info.wallets[0].walletSALDOATM | formattNumber
+              }}</ion-label>
+              <ion-label class="l-s" *ngIf="muestra">****</ion-label>&nbsp;
+              <ion-label class="l-tix">TIX</ion-label>&nbsp;
+              <ion-icon
+                name="eye-off-outline"
+                class="icon"
+                (click)="muestra = !muestra"
+              ></ion-icon>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="linea"></div>
+
+  <div class="d-l-d">
+    <ion-label class="l-d">{{ "ACCOUNTDATA" | translate }}</ion-label>
+  </div>
+
+  <div class="d-c">
+    <div class="s-4 left" (click)="comunidad()">
+      <div class="ion-text-center">
+        <ion-label class="l-ti">{{ "COMMUNITY2" | translate }}</ion-label
+        ><br />
+        <ion-label class="l-nu"
+          >+{{ info.community_percentage | formattNumber }}%</ion-label
+        >
+      </div>
+    </div>
+
+    <div class="s-4 centrar" (click)="(recompensas)">
+      <div class="ion-text-center">
+        <!-- <ion-label class="l-ti">{{'CASHBACK3' | translate}}</ion-label><br>
+        <ion-label class="l-nu">{{info.cashbak_pendiente| formattNumber}} TIX</ion-label> -->
+      </div>
+    </div>
+
+    <div class="s-4 end" (click)="etixwin()">
+      <div class="ion-text-center">
+        <ion-label class="l-ti">{{ "WIN" | translate }}</ion-label
+        ><br />
+        <ion-label class="l-nu">{{
+          info.active_win | formattNumber
+        }}</ion-label>
+      </div>
+    </div>
+  </div>
+</div>

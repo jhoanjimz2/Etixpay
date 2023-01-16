@@ -1,0 +1,12 @@
+ion-content {
+    --background: #F5F6F8;
+}
+.buton-edit {
+    width: 90%;
+    --border-radius: 15px;
+    --background: rgb(223, 112, 0);
+    text-transform: capitalize;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+}

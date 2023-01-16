@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="38px" height="38px" viewBox="0 0 38 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>wallet_send</title>
+    <g id="wallet" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Wallet" transform="translate(-205.000000, -122.000000)">
+            <g id="wallet_send" transform="translate(205.000000, 122.000000)">
+                <circle id="viola-scuro-copy" fill="#664BC4" cx="19" cy="19" r="19"></circle>
+                <polygon id="Fill-5" fill="#FFFFFF" points="10 17 25.0007143 18.999 10 21 10.0110005 28 31 18.999 10.0110005 10"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

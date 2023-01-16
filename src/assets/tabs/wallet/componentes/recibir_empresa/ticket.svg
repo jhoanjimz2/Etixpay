@@ -1,0 +1,18 @@
+<svg id="receive_ticket_active" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="31" height="32" viewBox="0 0 31 32">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="Clip_6" data-name="Clip 6" d="M0,32H31V0H0Z" fill="none"/>
+    </clipPath>
+  </defs>
+  <path id="Fill_1" data-name="Fill 1" d="M10.842,14a2.069,2.069,0,0,1-1.526-.681L6.5,10.28,3.681,13.319a2.1,2.1,0,0,1-3.051,0,2.464,2.464,0,0,1,0-3.29L9.317.659a2.1,2.1,0,0,1,3.052,0A2.415,2.415,0,0,1,13,2.3a2.415,2.415,0,0,1-.631,1.645L9.549,6.988l2.82,3.04a2.464,2.464,0,0,1,0,3.29A2.073,2.073,0,0,1,10.842,14Zm0-12.976A1.158,1.158,0,0,0,10,1.391L1.307,10.76a1.365,1.365,0,0,0,0,1.827,1.166,1.166,0,0,0,1.7,0L6.5,8.816,10,12.587a1.166,1.166,0,0,0,1.695,0,1.365,1.365,0,0,0,0-1.827l-3.5-3.772,3.5-3.771a1.364,1.364,0,0,0,0-1.827A1.156,1.156,0,0,0,10.843,1.025Z" transform="translate(17 18)" fill="#fff"/>
+  <path id="Fill_3" data-name="Fill 3" d="M3.1,7h0L.6,4.08a2.708,2.708,0,0,1,0-3.4A1.915,1.915,0,0,1,2.052,0,1.915,1.915,0,0,1,3.5.681L6,3.6,3.1,7ZM2.052,1.042a1.059,1.059,0,0,0-.809.391,1.46,1.46,0,0,0-.335.949,1.452,1.452,0,0,0,.335.946L3.1,5.494,4.713,3.6,2.861,1.433A1.059,1.059,0,0,0,2.052,1.042Z" transform="translate(17.001 18)" fill="#fff"/>
+  <path id="Clip_6-2" data-name="Clip 6" d="M0,32H31V0H0Z" fill="none"/>
+  <g id="receive_ticket_active-2" data-name="receive_ticket_active" clip-path="url(#clip-path)">
+    <path id="Fill_5" data-name="Fill 5" d="M14,14H0V0H14V14ZM.988.988V13.011H13.012V.988Z" transform="translate(17 0)" fill="#fff"/>
+    <path id="Fill_7" data-name="Fill 7" d="M3,4H0V0H3V4ZM.832,1.111v1.78H2.166V1.111Z" transform="translate(22 5)" fill="#fff"/>
+    <path id="Fill_8" data-name="Fill 8" d="M14,14H0V0H14V14ZM.988.988V13.011H13.012V.988Z" transform="translate(0 0)" fill="#fff"/>
+    <path id="Fill_9" data-name="Fill 9" d="M3,4H0V0H3V4ZM.832,1.11V2.889H2.167V1.11Z" transform="translate(5 5)" fill="#fff"/>
+    <path id="Fill_10" data-name="Fill 10" d="M14,14H0V0H14V14ZM.988.988V13.012H13.012V.988Z" transform="translate(0 18)" fill="#fff"/>
+    <path id="Fill_11" data-name="Fill 11" d="M3,4H0V0H3V4ZM.832,1.11V2.889H2.167V1.11Z" transform="translate(5 23)" fill="#fff"/>
+  </g>
+</svg>

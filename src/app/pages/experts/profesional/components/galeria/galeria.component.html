@@ -1,0 +1,30 @@
+<ion-grid>
+  <ion-row>
+    <ion-col class="ion-text-center pr">
+      <div class="div-change" *ngIf="editar">
+        <ion-icon name="refresh-circle-outline" (click)="opcionesImg(2)"></ion-icon>
+      </div>
+      <img class="img-rec" [src]="profesional.rectangular_image" (click)="verImg(profesional.rectangular_image)">
+    </ion-col>
+    <ion-col class="col-imgs pr">
+      <div class="div-change-dos" *ngIf="editar">
+        <ion-icon name="refresh-circle-outline" (click)="opcionesImg(4)"></ion-icon>
+      </div>
+      <img class="img-cua" [src]="profesional.square_image" (click)="verImg(profesional.square_image)">
+      <br>
+      <div class="div-contenedor">
+        <div class="div-add-galeria" *ngIf="editar" (click)="cargarCamara(); opcion = 3">
+          <ion-icon name="add-outline" class="icon-add"></ion-icon>
+        </div>
+        <div *ngFor="let img of profesional.gallery" class="pr">
+          <div class="div-change-tres" *ngIf="editar">
+            <ion-icon name="trash" (click)="selectEliminar(img)"></ion-icon>
+            &nbsp;
+            <ion-icon name="refresh-circle-outline" (click)="selectCambiar(img)"></ion-icon>
+          </div>
+          <img class="img-galeria" [src]="img"  (click)="verGaleria(profesional.gallery)">
+        </div>
+      </div>
+    </ion-col>
+  </ion-row>
+</ion-grid>

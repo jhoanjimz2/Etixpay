@@ -1,0 +1,64 @@
+.divBase {
+  width: 100%;
+  position: relative;
+  height: 30px;
+  background-color: rgb(241, 242, 246);
+  border: 0px solid rgb(241, 242, 246);
+  border-radius: 5px;
+}
+.divSelect {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 30px;
+  width: 50%;
+  background-color: #664bc4;
+  border: 0px solid #664bc4;
+  border-radius: 5px;
+}
+.col1 {
+  padding: 0px;
+}
+.lineasCol {
+  border-right: 1px solid rgb(241, 242, 246);
+  border-left: 1px solid rgb(241, 242, 246);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.col2 {
+  padding: 0px;
+  position: relative;
+}
+.col3 {
+  padding-left: 0px;
+  padding-right: 0px;
+  position: relative;
+}
+.linea {
+  height: 15px;
+  border-right: 1px solid rgb(241, 242, 246);
+  position: absolute;
+}
+.numero {
+  height: 15px;
+  position: absolute;
+  font-size: 70%;
+  font-weight: bold;
+  color: rgb(241, 242, 246);
+  top: 16px;
+}
+.regalo {
+  height: 15px;
+  width: 15px;
+  border-radius: 7.5px;
+  position: absolute;
+  font-size: 70%;
+  font-weight: bold;
+  top: 16px;
+  left: calc(100% - 8px);
+  background-color: #664bc4;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,72 @@
+.d-c {
+    margin: 20px 16px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+.label {
+    color: black;
+    font-size: 18px;
+    font-weight: 400;
+}
+.label-view {
+    color: #d8dcdf;
+    font-size: 16px;
+    font-weight: 400;
+}
+.d-c-2 {
+    overflow-y: hidden;
+    overflow-x: auto;
+    white-space: nowrap;
+    display: -webkit-box;
+    padding-top: 30px;
+    padding-bottom: 15px;
+}
+.d-s {
+    width: 120px;
+    height: 120px;
+    border-radius: 15px !important;
+    margin-right: 10px;
+    margin-left: 10px;
+    background: #DF7000;
+    border: 1px solid #DF7000;
+    position: relative;
+}
+.d-f {
+    display: flex;
+}
+.w-6 {
+  flex: 0 0 calc(calc(6 / var(--ion-grid-columns, 12)) * 100%);
+  width: calc(calc(6 / var(--ion-grid-columns, 12)) * 100%);
+  max-width: calc(calc(6 / var(--ion-grid-columns, 12)) * 100%);
+}
+.t-e {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.b-c {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px !important;
+  background-color: #ffffff20;
+  z-index: 1;
+  top: 15px;
+  left: 10px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.b-c img {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+}
+.label-name {
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    bottom: 15px;
+    left: 10px;
+    position: absolute;
+}

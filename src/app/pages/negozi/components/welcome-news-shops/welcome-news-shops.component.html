@@ -1,0 +1,22 @@
+<ion-grid class="grid">
+  <ion-row>
+    <ion-col class="padding-top not-padding-lados p-b">
+      <ion-label class="label-titulo">{{'WELCOMENEWSHOPS' | translate}}</ion-label>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col class="not-padding-lados">
+      <div class="div-contenedor ion-no-color-barra">
+        <div *ngFor="let shop of shops; let i = index" class="div-item" (click)="irNegoziPage(shop.uuid)">
+          <div class="boton">
+            <img src="{{shop.empresaFOTO}}" *ngIf="shop.empresaFOTO">
+            <img src="assets/img_predefinidas/Bussines_cuadrada.png" *ngIf="!shop.empresaFOTO">
+          </div>
+          <div class="div-name-label">
+            <ion-label>{{shop.empresaNOMBREMAP}}</ion-label>
+          </div>
+        </div>
+      </div>
+    </ion-col>
+  </ion-row>
+</ion-grid>

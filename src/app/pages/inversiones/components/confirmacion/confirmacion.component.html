@@ -1,0 +1,39 @@
+<ion-content>
+
+  <ion-slides #slides mode="ios">
+    <ion-slide>
+      <div class="div-contenedor">
+        <ion-card mode="ios">
+          <ion-card-content  mode="ios">
+            <div>
+              <img src="assets/pages/invest/true.svg" class="img" *ngIf="type">
+              <img src="assets/pages/invest/false.svg" class="img" *ngIf="!type"><br><br>
+              <ion-label *ngIf="type" class="label-uno">{{'SUPU' | translate}}</ion-label>
+              <ion-label *ngIf="!type" class="label-uno">{{'PUFA' | translate}}</ion-label><br><br>
+              <ion-label *ngIf="type" class="label-dos">{{'YOHASUPU' | translate}}</ion-label>
+              <ion-label *ngIf="!type" class="label-dos">{{'UNWECOPRO' | translate}}</ion-label><br>
+              <ion-label *ngIf="type" class="label-tres">{{cantidad}} {{siglas}}</ion-label>
+            </div>
+          </ion-card-content>
+        </ion-card><br>
+  
+        <ion-button 
+          *ngIf="type"  
+          (click)="goToWallet()"
+          expand="block" 
+          class="button-done"  
+          mode="ios">{{'DNE' | translate}}
+        </ion-button>
+
+        <ion-button 
+          *ngIf="!type"
+          (click)="tryAgain()"
+          expand="block" 
+          class="button-try-again"  
+          mode="ios">{{'TRAG' | translate}}
+        </ion-button>
+
+      </div>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

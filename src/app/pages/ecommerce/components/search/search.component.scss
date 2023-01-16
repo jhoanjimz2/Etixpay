@@ -1,0 +1,29 @@
+.no-padding {
+    padding: 0px;
+    position: relative;
+}
+ion-searchbar {
+    height: 40px !important;
+    padding: 0px !important;
+    border-radius: 20px !important;
+    margin: 10px !important;
+    background: white !important;
+    width: calc(100% - 20px) !important;
+    --icon-color: black !important;
+    --placeholder-color: black !important;
+    --border-radius: 20px !important;
+    --color: black !important;
+    font-size: 22px !important;
+}
+ion-list {
+    width: calc(100% - 24px);
+    border-radius: 15px;
+    background-color: #fff;
+    margin: 12px;
+    margin-top: 0px;
+    padding: 0px;
+    border-radius: 20px;
+}
+.item-cargando {
+    text-align: center;
+}

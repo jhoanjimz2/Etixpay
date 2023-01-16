@@ -1,0 +1,61 @@
+.padding_row_uno {
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+.label_uno {
+  font-weight: 300;
+  font-size: 20px;
+  color: grey;
+}
+.label_dos {
+  font-weight: 300;
+  font-size: 20px;
+  color: #000000;
+}
+.label_tres {
+  font-weight: bold;
+  font-size: 40px;
+  color: #000000;
+}
+.label_cuatro {
+  font-weight: bold;
+  font-size: 30px;
+  color: #000000;
+}
+.label_cinco {
+  font-weight: bold;
+  font-size: 30px;
+  color: #000000;
+}
+.inputs {
+  border: 1px solid #f0f4f7ce;
+  width: 100%;
+  height: 45px;
+  border-radius: 10px;
+  background-color: #f0f4f7ce;
+  --placeholder-color: #d8dcdf;
+  --placeholder-opacity: 1;
+  font-size: 90%;
+  font-weight: bold;
+  text-align: center;
+}
+.button_confirm {
+  margin-top: auto;
+  height: 35px !important;
+  width: 100%;
+  border: 1px solid #664bc4;
+  background-color: #664bc4;
+  border-radius: 30px;
+  font-size: 90%;
+  color: #ffffff;
+}
+.button_reset {
+  margin-top: auto;
+  height: 35px !important;
+  width: 100%;
+  border: 1px solid #3ec0e8;
+  background-color: #3ec0e8;
+  border-radius: 30px;
+  font-size: 90%;
+  color: #ffffff;
+}

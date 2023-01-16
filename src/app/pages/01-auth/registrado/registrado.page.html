@@ -1,0 +1,42 @@
+<ion-content>
+  <ion-header class="ion-no-border paddingHeader">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button
+          defaultHref="/auth/login"
+          text=""
+          class="iconBack"
+        ></ion-back-button>
+      </ion-buttons>
+      <img src="/assets/inicio/registrado/elements-13.png" class="imagenHeader" />
+    </ion-toolbar>
+  </ion-header>
+  <ion-toolbar color="tertiary" class="ion-text-center">
+    <ion-label class="textCongra">{{'CONGRATULATIONSR' | translate}}</ion-label>
+  </ion-toolbar>
+  <ion-grid class="ion-text-center">
+    <ion-row>
+      <ion-col class="colImg">
+        <img src="/assets/inicio/registrado/email icon-09.svg" class="imagenMail" />
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="colText1">
+        <ion-label class="text1">{{'YOURACCOUNTR' | translate}}</ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="colImg">
+        <ion-label class="text1">{{'IFYOUNEEDR' | translate}}</ion-label>
+        <ion-label class="text2">support@etixpay.com</ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <button class="botonGo" (click)="go_email()">
+          {{'GOTOEMAILR' | translate}}
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

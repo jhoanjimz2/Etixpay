@@ -1,0 +1,378 @@
+<app-header-padre [page]="true"></app-header-padre>
+<ion-content>
+
+  <form  [formGroup]="formulario">
+    <ion-grid class="grid">
+      <ion-row>
+        <ion-col>
+          <ion-label class="label1">{{'ABOUT' | translate}}</ion-label>        
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-input class="input" placeholder="{{'INSERTEVENT' | translate}}" [formControl]="formulario.controls.titulo"name="titulo" >
+            <ion-label class="label2">{{'EVENTTITLE' | translate}}</ion-label>
+          </ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-datetime  class="input" placeholder="{{'CHOOSEDATE' | translate}}" mode="md" display-format="DD/MM/YYYY HH:mm"
+          cancelText="{{'CANCEL3' | translate}}" doneText="OK"
+          [formControl]="formulario.controls.fecha_inicial_del_evento" name="fecha_inicial_del_evento" [min]="datetime_min" [max]="datetime_max"></ion-datetime>
+          <ion-label class="label3">{{'EVENTDATE' | translate}}</ion-label>
+          <ion-icon name="calendar-outline" class="icon"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="campo_no_valido('fecha_inicial_del_evento')">
+        <ion-col>
+          <ion-label class="texto_error">*{{'DATEMUST' | translate}}</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-datetime  class="input" placeholder="{{'CHOOSEDATE' | translate}}" mode="md" display-format="DD/MM/YYYY HH:mm"
+          cancelText="{{'CANCEL3' | translate}}" doneText="OK"
+          [formControl]="formulario.controls.fecha_final_del_evento" name="fecha_final_del_evento" [min]="datetime_min" [max]="datetime_max"></ion-datetime>
+          <ion-label class="label3">{{'EVENTDATEFINAL' | translate}}</ion-label>
+          <ion-icon name="calendar-outline" class="icon"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="campo_no_valido('fecha_final_del_evento')">
+        <ion-col>
+          <ion-label class="texto_error">*{{'THEENDTIME' | translate}}</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-datetime  class="input" placeholder="{{'CHOOSEDATE' | translate}}" mode="md" display-format="DD/MM/YYYY HH:mm"
+          cancelText="{{'CANCEL3' | translate}}" doneText="OK" 
+          [formControl]="formulario.controls.fecha_final_de_compra"name="fecha_final_de_compra"  [min]="datetime_min" [max]="datetime_max"></ion-datetime>
+          <ion-label class="label3">{{'LASTDAYOFPURCHASE' | translate}}</ion-label>
+          <ion-icon name="calendar-outline" class="icon"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="campo_no_valido('fecha_final_de_compra')">
+        <ion-col>
+          <ion-label class="texto_error">*{{'THEFINALDATE' | translate}}</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <div class="div1" >
+            <img src="assets/tabs/home/componentes/eventos-locales/editar-imagen.svg" class="imgicondelete">
+            <div class="div2">
+              <ion-label>{{'ADDMAINPHOTO'  |translate}}</ion-label><br>
+              <button><ion-icon name="camera-outline"></ion-icon></button>    
+              <ion-label>{{'MAXIMO8MG' | translate}}</ion-label>                 
+            </div>
+            <input type="file" (change)="add_img($event, 'destacada')">
+            <img [src]="img_html" class="img_cargada"  [hidden]="!img_html">
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col *ngFor="let img of galeria_html; let i = index;" size="4">
+          <div class="div3">
+            <img src="assets/tabs/home/componentes/eventos-locales/eliminar-foto.svg" class="imgicondelete"
+            (click)="elimina_imagen(i)" [hidden]="validar_boton_eliminar[i]">
+            <input type="file" (change)="add_img($event, i)"  [hidden]="!validar_boton_eliminar[i]">
+            <ion-icon name="add-outline"></ion-icon>
+            <img [src]="galeria_html[i]" class="img_cargada"  *ngIf="galeria_html[i]">
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-textarea rows="6" cols="20" class="input" placeholder="{{'INSERTDESCRIPTION' | translate}}"
+          [formControl]="formulario.controls.descripcion"name="descripcion">
+           <ion-label class="label2">{{'DESCRIPTION' | translate}}</ion-label>
+          </ion-textarea>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <div class="linea"></div>
+      <ion-grid class="grid">
+        <ion-row>
+          <ion-col>
+            <ion-label class="label1">{{'CONTACTS' | translate}}</ion-label>        
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ionic-selectable 
+            [items]="pais" 
+            class="input2"
+            itemValueField="id" 
+            itemTextField="paisNOMBRE" 
+            [canSearch]="true"
+            placeholder="{{'CHOOSECOUNTRY' | translate}}"
+            searchFailText="{{'NOTFOUND3' | translate}}"
+            searchPlaceholder="{{'SEARCH' | translate}}"
+            [hasInfiniteScroll]="true"
+            (onInfiniteScroll)="obtenerPaises($event)"
+            (onSearch)="buscarPais($event)"
+            [formControl]="formulario.controls.pais"
+            name="pais">                 
+          </ionic-selectable>
+          <ion-label class="label4">{{'COUNTRY5' | translate}}</ion-label>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-input class="input" placeholder="{{'INSERTADDRESS' | translate}}" value="{{formulario.controls.direccion.value}}"
+            [formControl]="formulario.controls.direccion" name="direccion" (ionBlur)="direccion_con_google_address()">
+            <ion-label class="label2">{{'ADDRESS2' | translate}}</ion-label>
+            </ion-input>
+            <img src="assets/tabs/home/componentes/eventos-locales/localizar.svg"  class="img" (click)="sacarPosicion()">
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="colmap">
+            <div #map id="map" [hidden]="cargando"></div>
+            <ion-skeleton-text class="skeleton" animated [hidden]="!cargando"></ion-skeleton-text>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="colcheck1">
+            <div class="divcheck">
+              <ion-checkbox mode="md" class="check"
+              [formControl]="formulario.controls.check_direccion" name="check_direccion"></ion-checkbox>
+            </div>        
+          </ion-col>
+          <ion-col>
+            <div class="divtextocheck">
+              {{'CHECKHEREIF' | translate}}
+            </div>        
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="4">
+            <ionic-selectable 
+            [items]="pais" 
+            class="input2"
+            itemValueField="id" 
+            itemTextField="paisNOMBRE" 
+            [canSearch]="true"
+            placeholder="{{'COUNTRY5' | translate}}"
+            searchFailText="{{'NOTFOUND3' | translate}}"
+            searchPlaceholder="{{'SEARCH' | translate}}"
+            [hasInfiniteScroll]="true"
+            (onInfiniteScroll)="obtenerPaises($event)"
+            (onSearch)="buscarPais($event)"
+            [formControl]="formulario.controls.indicativo_uno"
+            name="indicativo_uno">    
+            <ng-template ionicSelectableValueTemplate let-pais="value">{{pais.paisINDICATIVO}}</ng-template>               
+          </ionic-selectable>
+          <ion-label class="label4">{{'COUNTRY5' | translate}}</ion-label>
+          </ion-col>
+          <ion-col>
+            <ion-input class="input" placeholder="{{'PHONENUMBER4' | translate}}" type="number"
+            [formControl]="formulario.controls.numero_principal"name="numero_principal">
+            <ion-label class="label2">{{'PHONENUMBER4' | translate}}</ion-label>
+            </ion-input>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="4">
+            <ionic-selectable 
+            [items]="pais" 
+            class="input2"
+            itemValueField="id" 
+            itemTextField="paisNOMBRE" 
+            [canSearch]="true"
+            placeholder="{{'COUNTRY5' | translate}}"
+            searchFailText="{{'NOTFOUND3' | translate}}"
+            searchPlaceholder="{{'SEARCH' | translate}}"
+            [hasInfiniteScroll]="true"
+            (onInfiniteScroll)="obtenerPaises($event)"
+            (onSearch)="buscarPais($event)"
+            [formControl]="formulario.controls.indicativo_dos"
+            name="indicativo_dos">  
+            <ng-template ionicSelectableValueTemplate let-pais="value">{{pais.paisINDICATIVO}}</ng-template>                 
+          </ionic-selectable>
+          <ion-label class="label4">{{'COUNTRY5' | translate}}</ion-label>
+          </ion-col>
+          <ion-col>
+            <ion-input class="input" placeholder="{{'PHONENUMBER4' | translate}}" type="number"
+            [formControl]="formulario.controls.numero_secundario" name="numero_secundario">
+            <ion-label class="label2">{{'SECONDNUMBER' | translate}}</ion-label>
+            </ion-input>
+          </ion-col>
+        </ion-row>
+        <ion-row *ngIf="campo_no_valido('numero_secundario')">
+          <ion-col>
+            <ion-label class="texto_error">*{{'THECONTACT' | translate}}</ion-label>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-input class="input" placeholder="{{'YOUREMAIL' | translate}}" type="email"
+            [formControl]="formulario.controls.email"name="email">
+            <ion-label class="label2">{{'EMAIL2' | translate}}</ion-label>
+            </ion-input>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-input class="input" placeholder="{{'WEBSITE' | translate}}" type="url"
+            [formControl]="formulario.controls.sitio_web"name="sitio_web">
+            <ion-label class="label2">{{'WEBSITEOPTIONAL' | translate}}</ion-label>
+            </ion-input>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <div class="linea"></div>  
+      <ion-grid class="grid">
+        <ion-row>
+          <ion-col>
+            <ion-item lines="none" class="itemradio" (ionChange)="evento_free_click()">
+              <ion-label class="label1">{{'FREE' | translate}}</ion-label>
+              <ion-toggle class="toggle" mode="ios" slot="end" checked={{evento_free}} ></ion-toggle>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row *ngIf="!evento_free">
+          <ion-col>
+            <ion-label class="label5">Ticket standart</ion-label>        
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="4"  *ngIf="!evento_free">
+            <ion-label class="label4">{{'PRICE' | translate}}</ion-label>
+            <input class="input3" placeholder="0,00 €" mask="separator.2" thousandSeparator="." pattern="[0-9.,]+"
+            [formControl]="formulario.controls.precio_ticket_standard" name="precio_ticket_standard">
+          </ion-col>
+          <ion-col size="4">
+            <ion-input class="input" placeholder="0" type="number"
+            [formControl]="formulario.controls.disponibilidad_ticket_standard" name="disponibilidad_ticket_standard">
+            <ion-label class="label2">{{'AVAILABLE' | translate}}</ion-label>
+            </ion-input>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-input class="input" placeholder="{{'INSERTNOTE' | translate}}" 
+            [formControl]="formulario.controls.nota_ticket_standard" name="nota_ticket_standard">
+            <ion-label class="label2">{{'NOTE' | translate}}</ion-label>
+            </ion-input>
+          </ion-col>
+        </ion-row>
+        <ion-row  *ngIf="!evento_free">
+          <ion-col>
+            <ion-label class="label5">Ticket luxury</ion-label>         
+          </ion-col>
+        </ion-row>
+        <ion-row  *ngIf="!evento_free">
+          <ion-col size="4">
+            <ion-label class="label4">{{'PRICE' | translate}}</ion-label>
+            <input class="input3" placeholder="0,00 €" mask="separator.2" thousandSeparator="." pattern="[0-9.,]+"
+            [formControl]="formulario.controls.precio_ticket_luxury" name="precio_ticket_luxury">
+          </ion-col>
+          <ion-col size="4">
+            <ion-input class="input" placeholder="0" type="number"
+            [formControl]="formulario.controls.disponibilidad_ticket_luxury" name="disponibilidad_ticket_luxury">
+            <ion-label class="label2">{{'AVAILABLE' | translate}}</ion-label>
+            </ion-input>
+          </ion-col>
+        </ion-row>
+        <ion-row  *ngIf="!evento_free">
+          <ion-col>
+            <ion-input class="input" placeholder="{{'INSERTNOTE' | translate}}"
+            [formControl]="formulario.controls.nota_ticket_luxury" name="nota_ticket_luxury">
+            <ion-label class="label2">{{'NOTE' | translate}}</ion-label>
+            </ion-input>
+          </ion-col>
+        </ion-row>
+        <ion-row  *ngIf="!evento_free">
+          <ion-col>
+            <ion-label class="label5">Ticket VIP</ion-label>        
+          </ion-col>
+        </ion-row>
+        <ion-row  *ngIf="!evento_free">
+          <ion-col size="4">
+            <ion-label class="label4">{{'PRICE' | translate}}</ion-label>
+            <input class="input3" placeholder="0,00 €" mask="separator.2" thousandSeparator="." pattern="[0-9.,]+"
+            [formControl]="formulario.controls.precio_ticket_vip" name="precio_ticket_vip">
+          </ion-col>
+          <ion-col size="4">
+            <ion-input class="input" placeholder="0" type="number"
+            [formControl]="formulario.controls.disponibilidad_ticket_vip" name="disponibilidad_ticket_vip">
+            <ion-label class="label2">{{'AVAILABLE' | translate}}</ion-label>
+            </ion-input>
+          </ion-col>
+        </ion-row>
+        <ion-row  *ngIf="!evento_free">
+          <ion-col>
+            <ion-input class="input" placeholder="{{'INSERTNOTE' | translate}}"
+            [formControl]="formulario.controls.nota_ticket_vip" name="nota_ticket_vip">
+            <ion-label class="label2">{{'NOTE' | translate}}</ion-label>
+            </ion-input>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+  
+  
+    
+    <div class="linea"></div>
+    <ion-grid class="grid">
+      <ion-row>
+        <ion-col>
+          <ion-label class="label1">{{'ETIXCOMMUNITY' | translate}}</ion-label>       
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-label class="label6">{{'YOUWILLRECEIVE' | translate}}</ion-label>         
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-input class="input" placeholder="0%" type="number"
+          [formControl]="formulario.controls.comision" name="comision">
+          <ion-label class="label2">{{'COMMISSIONPERCENTAGE' | translate}}</ion-label>
+          </ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="colcheck2">
+          <div class="div">
+            <ion-checkbox mode="md" class="check2"
+            [formControl]="formulario.controls.check_teminos_condiciones" name="check_teminos_condiciones"></ion-checkbox>
+          </div>   
+        </ion-col>
+        <ion-col>
+          <div class="div">{{'TERMSCONDITIONS'| translate}}</div>  
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="colcheck2">
+          <div class="div">
+            <ion-checkbox mode="md" class="check2"
+            [formControl]="formulario.controls.check_politicas_privacidad" name="check_politicas_privacidad"></ion-checkbox>
+          </div>   
+        </ion-col>
+        <ion-col>
+          <div class="div">{{'PRIVACYPOLICY' | translate}}</div>   
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  
+  
+  
+    <div class="linea"></div>
+    <ion-grid class="grid">
+      <ion-row>
+        <ion-col>
+          <button [ngClass]="{'botonrosadoF': !formulario.valid , 'botonrosado': formulario.valid}" 
+          [disabled]="!formulario.valid" (click)="editar_evento()" >{{'EDITEVENT' | translate}}</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+
+
+  </form>
+
+</ion-content>
+

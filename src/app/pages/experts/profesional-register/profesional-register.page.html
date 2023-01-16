@@ -1,0 +1,70 @@
+<ion-content>
+
+  <app-header [step]="step" (funcion)="funcion($event)" [titulo]="'AUTORIZZAZIONI E CATEGORIA'" *ngIf="step == 1"></app-header>
+  <app-header [step]="step" (funcion)="funcion($event)" [titulo]="'DATI DI CONTATTO'" *ngIf="step == 2"></app-header>
+  <app-header [step]="step" (funcion)="funcion($event)" [titulo]="'DATI FISCALI E RICOMPENSA'" *ngIf="step == 3"></app-header>
+  <app-header [step]="step" (funcion)="funcion($event)" [titulo]="'MAPPA, DESCRIZIONE E FOTO'" *ngIf="step == 4"></app-header>
+  <app-header [step]="step" (funcion)="funcion($event)" *ngIf="step == 5"></app-header>
+  <!-- Stetps -->
+  <app-steps [step]="step"></app-steps>
+  <!-- Stetps -->
+
+
+  <app-authorization
+    [final]="final"
+    [hidden]="step != 1"
+    [preRegistro]="preRegistro"
+    class="w-100"
+    (funcion)="aprobado($event)">
+  </app-authorization>
+
+  <app-contact-detail
+    [estado]="estado"
+    [profesionalID]="profesionalID"
+    [final]="final"
+    [codigo]="codigo"
+    [contactDetail]="contactDetail"
+    class="w-100"
+    (funcion)="setContactDetail($event)"
+    [hidden]="step != 2">
+  </app-contact-detail>
+
+  <app-data-fiscal
+    [final]="final"
+    [profesionalID]="profesionalID"
+    [sitioWeb]="preRegistro.profesionalWEB"
+    [dataFiscal]="dataFiscal"
+    class="w-100"
+    (funcion)="setDataFiscal($event)"
+    [hidden]="step != 3">
+  </app-data-fiscal>
+
+  <app-mapa-descripcion-foto
+    [galeriaHTML]="galeriaHTML"
+    [final]="final"
+    [profesionalID]="profesionalID"
+    [dataMapa]="dataMapa"
+    class="w-100"
+    (funcion)="setMapaDesFoto($event)"
+    [hidden]="step != 4">
+  </app-mapa-descripcion-foto>
+
+  <app-resumen
+    [final]="final"
+    [profesionalID]="profesionalID"
+    [preRegistro]="preRegistro"
+    [contactDetail]="contactDetail"
+    [dataFiscal]="dataFiscal"
+    [dataMapa]="dataMapa"
+    class="w-100"
+    (funcion)="resumen($event)"
+    [hidden]="step != 5">
+  </app-resumen>
+
+  <app-exito
+    class="w-100"
+    [hidden]="step != 6">
+  </app-exito>
+
+
+</ion-content>

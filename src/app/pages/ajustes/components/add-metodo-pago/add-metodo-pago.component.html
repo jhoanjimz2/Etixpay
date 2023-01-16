@@ -1,0 +1,97 @@
+<div>
+  <ion-grid class="grid_uno">
+    <ion-row>
+      <ion-col class="col_titulo">
+        <ion-label class="label_titulo" *ngIf="tipo == 'bank'">{{'ADDBANKACCOUNT' | translate}}</ion-label>
+        <ion-label class="label_titulo" *ngIf="tipo == 'card'">{{'ADDNEWCARD2' | translate}}</ion-label>
+        <!-- <ion-icon name="alert-circle-outline" class="icon_alert"></ion-icon> -->
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+  <form [formGroup]="form_bank" id="form_bank" [hidden]="tipo != 'bank'" autocomplete="off">
+    <ion-grid class="grid_dos" >
+      <ion-row>
+        <ion-col class="col_input">
+          <ion-label class="label_subti">{{'BANKACCOUNT' | translate}}</ion-label><br>
+          <input class="input" placeholder="{{'BANKACCOUNT' | translate}}" [formControl]="form_bank.controls.cuenta" name="cuenta">
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="col_input">
+          <ion-label class="label_subti">{{'ACCOUNTHOLDER' | translate}}</ion-label><br>
+          <input class="input" placeholder="XXX XXX" [formControl]="form_bank.controls.titular" name="titular">
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="col_input">
+          <ion-label class="label_subti">{{'COUNTRY6' | translate}}</ion-label><br>
+          <ionic-selectable 
+          [items]="pais" 
+          class="input"
+          itemValueField="id" 
+          itemTextField="paisNOMBRE" 
+          [canSearch]="true"
+          placeholder="{{'COUNTRY6' | translate}}"
+          searchFailText="No encontrado"
+          searchPlaceholder="search"
+          [formControl]="form_bank.controls.pais"
+          name="pais"
+          [hasInfiniteScroll]="true"
+          (onInfiniteScroll)="obtenerPaises($event)"
+          (onSearch)="buscarPais($event)">
+          <ng-template ionicSelectableValueTemplate let-pais="value">{{pais.paisNOMBRE}}</ng-template>                    
+        </ionic-selectable>
+        </ion-col>
+        <ion-col class="col_input">
+          <ion-label class="label_subti">{{'SWIFT' | translate}}</ion-label><br>
+          <input class="input" placeholder="{{'SWIFT' | translate}}" [formControl]="form_bank.controls.swift" name="swift">
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+
+  <form [formGroup]="form_card" id="form_card" [hidden]="tipo != 'card'" autocomplete="off">
+    <ion-grid class="grid_dos" >
+      <ion-row>
+        <ion-col class="col_input">
+          <ion-label class="label_subti">{{'CARDNUMBER2' | translate}}</ion-label><br>
+          <input class="input" placeholder="{{'CARDNUMBER2' | translate}}" [formControl]="form_card.controls.numero" name="numero"
+          (keyup)="numero_tarjeta()" value="{{form_card.controls.numero.value}}">
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="col_input">
+          <ion-label class="label_subti">{{'CARDOWNER2' | translate}}</ion-label><br>
+          <input class="input" placeholder="XXX XXX" [formControl]="form_card.controls.titular" name="titular">
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="col_input">
+          <ion-label class="label_subti">{{'EXPIRINGDATE2' | translate}}</ion-label><br>
+          <input class="input" placeholder="mm / yy" [formControl]="form_card.controls.fecha_exp" name="fecha_exp"
+          (keyup)="fecha_caducidad()" value="{{form_card.controls.fecha_exp.value}}" maxlength="5">
+        </ion-col>
+        <ion-col class="col_input">
+          <ion-label class="label_subti">{{'CVVCODE2' | translate}}</ion-label><br>
+          <input class="input" placeholder="{{'CVVCODE2' | translate}}" [formControl]="form_card.controls.cvc" name="cvc"
+          (keyup)="numero_cvc()" value="{{form_card.controls.cvc.value}}" maxlength="3" type="password">
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+
+</div>
+
+<ion-toolbar class="tolbar">
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <button [ngClass]="{'button': form_card.valid, 'button_f': !form_card.valid}" (click)="add_cuenta('card')" 
+        [hidden]="tipo != 'card'" form="form_card" type="submit" [disabled]="!form_card.valid">{{'SAVE' | translate}}</button>
+        <button [ngClass]="{'button': form_bank.valid, 'button_f': !form_bank.valid}" (click)="add_cuenta('bank')"
+        [hidden]="tipo != 'bank'" form="form_bank" type="submit" [disabled]="!form_bank.valid">{{'SAVE' | translate}}</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-toolbar>

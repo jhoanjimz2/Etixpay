@@ -1,0 +1,28 @@
+<ion-content>
+  
+  <button type="button" class="boton-back" (click)="salir_sin_argumentos()">
+    <ion-icon name="chevron-back-outline"></ion-icon>
+  </button>
+
+  <button [ngClass]="{'boton-cerca-no': !botonSelect, 'boton-cerca': botonSelect}"
+  type="button" (click)="buscar_aqui(true)">
+    <ion-label>{{'SEARCHHERE2' | translate}}</ion-label>
+  </button>
+
+  <ion-icon name="locate-outline" class="boton-mi-posicion"  (click)="mi_ubicacion()"></ion-icon>
+  
+  <button type="button" class="boton-filtros" (click)="filtros_mapa()">
+    <ion-icon name="options-outline"></ion-icon>
+  </button>
+  
+  <!-- <button type="button" class="boton_mas_cerca" (click)="salir_sin_argumentos()">
+    <ion-icon name="share-outline"></ion-icon>
+  </button> -->
+
+  <ion-icon name="camera" class="boton-sugerencia" (click)="seleccion_sugerencia()"></ion-icon>
+  
+  <app-card-objeto [objeto]="objeto" class="card-objeto" *ngIf="objeto" (actualizarVotos)="votosActualizar($event, objeto)"></app-card-objeto>
+
+  <div #map id="map"></div>
+
+</ion-content>

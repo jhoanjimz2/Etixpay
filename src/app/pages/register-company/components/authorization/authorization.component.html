@@ -1,0 +1,93 @@
+<ion-card class="no-shadow">
+  <h1 class="ion-text-center">
+    <ion-label color="primary">{{'GREENTING1' | translate}}</ion-label>
+  </h1>
+  <h5 class="ion-text-center">
+    <ion-label color="primary">{{email}}</ion-label>
+  </h5>
+  <p class="ion-text-center">
+    <ion-label class="dark-label">
+      {{'CREATEACCOUNTQUESTION' | translate}}
+    </ion-label>
+  </p>
+  <ion-row>
+    <ion-col class="ion-text-center ">
+      <ion-button (click)="isRepresentativeLegal('YES'); validateData()"  [color]="this.authorization.isRepresentativeLegal === 'YES' ? 'primary' : 'light'" class="btn-button wth-90p">
+        <ion-label [color]="this.authorization.isRepresentativeLegal === 'YES' ? 'light' : 'medium'">
+          {{'YES' | translate}}
+        </ion-label>
+      </ion-button>
+    </ion-col>
+    <ion-col class="ion-text-center">
+      <ion-button (click)="isRepresentativeLegal('NO'); validateData()" [color]="this.authorization.isRepresentativeLegal === 'NO' ? 'primary' : 'light'" class="btn-button wth-90p">
+        <ion-label [color]="this.authorization.isRepresentativeLegal === 'NO' ? 'light' : 'medium'">
+          {{'NO' | translate}}
+        </ion-label>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+  
+  <h4 class="ion-text-center">
+    <ion-label class="dark-label">
+      {{'COMPANYTYPE' | translate}}
+    </ion-label>
+  </h4>
+  <ion-row>
+    <ion-col class="ion-text-center">
+      <ion-button (click)="typeStore(1); validateData()" [color]="this.authorization.typeStore === 1 ? 'primary' : 'light'" class="btn-button wth-90p ht-90px">
+        <ion-label [color]="this.authorization.typeStore === 1 ? 'light' : 'medium'" class="txt-capitalize">
+          {{'ECOMMERCE' | translate}}
+        </ion-label>
+      </ion-button>
+    </ion-col>
+    <ion-col class="ion-text-center">
+      <ion-button (click)="typeStore(2); validateData()" [color]="this.authorization.typeStore === 2 ? 'primary' : 'light'" class="btn-button wth-90p ht-90px">
+        <ion-label [color]="this.authorization.typeStore === 2 ? 'light' : 'medium'" class="txt-capitalize">
+          {{'LOCALSTORE' | translate}}
+        </ion-label>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+  <ion-card-content>
+    <p>
+      <ion-label class="dark-label">{{'CHOOSECATEGORYCOMPANY' | translate}}</ion-label>
+    </p>
+    <select *ngIf="idLanguage === 'en'" (change)="validateData(); getCategory()" [(ngModel)]="authorization.idCategory" name="idCategory" class="input-select" required>
+      <option value = "">{{'NAMECATEGORY' | translate}}</option>
+      <option *ngFor="let categorty of categories" value = "{{categorty.id}}">{{categorty.categoria_empresaTITULO}}</option>
+    </select>  
+
+    <select *ngIf="idLanguage === 'it'" (change)="validateData(); getCategory()" [(ngModel)]="authorization.idCategory" name="idCategory" class="input-select" required>
+      <option value = "">{{'NAMECATEGORY' | translate}}</option>
+      <option *ngFor="let categorty of categories" value = "{{categorty.id}}">{{categorty.categoria_empresaTITULOIT}}</option>
+    </select>  
+
+    <select *ngIf="idLanguage === 'es'" (change)="validateData(); getCategory()" [(ngModel)]="authorization.idCategory" name="idCategory" class="input-select" required>
+      <option value = "">{{'NAMECATEGORY' | translate}}</option>
+      <option *ngFor="let categorty of categories" value = "{{categorty.id}}">{{categorty.categoria_empresaTITULOES}}</option>
+    </select>  
+
+    <select *ngIf="idLanguage === 'ro'" (change)="validateData(); getCategory()" [(ngModel)]="authorization.idCategory" name="idCategory" class="input-select" required>
+      <option value = "">{{'NAMECATEGORY' | translate}}</option>
+      <option *ngFor="let categorty of categories" value = "{{categorty.id}}">{{categorty.categoria_empresaTITULORO}}</option>
+    </select>  
+  </ion-card-content>
+  <ion-card-content *ngIf="authorization.typeStore === 1">
+    <p>
+      <ion-label class="dark-label">{{'LINKWEBSITE' | translate}}</ion-label>
+    </p>
+    <ion-input (ionChange)="validateData()" [(ngModel)]="authorization.linkWebSide" name="linkWebSide" class="input-text" [placeholder]="'COPYLINKWEBSITE' | translate"></ion-input>
+  </ion-card-content>
+  <ion-row class="p-t-80">
+    <ion-col class="ion-text-center">
+    </ion-col>
+    <ion-col class="ion-text-center">
+      <ion-button (click)="continue()" [color]="dataValid ? 'primary' : 'medium'" class="btn-button wth-90p" [disabled]="!dataValid">
+        <ion-label color="light" class="txt-capitalize">
+          {{'CONTINUE' | translate}}
+          <i class="mdi mdi-arrow-right m-l-15"></i>
+        </ion-label>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-card>

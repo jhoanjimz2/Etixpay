@@ -1,0 +1,127 @@
+<ion-content>
+  <ion-grid class="header">
+    <ion-row class="row">
+      <ion-col class="col">
+        <ion-icon name="arrow-back-sharp"  (click)="back()" class="iconBack"></ion-icon>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <ion-label class="tituloHeader">{{'PERSONALINFORMATION2' | translate}}</ion-label>
+        <ion-label class="edit" (click)="editar()" *ngIf="!editarFormulario">{{'EDIT' | translate}}</ion-label>
+        <ion-label class="edit" (click)="cancelar()" *ngIf="editarFormulario">{{'CANCEL4' | translate}}</ion-label>
+      </ion-col>
+    </ion-row>
+  </ion-grid> 
+  <div class="linea"></div>
+  <form [formGroup]="formulario" id="formulario" (ngSubmit)="actualizar_informacion()">
+    <ion-grid class="grid1">
+      <ion-row>
+        <ion-col class="ion-text-left">
+          <ion-label class="titulos">{{'FULLNAME' | translate}}</ion-label>
+        </ion-col>
+        <ion-col class="ion-text-end">
+          <ion-input class="input_data" [formControl]="formulario.controls.nombres" name="nombres"></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="ion-text-left">
+          <ion-label class="titulos">{{'SURNAME' | translate}}</ion-label>
+        </ion-col>
+        <ion-col class="ion-text-end">
+          <ion-input class="input_data" [formControl]="formulario.controls.apellidos" name="apellidos"></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="col_titulos">
+          <ion-label class="titulos">{{'EMAIL' | translate}}</ion-label>
+        </ion-col>
+        <ion-col class="ion-text-end">
+          <ion-label class="subtitulos">{{infoPersonal.email}}</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="col_titulos">
+          <ion-label class="titulos">{{'PHONENUMBER2' | translate}}</ion-label>
+        </ion-col>
+        <ion-col class="ion-text-end">
+          <ion-label class="subtitulos">{{infoPersonal.persona.personaTELEFONO}}</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="col_titulos">
+          <ion-label class="titulos">{{'DATEOFBIRTH' | translate}}</ion-label>
+        </ion-col>
+        <ion-col class="ion-text-end">
+          <ion-datetime class="input_data" max="{{fecha_limite}}" [formControl]="formulario.controls.fecha_nacimiento" name="fecha_nacimiento"></ion-datetime>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  
+  
+    <ion-grid class="grid2">
+      <ion-row>
+        <ion-col class="col_titulos">
+          <ion-label class="titulos">{{'COUNTRY2' | translate}}</ion-label>
+        </ion-col>
+        <ion-col>
+          <ionic-selectable 
+            [items]="pais" 
+            class="input_data"
+            itemValueField="id" 
+            itemTextField="paisNOMBRE" 
+            [canSearch]="true"
+            placeholder=""
+            searchFailText="{{ 'NOENCONTRADONR' | translate}}"
+            searchPlaceholder="{{ 'BUSCARNR' | translate}}"
+            [formControl]="formulario.controls.pais"
+            name="pais"
+            (onInfiniteScroll)="obtener_paises($event)"
+            (onChange)="cargar_ciudades_dos($event)"
+            (onSearch)="buscar_pais($event)"
+            [hasInfiniteScroll]="true">                  
+          </ionic-selectable>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="col_titulos">
+          <ion-label class="titulos">{{'CITY' | translate}}</ion-label>
+        </ion-col>
+        <ion-col>
+          <ionic-selectable 
+            [items]="ciudad" 
+            class="input_data"
+            itemValueField="id" 
+            itemTextField="ciudadNOMBRE" 
+            [canSearch]="true"
+            placeholder=""
+            searchFailText="{{ 'NOENCONTRADONR' | translate}}"
+            searchPlaceholder="{{ 'BUSCARNR' | translate}}"
+            [formControl]="formulario.controls.ciudad"
+            name="ciudad"
+            (onInfiniteScroll)="obtener_ciudades($event)"
+            (onSearch)="buscar_ciudad($event)"
+            [hasInfiniteScroll]="true">                  
+          </ionic-selectable>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="col_titulos">
+          <ion-label class="titulos">{{'ADDRESS' | translate}}</ion-label>
+        </ion-col>
+        <ion-col class="ion-text-end">
+          <ion-input class="input_data" [formControl]="formulario.controls.direccion" name="direccion"></ion-input>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+
+
+</ion-content>
+<ion-toolbar *ngIf="editarFormulario">
+  <ion-grid>
+    <ion-row class="row">
+      <ion-col>
+        <button class="boton_save" form="formulario" type="submit" [disabled]="!formulario.valid">{{'SAVE2' | translate}}</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-toolbar>
+

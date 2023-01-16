@@ -1,0 +1,25 @@
+{
+    "categorias": [
+        {
+            "id": 1,
+            "voucher_tipoTITULOIT":"My vouchers",
+            "voucher_tipoTITULOEN":"My vouchers",
+            "voucher_tipoTITULOES":"My vouchers",
+            "voucher_tipoTITULORO":"My vouchers"
+        },
+        {
+            "id": 2,
+            "voucher_tipoTITULOIT":"Flash",
+            "voucher_tipoTITULOEN":"Flash",
+            "voucher_tipoTITULOES":"Flash",
+            "voucher_tipoTITULORO":"Flash"
+        },
+        {   
+            "id": 3,
+            "voucher_tipoTITULOIT":"All vouchers",
+            "voucher_tipoTITULOEN":"All vouchers",
+            "voucher_tipoTITULOES":"All vouchers",
+            "voucher_tipoTITULORO":"All vouchers"
+        }
+    ]
+}

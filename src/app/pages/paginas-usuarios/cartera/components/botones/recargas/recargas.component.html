@@ -1,0 +1,128 @@
+<ion-content>
+
+
+  <div [hidden]="opcion_modal != 1">
+    <ion-grid class="ion-text-center">
+      <ion-row><ion-col><div class="lineaclose" (click)="salir_sin_argumentos()"></div></ion-col></ion-row>
+      <ion-row><ion-col class="padding"><ion-label class="label_uno">{{'SELECTAMOUNT' | translate}}</ion-label></ion-col></ion-row>
+      <ion-row>
+        <ion-col *ngFor="let boton of botones" size="{{boton.size}}">
+          <button class="boton" (click)="cantidad = boton.valor; click(3)" type="button">€ {{boton.valor | formattNumber2}}</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-grid class="toolbar">
+      <ion-row><ion-col><button class="boton2" (click)="click(2); cantidad = 0" type="button">{{'CUSTOMYOURAMOUNT' | translate}}</button></ion-col></ion-row>
+    </ion-grid>
+  </div>
+
+
+  <div [hidden]="opcion_modal != 2">
+    <ion-grid class="ion-text-center">
+      <ion-row><ion-col><div class="lineaclose" (click)="salir_sin_argumentos()"></div></ion-col></ion-row>
+      <ion-row>
+        <ion-col class="padding">
+          <ion-icon name="chevron-back" class="iconback" (click)="click(1)"></ion-icon>
+          <ion-label class="label_uno">{{'CUSTOMYOURAMOUNT' | translate}}</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row><ion-col><ion-label class="label2" (click)="cantidad_popover()">€ {{cantidad | formattNumber2}}</ion-label></ion-col></ion-row>
+    </ion-grid>
+    <ion-grid class="toolbar">
+      <ion-row><ion-col><button class="boton2" (click)="click(3)" [disabled]="cantidad == 0" type="button">{{'NEXT' | translate}}</button></ion-col></ion-row>
+    </ion-grid>
+  </div>
+
+  
+  <div *ngIf="opcion_modal == 3">
+    <ion-grid>
+      <ion-row><ion-col><div class="lineaclose" (click)="salir_sin_argumentos()"></div></ion-col></ion-row>
+      <ion-row>
+        <ion-col class="padding ion-text-center">
+          <ion-icon name="chevron-back" class="iconback" (click)="click(1); cantidad = 0"></ion-icon>
+          <ion-label class="label_uno">{{'CONFIRMTOPUP' | translate}}</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-label class="label_dos">{{'CHOOSEFUND' | translate}}</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <app-tarjetas 
+            (seleccionar)="seleccion($event)"
+            [cuenta_seleccionada]="cuenta_seleccionada">
+          </app-tarjetas>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-label class="label_dos">{{'USEANOTHERMETHOD' | translate}}</ion-label>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <app-formulario-tarjeta 
+      (elimina)="eliminar_seleccion()"
+      (recarga)="recargar($event)"
+      [cantidad]="cantidad"
+      [reset_form]="reset_form">
+    </app-formulario-tarjeta>
+  </div>
+
+  
+  <div [hidden]="opcion_modal != 4" class="div_confirmacion">
+    <ion-grid class="ion-text-center">
+      <ion-row>
+        <ion-col class="padding">
+          <ion-label class="label_tres">{{'PAYMENTCONFIRMATION' | translate}}</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="col_img_uno">
+          <ion-icon src="assets/tabs/wallet/componentes/botones/confirmation.svg" class="img_pay"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="col_boton_uno">
+          <button class="boton_succesfully">{{'SUCCESSFULLYTRANSACTION' | translate}}</button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-card class="car_info_transferencia">
+            <ion-grid>
+              <ion-row>
+                <ion-col class="lineado_col ion-text-left">
+                  <ion-label class="label_cuatro">{{'TRADINGCODE' | translate}}</ion-label><br> 
+                  <ion-label class="label_cuatro">{{'TRANSACTIONTIME' | translate}}</ion-label>                 
+                </ion-col>
+                <ion-col class="lineado_col ion-text-end">
+                  <ion-label class="label_cinco">{{codigo_transaccion}}</ion-label><br>
+                  <ion-label class="label_cinco">{{fecha_transaccion | dateTimeFormatFilter: 'MMMM DD, YYYY'}} - {{fecha_transaccion | dateTimeFormatFilter: 'HH:mm'}}</ion-label>                  
+                </ion-col>
+              </ion-row>
+              <!-- <ion-row>
+                <ion-col class="lineado_col">
+                  <ion-label class="label_transaction">View Transaction Details</ion-label>
+                </ion-col>
+              </ion-row> -->
+            </ion-grid>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+
+</ion-content>
+<ion-toolbar class="tolbar" [hidden]="opcion_modal != 4">
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <button class="boton_back_to_wallet" type="button" (click)="salir_sin_argumentos()">{{'GOBACKTOWALLET' | translate}}</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-toolbar>

@@ -1,0 +1,23 @@
+<ion-card>
+  <ion-row class="row_info">
+    <ion-col class="col_img ion-no-padding">
+      <img src="{{voucher.voucherIMAGENDESTACADA}}" class="img_vouchers">
+    </ion-col>
+    <ion-col class="col_info">
+      <div class="div_uno">
+        <div class="label_uno">{{voucher.voucherTITULO}}</div>
+        <div class="label_dos">{{'TILL2' | translate}} {{ voucher.voucherFECHACADUCIDAD | dateTimeFormatFilter: 'DD.MM.YY'}}</div>
+      </div>
+      <div class="div_dos">
+        <div class="label_tres">{{categoria}}</div>
+      </div>
+      <div class="div_tres">
+        <div class="div_cuatro">
+          <div class="label_cuatro">{{voucher.voucherPRECIO | formattNumber }} €</div><br>
+          <div class="label_quinto">{{'PR' | translate}} {{voucher_punto_recompensa| number: '1.0'}}</div>
+        </div>
+      </div>
+      <div class="div_cinco" (click)="comprar_voucher()">{{'BUYNOW' | translate}}</div>
+    </ion-col>
+  </ion-row>
+</ion-card>

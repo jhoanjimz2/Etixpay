@@ -1,0 +1,55 @@
+
+    <form (ngSubmit)="recargar()" [formGroup]="form_card" id="form_card" autocomplete="off">
+      <ion-grid class="formulario">
+        <ion-row>
+          <ion-col class="col_input">
+            <ion-label class="label_subti">{{'CARDNUMBER' | translate}}</ion-label><br>
+            <input placeholder="{{'CARDNUMBER' | translate}}" [formControl]="form_card.controls.number" name="number" (keyup)="numero_tarjeta(); eliminar_seleccion()">
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="col_input">
+            <ion-label class="label_subti">{{'CARDOWNER'| translate}}</ion-label><br>
+            <input placeholder="XXX XXX" [formControl]="form_card.controls.name" name="name" (keyup)="eliminar_seleccion()">
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="col_input">
+            <ion-label class="label_subti">{{'EXPIRINGDATE' | translate}}</ion-label><br>
+            <input placeholder="mm / yy" [formControl]="form_card.controls.fecha_exp" name="fecha_exp" (keyup)="fecha_caducidad(); eliminar_seleccion()" maxlength="5">
+          </ion-col>
+          <ion-col class="col_input">
+            <ion-label class="label_subti">{{'CVVCODE' | translate}}</ion-label><br>
+            <input placeholder="{{'CVVCODE' | translate}}" [formControl]="form_card.controls.cvc" name="cvc" (keyup)="numero_cvc(); eliminar_seleccion()" maxlength="3">
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-item lines="none">
+              <ion-checkbox class="check_card" [formControl]="form_card.controls.check" name="check"></ion-checkbox>
+              {{'SAVECARDONYOUR' | translate}}
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-grid class="formulario_dos">
+        <ion-row>
+          <ion-col class="col_pay">
+            <ion-label class="label_uno_pay">{{'TOTAL2' | translate}}</ion-label><br><br>
+            <ion-label class="label_uno_cantidad">€ {{cantidad | formattNumber2}}</ion-label>          
+          </ion-col>
+          <ion-col class="ion-text-end">
+            <button class="boton_recharge" type="submit">
+              <img src="assets/tabs/wallet/componentes/botones/savepayment.png" class="img_icon">&nbsp;&nbsp;
+              <ion-label>{{'RECHARGE' | translate}}</ion-label>
+            </button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="col_pci">
+            <img src="assets/tabs/wallet/componentes/botones/pci.png" class="img_icon">&nbsp;&nbsp;
+            <ion-label class="label_uno_pay">{{'SECURITYSTANDARDS' | translate}}</ion-label>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </form>

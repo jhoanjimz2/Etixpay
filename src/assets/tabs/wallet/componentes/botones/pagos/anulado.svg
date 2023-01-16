@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="106px" height="85px" viewBox="0 0 106 85" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>failed</title>
+    <g id="wallet" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="receive-failed" transform="translate(-128.000000, -188.000000)">
+            <g id="failed" transform="translate(128.000000, 188.000000)">
+                <path d="M57.2427934,6.80447994 L101.232802,77.3544935 C102.693875,79.6977236 101.978745,82.7817205 99.6355149,84.2427934 C98.8418579,84.7376619 97.9253086,85 96.9900085,85 L9.00999151,85 C6.24856777,85 4.00999151,82.7614237 4.00999151,80 C4.00999151,79.0646999 4.27232963,78.1481506 4.76719814,77.3544935 L48.7572066,6.80447994 C50.2182795,4.46124986 53.3022764,3.74612015 55.6455065,5.20719302 C56.2928097,5.61080565 56.8391807,6.15717666 57.2427934,6.80447994 Z" id="Triangle" fill="#FF0000"></path>
+                <text id="!" font-family="ArialRoundedMTBold, Arial Rounded MT Bold" font-size="56" font-weight="normal" letter-spacing="0.527058812" fill="#FFFFFF">
+                    <tspan x="43.9122518" y="71">!</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

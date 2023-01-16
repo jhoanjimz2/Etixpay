@@ -1,0 +1,19 @@
+<div class="contenedor">
+  <div class="ion-text-center p-b-27">
+    <ion-label class="l-1">
+      {{'USETHIS' | translate}}
+    </ion-label>
+  </div>
+  <div class="ion-text-center p-b-27">
+    <ion-label class="l-2">
+      {{'FRAMETHE' | translate}}
+    </ion-label>
+  </div>
+  <div class="ion-text-center p-b-27">
+    <button class="b-c" (click)="botonClick()">{{'CONTINUEP' | translate}}</button>
+  </div>
+  <div class="centrar">
+    <ion-checkbox class="check" mode="md" [(ngModel)]="advertencia"></ion-checkbox>&nbsp;&nbsp;
+    <ion-label class="l-2">{{'DONOTSHOW' | translate}}</ion-label>
+  </div>
+</div>

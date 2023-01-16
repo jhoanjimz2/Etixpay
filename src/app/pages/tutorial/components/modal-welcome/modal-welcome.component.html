@@ -1,0 +1,36 @@
+<div class="main-div"></div>
+
+<ion-card class="card-info">
+  <ion-card-header class="ion-text-center">
+    <ion-text class="text-title">
+      Benvenuti nel tutotial di EtixPay !
+    </ion-text>
+  </ion-card-header>
+  <ion-card-content style="padding-left: 50px; padding-right: 50px; margin-top: 20px;">
+      <p class="ion-text-center">
+        <ion-label class="text-info">
+          Scopri l'app e come guadagnare con il tuo passaparola
+        </ion-label>
+      </p>
+  </ion-card-content>
+  <ion-card-content class="m-b-40">
+    <ion-row >
+      <ion-col class="ion-text-center">
+        <ion-button (click)="continue()" class="btn-begin">
+          <ion-label>
+            Avvia Tutorial
+          </ion-label>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row >
+      <ion-col class="ion-text-center">
+        <ion-button (click)="leave()" class="btn-leave" fill="outline">
+          <ion-label>
+           Salta
+          </ion-label>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-card-content>
+</ion-card>

@@ -1,0 +1,65 @@
+.col_header {
+  position: relative;
+  text-align: center;
+}
+.icon_close {
+  font-size: 16px;
+  color: #000;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+.icon_camara {
+  font-size: 80px;
+  color: #a1e0f3;
+}
+.label_uno {
+  font-size: 15px;
+  font-weight: bold;
+  color: #000;
+}
+.label_dos {
+  font-size: 12px;
+  font-weight: 400;
+  color: #d8dcdf;
+}
+.label_tres {
+  font-size: 12px;
+  font-weight: 400;
+  color: #a1e0f3;
+}
+.col_text_uno {
+  text-align: center;
+  padding-bottom: 10px;
+}
+.col_text_dos {
+  text-align: justify;
+}
+.label_cuatro {
+  font-size: 12px;
+  font-weight: 400;
+  color: grey;
+  opacity: 0.8;
+  font-style: italic;
+}
+.item_check {
+  text-align: center !important;
+  padding: 0px 50px;
+}
+.col_button {
+  padding: 0px 30px 30px 30px;
+}
+.boton_camara {
+  border: 1px solid #664bc4;
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  background-color: #664bc4;
+  color: #ffffff;
+}
+.grid {
+  padding: 20px;
+}
+ion-checkbox {
+  --border-radius: 2px;
+}

@@ -1,0 +1,262 @@
+ion-grid {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.boton_img {
+  position: relative;
+  display: inline-block;
+  border: 1px solid #f0f1f5;
+  background-color: #f0f1f5;
+  color: #fff;
+  font-size: 250%;
+  width: 90px;
+  height: 90px;
+  border-radius: 45px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.boton_img::before {
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.boton_img input[type="file"] {
+  opacity: 0;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 999;
+}
+.iconedit {
+  position: absolute;
+  top: 2px;
+  right: 0px;
+  font-size: 25px;
+  z-index: 9;
+}
+.img_cargada {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  object-fit: cover;
+  width: 99%;
+  height: 99%;
+  border-radius: 50%;
+}
+.label_uno {
+  font-size: 16px;
+  font-weight: bold;
+  color: #000;
+  text-shadow: 0px 0px 1px #000;
+}
+.input {
+  border: 1px solid #d8dcdf;
+  border-radius: 10px;
+  width: 100%;
+  position: relative;
+  --padding-start: 10px;
+  --padding-top: 33px;
+  --padding-bottom: 12px;
+  --placeholder-color: #d8dcdf;
+  --color: #000;
+  --placeholder-opacity: 1;
+}
+.input_dos {
+  border: 1px solid #d8dcdf;
+  background-color: #fff;
+  border-radius: 10px;
+  width: 100%;
+  position: relative;
+  padding-left: 10px;
+  padding-top: 33px;
+  padding-bottom: 12px;
+  color: #000;
+}
+::placeholder {
+  color: #d8dcdf;
+  opacity: 1;
+}
+.label_dos {
+  font-size: 90%;
+  color: #e5e6e8;
+  position: absolute !important;
+  top: 10px;
+  left: 10px;
+  z-index: 1;
+}
+.label_tres {
+  font-size: 90%;
+  color: #e5e6e8;
+  position: absolute !important;
+  top: 15px;
+  left: 15px;
+  z-index: 1;
+}
+.icon_uno {
+  position: absolute !important;
+  top: 14px;
+  right: 15px;
+  font-size: 20px;
+  color: grey;
+}
+.icon_dos {
+  position: absolute !important;
+  bottom: 18px;
+  right: 15px;
+  font-size: 20px;
+  color: grey;
+}
+.div1 {
+  position: relative;
+  display: inline-block;
+  border: 1px solid #d8dcdf;
+  border-radius: 15px;
+  width: 100%;
+  height: 150px;
+}
+.div1::before {
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.div1 input[type="file"] {
+  opacity: 0;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 999;
+}
+.div2 {
+  width: auto;
+  height: auto;
+  line-height: 2.5;
+  position: absolute;
+  top: calc(50% - 60px);
+  left: calc(50% - 51.135px);
+  z-index: 1;
+  opacity: 0.5;
+}
+.div2 ion-label {
+  font-size: 90%;
+  font-weight: bold;
+  color: #d8dcdf;
+}
+.div2 button {
+  width: 80px;
+  height: 80px;
+  border-radius: 40px;
+  font-size: 200%;
+  font-weight: bold;
+  color: #fff;
+  background-color: #d8dcdf;
+  border: 1px solid #d8dcdf;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+.img_cargada_main {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+}
+.linea {
+  background-color: rgb(247, 249, 251);
+  height: 2px;
+  width: 100%;
+}
+.label_cuatro {
+  font-size: 14px;
+  font-weight: bold;
+  color: #e5e6e8;
+}
+.label_cinco {
+  font-size: 14px;
+  font-weight: bold;
+  color: #000;
+}
+.label_seis {
+  font-size: 14px;
+  font-weight: bold;
+  color: #000;
+  text-shadow: 0px 0px 1px #000;
+}
+.centrar_uno {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.centrar_dos {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.label_siete {
+  font-size: 14px;
+  font-weight: bold;
+  color: rgb(102, 75, 196);
+}
+.button_reset {
+  background-color: #2ac0eb;
+  color: #fff;
+  width: 100%;
+  height: 45px;
+  border-radius: 10px;
+  font-size: 100%;
+  font-weight: bold;
+}
+.button_create {
+  background-color: rgb(102, 75, 196);
+  color: #fff;
+  width: 100%;
+  height: 45px;
+  border-radius: 10px;
+  font-size: 100%;
+  font-weight: bold;
+}
+.button_create_f {
+  background-color: #fff;
+  color: rgb(102, 75, 196);
+  border: 1px solid rgb(102, 75, 196);
+  width: 100%;
+  height: 45px;
+  border-radius: 10px;
+  font-size: 100%;
+  font-weight: bold;
+}
+.col_relative {
+  position: relative;
+}
+.div_check {
+  width: auto;
+  height: auto;
+  padding: 2px;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid #d8dcdf;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+ion-checkbox {
+  --border-color: #d8dcdf;
+  --border-width: 1px;
+  --background-checked: rgb(102, 75, 196);
+  --border-color-checked: rgb(102, 75, 196);;
+  --checkmark-color: #fff;
+  --checkmark-width: 2px;
+  --border-radius: 5px;
+  width: 20px;
+  height: 20px;
+}

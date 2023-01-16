@@ -1,0 +1,51 @@
+<ion-content>
+  <ion-grid >
+    <ion-row>
+      <ion-col class="ion-text-center">
+        <div class="separate"></div>
+        <img src="/assets/inicio/slide-nuevo/logoIdioma.png" class="centrar" class="imgTituloSlideIdioma">
+        <div class="separate-min"></div>
+      </ion-col>
+    </ion-row><ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-radio-group value="en" mode="md"
+            (ionChange)="selecionarIdioma($event)">
+            <ion-list-header>
+              <ion-label class="title-idioma"><b>{{'IDIOMAS' | translate | uppercase}}</b></ion-label>
+            </ion-list-header>
+            <ion-item>
+              <ion-label>{{'ITALIANS' | translate}}</ion-label>
+              <ion-radio slot="start" value="it"></ion-radio>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>{{'ENGLISHS' | translate}}</ion-label>
+              <ion-radio slot="start" value="en"></ion-radio>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>{{'SPANISHS' | translate}}</ion-label>
+              <ion-radio slot="start" value="es"></ion-radio>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>{{'ROMANIANS' | translate}}</ion-label>
+              <ion-radio slot="start" value="ro"></ion-radio>
+            </ion-item>
+          </ion-radio-group>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<ion-toolbar>
+  <ion-row>
+    <ion-col class="paddingParaBoton">
+      <button class="botonLets" (click)="modalClose()">
+        {{'LETSTART' | translate}}
+      </button>
+    </ion-col>                 
+  </ion-row>
+</ion-toolbar>
+

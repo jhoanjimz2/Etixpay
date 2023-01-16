@@ -1,0 +1,36 @@
+<ion-row class="row-padding">
+  <ion-col class="ion-text-left">
+    <ion-label class="label-uno">{{'PAYMENTMETHOD' | translate}}</ion-label>
+  </ion-col>
+  <ion-col class="ion-text-end">
+    <ion-label class="label-dos" [hidden]="!mostrar">{{saldo_tix | formattNumber}} TIX</ion-label>
+    <ion-label class="label-dos" [hidden]="mostrar">{{'TIXAVAILABLE' | translate}}</ion-label>&nbsp;&nbsp;
+    <ion-label class="label-tres" (click)="mostrar = !mostrar" [hidden]="mostrar">{{'SHOW' | translate}}</ion-label>
+    <ion-label class="label-tres" (click)="mostrar = !mostrar" [hidden]="!mostrar">{{'HIDE' | translate}}</ion-label>
+  </ion-col>
+</ion-row>
+
+
+<ion-row>
+  <ion-col>
+    <div class="div-cueta" [ngClass]="{ 'color-tolbar': cuenta.seleccionado}" *ngFor="let cuenta of total_cuentas;">
+      <div class="w-3 centrar p-r">
+        <button [ngClass]="{ 'b-c-s': cuenta.seleccionado,  'b-c':  !cuenta.seleccionado}" type="button" class="p-r">
+          <ion-icon name="checkmark-circle" class="c-i" *ngIf="cuenta.seleccionado"></ion-icon>
+          <img src="{{cuenta.img}}" height="40px" width="">
+        </button>
+      </div>
+      <div class="w-7 left p-r">
+        <div>
+          <ion-label class="textoTitulo">{{cuenta.nombre}}</ion-label><br>
+          <ion-label class="textoSubtitulo">{{cuenta.texto}}</ion-label><br>
+          <ion-label class="textoReSubtitulo"  *ngIf="cuenta.seleccionado">{{'PREFERREDMETHOD' | translate}}</ion-label>
+          <ion-label class="textoReSubtitulo"  *ngIf="!cuenta.seleccionado" (click)="select_cuenta(cuenta)">{{'SETASPREFERREDMETHOD' | translate}}</ion-label>
+        </div>
+      </div>
+      <div class="w-2 centrar p-r">
+        <ion-icon name="chevron-forward-outline" class="i-a"></ion-icon>
+      </div>
+    </div>
+  </ion-col>
+</ion-row>

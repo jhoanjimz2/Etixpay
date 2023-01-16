@@ -1,0 +1,183 @@
+ion-content {
+  --background: rgb(244, 244, 244);
+}
+.ioncontent {
+  --padding-bottom: 100px;
+}
+.lineaclose {
+  width: 50px;
+  height: 5px;
+  border-radius: 15px;
+  background-color: rgb(227, 227, 227);
+  border: 1px solid rgb(227, 227, 227);
+  margin: auto;
+}
+.padding {
+  padding: 15px;
+  position: relative;
+}
+.label_uno {
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+  text-shadow: 0px 0px 1px #d8dcdf;
+}
+.boton {
+  width: 100%;
+  height: 50px;
+  border-radius: 10px;
+  background-color: #fff;
+  border: 1px solid #fff;
+  color: #664ac5;
+  font-size: 100%;
+  font-weight: bold;
+}
+.boton2 {
+  width: 100%;
+  height: 45px;
+  border-radius: 10px;
+  background-color: #664ac5;
+  border: 1px solid #664ac5;
+  color: #fff;
+  font-size: 100%;
+  font-weight: 400;
+}
+.toolbar {
+  height: 77px;
+  background-color: #fff;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
+}
+.iconback {
+  position: absolute;
+  top: calc(50% - 10px);
+  left: 10px;
+  font-size: 20px;
+}
+.label2 {
+  font-size: 240%;
+  color: #000;
+  text-shadow: 0px 0px 1px #d8dcdf;
+}
+.toolbar_dos {
+  height: 77px;
+  background-color: #fff;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
+  padding-top: 10px;
+}
+.label_tres {
+  font-size: 16px;
+  color: #000;
+  font-weight: 400;
+}
+.div_confirmacion {
+  width: 100%;
+  height: 100%;
+}
+.img_pay {
+  font-size: 200px;
+}
+.col_img_uno {
+  padding-top: 10px;
+  padding-bottom: 35px;
+}
+.col_boton_uno {
+  text-align: center;
+}
+.boton_succesfully {
+  width: 90%;
+  height: 40px;
+  border-radius: 8px;
+  color: #000;
+  background-color: rgb(168, 240, 187);
+  font-weight: 400;
+  font-size: 13px;
+}
+.car_info_transferencia {
+  border-radius: 10px;
+  box-shadow: none;
+  margin: 5px;
+  padding: 5px;
+}
+.label_cuatro {
+  color: #d2d4d6;
+  font-weight: 400;
+  font-size: 13px;
+}
+.label_cinco {
+  color: #000;
+  font-weight: 400;
+  font-size: 13px;
+  text-shadow: 0px 0px 1px #d8dcdf;
+}
+.lineado_col {
+  line-height: 3;
+}
+.grid_qr {
+  margin-top: 24px;
+}
+.boton_qr {
+  height: 40px !important;
+  width: 40px;
+  border: 1px solid #3ec0e8;
+  background-color: #3ec0e8;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.icon_qr {
+  font-size: 30px;
+  color: #fff;
+}
+.input_wallet {
+  font-weight: bold;
+  height: 40px !important;
+  border: 1px solid #fff;
+  width: 100%;
+  --placeholder-opacity: 1;
+  --placeholder-color: #d8dcdf;
+  --placeholder-font-weight: 100;
+  --background: #fff;
+  --padding-start: 5px;
+  border-radius: 10px;
+}
+.formulario_dos {
+  background-color: #fff;
+  margin-top: 10px;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 30px;
+}
+.col_pay {
+  line-height: 0.8;
+}
+.label_uno_pay {
+  font-size: 14px;
+  font-weight: 300;
+  color: rgb(159, 159, 159);
+  text-shadow: 0px 0px 1px rgb(159, 159, 159);
+}
+.label_uno_cantidad {
+  font-size: 18px;
+  font-weight: bold;
+  color: #000;
+  text-shadow: 0px 0px 1px #d8dcdf;
+}
+.boton_recharge {
+  width: 90%;
+  height: 45px;
+  border-radius: 9px;
+  background-color: #3ecd35;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 400;
+  border: 1px solid #3ecd35;
+}

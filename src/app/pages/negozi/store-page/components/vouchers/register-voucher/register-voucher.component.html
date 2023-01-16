@@ -1,0 +1,154 @@
+<app-header-padre [page]="true"></app-header-padre>
+<ion-content>
+
+  <form  [formGroup]="formulario" (ngSubmit)="crearVoucher()">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <div class="boton_img">
+            <ion-icon name="camera-outline"></ion-icon>  
+            <ion-icon src="assets/tabs/menu/componentes/perfil_cuenta_profesional/edit.svg" class="iconedit" ></ion-icon> 
+            <input type="file" (change)="addImgDestacada($event)"   accept="image/png, image/jpeg"> 
+            <img [src]="imgDestacadaHtml" class="img_cargada"  [hidden]="!imgDestacadaHtml">       
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-label class="label_uno">{{'ABOUT5' | translate}}</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-input class="input" placeholder="{{'VOUCHERNAME1' | translate}}" 
+          [formControl]="formulario.controls.name" name="name">
+            <ion-label class="label_dos">{{'TITLE2' | translate}}</ion-label>
+          </ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-select class="input" placeholder="{{'CHOOSETYPE1' | translate}}" [formControl]="formulario.controls.tipo" name="tipo">
+            <ion-select-option *ngFor="let type of cateVouchers" value="{{type.id}}">{{type.voucher_tipoTITULOEN}}</ion-select-option>
+          </ion-select>
+          <ion-label class="label_tres">{{'VOUCHERTYPE1' | translate}}</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <input class="input_dos" placeholder="0"
+          mask="separator.2"
+          thousandSeparator="." 
+          [formControl]="formulario.controls.precio" name="precio">
+          <ion-label class="label_tres">{{'VOUCHERPRICE2' | translate}}</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-datetime  class="input" placeholder="00 / 00 / 0000  00:00"  mode="md" display-format="DD/MM/YYYY HH:mm"
+          [formControl]="formulario.controls.fechaInicial" name="fechaInicial"></ion-datetime>
+          <ion-label class="label_tres">{{'START6' | translate}}</ion-label>
+          <ion-icon name="calendar-outline" class="icon_uno"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-datetime  class="input" placeholder="00 / 00 / 0000  00:00"  mode="md" display-format="DD/MM/YYYY HH:mm"
+          [formControl]="formulario.controls.fechaFinal" name="fechaFinal"></ion-datetime>
+          <ion-label class="label_tres">{{'END4' | translate}}</ion-label>
+          <ion-icon name="calendar-outline" class="icon_uno"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-textarea rows="4" cols="20" class="input" placeholder="{{'INSERTDESCRIPTION4' | translate}}"
+          [formControl]="formulario.controls.descripcion" name="descripcion">
+            <ion-label class="label_dos">{{'DESCRIPTION6' | translate}}</ion-label>
+          </ion-textarea>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <div class="div1" >
+            <div class="div2">
+              <ion-label>{{'ADDMAINPHOTO3' | translate}}</ion-label><br>
+              <button><ion-icon name="camera-outline"></ion-icon></button>            
+            </div>
+            <input type="file" (change)="addImgSecundaria($event)"   accept="image/png, image/jpeg">
+            <img [src]="imgSecundariaHtml" class="img_cargada_main"  [hidden]="!imgSecundariaHtml">
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-input class="input" placeholder="0"
+          [formControl]="formulario.controls.limiteDeCompra" name="limiteDeCompra">
+            <ion-label class="label_dos">{{'PURCHASELIMIT1' | translate}}</ion-label>
+          </ion-input>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <div class="linea"></div>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-label class="label_uno">{{'ETIXCOMMUNITY2' | translate}}</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-label class="label_cuatro">
+            {{'YOUWILLRECEIVE3' | translate}}
+          </ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-label class="label_cinco">{{'COMMISSIONPERCENTAJE' | translate}}</ion-label>
+        </ion-col>
+        <ion-col class="centrar_uno">
+          <ion-label class="label_seis">10%</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="2" class="centrar_dos">
+          <div class="div_check">
+            <ion-checkbox mode="md"
+            [formControl]="formulario.controls.checkUno" name="checkUno"></ion-checkbox>  
+          </div>
+        </ion-col>
+        <ion-col class="centrar_dos">
+          <ion-label class="label_siete" (click)="terminosCondiciones()">{{'TERMSCONDITIONS3' | translate}}</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="2" class="centrar_dos">
+          <div class="div_check">
+            <ion-checkbox mode="md"
+            [formControl]="formulario.controls.checkDos" name="checkDos"></ion-checkbox>  
+          </div>
+        </ion-col>
+        <ion-col class="centrar_dos">
+          <ion-label class="label_siete" (click)="politicasSeguridad()">{{'PRIVACYPOLICY2' | translate}}</ion-label>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <div class="linea"></div>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="4">
+          <button class="button_reset" type="button">{{'RESET7' | translate}}</button>
+        </ion-col>
+        <ion-col>
+          <button class="button_create" type="submit"
+          [ngClass]="{
+            'button_create': formulario.valid && imgDestacadaHtml && imgSecundariaHtml , 
+            'button_create_f': !formulario.valid || !imgDestacadaHtml || !imgSecundariaHtml
+          }"          
+          [disabled]="!formulario.valid || !imgDestacadaHtml || !imgSecundariaHtml">{{'CREATEVOUCHER2' | translate}}</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+
+</ion-content>

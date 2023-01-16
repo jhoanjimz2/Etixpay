@@ -1,0 +1,54 @@
+<div class="div_contenedor ion-no-color-barra">
+  <div *ngIf="tipo_user != 3">
+    <app-boton-segment
+      nombre="{{ 'RECEIVE4' | translate }}"
+      imagen="assets/tabs/wallet/componentes/botones/boton_segment_wallet/receive.png"
+      (abrir_modal)="recibir()"
+    >
+    </app-boton-segment>
+  </div>
+  <div>
+    <app-boton-segment
+      nombre="{{ 'RECHARGECC' | translate }}"
+      imagen="assets/tabs/wallet/componentes/botones/boton_segment_wallet/recharge.png"
+      (abrir_modal)="tipo_recarga()"
+    >
+    </app-boton-segment>
+  </div>
+  <div>
+    <app-boton-segment
+      nombre="{{ 'SEND8' | translate }}"
+      imagen="assets/tabs/wallet/componentes/botones/boton_segment_wallet/send.png"
+      (abrir_modal)="enviar()"
+    >
+    </app-boton-segment>
+  </div>
+  <!-- <div>
+    <app-boton-segment 
+      nombre="{{'REQUEST5' | translate}}" 
+      imagen="assets/tabs/wallet/componentes/botones/boton_segment_wallet/request.png" (abrir_modal)="desactivado()">
+    </app-boton-segment>
+  </div> -->
+  <!-- <div>
+    <app-boton-segment 
+      nombre="{{'ETIXWIN2' | translate}}" 
+      imagen="assets/tabs/wallet/componentes/botones/boton_segment_wallet/etixwin.png" (abrir_modal)="desactivado()">
+    </app-boton-segment>
+  </div> -->
+  <div>
+    <app-boton-segment
+      nombre="{{ 'WITHDRAWALCC' | translate }}"
+      imagen="assets/tabs/wallet/componentes/botones/boton_segment_wallet/withdrawal.png"
+      (abrir_modal)="retiros()"
+    >
+    </app-boton-segment>
+  </div>
+  <div>
+    <app-boton-segment
+      nombre="{{ 'MOVEMENTSCC' | translate }}"
+      imagen="assets/tabs/wallet/componentes/botones/boton_segment_wallet/movements.png"
+      (abrir_modal)="movimientos()"
+    >
+    </app-boton-segment>
+  </div>
+</div>

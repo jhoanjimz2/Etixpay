@@ -1,0 +1,110 @@
+<form ngNativeValidate #formProfeFiscal="ngForm">
+  <ion-card-content>
+
+
+    <div>
+      <ion-label class="subti">Nome sulle mappe</ion-label>
+      <div class="espacio1"></div>
+      <ion-input  
+        type="text" [(ngModel)]="dataMapa.profesionalNAMEMAP" required
+        name="nameMapa" class="input-text"
+        [placeholder]="'Inserisci il nome che vedranno i tuoi clienti sulle mappe Etix'">
+      </ion-input>
+    </div>
+
+
+    <div>
+      <div class="espacio1"></div>
+      <ion-label class="subti">Descrizione attività</ion-label>
+      <div class="espacio2"></div>
+      <ion-textarea  
+        type="text" [(ngModel)]="dataMapa.profesionalDESRIPTION" required
+        name="descripcion" class="input-textarea"
+        [placeholder]="'Descrivi la tua attività in 100 parole...'">
+      </ion-textarea>
+    </div>
+  </ion-card-content>
+</form>
+
+<ion-card-content>
+  <div>
+    <div class="espacio3"></div>
+    <ion-label class="subti">Carica foto, le prime 3 sono obbligatorie</ion-label>
+    <div class="espacio4"></div>
+  </div>
+  <ion-row>
+      <ion-col size="3" class="p-l-0">
+        <img (click)="photo(1)" *ngIf="galeriaHTML.imgPrincipal" class="img-btn-plus" [src]="galeriaHTML.imgPrincipal">
+        <ion-button (click)="photo(1)" *ngIf="!galeriaHTML.imgPrincipal" class="btn-plus" fill="outline">
+          <i class="mdi mdi-plus f-z-40"></i>
+        </ion-button>
+      </ion-col>
+      <ion-col size="9" class="row-item-photo">
+          <p>
+            <ion-text class="txt-capitalize dark-label">Questa è la tua foto di preview sulla Home Etix</ion-text>
+          </p>
+      </ion-col>
+  </ion-row>
+  <ion-row>
+      <ion-col size="3" class="p-l-0">
+        <img (click)="photo(2)" *ngIf="galeriaHTML.imgSecundaria" class="img-btn-plus" [src]="galeriaHTML.imgSecundaria">
+        <ion-button (click)="photo(2)" *ngIf="!galeriaHTML.imgSecundaria" class="btn-plus" fill="outline">
+          <i class="mdi mdi-plus f-z-40"></i>
+        </ion-button>
+      </ion-col>
+      <ion-col size="9" class="row-item-photo">
+          <p>
+            <ion-text class="txt-capitalize dark-label">Questa è la foto di copertina che appare esplorando il tuo profilo esperto</ion-text>
+          </p>
+      </ion-col>
+  </ion-row>
+  <ion-row>
+      <ion-col size="3" class="p-l-0">
+        <img (click)="photo(3)" *ngIf="galeriaHTML.imgTerciaria" class="img-btn-plus" [src]="galeriaHTML.imgTerciaria">
+        <ion-button (click)="photo(3)" *ngIf="!galeriaHTML.imgTerciaria" class="btn-plus" fill="outline">
+          <i class="mdi mdi-plus f-z-40"></i>
+        </ion-button>
+      </ion-col>
+      <ion-col size="9" class="row-item-photo">
+          <p>
+            <ion-text class="txt-capitalize dark-label">Questa è la foto piccola che appare accanto al nome del tuo profilo</ion-text>
+          </p>
+      </ion-col>
+  </ion-row>
+</ion-card-content>
+
+<hr>
+
+<ion-card-content>       
+  <ion-row>
+    <ion-col class="ion-text-center" *ngFor="let image of galeriaHTML.galeria; let i = index">
+      <img (click)="photo(4 + i)" *ngIf="image" class="img-btn-small " [src]="image">
+      <ion-button (click)="photo(4 + i)" *ngIf="!image" class="btn-plus-small" fill="outline">
+        <i class="mdi mdi-plus f-z-40"></i>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+  <ion-text class="txt-capitalize dark-label">Queste sono le foto che si vedono in scroll laterale esplorando il tuo profilo - <b>max 5</b></ion-text>
+  <ion-row class="p-t-20">
+    <ion-col class="ion-text-center">
+    </ion-col>
+    <ion-col class="ion-text-center" *ngIf="!final.final">
+      <ion-button (click)="continue()" [ngClass]="!( !galeriaHTML.imgPrincipal || !galeriaHTML.imgSecundaria || !galeriaHTML.imgTerciaria || !formProfeFiscal.form.valid ) ? 'primary' : 'medium'" class="btn-button wth-90p" 
+                [disabled]="(!galeriaHTML.imgPrincipal || !galeriaHTML.imgSecundaria || !galeriaHTML.imgTerciaria || !formProfeFiscal.form.valid)">
+        <ion-label color="light" class="txt-capitalize">
+          Crea profilo
+          <i class="mdi mdi-arrow-right m-l-15"></i>
+        </ion-label>
+      </ion-button>
+    </ion-col>
+    <ion-col class="ion-text-center" *ngIf="final.final">
+      <ion-button (click)="volverAlFinal()" [ngClass]="!( !galeriaHTML.imgPrincipal || !galeriaHTML.imgSecundaria || !galeriaHTML.imgTerciaria || !formProfeFiscal.form.valid ) ? 'primary' : 'medium'" class="btn-button wth-90p" 
+                [disabled]="(!galeriaHTML.imgPrincipal || !galeriaHTML.imgSecundaria || !galeriaHTML.imgTerciaria || !formProfeFiscal.form.valid)">
+        <ion-label color="light" class="txt-capitalize">
+          Crea profilo
+          <i class="mdi mdi-arrow-right m-l-15"></i>
+        </ion-label>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-card-content>

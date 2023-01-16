@@ -1,0 +1,38 @@
+.row-history {
+    border: 1px solid #e2e3f1;
+    border-radius: 25px;
+    margin-top: 15px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.centrar-history {
+    text-align: center !important;
+    position: relative;
+}
+.label-history-uno {
+    color: rgb(0,0,0);
+    font-size: 17px;
+    font-weight: 400;
+}
+.label-history-dos {
+    color: rgb(0,220,209);
+    font-size: 30px;
+    font-weight: bold;
+}
+.label-history-tres {
+    color: rgb(226,227,241);
+    font-size: 17px;
+    font-weight: 400;
+}
+.grid-history {
+    padding-top: 25px;
+}
+.icono-check {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    right: 10px;
+    top: 0px;
+}

@@ -1,0 +1,33 @@
+<ion-grid class="grid" *ngIf="eventos_all.length">
+  <ion-row>
+    <ion-col class="ion-text-left col_uno">
+      <ion-label class="textoEv">{{'EVENTSCH' | translate }}</ion-label> 
+    </ion-col>
+    <ion-col class="ion-text-end col_uno">
+      <ion-label class="textoViEv" (click)="eventos()">{{'VIEWALLCH' | translate }}</ion-label>        
+    </ion-col>
+  </ion-row>
+  <ion-slides [options]="slideEventos" class="eventosLocalesSlides" (ionSlideReachEnd)="cargar_mas_eventos()">
+    <ion-slide  *ngIf="eventos_all.length <= 0">
+      <div class="div_info_nula">
+        <ion-label class="label_info_nula">{{'NOEVENTSAVAILABLE' | translate}}</ion-label>
+      </div>
+    </ion-slide>
+    <ion-slide  *ngFor=" let evento of eventos_all">   
+      <ion-card class="cardEventos" (click)="descripcion_de_evento(evento)">
+        <ion-row class="rowimgEv">
+          <ion-col class="colimgEv ion-no-padding">
+            <img src="{{evento.eventoIMAGENDESTACADA}}" class="imgCardEventos">
+          </ion-col>
+          <ion-col class="coltextoEventos ion-no-padding">
+            <div class="div1"><div class="uno">{{evento.eventoFECHAINICIO | dateTimeFormatFilter : "DD MMM hh:mm"}}</div><div class="dos">{{voucher_standart_precio(evento) | formattNumber}} €</div></div>
+            <div class="div2">{{evento.eventoTITULO }}</div>
+            <div class="div3">{{evento.eventoDESCRIPCION }}</div>
+            <div class="div4">{{voucher_standart_punto_recompensa(evento) | number: '1.0'}} PR</div>
+            <ion-icon name="chevron-forward" class="iconarrow"></ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+</ion-grid>

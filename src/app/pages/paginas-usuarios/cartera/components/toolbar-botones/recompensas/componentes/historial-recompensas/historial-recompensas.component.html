@@ -1,0 +1,37 @@
+<app-header-padre [page]="true"></app-header-padre>
+<ion-content>
+
+  <form [formGroup]="formulario" class="formulario">
+    <ion-grid class="ion-text-center">
+      <ion-row class="row_datetime">
+        <ion-col size="3">
+          <button class="botton_no_seleccionado" *ngIf="!filtro_fecha" (click)="add()">{{'ADDPERIOD2' | translate}}</button>
+          <button class="botton_no_seleccionado" *ngIf="filtro_fecha" (click)="clear()">{{'CLEAR2' | translate}}</button>
+        </ion-col>
+        <ion-col class="ion-text-left">
+          <ion-label  *ngIf="filtro_fecha" class="label_uno">{{'FROM2' | translate}}</ion-label><br>
+          <ion-datetime *ngIf="filtro_fecha" display-format="DD/MM/YYYY" mode="ios" (ionChange)="activar_servicio()" placeholder="00/00/0000"
+          [formControl]="formulario.controls.fecha_inicial" name="fecha_inicial"></ion-datetime>
+        </ion-col>
+        <ion-col class="ion-text-left">
+          <ion-label  *ngIf="filtro_fecha" class="label_uno">{{'TO2' | translate}}</ion-label><br>
+          <ion-datetime  *ngIf="filtro_fecha" display-format="DD/MM/YYYY" mode="ios"(ionChange)="activar_servicio()" placeholder="00/00/0000" 
+          [formControl]="formulario.controls.fecha_final" name="fecha_final"></ion-datetime>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+  
+  
+  <app-item-recompensa *ngFor="let item of cashback_por_cobrar_historial" [item]="item"></app-item-recompensa>
+  
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="load_data($event)" *ngIf="control_paginas_historial < ultima_pagina_historial && !filtro_fecha">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="{{'CARGANDORH' | translate}}">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="load_data_fechas($event)" *ngIf="control_paginas_historial_fechas < ultima_pagina_historial_fechas && filtro_fecha">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="{{'CARGANDORH' | translate}}">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+</ion-content>

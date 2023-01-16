@@ -1,0 +1,48 @@
+.text-title {
+  font-size: 20px;
+  font-weight: 500;
+  color: #2A2A2A;  
+}
+.text-ratio {
+    font-size: 12px;
+    font-weight: 500;
+    color: #2A2A2A;
+    margin-right: 10px;
+}
+
+.text-km {
+    font-size: 12px;
+    font-weight: 500;
+    color: #43BEE5;
+}
+
+ion-content {
+    --offset-bottom: auto!important;
+    --overflow: hidden;
+    overflow: auto;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    background-color: #FFFFFF;
+}
+.r-1 {
+    margin-left: 10px; 
+    margin-right: 10px;
+}
+.r-2 {
+    border: solid 1px #6D6D6D; 
+    border-radius: 20px; 
+    margin-left: 10px; 
+    margin-right: 10px; 
+    height: 40px; 
+    margin-top: 10px;
+}
+.c-1 {
+    margin-left: 5px;
+}
+.i-1 {
+    font-size: 25px;
+}
+.c-2 {
+    padding: 0%;
+}

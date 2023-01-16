@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="34px" height="39px" viewBox="0 0 34 39" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Map store</title>
+    <defs>
+        <path d="M10.1943062,25 C11.2286699,25 16.1543416,19.1676992 17.3688976,17.3098765 C19.2359246,14.4540138 20.3886124,12.7645019 20.3886124,9.61177442 C20.3886124,4.30333799 15.8244661,7.10542736e-15 10.1943062,7.10542736e-15 C4.56414635,7.10542736e-15 -8.8817842e-15,4.30333799 -8.8817842e-15,9.61177442 C-8.8817842e-15,12.7809061 1.06807999,14.4591719 2.92887196,17.3098765 C4.22580872,19.2967635 9.15994252,25 10.1943062,25 Z" id="path-1"></path>
+        <filter x="-56.4%" y="-26.0%" width="212.8%" height="192.0%" filterUnits="objectBoundingBox" id="filter-2">
+            <feMorphology radius="1.5" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="5" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.2 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="map" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="map-Stores" transform="translate(-52.000000, -312.000000)">
+            <g id="Map-store" transform="translate(59.000000, 314.000000)">
+                <g id="Oval-Copy-6">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                    <path stroke="#FFFFFF" stroke-width="1.5" d="M10.1943062,-0.75 C13.2112213,-0.75 15.9407978,0.405992198 17.9172789,2.26953149 C19.9102042,4.14857532 21.1386124,6.74564866 21.1386124,9.61177442 C21.1386124,12.8543297 20.0129847,14.6377966 18.1217006,17.5290681 C16.6668865,19.7543164 11.289978,25.75 10.1943062,25.75 C9.09754436,25.75 3.70987639,19.878469 2.30082907,17.7198303 C0.340942701,14.7173147 -0.75,12.9423522 -0.75,9.61177442 C-0.75,6.74564866 0.478408236,4.14857532 2.47133351,2.26953149 C4.44781458,0.405992198 7.17739107,-0.75 10.1943062,-0.75 Z" fill="#3EC0E8" fill-rule="evenodd"></path>
+                </g>
+                <text id="%-copy-3" font-family="Avenir-Black, Avenir" font-size="12" font-weight="700" fill="#FFFFFF">
+                    <tspan x="5" y="14">%</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

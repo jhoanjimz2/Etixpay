@@ -1,0 +1,41 @@
+<ion-grid class="padding-grid">
+  <ion-row>
+    <ion-col class="ion-text-center col-boton">
+      <ion-label class="label-input">{{'INSERTTHETOTALAMOUNT' | translate}}</ion-label>
+      <ion-icon 
+        *ngIf="!formulario"
+        class="icon-arrow"
+        (click)="formularios()"
+        src="assets/tabs/wallet/componentes/recibir_empresa/arrow_abajo.svg">
+      </ion-icon>
+      <ion-icon 
+        *ngIf="formulario"
+        class="icon-arrow"
+        (click)="formularios()"
+        src="assets/tabs/wallet/componentes/recibir_empresa/arrow_arriba.svg">
+      </ion-icon>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col class="ion-text-center col-boton">
+      <ion-button class="input" (click)="seleccionarCantidad(false)">{{cantidadUno | formattNumber}}</ion-button>
+      <ion-label class="euro-icon">€</ion-label>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col class="ion-text-center col-boton borde-abajo">
+      <ion-label [ngClass]="{'label-input': formulario, 'label-input-f': !formulario}">{{'AMOUNTWHITHOUT' | translate}}</ion-label><br>
+      <ion-button [ngClass]="{'input-dos': formulario, 'input-dos-f': !formulario}"(click)="seleccionarCantidad(true)" [disabled]="!formulario">
+        {{cantidadDos | formattNumber}}
+      </ion-button>
+      <ion-label [ngClass]="{'euro-icon': formulario, 'euro-icon-f': !formulario}">€</ion-label>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col class="ion-text-center col-boton">
+      <ion-label class="label-input">{{'TOTALMP' | translate}}</ion-label><br>
+      <div class="input" >{{total | formattNumber}}</div>
+    </ion-col>
+  </ion-row>
+</ion-grid>

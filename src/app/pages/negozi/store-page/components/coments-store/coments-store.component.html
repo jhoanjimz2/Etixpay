@@ -1,0 +1,36 @@
+<ion-grid>
+  <ion-row>
+    <ion-col class="col-left">
+      <ion-label class="label-reviews">{{'REVIEWSN' | translate}}</ion-label>
+    </ion-col>
+    <ion-col class="ion-text-end" *ngIf="user != emailStore">
+      <button class="boton-write" (click)="addComments()">{{'WRITEREVIEWN' | translate}}</button>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col class="col-left-dos">
+      <app-stars-coments [valoracion]="ponderado" class="zoom-ponderado"></app-stars-coments>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <div class="div-contenedor">
+        <div class="div-comentario" *ngFor="let coment of coments">
+          <div class="div-img-name">
+            <img src="{{coment.imagen}}" class="img-perfil">&nbsp;&nbsp;
+            <ion-label class="label-name">{{coment.nombre}}</ion-label>
+          </div>
+          <div class="div-coment">
+            <ion-label class="label-coment">
+              {{coment.empresa_comentarioCOMENTARIO}}
+            </ion-label>
+          </div>
+          <div class="div-star-coment">
+            <app-stars-coments [valoracion]="coment.empresa_comentarioCALIFICACION"></app-stars-coments>
+          </div>
+          <ion-icon name="trash" class="icon-trash" (click)="deleteTrash(coment.uuid)" *ngIf="user == coment.cliente.email"></ion-icon>
+        </div>
+      </div>
+    </ion-col>
+  </ion-row>
+</ion-grid>

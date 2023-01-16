@@ -1,0 +1,22 @@
+<ion-grid>
+    <ion-row>
+        <ion-col class="ion-text-center">
+            <ion-label class="label-uno ">
+                {{'SHOWTHISQRCODE2' | translate}}<br>
+                {{'TOYOURCLIENT' | translate}}
+            </ion-label>
+            <br><br>
+            <ion-card class="card-qr">
+                <img [src]="transaccion.codigoQR" class="img-qr">
+            </ion-card>
+            <br><br>
+            <ion-label class="label-dos">{{'PAYMENT3' | translate}}</ion-label>
+            <div class="input">{{total | formattNumber}}<ion-label class="euro-icon">€</ion-label></div>
+            <br>
+            <ion-label class="label-dos">{{'PRGENERATED2' | translate}}</ion-label>
+            <div class="input">{{transaccion.pr | formattNumber}}</div>
+            <br><br>
+            <button class="button-cancel" (click)="cancelando()" type="button">{{'CANCEL15' | translate}}</button>
+        </ion-col>
+    </ion-row>
+</ion-grid>

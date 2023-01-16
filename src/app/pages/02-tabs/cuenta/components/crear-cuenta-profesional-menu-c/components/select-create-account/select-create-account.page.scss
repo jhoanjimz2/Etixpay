@@ -1,0 +1,72 @@
+.contenedor {
+    width: 100% !important;
+    height: 100% !important;
+}
+.contenedor-uno {
+    background-color: #33BDEB !important;
+    width: 100% !important;
+    height: 50% !important;
+    position: relative !important;
+}
+.contenedor-dos {
+    background-color: #f4ad43 !important;
+    width: 100% !important;
+    height: 50% !important;
+    position: relative !important;
+}
+.bgopacity {
+    background-color: #ffffff50;
+    width: 100%;
+    height: 79px;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    display: flex;
+}
+.bgbutton {
+    width: 327px;
+    height: 53px;
+    border-radius: 14px;
+    color: white;
+    background: #ffffff40;
+    margin: auto;
+    font-size: 16px;
+    font-weight: 400;
+}
+.img {
+    height: 208px;
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+    left: 0px;
+    bottom: 79px;
+}
+.iconclose {
+  font-size: 200%;
+  font-weight: bold;
+  color: #fff;
+  position: absolute;
+  top: 50px;
+  left: 10px;
+  z-index: 10;
+}
+.div-label {
+    text-align: center;
+    position: absolute;
+    left: 0px;
+    bottom: 287px;
+    padding: 10px;
+    padding-bottom: 0px;
+    line-height: 1.5;
+}
+.label {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+}
+p {
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 400;
+    margin: 0px;
+}

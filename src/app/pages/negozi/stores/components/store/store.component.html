@@ -1,0 +1,30 @@
+<ion-grid class="borderRadius" (click)="irStorePage()">
+  <ion-row class="borderRadius">
+    <ion-col class="colImg borderRadius">
+      <img src="{{store.empresaFOTO}}" class="imgPrincipal">
+    </ion-col>
+    <ion-col>
+      <div class="divTam">
+        <ion-label class="labelTitulo">{{store.empresaNOMBREMAP}}</ion-label>
+      </div>
+      <div class="divTam">
+        <ion-label class="labelText">{{store.empresaCATEGORIA}}</ion-label>
+      </div>
+      <div class="divTam">
+        <ion-icon name="star-sharp" class="iconStar"></ion-icon>&nbsp;&nbsp;
+        <ion-label class="labelText" *ngIf="store.empresaNUMEROVAT">{{store.empresaNUMEROVAT}}/5</ion-label>
+        <ion-label class="labelText" *ngIf="!store.empresaNUMEROVAT">0/5</ion-label>
+      </div>
+      <div class="divTam">
+        <ion-icon name="gift-sharp" class="iconPr"></ion-icon>&nbsp;&nbsp;
+        <ion-label class="labelText">{{store.pr_base}} PR/100€</ion-label>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <ion-icon name="git-compare-outline" class="iconCash"></ion-icon>&nbsp;&nbsp;
+        <ion-label class="labelText">{{store.cashbackCLIENTE | formattNumber2}}% C.B.</ion-label>
+      </div>
+    </ion-col>
+  </ion-row>
+  <img src="assets/negozi/reloj.svg" class="imgReloj">
+  <img src="assets/negozi/direccion.svg" class="imgDirection">
+  <ion-label class="labelKillometros">{{store.posicionDISTANCIA | formattNumber2}}km</ion-label>
+</ion-grid>

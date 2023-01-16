@@ -1,0 +1,133 @@
+<app-header-padre [page]="true"></app-header-padre>
+<ion-content>
+
+  <ion-row class="card-row">
+    <ion-col class="ion-text-center">
+      <img *ngIf="mainImage && !imageMainHtml" class="card-image" [src]="product.main_image.file.fileURL | image">
+      <div *ngIf="mainImage && !imageMainHtml" class="card-icon">
+        <i class="mdi mdi-arrow-up-down f-z-40"></i>
+      </div>
+      <img *ngIf="imageMainHtml" class="card-image-new" [src]="imageMainHtml">
+      <div class="input-transparente">
+        <input type="file" (change)="add_img($event, 'main')"  accept="image/png, image/jpeg" #myInput>
+      </div>
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="p-l-5 p-r-5">
+    <ion-col class="ion-text-center" *ngFor="let item of [0,0,0]; let i = index">
+      <img *ngIf="product.gallery.length > 0 && !imageTempEdit[i]" class="card-image-small" [src]="product.gallery[i].file.fileURL | image">
+      <div *ngIf="product.gallery.length > 0 && !imageTempEdit[i]" class="card-icon-smalll">
+        <i class="mdi mdi-arrow-up-down f-z-20"></i>
+      </div>
+      <img *ngIf="imageTempEdit[i]" class="card-image-small-new" [src]="imageTempEdit[i]">
+      <div class="input-transparente">
+        <input type="file" (change)="add_img($event, i)"  accept="image/png, image/jpeg" #myInput>
+      </div>
+    </ion-col>
+  </ion-row>
+
+  <form ngNativeValidate #formItem="ngForm">
+    <ion-row class="card-row">
+      <ion-col>
+        <ion-label class="text-label">{{'ADDTITLE' | translate}}</ion-label>
+        <ion-input class="text-input" [(ngModel)]="product.productNAME" name="productNAME" placeholder="{{'ADDTITLE' | translate}}"></ion-input>
+        <div class="m-t-10">
+          <ion-label class="text-label">{{'LOCALITATIONPRODUCT' | translate}}</ion-label>
+          <ion-row>
+            <ion-col class="ion-no-padding">
+              <ionic-selectable 
+                [items]="pais" 
+                class="text-input"
+                itemValueField="id" 
+                itemTextField="paisNOMBRE" 
+                [canSearch]="true"
+                placeholder="{{'COUNTRYMP' | translate}}"
+                searchFailText="{{'NOTFOUND3' | translate}}"
+                searchPlaceholder="{{'SEARCH' | translate}}"
+                [hasInfiniteScroll]="true"
+                (onInfiniteScroll)="obtenerPaises($event)"
+                (onChange)="cargar_ciudades($event)"
+                (onSearch)="buscarPais($event)"
+                [(ngModel)]="product.country_id"
+                name="country_id" required>                 
+              </ionic-selectable>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col class="ion-no-padding">
+              <ionic-selectable
+                #portComponent
+                [items]="ciudad" 
+                class="text-input"
+                itemValueField="id" 
+                itemTextField="ciudadNOMBRE" 
+                [canSearch]="true"
+                placeholder="{{'CITYMP' | translate}}"
+                searchFailText="{{ 'NOENCONTRADONR' | translate}}"
+                searchPlaceholder="{{ 'BUSCARNR' | translate}}"
+                [(ngModel)]="product.city_id"
+                name="city_id"
+                (onInfiniteScroll)="obtener_ciudades($event)"
+                (onSearch)="buscar_ciudad($event)"
+                [hasInfiniteScroll]="true" required>                  
+              </ionic-selectable>
+            </ion-col>
+          </ion-row>
+
+
+          <ion-input class="text-input" [(ngModel)]="product.productADDRESS" name="productADDRESS" placeholder="{{'ADDRESSMP' | translate}}"></ion-input>
+        </div>
+      </ion-col>
+    </ion-row>
+  
+    <ion-row class="card-row">
+      <ion-col size="8.5">
+        <ion-label>{{'PRICEPRODUCT' | translate}}</ion-label>
+        <ion-row class="card-row-price">
+          <ion-col size="9">
+            <ion-input [(ngModel)]="product.current_price.priceVALUE" name="priceVALUE" type="number"></ion-input>
+          </ion-col>
+          <ion-col class="ion-text-right" class="p-t-14">
+            <ion-label class="text-price">€/TIX</ion-label>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+      <ion-col size="3.5" class="ion-text-center">
+        <ion-label>{{'COMMUNITYMP' | translate}}</ion-label>
+        <ion-row>
+          <ion-col class="ion-text-center card-community">
+            <ion-label class="text-community">{{conmmunity}}</ion-label>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  
+    <ion-row class="card-row">
+      <ion-col>
+        <ion-label>{{'NETSALES' | translate}}</ion-label>
+        <ion-row class="card-row-net-sales">
+          <ion-col size="9">
+            <ion-input [(ngModel)]="netSales" name="netSales" type="number" readonly></ion-input>
+          </ion-col>
+          <ion-col class="ion-text-right" class="p-t-14">
+            <ion-label class="text-price">€/TIX</ion-label>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  
+    <ion-row class="card-row-text-area">
+      <ion-col class="card-text-area">
+        <ion-textarea [(ngModel)]="product.productDESCRIPTION" name="productDESCRIPTION" rows="7" class="input-text-area"></ion-textarea>
+      </ion-col>
+    </ion-row>
+  
+    <ion-row class="card-row-btn">
+      <ion-col class="ion-text-center">
+       <ion-button (click)="editProduc()" class="btn-save">{{'SAVECHANGES' | translate}}</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+
+</ion-content>

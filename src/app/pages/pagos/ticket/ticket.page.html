@@ -1,0 +1,33 @@
+<app-header-padre [page]="true"></app-header-padre>
+<ion-content>
+  <div class="contenedor">
+    <app-cantidad
+      *ngIf="opcion == 1"
+      [informacion]="informacion"
+      (funcion)="funcion($event)"
+    >
+    </app-cantidad>
+    <app-enviando
+      [informacion]="informacion"
+      [cantidad]="cantidad"
+      (funcion)="funcion($event)"
+      *ngIf="opcion == 2 && informacion.payment === 'tix'"
+    >
+    </app-enviando>
+    <EtixPay-cash
+      [informacion]="informacion"
+      [cantidad]="cantidad"
+      (funcion)="funcion($event)"
+      *ngIf="opcion == 2 && informacion.payment === 'cash'"
+    >
+    </EtixPay-cash>
+    <app-exito
+      [informacion]="informacion"
+      [cantidad]="cantidad"
+      (funcion)="funcion($event)"
+      *ngIf="opcion == 3"
+    >
+    </app-exito>
+    <app-fallo (funcion)="funcion($event)" *ngIf="opcion == 4"> </app-fallo>
+  </div>
+</ion-content>

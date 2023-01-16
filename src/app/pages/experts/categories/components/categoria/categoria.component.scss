@@ -1,0 +1,32 @@
+.d-s {
+  width: 145px;
+  height: 145px;
+  border-radius: 15px !important;
+  margin: auto;
+  margin-bottom: 10px;
+  background: #DF7000;
+  position: relative;
+}
+.b-c {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px !important;
+  background-color: #ffffff20;
+  color: white;
+  font-size: 150%;
+  z-index: 1;
+  top: 15px;
+  left: 10px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.label-name {
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  bottom: 15px;
+  left: 10px;
+  position: absolute;
+}

@@ -1,0 +1,36 @@
+<ion-grid class="grid">
+  <ion-row>
+    <ion-col>  
+      <ion-card class="cardgrafica">
+        <div class="actualize" (click)="actualizar_datos()">{{'ACTUALIZECC' | translate}}</div>
+        <div class="divcontenedorfondo">
+          <div class="divlineafondo"></div>
+        </div>
+        <ion-slides *ngIf="proyectos_grafica.length <= 0" [options]="slides_dos">
+          <ion-slide  >
+            <ion-label class="label_info_nula">{{'NOSPROYECTOSLOCALES' | translate}}</ion-label>
+          </ion-slide>
+        </ion-slides>
+        <ion-slides [options]="slides" #slide *ngIf="proyectos_grafica.length > 0">
+          <ion-slide *ngFor="let relleno of proyectos_grafica">
+            <div class="numero">{{relleno.pivot.wallet_proyectoPORCENTAJE | number:'1.1-2'}}%</div>
+            <div class="barraporcentaje" [ngStyle]="{'height': relleno.pivot.wallet_proyectoPORCENTAJE + 'px' ,
+                                                     'margin-top': 130 - relleno.pivot.wallet_proyectoPORCENTAJE + 'px',
+                                                     'background-color': relleno.proyectoCOLOR}" [hidden]="relleno.proyectoCOLOR == 'null'"></div>
+            <div class="barraporcentaje" [ngStyle]="{'height': relleno.pivot.wallet_proyectoPORCENTAJE + 'px' ,
+                                                     'margin-top': 130 - relleno.pivot.wallet_proyectoPORCENTAJE + 'px',
+                                                     'background-color': '#664ac5 '}" [hidden]="relleno.proyectoCOLOR != 'null'"></div>
+            <div class="barraporcentajeF"></div>
+            <div class="info">
+              <div class="divimg">
+                <img src="{{relleno.proyectoLOGO}}">
+              </div>
+              <ion-label class="label1">{{relleno.proyectoSIGLATOK}}</ion-label><br>
+              <ion-label class="label2">{{relleno.pivot.wallet_proyectoSALDOATM | number:'1.0'}} €</ion-label>
+            </div>     
+          </ion-slide>
+        </ion-slides>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-grid>

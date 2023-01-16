@@ -1,0 +1,132 @@
+<div class="ion-text-center mtb1">
+  <ion-label class="titulo">Riepilogo</ion-label>
+</div>
+
+<ion-grid class="card">
+  <ion-row>
+    <ion-col class="p-0 pb16">
+      <ion-label class="text-title">INFORMAZIONI GENERALI</ion-label>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col class="p-0 pr" size="6"><ion-label class="text-text">Tipologia professionista</ion-label></ion-col>
+    <ion-col class="p-0 pl" size="6" *ngIf="preRegistro.profesionalisSERVICEVIRTUAL"><ion-label class="text-text">Online</ion-label></ion-col>
+    <ion-col class="p-0 pl" size="6" *ngIf="!preRegistro.profesionalisSERVICEVIRTUAL"><ion-label class="text-text">Di presenza</ion-label></ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col class="p-0 pr" size="6"><ion-label class="text-text">Categoria</ion-label></ion-col>
+    <ion-col class="p-0 pl" size="6"><ion-label class="text-text" *ngIf="profesion">{{profesion.profession_name}}</ion-label></ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col class="p-0 pr" size="6"><ion-label class="text-text">Community code</ion-label></ion-col>
+    <ion-col class="p-0 pl" size="6"><ion-label class="text-text">{{email}}</ion-label></ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col class="p-0 ion-text-end pt13">
+      <ion-label class="text-modifica" (click)="continue(1)"><ion-icon name="create-outline"></ion-icon>&nbsp;Modifica</ion-label>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+
+
+<ion-grid class="card">
+  <ion-row>
+    <ion-col class="p-0 pb16">
+      <ion-label class="text-title">DATI DI CONTATTO</ion-label>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col class="p-0 pr" size="6"><ion-label class="text-text">Indirizzo email</ion-label></ion-col>
+    <ion-col class="p-0 pl" size="6"><ion-label class="text-text">{{contactDetail.email}}</ion-label></ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col class="p-0 pr" size="6"><ion-label class="text-text">Numero di telefono</ion-label></ion-col>
+    <ion-col class="p-0 pl" size="6"><ion-label class="text-text" *ngIf="indicativo">+{{indicativo.paisINDICATIVO}}&nbsp;{{contactDetail.phone}}</ion-label></ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col class="p-0 ion-text-end pt13">
+      <ion-label class="text-modifica" (click)="continue(2)"><ion-icon name="create-outline"></ion-icon>&nbsp;Modifica</ion-label>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+
+<ion-grid class="card">
+  <ion-row>
+    <ion-col class="p-0 pb16">
+      <ion-label class="text-title">DATI FISCALI E RICOMPENSA</ion-label>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col class="p-0 pr" size="6"><ion-label class="text-text">Nome legale</ion-label></ion-col>
+    <ion-col class="p-0 pl" size="6"><ion-label class="text-text">{{dataFiscal.profesionalREPRESENTATIVENAME}}</ion-label></ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col class="p-0 pr" size="6"><ion-label class="text-text">Forma giuridica</ion-label></ion-col>
+    <ion-col class="p-0 pl" size="6"><ion-label class="text-text" *ngIf="formaJuridica">{{formaJuridica.legal_form_name}}</ion-label></ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col class="p-0 pr" size="6"><ion-label class="text-text">Numero fiscale</ion-label></ion-col>
+    <ion-col class="p-0 pl" size="6"><ion-label class="text-text">{{dataFiscal.profesionalTAXNUMBER}}</ion-label></ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col class="p-0 pr" size="6"><ion-label class="text-text">Indirizzo sede legale</ion-label></ion-col>
+    <ion-col class="p-0 pl" size="6"><ion-label class="text-text">{{dataFiscal.legalAddress.addressMAIN}}</ion-label></ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col class="p-0 pr" size="6"><ion-label class="text-text">Indirizzo sede operativa</ion-label></ion-col>
+    <ion-col class="p-0 pl" size="6"><ion-label class="text-text">{{dataFiscal.operativeAddress.addressMAIN}}</ion-label></ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col class="p-0 pr" size="6"><ion-label class="text-text">Ricompensa Etix</ion-label></ion-col>
+    <ion-col class="p-0 pl" size="6"><ion-label class="text-text">10%</ion-label></ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col class="p-0 ion-text-end pt13">
+      <ion-label class="text-modifica" (click)="continue(3)"><ion-icon name="create-outline"></ion-icon>&nbsp;Modifica</ion-label>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+
+
+
+<ion-grid class="card">
+  <ion-row>
+    <ion-col class="p-0 pb16">
+      <ion-label class="text-title">MAPPA, DESCRIZIONE E FOTO</ion-label>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col class="p-0">
+      <ion-label class="text-subti">Nome</ion-label><br>
+      <ion-label class="text-text">{{dataMapa.profesionalNAMEMAP}}</ion-label>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col class="p-0 pt22">
+      <ion-label class="text-subti">Descrizione attività</ion-label><br>
+      <ion-label class="text-text">{{dataMapa.profesionalDESRIPTION}}</ion-label>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col class="p-0 ion-text-end pt13">
+      <ion-label class="text-modifica" (click)="continue(4)"><ion-icon name="create-outline"></ion-icon>&nbsp;Modifica</ion-label>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+
+<ion-card-content class="card-content">
+  <ion-row>
+    <ion-col class="p-0">
+      <ion-button (click)="success()" class="btn-button wth-90p primary">
+        <ion-label color="light" class="txt-capitalize">
+          Conferma
+          <i class="mdi mdi-arrow-right m-l-15"></i>
+        </ion-label>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-card-content>

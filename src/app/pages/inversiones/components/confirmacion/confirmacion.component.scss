@@ -1,0 +1,61 @@
+ion-slides {
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+.div-contenedor {
+    width: 100%;
+}
+ion-card {
+    margin: 25px;
+    height: 358px;
+    border-radius: 11px;
+}
+img {
+    width: 85px;
+    height: 85px;
+}
+ion-card-content {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.label-uno {
+    font-weight: 400;
+    color: black;
+    font-size: 26px;
+}
+.label-dos {
+    font-weight: 300;
+    color: black;
+    font-size: 18px;
+}
+.label-tres {
+    font-weight: 400;
+    color: #664BC4;
+    font-size: 26px;
+}
+.button-done {
+    margin-top: 60px;
+    margin-left: 25px;
+    margin-right: 25px;
+    height: 47px;
+    --border-radius: 11px;
+    color: white;
+    --background: #664BC0;
+    text-transform: capitalize;
+}
+.button-try-again {
+    margin-top: 60px;
+    margin-left: 25px;
+    margin-right: 25px;
+    height: 47px;
+    --border-radius: 11px;
+    color: white;
+    --background: #07A73C;
+    text-transform: capitalize;
+}

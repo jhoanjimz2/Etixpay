@@ -1,0 +1,112 @@
+ion-content {
+    background-color: #FFFFFF;
+}
+
+.card-row {
+    margin-top: 10px;
+    padding-left: 20px; 
+    padding-right: 20px; 
+}
+
+.m-t-50 {
+    margin-top: 50px;
+}
+
+.text-contact {
+    font-size: 18px; 
+    font-weight: bold; 
+    color: #43BEE5;
+}
+
+.text-input {
+    font-size: 16px;
+    border: solid 1px #707070;
+    height: 45px;
+    border-radius: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    color: #2A2A2A;
+    margin-top: 10px;
+    font-weight: 500;
+}
+
+.text-label {
+    color: #B4B4B4;
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 20px;
+    font-style: italic;
+}
+
+.card-row-phone {
+    margin-top: 5px;
+    padding-left: 20px; 
+    padding-right: 20px; 
+    border: solid 1px #707070; 
+    margin-left: 20px;
+    margin-right: 20px; 
+    border-radius: 30px; 
+    height: 45px; 
+    padding-top: 2px; 
+    padding-bottom: 2px;
+}
+
+.card-text-area {
+    border: solid 1px #6D6D6D; 
+    border-radius: 20px;
+}
+
+
+.input-text-area {
+    height: 168px;
+}
+
+.card-row-message {
+    padding-left: 20px; 
+    padding-right: 20px; 
+}
+
+.card-row-btn {
+    padding-left: 10px; 
+    padding-right: 10px; 
+    margin-top: 30px; 
+    margin-bottom: 100px;
+}
+
+.btn-save {
+    height: 54px;
+    width: 219px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #2A2A2A;
+    text-transform: capitalize;
+    --border-radius: 10px;
+    --background: #F6F02D;
+    --box-shadow: none;
+}
+
+.p-t-5 {
+    padding-top: 5px;
+}
+
+.card-code-phone {
+    border-right: solid 1px #707070;
+    height: 30px; 
+    padding-top: 5px;
+}
+
+.text-code-phone {
+    font-size: 16px; 
+    font-weight: 500; 
+    font-style: italic;
+}
+
+.p-0 {
+    padding: 0%;
+}
+
+.input-phone {
+    font-size: 16px;
+    font-weight: 500; 
+    color: #2A2A2A;
+}

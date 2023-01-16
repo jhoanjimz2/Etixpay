@@ -1,0 +1,18 @@
+<ion-row *ngFor=" let tarjeta of tarjetas" class="row_tarjeta">
+  <ion-col size="3">
+    <button [ngClass]="{ 'boton_cuenta_select': tarjeta.seleccionado,  'boton_cuenta':  !tarjeta.seleccionado}" type="button">
+      <ion-icon name="checkmark-circle" class="check_icon" *ngIf="tarjeta.seleccionado"></ion-icon>
+      <img src="{{tarjeta.img}}" height="40px" width="" *ngIf="tarjeta.img">
+      <ion-icon name="{{tarjeta.icon}}" *ngIf="!tarjeta.img" class="icono"></ion-icon>
+    </button>
+  </ion-col>
+  <ion-col class="col_text">
+    <div class="div_text">
+      <ion-label class="texto_titulo">{{tarjeta.nombre | modoIban: tarjeta.icon}}</ion-label><br>
+      <ion-label class="texto_subtitulo">{{tarjeta.texto | translate}}</ion-label><br>
+      <ion-label class="texto_re_subtitulo"  *ngIf="tarjeta.seleccionado">{{'PREFERREDMETHOD' | translate}}</ion-label>
+      <ion-label class="texto_re_subtitulo"  *ngIf="!tarjeta.seleccionado" (click)="select_cuenta(tarjeta)">{{'SETASPREFERREDMETHOD' | translate}}</ion-label>
+    </div>
+    <img src="/assets/tabs/componentes/successful.svg" *ngIf="tarjeta.seleccionado" class="tarjeta_select">
+  </ion-col>
+</ion-row>

@@ -1,0 +1,89 @@
+<ion-content>
+  <app-modal-welcome *ngIf="modalWelcome"
+    (setModalWelcome)="getModalWelcome($event)"
+    [modalWelcome]="modalWelcome"
+  ></app-modal-welcome>
+  <div *ngIf="nroImage === 1" class="w-h-100p">
+    <img [src]="imagesTutorial[0]" class="w-h-100p">
+  </div>
+
+  <div *ngIf="nroImage === 2" class="animate__animated animate__backInRight w-h-100p">
+    <img [src]="imagesTutorial[1]" class="w-h-100p" >
+    <div (click)="continue(3, false, true)" class="ani-img-2" [ngClass]="{'animate__animated animate__heartBeat': showAnimationClick}"></div>
+  </div>
+
+  <div *ngIf="nroImage === 3" class="w-h-100p">
+    <img [src]="imagesTutorial[2]" class="w-h-100p">
+  </div>
+
+  <div *ngIf="nroImage === 4" class="animate__animated animate__backInRight w-h-100p">
+    <img [src]="imagesTutorial[3]" class="w-h-100p">
+  </div>
+
+  <div *ngIf="nroImage === 5" class="animate__animated animate__backInRight w-h-100p">
+    <img [src]="imagesTutorial[4]" class="w-h-100p">
+  </div>
+
+  <div *ngIf="nroImage === 6" class="animate__animated animate__backInRight w-h-100p">
+    <img [src]="imagesTutorial[5]" class="w-h-100p">
+  </div>
+
+  <div *ngIf="nroImage === 7" class="animate__animated animate__backInRight w-h-100p">
+    <img [src]="imagesTutorial[6]" class="w-h-100p" >
+    <div (click)="continue(8, true, false)" class="ani-img-7" [ngClass]="{'animate__animated animate__heartBeat': showAnimationClick}"></div>
+  </div>
+
+  <div *ngIf="nroImage === 8" class="animate__animated animate__backInRight w-h-100p">
+    <img [src]="imagesTutorial[7]" class="w-h-100p" >
+    <div (click)="continue(9, true, false)" class="ani-img-8"[ngClass]="{'animate__animated animate__heartBeat': showAnimationClick}"></div>
+  </div>
+
+  <div *ngIf="nroImage === 9" class="animate__animated animate__backInRight w-h-100p">
+    <img [src]="imagesTutorial[8]" class="w-h-100p" >
+    <div (click)="continue(10, false, true)" class="ani-img-9" [ngClass]="{'animate__animated animate__heartBeat': showAnimationClick}"></div>
+  </div>
+
+  <div *ngIf="nroImage === 10" class="animate__animated animate__backInRight w-h-100p">
+    <img [src]="imagesTutorial[9]" class="w-h-100p">
+  </div>
+
+  <div *ngIf="nroImage === 11" class="animate__animated animate__backInRight w-h-100p">
+    <img [src]="imagesTutorial[10]" class="w-h-100p">
+  </div>
+
+  <div *ngIf="nroImage === 12" class="animate__animated animate__backInRight w-h-100p">
+    <img [src]="imagesTutorial[11]" class="w-h-100p" >
+    <div (click)="continue(13, true, false)" class="ani-img-12" [ngClass]="{'animate__animated animate__heartBeat': showAnimationClick}"></div>
+  </div>
+
+  <div *ngIf="nroImage === 13" class="animate__animated animate__backInRight w-h-100p">
+    <img [src]="imagesTutorial[12]" class="w-h-100p" >
+    <div (click)="continue(14, false, true)" class="ani-img-13" [ngClass]="{'animate__animated animate__heartBeat': showAnimationClick}"></div>
+  </div>
+
+  <div *ngIf="nroImage === 14" class="animate__animated animate__backInRight w-h-100p">
+    <img [src]="imagesTutorial[13]" class="w-h-100p">
+  </div>
+
+  <div *ngIf="nroImage === 15" class="animate__animated animate__backInRight w-h-100p">
+    <img [src]="imagesTutorial[14]" class="w-h-100p" >
+    <div (click)="continue(16, false, true)" class="ani-img-15" [ngClass]="{'animate__animated animate__heartBeat': showAnimationClick}"
+    >
+    </div>
+  </div>
+
+  <div *ngIf="nroImage === 16" class="animate__animated animate__backInRight w-h-100p">
+    <img [src]="imagesTutorial[15]" class="w-h-100p">
+  </div>
+
+  <div *ngIf="nroImage === 17" class="animate__animated animate__backInRight w-h-100p">
+    <img [src]="imagesTutorial[16]" class="w-h-100p" >
+    <div (click)="continue(18, true, false)" class="ani-img-17" [ngClass]="{'animate__animated animate__heartBeat': showAnimationClick}"></div>
+  </div>
+
+  <div *ngIf="nroImage === 18" class="animate__animated animate__backInRight w-h-100p">
+    <img [src]="imagesTutorial[17]" class="w-h-100p" >
+    <div (click)="continue(19, false, false)" class="ani-img-18" [ngClass]="{'animate__animated animate__heartBeat': showAnimationClick}"></div>
+  </div>
+
+</ion-content>

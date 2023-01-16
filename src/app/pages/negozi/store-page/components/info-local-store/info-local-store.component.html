@@ -1,0 +1,46 @@
+<ion-grid>
+  <ion-row>
+    <ion-col class="col-horario">
+      <button [ngClass]="{'botonRojo': !apertura, 'botonVerde': apertura}"  (click)="horario()">
+        <img src="assets/negozi/reloj.svg" class="imgReloj">&nbsp;
+        <img src="assets/negozi/bxs-down-arrow.svg" class="imgArrow">
+      </button>
+      <ion-label class="labelSubtitulos">{{'OPENNOW' | translate}}</ion-label>
+
+
+      <ion-grid class="grid-horario" *ngIf="botonHorario">
+        <ion-row *ngFor="let horario of horarios">
+          <ion-col class="padding-cero ion-text-left" size="4">
+            <ion-label class="label-dia">{{horario.empresa_horarioDIA | translate}}</ion-label>
+          </ion-col>
+          <ion-col class="padding-cero ion-text-left">
+            <ion-label class="label-horario" *ngIf="horario.empresa_horarioJORNADA == 'CERRADO'">{{'CERRADO' | translate}}</ion-label>
+            <ion-label class="label-horario" *ngIf="horario.empresa_horarioJORNADA == 'COMPLETA'">{{'OPENHOURS' | translate}}</ion-label>
+            <ion-label class="label-horario" *ngIf="horario.empresa_horarioJORNADA == 'JORNADAUNICA'">{{horario.empresa_horarioHORAAPERTURA}} - {{horario.empresa_horarioHORACIERRE}}</ion-label>
+            <ion-label class="label-horario" *ngIf="horario.empresa_horarioJORNADA == 'JORNADADOBLE'">
+              {{horario.empresa_horarioHORAAPERTURA}} - {{horario.empresa_horarioHORACIERRE}}, 
+              {{horario.empresa_horarioHORAAPERTURASECUNDARIA}} - {{horario.empresa_horarioHORACIERRESECUNDARIA}}
+            </ion-label>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+    </ion-col>
+    <ion-col class="ion-text-center">
+      <button [ngClass]="{'botonRojo': !informacionLocal.empresaRECIBETIX, 'botonVerde': informacionLocal.empresaRECIBETIX}" (click)="actualizarInfo()">
+        TIX
+      </button>
+      <ion-label class="labelSubtitulos">{{'NOTACCEPTSTIX' | translate}}</ion-label>
+    </ion-col>
+    <ion-col class="ion-text-center">
+      <button class="botonVerde">€</button>
+      <ion-label class="labelSubtitulos">{{'ACCEPTEURO' | translate}}</ion-label>
+    </ion-col>
+    <ion-col class="ion-text-center">
+      <button [ngClass]="{'botonRojo': !informacionLocal.empresaRECIBEMASCOSTAS, 'botonVerde': informacionLocal.empresaRECIBEMASCOSTAS}" (click)="actualizarInfo()">
+        <ion-icon src="assets/negozi/paw-sharp.svg"></ion-icon>
+      </button>
+      <ion-label class="labelSubtitulos">{{'PETFRIENDLY' | translate}}</ion-label>
+    </ion-col>
+  </ion-row>
+</ion-grid>

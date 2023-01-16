@@ -1,0 +1,17 @@
+<ion-row (click)="descripcion_movimiento()">
+  <ion-col class="ion-text-left col_line">
+    <div class="divInformacion">
+      <ion-label class="label1">{{movimiento.concepto}}</ion-label>
+      <app-tipo-movimiento class="label1" *ngIf="!movimiento.wallet_h_a_c_i_a || !movimiento.wallet_d_e_s_d_e" mensaje="{{movimiento.transaccionOBSERVACIONES}}"></app-tipo-movimiento>
+    </div>
+    <ion-label class="label2" >{{movimiento.created_at | dateTimeFormatFilter : "h:mm a"}}</ion-label>
+  </ion-col>
+  <ion-col class="ion-text-end col_line">
+    <ion-label class="label3" *ngIf="!movimiento.proyecto && movimiento.transaccionCONCEPTO === 'RETIRO'"> - {{movimiento.proyectoCANTIDADATM | formattNumber2}} TIX</ion-label>
+    <ion-label class="label3" *ngIf="movimiento.proyecto && movimiento.transaccionCONCEPTO === 'RETIRO'"> - {{movimiento.proyectoCANTIDADTOK | formattNumber2}} {{movimiento.proyecto.proyectoSIGLATOK}}</ion-label>
+    <ion-label class="label4" *ngIf="!movimiento.proyecto && movimiento.transaccionCONCEPTO === 'INGRESO'"> + {{movimiento.proyectoCANTIDADATM | formattNumber2}} TIX</ion-label>
+    <ion-label class="label4" *ngIf="movimiento.proyecto && movimiento.transaccionCONCEPTO === 'INGRESO'"> + {{movimiento.proyectoCANTIDADTOK | formattNumber2}} {{movimiento.proyecto.proyectoSIGLATOK}}</ion-label>
+    <br>
+    <ion-label class="label2">{{movimiento.transaccionFECHA | dateTimeFormatFilter : "MMMM DD, yyyy" }}</ion-label>
+  </ion-col> 
+</ion-row>

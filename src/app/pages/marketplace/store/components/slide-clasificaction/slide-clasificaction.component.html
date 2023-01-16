@@ -1,0 +1,12 @@
+
+  <div class="p-10">
+    <ion-row class="p-l">
+      <ion-col class="container-buttons-months p-0">
+        <div class="scroll" scrollX="true">
+          <div (click)="valueCategory('')" class="item btn-clas item-all" [ngClass]="{'bg-yellow': category === ''}" >{{'ALLCATEGORIES' | translate}}</div>
+          <div (click)="valueCategory(categorty.categoryNAME)" class="item btn-clas" [ngClass]="{'bg-yellow': category === categorty.categoryNAME}" *ngFor="let categorty of categories">{{categorty.categoryNAME}}</div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </div>
+

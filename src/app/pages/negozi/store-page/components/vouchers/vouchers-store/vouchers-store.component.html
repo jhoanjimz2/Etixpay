@@ -1,0 +1,37 @@
+<ion-grid *ngIf="vouchers.length">
+  <ion-row>
+    <ion-col>
+      <ion-label class="label-vouchers">{{'VOUCHERSOPORTUNITY' | translate}}</ion-label>
+    </ion-col>
+    <ion-col class="ion-text-end" *ngIf="editar">
+      <ion-label class="label-vouchers-panel" (click)="abrirPanelVouchers()">{{'VOUCHERSPANEL' | translate}}</ion-label>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-slides [options]="option" [pager]="true">
+        <ion-slide *ngFor="let voucher of vouchers">
+          <ion-grid class="grid-voucher">
+            <ion-row>
+              <ion-col class="col-img">
+                <img src="{{voucher.voucherIMAGENDESTACADA}}" class="img-voucher">
+              </ion-col>
+              <ion-col class="col-text">
+                <div class="div-linea-uno">
+                  <div class="div-titulo-voucher">{{voucher.voucherTITULO}}</div>
+                  <div class="div-fecha">{{'TILL3' | translate}} {{ voucher.voucherFECHACADUCIDAD | dateTimeFormatFilter: 'DD.MM.YY'}}</div>
+                </div>
+                <div class="div-linea-dos">{{categoria(voucher)}}</div>
+                <div class="div-linea-tres">
+                  <div class="div-label-precio">{{voucher.voucherPRECIO | formattNumber}} €</div>
+                  <div class="div-label-pr">{{'PR5' | translate}} {{voucher.voucherPUNTORECOMPENSA | formattNumber}}</div>
+                  <button class="button-buy" (click)="comprarVoucher(voucher)">{{'BUYNOW2' | translate}}</button>
+                </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-slide>
+      </ion-slides>
+    </ion-col>
+  </ion-row>
+</ion-grid>

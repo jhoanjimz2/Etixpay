@@ -1,0 +1,84 @@
+.padding-grid {    
+  padding: 10px 40px;
+  background-color: #fff;
+}
+.col-boton {
+  position: relative;
+}
+.label-input {
+  color: #000;
+  font-weight: 400;
+  font-size: 15px;
+}
+.icon-arrow {
+  width: 25px;
+  height: 25px;
+  z-index: 1;
+  position: absolute;
+  top: calc(50% - 12.5px);
+  right: -6px;
+}
+.input {
+  --background: #fff;
+  --box-shadow: none;
+  font-weight: 400;
+  font-size: 70px;
+  height: auto;
+  width: 100%;
+  color: #000;
+  text-align: center !important;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.input-dos {
+  --background: #fff;
+  --box-shadow: none;
+  font-weight: 400;
+  font-size: 40px;
+  height: auto;
+  width: 100%;
+  color: #000;
+  text-align: center !important;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.euro-icon {
+  position: absolute;
+  right: 0px;
+  top: calc(50% - 17.5px);
+  font-size: 30px;
+  color: #000;
+}
+.input-dos-f {
+  --background: transparent;
+  --box-shadow: none;
+  font-weight: 400;
+  font-size: 40px;
+  height: auto;
+  width: 100%;
+  color: transparent;
+  text-align: center !important;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.label-input-f {
+  color: transparent;
+  font-weight: 400;
+  font-size: 15px;
+}
+.euro-icon-f {
+  position: absolute;
+  right: 0px;
+  top: calc(50% - 17.5px);
+  font-size: 30px;
+  color: transparent;
+}
+.borde-abajo {
+    border-bottom: 1px solid #707070;
+}

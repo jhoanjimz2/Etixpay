@@ -1,0 +1,17 @@
+<app-header-padre [page]="true"></app-header-padre>
+<ion-content>
+
+  <ion-row>
+    <ion-col>
+      <ion-button (click)="addItem()" expand="block" class="btn-add" fill="outline">
+        <i class="mdi mdi-plus-circle icon-add"></i>
+        <ion-label>{{'ADDPRODUCT' | translate}}</ion-label>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+
+  <app-card-item [products]="products"></app-card-item>
+
+</ion-content>
+
+

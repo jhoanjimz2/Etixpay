@@ -1,0 +1,12 @@
+<app-header-padre [page]="true"></app-header-padre>
+<ion-content>
+  <div class="contenedor">
+    <div class="contenedor-dos">
+      <ngx-scanner-qrcode
+        #action
+        (event)="scanner($event)"
+      ></ngx-scanner-qrcode>
+      <!-- <div class="marco-camara"></div> -->
+    </div>
+  </div>
+</ion-content>

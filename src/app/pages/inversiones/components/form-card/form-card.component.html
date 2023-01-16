@@ -1,0 +1,64 @@
+<ion-grid>
+  <ion-row class="linea">
+    <ion-col>
+      <ion-item lines="none" class="item">
+        <ion-checkbox mode="ios" [(ngModel)]="activeForm[0].active" class="checkbox-uno" (ionChange)="seleccionarForm()"></ion-checkbox>
+        {{'PAWIANCA' | translate}}
+      </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-row *ngIf="activeForm[0].active">
+    <ion-col>
+      <form [formGroup]="formulario" autocomplete="off">
+        <img src="assets/pages/invest/logo-stripe.png" class="img-logo">
+        <div class="div-contenedor">
+          <div class="w-8 p-r">
+            <img src="assets/pages/invest/card.png" class="img-card">
+            <input 
+              class="inputs p-s"
+              placeholder="{{'CANU' | translate}}" 
+              [formControl]="formulario.controls.number" 
+              name="number" 
+              (keyup)="numero_tarjeta(); tarjeta();">
+          </div>
+          <div class="w-4 p-r">
+            <input 
+              class="inputs p-s"
+              placeholder="mm/yy" 
+              [formControl]="formulario.controls.fecha" 
+              name="fecha" 
+              maxlength="5"
+              (keyup)="fecha_caducidad(); tarjeta();">
+          </div>
+        </div>
+        <div class="div-contenedor">
+          <div class="w-8 p-r">
+            <input 
+              class="inputs p-s"
+              placeholder="{{'CAHONA' | translate}}" 
+              [formControl]="formulario.controls.name" 
+              name="name" 
+              (keyup)="tarjeta();">
+          </div>
+          <div class="w-4 p-r">
+            <input 
+              class="inputs p-s"
+              placeholder="CVV" 
+              [formControl]="formulario.controls.cvc" 
+              name="cvc" 
+              maxlength="3"
+              (keyup)="numero_cvc(); tarjeta();">
+          </div>
+        </div>
+      </form>
+    </ion-col>
+  </ion-row>
+  <ion-row *ngIf="activeForm[0].active">
+    <ion-col>
+      <ion-item lines="none" class="item-dos">
+        <ion-checkbox mode="md" [(ngModel)]="activeSave" class="checkbox-dos"></ion-checkbox>&nbsp;
+        {{'SAFOTUPA' | translate}}
+      </ion-item>
+    </ion-col>
+  </ion-row>
+</ion-grid>

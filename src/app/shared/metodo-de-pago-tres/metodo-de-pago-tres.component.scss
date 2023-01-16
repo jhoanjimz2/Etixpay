@@ -1,0 +1,87 @@
+ion-grid {
+  padding: 10px;
+}
+.row {
+  border: 1px solid #d8dcdf;
+  border-radius: 10px;
+  margin: 5px;
+  padding: 5px;
+  margin-bottom: 15px;
+}
+.col_img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.div_img {
+  width: 70px;
+  height: 70px;
+  border-radius: 10px;
+  border: 1px solid rgb(102, 75, 196);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.div_img_f {
+  width: 70px;
+  height: 70px;
+  border-radius: 10px;
+  border: 1px solid #d8dcdf;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.img {
+  width: 35px;
+  height: 35px;
+  color: #d8dcdf;
+}
+.col_info {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.div_info {
+  width: 100%;
+  position: relative;
+}
+.label_uno {
+  font-size: 14px;
+  color: #000;
+  font-weight: bold;
+}
+.label_dos {
+  font-size: 11px;
+  color: #d8dcdf;
+  font-weight: bold;
+}
+.label_tres {
+  font-size: 13px;
+  color: rgb(102, 75, 196);
+  font-weight: bold;
+}
+.icon_uno {
+  font-size: 20px;
+  color: rgb(102, 75, 196);
+  position: absolute;
+  right: -5px;
+  top: -5px;
+}
+.icon_dos {
+  font-size: 25px;
+  color: rgb(64, 191, 101);
+  position: absolute;
+  right: 10px;
+  top: calc(50% - 12.5px);
+}
+.paddingAdd {
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+.textoAdd {
+  font-weight: bold;
+  font-size: 100%;
+  color: #664bc4;
+}

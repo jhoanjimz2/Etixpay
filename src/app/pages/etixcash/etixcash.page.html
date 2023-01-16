@@ -1,0 +1,54 @@
+<app-header-padre [page]="true"></app-header-padre>
+<ion-content>
+  
+  <ion-segment mode="md" value="recharges" (ionChange)="muestra($event)">
+    <ion-segment-button value="recharges"  class="ion-text-capitalize">
+      {{'RECHARGES' | translate}}
+    </ion-segment-button>
+    <ion-segment-button value="retreals"  class="ion-text-capitalize">
+      {{'WITHDRAWALS' | translate}}
+    </ion-segment-button>
+    <ion-segment-button value="history"  class="ion-text-capitalize">
+      {{'HISTORY' | translate}}
+    </ion-segment-button>    
+  </ion-segment>
+  
+
+  <div *ngIf="filtro_movimientos == 'recharges'">
+    <ion-list *ngFor="let movimiento of recargas">
+      <app-movimiento-etixcash 
+        [movimiento]="movimiento" 
+        [tipo]="'INGRESO'"
+        (actualizarEvent)="actualizar()"
+      ></app-movimiento-etixcash>
+      <div class="linea"></div>     
+    </ion-list> 
+  </div>
+  
+  <div *ngIf="filtro_movimientos == 'retreals'">
+    <ion-list *ngFor="let movimiento of retiros"> 
+      <app-movimiento-etixcash 
+        [movimiento]="movimiento" 
+        [tipo]="'RETIRO'"
+        (actualizarEvent)="actualizar()"
+      ></app-movimiento-etixcash>
+      <div class="linea"></div>    
+    </ion-list> 
+  </div>
+  
+  <div *ngIf="filtro_movimientos == 'history'">
+    <ion-list *ngFor="let movimiento of movimientos">
+      <app-movimiento-etixcash 
+        [movimiento]="movimiento" 
+        [tipo]="movimiento.solicitud_en_empresaTIPO" 
+        [tipo_dos]="true"
+        (actualizarEvent)="actualizar()"
+      ></app-movimiento-etixcash>
+      <div class="linea"></div>    
+    </ion-list> 
+  </div>
+
+
+
+
+</ion-content>

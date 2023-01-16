@@ -1,0 +1,79 @@
+.label-uno {
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+}
+.div-slide {
+    overflow-y: hidden;
+    overflow-x: auto;
+    white-space: nowrap;
+    display: -webkit-box;
+}
+.chip {
+    --background: transparent;
+    --color: black;
+    border: 1px solid #F6F02D;
+}
+.chip-active {
+    --background: #F6F02D;
+    --color: black;
+    border: 1px solid #F6F02D;
+}
+.input-search {
+    --padding-start: 20px;
+    border-radius: 20px !important;
+    border: 5px solid #F6CE2D;
+    height: 32px;
+}
+.div-producto {
+    width: 161px;
+    position: relative;
+    margin-right: 15px;
+}
+.img-producto {
+    height: 161px;
+    width: 161px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.div-label {
+    width: 161px;
+    height: 18px;
+    position: relative;
+}
+.titulo-product {
+    color: #6D6D6D;
+    font-size: 15px;
+    width: 161px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+.div-buttons {
+    position: relative;
+    display: flex;
+}
+.button {
+    flex: 0 0 calc(calc(6 / var(--ion-grid-columns, 12)) * 100% - 5px);
+    width: calc(calc(6 / var(--ion-grid-columns, 12)) * 100% - 5px);
+    max-width: calc(calc(6 / var(--ion-grid-columns, 12)) * 100% - 5px);
+}
+.button-uno {
+    margin-right: 5px;
+    height: 24px;
+    background-color: #F6F02D;
+    border-radius: 12px;
+    font-size: 13px;
+    color: #000;
+}
+.button-dos {
+    margin-left: 5px;
+    height: 24px;
+    background-color: #664BC0;
+    border-radius: 12px;
+    font-size: 13px;
+    color: #fff;
+}

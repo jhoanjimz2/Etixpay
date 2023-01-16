@@ -1,0 +1,30 @@
+ion-content {
+  --background: rgb(245, 246, 248);
+}
+.div_mayor {
+  background: rgb(245, 246, 248);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+.arriba {
+  width: 100%;
+}
+.abajo {
+  background: #fff;
+  position: relative;
+  border-top-left-radius: 30px  !important;
+  border-top-right-radius: 30px  !important;
+  width: 100%;
+  flex: 1;
+  padding-bottom: 115px;
+}
+.grid {
+  background-color: #fff;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  width: 100%;
+  padding-left: 0px;
+  padding-right: 0px;
+}

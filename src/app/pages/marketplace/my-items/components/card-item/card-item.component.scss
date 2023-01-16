@@ -1,0 +1,71 @@
+
+.btn-clas {
+    height: 25px;
+    min-width: 70px;
+   
+    border: solid 1px #F6F02D;
+   
+    padding: 0%;
+    background-color: #FFFFFF;
+    
+}
+
+.text-title {
+    color: #6D6D6D;
+    font-size: 14px;
+    text-align: left;
+    font-weight: 500;
+}
+
+.btn-price {
+    min-width: 69px;
+    height: 24px;
+    border: solid 1px #F6F02D;
+    background-color: #F6F02D;
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 30px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 2px;
+    position: relative;
+}
+.label-punteado {
+    width: 69px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    position: absolute;
+    left: 5px;
+}
+
+.btn-rp {
+    min-width: 69px;
+    height: 24px;
+    border: solid 1px #664BC0;
+    background-color: #664BC0;
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 30px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 2px;
+    color: #FFFFFF;
+    position: relative;
+}
+
+.item-img {
+    border-radius: 10px; 
+    height: 160px;
+    width: 161px;
+}
+
+.m-b-100 {
+    margin-bottom: 100px;
+}

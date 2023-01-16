@@ -1,0 +1,103 @@
+<ion-row>
+  <ion-col class="ion-text-center padding-20">
+    <img src="assets/pages/icons/cash.svg" />
+  </ion-col>
+</ion-row>
+
+<div *ngIf="!pay">
+  <ion-row>
+    <ion-col class="ion-text-center">
+      <ion-text class="f-z-b-32">{{ "PAYP3" | translate }}</ion-text>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col size="11" class="ion-text-center">
+      <ion-text class="f-z-b-60">{{ cantidad | formattNumber2 }}</ion-text>
+    </ion-col>
+    <ion-col size="1" class="ion-text-center center-items">
+      <ion-text class="f-z-b-32">{{ "€" }}</ion-text>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col class="ion-text-center">
+      <ion-text class="f-z-b-32">{{ "PAYPTO" | translate }}</ion-text>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col class="ion-text-center">
+      <ion-text class="f-z-b-32">{{ informacion.name }}</ion-text>
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="card-info-text">
+    <ion-col class="ion-text-center card-info-text__col">
+      <ion-text class="f-z-b-16">{{ "TEXTPAY" | translate }}</ion-text>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col class="card-info-text__col">
+      <ion-input [(ngModel)]="code" class="input-code"> </ion-input>
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="card-info-text">
+    <ion-col class="card-info-text__col">
+      <button
+        (click)="payCash()"
+        [disabled]="!code"
+        class="btn-confir"
+        expand="full"
+      >
+        {{ "BTNPAY" | translate }}
+      </button>
+      <button [routerLink]="['/tabs/home']" class="btn-anul" expand="full">
+        <ion-text class="btn-anul__text">
+          {{ "BTNCANCELPAY" | translate }}
+        </ion-text>
+      </button>
+    </ion-col>
+  </ion-row>
+</div>
+
+<div *ngIf="pay">
+  <ion-row>
+    <ion-col class="ion-text-center">
+      <ion-text class="f-z-b-32">{{ "PRREWARD" | translate }}</ion-text>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col size="11" class="ion-text-center">
+      <ion-text class="f-z-b-60">{{
+        pay_efectivoPUNTOSDERECOMPENSA | formattNumber2
+      }}</ion-text>
+    </ion-col>
+    <ion-col size="1" class="ion-text-center center-items">
+      <ion-text class="f-z-b-32">{{ "PR" }}</ion-text>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col class="ion-text-center">
+      <ion-text class="f-z-b-32">{{ "PRREWARDFROM" | translate }}</ion-text>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col class="ion-text-center">
+      <ion-text class="f-z-b-32">{{ informacion.name }}</ion-text>
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="card-info-text">
+    <ion-col class="card-info-text__col">
+      <button [routerLink]="['/tabs/cartera']" class="btn-confir" expand="full">
+        {{ "BACKTOWALLET2" | translate }}
+      </button>
+    </ion-col>
+  </ion-row>
+</div>

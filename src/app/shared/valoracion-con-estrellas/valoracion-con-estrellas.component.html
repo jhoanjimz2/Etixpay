@@ -1,0 +1,12 @@
+<div [ngClass]="{'normal' : !tipo, 'pequenas' : tipo}">
+  <img src="assets/tabs/componentes/estrella_select.svg"  *ngIf="estrella > 0">
+  <img src="assets/tabs/componentes/estrella_select.svg"  *ngIf="estrella > 0 && estrella >= 2">
+  <img src="assets/tabs/componentes/estrella_select.svg"  *ngIf="estrella > 0 && estrella >= 3">
+  <img src="assets/tabs/componentes/estrella_select.svg"  *ngIf="estrella > 0 && estrella >= 4">
+  <img src="assets/tabs/componentes/estrella_select.svg"  *ngIf="estrella > 0 && estrella >= 5">
+  <img src="assets/tabs/componentes/estrella_f.svg"  *ngIf="estrella < 5 ">
+  <img src="assets/tabs/componentes/estrella_f.svg"  *ngIf="estrella < 5 && estrella < 2">
+  <img src="assets/tabs/componentes/estrella_f.svg"  *ngIf="estrella < 5 && estrella < 3">
+  <img src="assets/tabs/componentes/estrella_f.svg"  *ngIf="estrella < 5 && estrella < 4">
+  <img src="assets/tabs/componentes/estrella_f.svg"  *ngIf="estrella == 0">
+</div>

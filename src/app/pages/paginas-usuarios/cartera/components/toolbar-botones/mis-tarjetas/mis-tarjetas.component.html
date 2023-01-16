@@ -1,0 +1,91 @@
+<ion-header class="ion-no-border">
+    <div>
+        <ion-grid class="header">
+          <ion-row class="padding_top_cero">
+            <ion-col class="col_header">
+              <ion-icon name="close-outline" (click)="salir_sin_argumentos()" class="icon_close"></ion-icon>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <ion-label class="titulo">{{'MYCARDS2' | translate}}</ion-label>
+            </ion-col>
+            <ion-col class="col_header_dos">
+                <ion-icon name="menu" class="icon_menu"  (click)="popover_cards($event)"></ion-icon>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+    </div>
+</ion-header>
+<ion-content>
+    <ion-refresher slot="fixed" (ionRefresh)="cargar_seleccion_de_card_dos($event)" mode="md">
+      <ion-refresher-content refreshingSpinner="circles">
+      </ion-refresher-content>
+    </ion-refresher>
+    <div class="div_mayor">
+      
+        <div class="div_info">
+            <ion-grid class="ion-text-center">
+                <ion-row>
+                    <ion-col>
+                        <ion-label class="label_uno">Card</ion-label><br>
+                        <ion-label class="label_dos" *ngIf="!cargando">&nbsp;{{card_seleccionada.cardNUMERO | modoIban: true}}</ion-label>
+                        <ion-spinner *ngIf="cargando"></ion-spinner>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col class="col_info">
+                        <ion-label class="label_uno">{{'CARDNAME' | translate}}</ion-label><br>
+                        <img src="assets/tabs/wallet/componentes/tarjetas/edit.svg" class="img_edit" *ngIf="!cargando" (click)="alias_cards($event)">
+                        <ion-label class="label_dos" *ngIf="!cargando">&nbsp;{{card_seleccionada.cardALIAS}}</ion-label>
+                        <ion-spinner *ngIf="cargando"></ion-spinner>
+                    </ion-col>
+                    <ion-col class="col_info">
+                        <ion-label class="label_uno">{{'CARDBALANCE' | translate}}</ion-label><br>
+                        <ion-label class="label_dos" *ngIf="!cargando">{{card_seleccionada.wallet.walletSALDOATM | formattNumber}} €</ion-label>
+                        <ion-spinner *ngIf="cargando"></ion-spinner>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        <img src="assets/tabs/wallet/componentes/tarjetas/card.png" class="img_card">
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </div>
+        
+        
+        <div class="abajo">
+            <ion-grid>
+                <ion-row>
+                    <ion-col class="col_butons">
+                        <button class="buttons" (click)="lectorQr()">
+                            <img src="assets/tabs/wallet/componentes/tarjetas/pay.png"><br>
+                            {{'PAY3' | translate}}
+                        </button>
+                    </ion-col>
+                    <ion-col class="col_butons">
+                        <button class="buttons" (click)="top_up_card()">
+                            <img src="assets/tabs/wallet/componentes/tarjetas/top-up.png"><br>
+                            X
+                        </button>
+                    </ion-col>
+                    <ion-col class="col_butons">
+                        <button class="buttons" (click)="recharge()">
+                            <img src="assets/tabs/wallet/componentes/tarjetas/recharge.png"><br>
+                            {{'RECHARGE3' | translate}}
+                        </button>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        <ion-label class="label_tres">{{'DISCOVERADVANTAGES' | translate}}</ion-label>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        <img src="assets/tabs/wallet/componentes/tarjetas/cashless.png" class="img_card_dos">
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </div>
+    </div>
+
+</ion-content>

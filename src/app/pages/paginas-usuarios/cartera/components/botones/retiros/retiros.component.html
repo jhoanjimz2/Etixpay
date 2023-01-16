@@ -1,0 +1,96 @@
+<app-header-padre [page]="true"></app-header-padre>
+<ion-content>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <div class="div_balance">
+          <ion-label class="label_uno">{{'BALANCE' | translate}}</ion-label>
+          <ion-label class="label_dos">{{saldo_tix | formattNumber}} €</ion-label>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-label class="label_tres">{{'AMOUNT3' | translate}}</ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <form (ngSubmit)="generar_clave_cinamica()" [formGroup]="formulario" id="formulario" autocomplete="off">
+          <input placeholder="{{'CANTIDADMAXIMARETIRO' | translate}}" class="input" mask="separator.2" thousandSeparator="." [formControl]="formulario.controls.cantidad" name="cantidad">
+          <button class="button_euro" type="button">€</button>
+        </form>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-label class="label_tres">{{'WITHDRAWALMETHOD' | translate}}</ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="4" class="ion-text-center">
+        <button [ngClass]="{'boton_select': boton_select == 1, 'boton_select_f': boton_select != 1}" (click)="boton_select = 1; boton_select_vali = true" type="button" [disabled]="clave_dinamica || !formulario.valid || boton_select">
+          <ion-icon name="checkmark-outline" class="icon_select" *ngIf="boton_select == 1"></ion-icon>
+          <img class="img" src="assets/tabs/wallet/componentes/botones/pagos/wire_transfer.png"><br>
+          {{'WIRETRANSFER' | translate}}
+        </button>
+      </ion-col>
+      <ion-col size="4" class="ion-text-center">
+        <button [ngClass]="{'boton_select': boton_select == 2, 'boton_select_f': boton_select != 2}" (click)="boton_select = 2; boton_select_vali = true" type="button" [disabled]="true">
+          <ion-icon name="checkmark-outline" class="icon_select" *ngIf="boton_select == 2"></ion-icon>
+          <img class="img" src="assets/tabs/wallet/componentes/botones/pagos/cash_machine.png"><br>
+          {{'CASHMACHINE' | translate}}
+        </button>
+      </ion-col>
+      <ion-col size="4" class="ion-text-center">
+        <button [ngClass]="{'boton_select': boton_select == 3, 'boton_select_f': boton_select != 3}" (click)="boton_select = 3; boton_select_vali = true" type="button" [disabled]="clave_dinamica || !formulario.valid || boton_select">
+          <ion-icon name="checkmark-outline" class="icon_select" *ngIf="boton_select == 3"></ion-icon>
+          <img class="img" src="assets/tabs/wallet/componentes/botones/pagos/etixcash.png"><br>
+          {{'ETIXCASH' | translate}}
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <div class="linea"></div>
+
+  <app-metodo-de-pago-tres [prev_select]="prev_select" *ngIf="boton_select == 1 && !clave_dinamica"></app-metodo-de-pago-tres>
+
+  <ion-grid *ngIf="boton_select == 3">
+    <ion-row>
+      <ion-col>
+        <ion-label class="label_tres">{{'SCANQR' | translate}}</ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="2">
+        <button  class="boton" (click)="lectorQr()" type="button">
+          <ion-icon name="qr-code-outline" class="icon_qr"></ion-icon>  
+        </button>
+      </ion-col>
+      <ion-col>
+        <form [formGroup]="formulario_wallet">
+          <ion-input class="input_wallet" placeholder="{{'INSERTWALLET2' | translate}}"
+          [formControl]="formulario_wallet.controls.wallet" name="wallet"></ion-input>  
+        </form>      
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+  <app-clave-dinamica-retirar [clave]="clave" *ngIf="clave_dinamica"></app-clave-dinamica-retirar>
+  
+
+</ion-content>
+<ion-toolbar>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <button class="confirm" type="submit" form="formulario" [disabled]="!formulario.valid || !boton_select || !prev_select[0]"  *ngIf="!clave_dinamica && boton_select == 1">{{'CONFIRM5' | translate}}</button>
+        <button class="confirm" type="submit" form="formulario" [disabled]="!formulario.valid || !boton_select"  *ngIf="!clave_dinamica && boton_select == 3">{{'CONFIRM5' | translate}}</button>
+        <button class="confirm" type="button" [disabled]="!clave.clave" *ngIf="clave_dinamica && boton_select == 1" (click)="retiro_banco()">{{'CONFIRM5' | translate}}</button>
+        <button class="confirm" type="button" [disabled]="!clave.clave || !formulario_wallet.valid" *ngIf="clave_dinamica && boton_select == 3" (click)="retiro_etixcash()">{{'CONFIRM5' | translate}}</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-toolbar>

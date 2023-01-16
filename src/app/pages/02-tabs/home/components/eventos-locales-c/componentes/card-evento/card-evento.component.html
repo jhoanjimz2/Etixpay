@@ -1,0 +1,31 @@
+<ion-card>
+  <ion-row class="rowimg">
+    <ion-col class="colimg ion-no-padding" (click)="modalabrir()">
+      <img src="{{evento.eventoIMAGENDESTACADA}}"
+      class="imagenEvento">
+    </ion-col>
+    <ion-col class="coltexto ion-text-left ion-no-padding">
+      <div class="divTextoEvento"> 
+        <ion-label class="nombretituloEvento" (click)="modalabrir()">{{evento.eventoTITULO}}</ion-label>
+        <ion-label class="descripcioncorta" (click)="modalabrir()">{{evento.eventoDESCRIPCION}}</ion-label>
+        <app-boton-like-eventos 
+        [evento]="evento" 
+        [eventos_all]="eventos_all"
+        [eventos_mios]="eventos_mios"
+        [eventos_likes]="eventos_likes" 
+        class="botonlike" *ngIf="tipo != 3"></app-boton-like-eventos>
+        <ion-label *ngIf="evento.eventoESTADO == 'ACTIVO' && tipo == 3" class="label_valido">Accepted</ion-label>
+        <ion-label *ngIf="evento.eventoESTADO == 'PENDIENTE' && tipo == 3" class="label_no_valido">Pending</ion-label>
+      </div>
+      <div class="divdireccion" (click)="modalabrir()">
+        <ion-icon name="location-sharp"></ion-icon>&nbsp;&nbsp;
+        <ion-label>{{evento.eventoDIRECCION}}</ion-label>        
+      </div>
+      <div class="divultimo" (click)="modalabrir()">
+        <ion-label>{{evento.eventoFECHAINICIO | dateTimeFormatFilter : "DD MMM hh:mm"}}</ion-label>
+        <div class="divprecio">{{precio_standart | formattNumber}} €</div>
+      </div>
+      <ion-icon name="chevron-forward" class="iconarrow" (click)="modalabrir()"></ion-icon>
+    </ion-col>
+  </ion-row>
+</ion-card>

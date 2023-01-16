@@ -1,0 +1,23 @@
+<ion-grid>
+  <ion-row>
+    <ion-col class="col1 lineasCol">
+      <div class="divBase">
+        <div class="divSelect" [ngStyle]="{'width': porcentaje + '%'}">
+        </div>
+      </div>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col class="col2">
+      <div class="linea" *ngFor="let linea of [1,1,1,1,1,1,1,1,1,1,1]; let i = index"
+           [ngStyle]="{'left': 'calc('+ (i * 10) + '%' + ' - 1px)'}"></div>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col class="col3">
+      <div class="numero" *ngFor="let linea of [1,1,1,1,1,1,1,1,1,1]; let i = index"
+           [ngStyle]="{'left': 'calc('+ (i * 10) + '%' + ' - 5px)'}">{{i}}€</div>
+      <div class="regalo"><ion-icon name="gift-outline"></ion-icon></div>
+    </ion-col>
+  </ion-row>
+</ion-grid>

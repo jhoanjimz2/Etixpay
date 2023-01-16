@@ -1,0 +1,109 @@
+<app-header-padre [page]="true"></app-header-padre>
+<ion-content>
+  
+  <form [formGroup]="formulario" (ngSubmit)="comprar()" id="formulario">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="4" class="col_img">
+          <img src="{{proyecto.proyectoIMAGENPREVIA}}" class="img">
+        </ion-col>
+        <ion-col>
+          <ion-label class="label_cinco">{{proyecto.proyectoNOMBRE}}</ion-label><br>
+          <div class="div_dirreccion">
+            <ion-icon class="icon_location" name="location-sharp"></ion-icon>&nbsp;
+            <ion-label class="label_seis">{{proyecto.proyectoDIRECCION}}</ion-label>
+            <ion-label *ngIf="proyecto.ciudad" class="label_seis">,{{proyecto.ciudad.ciudadNOMBRE}}</ion-label>
+            <ion-label *ngIf="proyecto.pais" class="label_seis">,{{proyecto.pais.paisNOMBRE}}</ion-label>
+          </div>
+          <ion-label class="label_siete">{{'CATEGORY9' | translate}}:</ion-label><br>
+          <ion-label class="label_ocho" *ngIf="proyecto.tipo_proyecto">{{proyecto.tipo_proyecto.tipo_proyectoTITULO}}</ion-label>
+          <ion-label class="label_ocho" *ngIf="proyecto.types">{{proyecto.types.tipo_proyectoTITULO}}</ion-label><br>
+          <ion-label class="label_siete">{{'TOKENPRICE' | translate}}:</ion-label><br>
+          <ion-label class="label_ocho">1 {{proyecto.proyectoSIGLATOK}} = {{proyecto.proyectoPRECIO | formattNumber}} €</ion-label>
+          <div class="div_reloj">
+            <div>{{tiempo_restante.days}}</div> : <div>{{tiempo_restante.hours}}</div> : <div>{{tiempo_restante.minutes}}</div> : <div>{{tiempo_restante.seconds}}</div>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row class="row_margin">
+        <ion-col class="col_line">
+          <ion-label class="label_ocho">{{'AMOUNT4' | translate}}</ion-label>
+          <input class="input" (input)="sumar()" mask="separator.2" thousandSeparator="." 
+          [formControl]="formulario.controls.cantidad" name="cantidad">
+          <ion-label class="label_nueve" [hidden]="+formulario.controls.cantidad.value >= min">{{'CANTIDADMINIMADECOMPRA' | translate}} {{ min | formattNumber }}</ion-label>
+          <ion-label class="label_nueve" [hidden]="+formulario.controls.cantidad.value <= max">{{'CANTIDADMAXIMADECOMPRA' | translate}} {{ max | formattNumber }}</ion-label>
+        </ion-col>
+        <ion-col class="col_line">
+          <ion-label class="label_ocho">{{'PRICE2' | translate}}</ion-label>
+          <input class="input" mask="separator.2" thousandSeparator="." 
+          [formControl]="formulario.controls.precio" name="precio">
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-grid class="ion-no-padding">
+      <app-metodo-de-pago 
+        [prev_select]="prev_select"
+        (selectAccount)="selectA($event)">
+      </app-metodo-de-pago>
+    </ion-grid>
+    <ion-grid class="ion-no-padding">
+      <app-form-card
+        [activeForm]="activeForm"
+        (selectForm)="selectF($event)"
+        (recarga)="validTarjeta($event)">
+      </app-form-card>
+    </ion-grid>
+    <ion-grid>
+      <ion-row>
+        <ion-col class="col_uno">
+          <ion-label class="label_uno">{{'COMMISSIONI' | translate}}</ion-label><br>
+          <ion-label class="label_tres">{{'STAIGENERADO' | translate}}</ion-label><br>
+          <ion-label class="label_uno">{{'TOTAL3' | translate}}</ion-label>
+        </ion-col>
+        <ion-col class="ion-text-end col_uno">
+          <ion-label class="label_uno">{{comision | formattNumber}} €</ion-label><br>
+          <ion-label class="label_tres">{{puntos_recompensa | number: '1.0'}} PR</ion-label><br>
+          <ion-label class="label_uno">{{total | formattNumber}} €</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <div class="div_check">
+            <ion-checkbox [formControl]="formulario.controls.check_uno" name="check_uno"></ion-checkbox>&nbsp;&nbsp;
+            <ion-label class="item_check_label_uno">{{'IVEREAD' | translate}}</ion-label>&nbsp;
+            <ion-label (click)="terminos_y_condiciones()" class="item_check_label_dos"> {{'TERMSANDCONDITIONS' | translate}}</ion-label>
+          </div>
+          <div class="div_check">
+            <ion-checkbox [formControl]="formulario.controls.check_dos" name="check_dos"></ion-checkbox>&nbsp;&nbsp;
+            <ion-label class="item_check_label_uno">{{'IACCEPTALL' | translate}}</ion-label>
+          </div>
+          <div class="div_check_tres">
+            <ion-checkbox [formControl]="formulario.controls.check_tres" name="check_tres"></ion-checkbox>&nbsp;&nbsp;
+            <ion-label class="item_check_label_uno">{{'HOLETTO' | translate}}</ion-label>&nbsp;
+            <ion-label (click)="terminos_y_condiciones()" class="item_check_label_dos">{{'CONTRATO' | translate}}</ion-label>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>
+<ion-toolbar>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <button *ngIf="activeForm[0].active"
+                [ngClass]="{'confirm': formulario.valid && validCard.valid, 'confirm_f': !formulario.valid || !validCard.valid}"
+                type="submit" 
+                [disabled]="!formulario.valid || !validCard.valid" 
+                form="formulario">{{'CONFIRM7' | translate}} form
+        </button>
+        <button *ngIf="prev_select[0].seleccionado"
+                [ngClass]="{'confirm': formulario.valid, 'confirm_f': !formulario.valid}"
+                type="submit" 
+                [disabled]="!formulario.valid" 
+                form="formulario">{{'CONFIRM7' | translate}} prev
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-toolbar>

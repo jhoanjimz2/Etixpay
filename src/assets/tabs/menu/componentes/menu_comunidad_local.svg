@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="23px" height="21px" viewBox="0 0 23 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Local community</title>
+    <defs>
+        <polygon id="path-1" points="0 0.0002 22.878 0.0002 22.878 20.0102 0 20.0102"></polygon>
+    </defs>
+    <g id="Menu" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="My-profile" transform="translate(-22.000000, -279.000000)">
+            <g id="Local-community" transform="translate(22.000000, 279.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Clip-2"></g>
+                <path d="M0.6562,0.0002 C0.3752,0.0002 0.1252,0.1802 0.0332,0.4472 C-0.0548,0.7122 0.0352,1.0082 0.2602,1.1822 L8.9912,7.7782 L10.5462,19.4392 C10.5822,19.7172 10.7922,19.9392 11.0792,20.0002 C11.1192,20.0062 11.1602,20.0102 11.1982,20.0102 C11.4302,20.0102 11.6472,19.8852 11.7642,19.6852 C11.7642,19.6852 22.8702,0.5142 22.8782178,0.4732 C22.9012,0.3542 0.6562,0.0002 0.6562,0.0002" id="Fill-1" fill="#B4BBCB" mask="url(#mask-2)"></path>
+            </g>
+        </g>
+    </g>
+</svg>

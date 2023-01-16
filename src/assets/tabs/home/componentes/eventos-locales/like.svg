@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="17px" height="16px" viewBox="0 0 17 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>favorite full</title>
+    <defs>
+        <path d="M334.442088,381.415067 C331.798088,379.968067 329.344088,382.769067 329.344088,382.769067 C329.344088,382.769067 326.890088,379.968067 324.247088,381.415067 C321.694088,382.812067 321.540088,385.852067 322.673088,387.800067 C323.917088,389.937067 329.344088,394.789067 329.344088,394.789067 C329.344088,394.789067 334.772088,389.937067 336.015088,387.800067 C337.148088,385.852067 336.994088,382.812067 334.442088,381.415067 Z" id="path-1"></path>
+    </defs>
+    <g id="Events" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="favorite-full" transform="translate(-321.000000, -380.000000)">
+            <use fill="#E9446A" fill-rule="evenodd" style="mix-blend-mode: darken;" xlink:href="#path-1"></use>
+            <use stroke="#E9446A" stroke-width="1" xlink:href="#path-1"></use>
+        </g>
+    </g>
+</svg>

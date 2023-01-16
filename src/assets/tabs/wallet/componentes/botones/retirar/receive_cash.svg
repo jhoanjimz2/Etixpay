@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="39px" height="38px" viewBox="0 0 39 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>receive_cash</title>
+    <defs>
+        <filter id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Receive" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="receive_cash" transform="translate(-799.000000, -442.000000)" filter="url(#filter-1)">
+            <g transform="translate(800.000000, 443.000000)">
+                <path d="M36.5,18 C36.5,8.05893444 28.440313,0 18.5004848,0 C8.55968702,0 0.5,8.05893444 0.5,18 C0.5,27.9410656 8.55968702,36 18.5004848,36 C28.440313,36 36.5,27.9410656 36.5,18 Z" id="Stroke-1" stroke="#FFFFFF" stroke-width="2"></path>
+                <text id="€" font-family="Avenir-Heavy, Avenir" font-size="22" font-weight="600" letter-spacing="0.207058819" fill="#FFFFFF">
+                    <tspan x="10.6864706" y="26">€</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

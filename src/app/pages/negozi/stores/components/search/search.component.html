@@ -1,0 +1,19 @@
+<ion-grid class="no-padding">
+  <ion-row>
+    <ion-col class="no-padding">
+      <ion-searchbar
+        placeholder="{{'SEARCHN' | translate}}"
+        mode="ios"
+        (ionChange)="buscar($event)"
+        debounce="500">
+      </ion-searchbar>
+      <ion-list>
+        <ion-item *ngIf="cargando" class="item-cargando" lines="none">{{'SEARCHINGN' | translate}}<ion-spinner name="circles" slot="end"></ion-spinner></ion-item>
+        <ion-item lines="none" *ngIf="lista.length == 0 && noEncontrado">{{'NOTFOUNDN' | translate}}</ion-item>
+        <ion-item *ngFor="let store of lista" lines="none" [hidden]="lista.length < 0 && noEncontrado" (click)="irNegoziPage(store.uuid)">
+          <ion-label >{{store.empresaNOMBREMAP}}</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-col>
+  </ion-row>
+</ion-grid>

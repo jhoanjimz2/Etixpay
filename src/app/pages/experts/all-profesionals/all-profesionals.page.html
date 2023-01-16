@@ -1,0 +1,15 @@
+<app-header-padre [page]="true" [color]="'#DF7000'"></app-header-padre>
+<ion-content>
+
+  <app-search
+    (search)="buscar($event)">
+  </app-search>
+
+  <div class="d-c-max">
+    <app-profesional 
+      [profesional]="profesional" 
+      *ngFor="let profesional of  profesionalsAll | experts : palabra : 'profesional'">
+    </app-profesional>
+  </div>
+
+</ion-content>

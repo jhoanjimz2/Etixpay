@@ -1,0 +1,162 @@
+<ion-card-content>
+  <h1 class="ion-text-center">
+    <ion-label color="primary">{{'SUMMARY' | translate}}</ion-label>
+  </h1>
+</ion-card-content>
+
+<div class="card-info">
+  <ion-card-content>
+    <h2>
+      <ion-label class="dark-label">{{'GENERALINFORMATIONS' | translate}}</ion-label>
+    </h2>
+    <ion-row>
+      <ion-col>
+        <ion-text class="dark-label"><p>{{'COMPANYTYPESUMMARY' | translate}}</p></ion-text>
+        <ion-text class="dark-label"><p>{{'CATEGORYCOMPANY' | translate}}</p></ion-text>
+        <ion-text class="dark-label"><p>{{'COMMUNITYCODESUMMARY' | translate}}</p></ion-text>
+      </ion-col>
+      <ion-col>
+        <ion-text class="dark-label"><p>{{summary.authorization.typeStore === 1 ? 'Online' : 'Offline'}}</p></ion-text>
+        <ion-text class="dark-label"><p>{{summary.authorization.category}}</p></ion-text>
+        <ion-text class="dark-label"><p>{{communityCode}}</p></ion-text>
+      </ion-col>
+    </ion-row>
+    <div class="ion-text-right p-r-10p">
+        <i (click)="editInfo(1)" class="fa fa-pencil-square-o icon-edit-info"></i>
+        <ion-text (click)="editInfo(1)" color="primary">{{'EDITSUMMARY' | translate}}</ion-text>
+    </div>
+  </ion-card-content>
+</div>
+
+<div class="card-info">
+  <ion-card-content>
+    <h2>
+      <ion-label class="dark-label">{{'CONTACTSDETAILS' | translate}}</ion-label>
+    </h2>
+    <ion-row>
+      <ion-col>
+        <ion-text class="dark-label"><p>{{'EMAILADDRESS' | translate}}</p></ion-text>
+      </ion-col>
+      <ion-col>
+        <ion-text class="dark-label"><p>{{summary.contactDetail.email}}</p></ion-text>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-text class="dark-label"><p>{{'PHONENUMBERSUMMARY' | translate}}</p></ion-text>
+      </ion-col>
+      <ion-col>
+        <ion-text class="dark-label"><p>{{summary.contactDetail.phone}}</p></ion-text>
+      </ion-col>
+    </ion-row>
+    <div class="ion-text-right p-r-10p">
+        <i (click)="editInfo(2)" class="fa fa-pencil-square-o icon-edit-info"></i>
+        <ion-text (click)="editInfo(2)" color="primary">{{'EDITSUMMARY' | translate}}</ion-text>
+    </div>
+  </ion-card-content>
+</div>
+
+<div class="card-info">
+  <ion-card-content>
+    <h2>
+      <ion-label class="dark-label">{{'FISCALDATAANDREWARD' | translate}}</ion-label>
+    </h2>
+    <ion-row>
+      <ion-col>
+        <ion-text class="dark-label"><p>{{'COMPANYNAME' |translate}}</p></ion-text>
+      </ion-col>
+      <ion-col>
+        <ion-text class="dark-label"><p>{{summary.fiscalData.companyName}}</p></ion-text>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="summary.authorization.isRepresentativeLegal === 'NO'">
+      <ion-col>
+        <ion-text class="dark-label"><p>{{'LEGALREPRESENTATIVE' | translate}}</p></ion-text>
+      </ion-col>
+      <ion-col>
+        <ion-text class="dark-label"><p>{{summary.fiscalData.legalRepresentative}}</p></ion-text>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-text class="dark-label"><p>{{'COMPANYTYPESUMMARY' | translate}}</p></ion-text>
+      </ion-col>
+      <ion-col>
+        <ion-text class="dark-label"><p>{{summary.fiscalData.legalForm}}</p></ion-text>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-text class="dark-label"><p>{{'TAXNUMBER' | translate}}</p></ion-text>
+      </ion-col>
+      <ion-col>
+        <ion-text class="dark-label"><p>{{summary.fiscalData.taxNumber}}</p></ion-text>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-text class="dark-label"><p>{{'LEGALADDRESSCOMPANYSUMMARY' | translate}}</p></ion-text>
+      </ion-col>
+      <ion-col>
+        <ion-text class="dark-label"><p>{{summary.fiscalData.legalAddress}}</p></ion-text>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-text class="dark-label"><p>{{'OPERATIVEADDRESS' | translate}}</p></ion-text>
+      </ion-col>
+      <ion-col>
+        <ion-text class="dark-label"><p>{{summary.fiscalData.operativeAddress}}</p></ion-text>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-text class="dark-label"><p>{{'ETIXREWARD' | translate}}</p></ion-text>
+      </ion-col>
+      <ion-col>
+        <ion-text class="dark-label"><p>{{summary.fiscalData.rewardEtix}}%</p></ion-text>
+      </ion-col>
+    </ion-row>
+    <div class="ion-text-right p-r-10p">
+        <i (click)="editInfo(3)" class="fa fa-pencil-square-o icon-edit-info"></i>
+        <ion-text (click)="editInfo(3)" color="primary">{{'EDITSUMMARY' | translate}}</ion-text>
+    </div>
+  </ion-card-content>
+</div>
+
+<div class="card-info">
+  <ion-card-content>
+    <h2>
+      <ion-label class="dark-label">{{'MAPDESCRIPTIONPHOTOS' | translate}}</ion-label>
+    </h2>
+    <ion-row>
+      <ion-col>
+        <ion-text class="dark-label"><p>{{'BRANDNAME' | translate}}</p></ion-text>
+        <ion-text class="dark-label"><p>{{summary.description.brandName}}</p></ion-text>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-text class="dark-label"><p>{{'COMPANYDESCRIPTION' | translate}}</p></ion-text>
+        <ion-text class="dark-label"><p>{{summary.description.companyDescription}}</p></ion-text>
+      </ion-col>
+    </ion-row>
+    <div class="ion-text-right p-r-10p">
+        <i (click)="editInfo(4)" class="fa fa-pencil-square-o icon-edit-info"></i>
+        <ion-text (click)="editInfo(4)" color="primary">{{'EDITSUMMARY' | translate}}</ion-text>
+    </div>
+  </ion-card-content>
+</div>
+
+<ion-row class="p-t-30">
+  <ion-col class="ion-text-center">
+  </ion-col>
+  <ion-col class="ion-text-center">
+    <ion-button (click)="continue()" color="primary" class="btn-button wth-90p">
+      <ion-label color="light" class="txt-capitalize">
+        {{'CONTINUE' | translate}}
+        <i class="mdi mdi-arrow-right m-l-15"></i>
+      </ion-label>
+    </ion-button>
+  </ion-col>
+</ion-row>

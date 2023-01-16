@@ -1,0 +1,28 @@
+ion-col {
+    text-align: center !important;
+}
+.boton-numero {
+    height: 53px;
+    width: 53px;
+    --border-radius: 10px;
+    color: black;
+    --background: white;
+    --box-shadow: 0px 0px 20px 0px #d8dcdf;
+    font-size: 20px;
+}
+.boton-close {
+    height: 53px;
+    width: 84px;
+    --border-radius: 10px;
+    color: white;
+    font-size: 30px;
+}
+.boton-dos {
+    height: 53px;
+    width: 84px;
+    --border-radius: 10px;
+    color: black;
+    --background: white;
+    --box-shadow: 0px 0px 20px 0px #d8dcdf;
+    font-size: 20px;
+}

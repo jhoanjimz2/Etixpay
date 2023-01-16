@@ -1,0 +1,29 @@
+
+<app-header-padre [tabs]="true"></app-header-padre>
+
+<ion-content>
+
+  <ion-row class="r-1">
+    <ion-col>
+      <ion-label class="text-title">{{'MARKETPLACE' | translate}}</ion-label>
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="r-2">
+    <ion-col size="1.5" class="c-1">
+      <i class="fa fa-search i-1"></i>
+    </ion-col>
+    <ion-col class="c-2">
+      <ion-input [(ngModel)]="search" name="search"></ion-input>
+    </ion-col>
+  </ion-row>
+
+  <app-slide-clasificaction (setCategory)="getCategory($event)"></app-slide-clasificaction>
+
+  <app-card-item
+    [category]="category"
+    [search]="search"
+    [products]="products"
+  ></app-card-item>
+
+</ion-content>

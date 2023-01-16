@@ -1,0 +1,178 @@
+.grid {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.collocal {
+  padding-top: 15px;
+  padding-left: 15px;
+}
+.textolocal {
+  font-size: 100%;
+  font-weight: bold;
+  color: #000;
+  text-shadow: 0px 0px 1px #d8dcdf;
+}
+.textocards {
+  font-size: 100%;
+  font-weight: bold;
+  color: #664bc4;
+  text-shadow: 0px 0px 1px #d8dcdf;
+}
+.cardgrafica {
+  padding: 0px;
+  margin: 10px;
+  height: 235px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  position: relative;
+}
+.wallet_antereum {
+  font-size: 12px;
+  font-weight: 400;
+  color: #000;
+  position: absolute;
+  top: 12px;
+  left: 10px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+}
+.actualize {
+  font-size: 13px;
+  font-weight: bold;
+  color: #664bc4;
+  position: absolute;
+  top: 15px;
+  right: 10px;
+  z-index: 1;
+}
+.divcontenedorfondo {
+  margin-top: 10px;
+  position: absolute;
+  top: 30px;
+  left: 0px;
+  width: 100%;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+}
+.divlineafondo {
+  margin: auto;
+  position: absolute;
+  width: 100%;
+  top: 120px;
+  border-top: 1px solid #d8dcdf;
+}
+.barraporcentaje {
+  width: 25px;
+  border-radius: 3px;
+  margin: auto;
+}
+.barraporcentajeF {
+  width: 28px;
+  border-radius: 3px;
+  background-color: #f5f6f8;
+  position: absolute;
+  height: 100px;
+  z-index: -1;
+  top: 30px;
+}
+.numero {
+  width: 40px;
+  height: 14px;
+  font-size: 60%;
+  font-weight: 300;
+  color: #000;
+  position: absolute;
+  z-index: 1;
+  top: 10px;
+}
+ion-slides {
+  width: 100%;
+  margin: 0px;
+  position: absolute;
+  top: 30px;
+}
+ion-slide {
+  height: 200px;
+}
+.info {
+  position: absolute;
+  bottom: 20px;
+  margin: auto;
+  line-height: 0.8;
+}
+.divimg {
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  border: 1px solid #d8dcdf;
+  margin: auto;
+}
+.divimg img {
+  width: 99%;
+  height: 99%;
+  border-radius: 49.5%;
+  object-fit: cover;
+}
+.label1 {
+  font-size: 65%;
+  font-weight: bold;
+  text-shadow: 0px 0px 1px #d8dcdf;
+  color: #000;
+}
+.label2 {
+  font-size: 60%;
+  font-weight: 300;
+  color: #000;
+}
+
+
+.grid_dos {
+  margin: 10px;
+  background-color: #fff;
+  border-radius: 12px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 13px;
+  border: 1px solid #d8dcdf;
+}
+
+.col1 {
+  max-width: 50px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+.imgicon {
+  width: 20px;
+}
+.col2 {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  font-size: 100%;
+  font-weight: bold;
+  color: #000;
+}
+.col3 {
+  max-width: 70px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 150%;
+  font-weight: bold;
+  color: #d8dcdf;
+}
+
+.label_info_nula {
+  font-size: 16px;
+  font-weight: 400;
+  color: #000;
+  // position: absolute;
+  // z-index: 9999999;
+  // left: 0px;
+  // top: 50%;
+}

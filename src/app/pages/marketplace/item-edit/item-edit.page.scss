@@ -1,0 +1,283 @@
+ion-content {
+    background-color: #FFFFFF;
+    --offset-bottom: auto!important;
+    --overflow: hidden;
+    overflow: auto;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+}
+
+.title {
+    color: #2A2A2A; 
+    text-align: left; 
+    font-size: 20px; 
+    font-weight: 500;
+}
+
+.card-image {
+    box-shadow: none;
+    border-radius: 10px;
+    height: 329px;
+    width: 98%;
+    opacity: 0.7;
+}
+
+.card-image-new {
+    box-shadow: none;
+    border-radius: 10px;
+    height: 329px;
+    width: 98%;
+}
+
+.card-image-small {
+    opacity: 0.7;
+    border-radius: 10px;
+    height: 107px;
+    width: 107px;
+}
+
+.card-image-small-new {
+    border-radius: 10px;
+    height: 107px;
+    width: 107px;
+}
+
+.opc-04 {
+    opacity: 0.7;
+}
+
+.text-label {
+    color: #2A2A2A;
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 20px;
+}
+
+.text-input {
+    font-size: 14px;
+    border: solid 1px #707070;
+    height: 45px;
+    border-radius: 30px;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    color: #6D6D6D;
+    margin-top: 10px;
+}
+
+.btn-save {
+    height: 46px;
+    width: 246px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #2A2A2A;
+    text-transform: capitalize;
+    --border-radius: 10px;
+    --background: #F6F02D;
+    --box-shadow: none;
+}
+
+
+.card-icon {
+    border-radius: 50%; 
+    background-color: #F6F02D;  
+    padding-top: 10px; 
+    height: 67px; 
+    width: 67px; 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -25px 0 0 -25px; 
+    opacity: 0.7;
+}
+
+.f-z-40 {
+    font-size: 40px;
+}
+
+.card-icon-smalll {
+    border-radius: 50%; 
+    background-color: #F6F02D; 
+    opacity: 0.7; 
+    padding-top: 5px; 
+    height: 34px; 
+    width: 34px; 
+    position: absolute;
+    top: 50%;
+    left: 55%;
+    margin: -25px 0 0 -25px; 
+}
+
+.f-z-20 {
+    font-size: 20px;
+}
+
+.card-row {
+    margin-top: 10px;
+    padding-left: 5px; 
+    padding-right: 5px; 
+}
+
+.p-l-5 {
+    padding-left: 5px;
+}
+
+ion-content {
+    background-color: #FFFFFF;
+}
+
+.p-r-5 {
+    padding-right: 5px;
+}
+
+.m-t-10 {
+    margin-top: 10px;
+}
+
+.card-row-price {
+    border: solid 1px #6D6D6D; 
+    border-radius: 20px; 
+    margin-top: 5px;
+}
+
+.text-price {
+    font-size: 20px; 
+    font-weight: 500;
+}
+
+.text-community {
+    font-size: 20px; 
+    font-weight: 500; 
+    color: #FFFFFF;
+}
+
+.card-community {
+    border-radius: 20px; 
+    background-color: #43BEE5; 
+    height: 52px; 
+    margin-top: 5px; 
+    padding-top: 14px;
+}
+
+.p-t-14 {
+    padding-top: 14px;
+}
+
+.card-row-net-sales {
+    border: solid 1px #6D6D6D; 
+    border-radius: 20px;
+    margin-top: 5px; 
+    background-color: #E2E2E2;
+}
+
+.card-text-area {
+    border: solid 1px #6D6D6D; 
+    border-radius: 20px;
+}
+
+.card-row-text-area {
+    padding-left: 10px; 
+    padding-right: 10px; 
+    margin-top: 10px;
+}
+
+.input-text-area {
+    height: 168px;
+}
+
+.card-row-btn {
+    padding-left: 10px; 
+    padding-right: 10px; 
+    margin-top: 10px; 
+    margin-bottom: 100px;
+}
+.btn-back {
+    color: #2A2A2A;
+}
+ion-input {
+    --placeholder-font-style: oblique !important;
+}   
+ion-textarea {
+    --placeholder-font-style: oblique !important;
+} 
+.input-transparente::before {
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.input-transparente input[type="file"] {
+  opacity: 0;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 999;
+  left: 0px;
+  top: 0px;
+}
+
+
+
+
+/* 
+
+{
+        "attributes": [
+            {
+                "main_attribute_code": "height",
+                "value": "30",
+                "uuid": "eyJpdiI6IjkvNk1RMndvU1ZHWlMyVHRkWCtlUEE9PSIsInZhbHVlIjoiYk1tK1B0WFVoak4wTDdrZnJhMVFPQT09IiwibWFjIjoiMzVjOGY5ZmExNzVhNTVmOWY4MTM0NTE1N2ZkYzAwOTMzMWU1NmQ1ZmU2ZjdiODQyODZjNjI1ODBlMGE1ZjMwNCIsInRhZyI6IiJ9"
+            },
+            {
+                "main_attribute_code": "width",
+                "value": "35",
+                "uuid": "eyJpdiI6Ims3ajdBS0JGWjRwYk9keGwxNXplWlE9PSIsInZhbHVlIjoiMmdCNkxkZ3hVYWRPM1dXdEtId0xUUT09IiwibWFjIjoiODZkOTE5ZDEwYzE3ODM2OThjZTU1Y2UxNDVlMzdlYTZhYzlmMmY0N2M3ZjVmM2FiMTM0NDAxZjgwZmRiMWJhZiIsInRhZyI6IiJ9"
+            }
+        ],
+        "gallery": [
+            //cuando vas a actualizar una imagen de la galeria esto cuando agrega imagenes nuevas
+            {
+                "uuid": "eyJpdiI6Im9ocDg3eHExYldtdGRjQ2Fyd2hvSlE9PSIsInZhbHVlIjoiU1pheXd5UTRLbkpjQXNWcFZIOTBxQT09IiwibWFjIjoiMDY2M2U3ZjZlOGRkZTVkMjBkZWVlZjc5NTMwNjIxZDcwNzFjMmJlMTQ4YzQzZTAwZjZiZmFhM2ZmMzYzNWQzMCIsInRhZyI6IiJ9",
+                "file_upload": null
+            }
+        ],
+        "main_image": {
+            "file_upload": null,
+            "uuid": "eyJpdiI6IlRzMngvUnRTbFBSdmY3MVlYQ2JTdVE9PSIsInZhbHVlIjoiODNlYVFLbHp0WWRGcXlpNFVCcFg1QT09IiwibWFjIjoiNDI2MDI2ZDkwN2NiZWM3MjA3YjkwNzZmNjg2NmI0YWU3NWQ2ZGQyNTFiMTU1NTQ4OTBkZDkxNTUzMzI4MWVmOCIsInRhZyI6IiJ9"
+        },
+        "productNAME": "producto actualizado",
+        "price": {
+            "priceVALUE": "110",
+            "uuid": "eyJpdiI6InI2VHQ0YnVVZFdEWlRodEJWbTVUS1E9PSIsInZhbHVlIjoiUTI0VEZONmpoQjJoUzJlZFZ6SkNCdz09IiwibWFjIjoiOWM1NWU2NTMyZWQxY2U3MzJiZTA0MmFiZWM4MDRhOWM1YzYxM2FjZDkxNmUwYzQ2N2I0ZDhlMWRhNWE5YmU1NSIsInRhZyI6IiJ9"
+        },
+        "product_type": "product",
+        "productSKU": "SKU producy 011",
+        "productSHORTDESCRIPTION": "mmmmmm",
+        "productDESCRIPTION": "mmmmmmmmmmmmmmmmmmmmmmmmmmmmmm",
+        "category_uuid": "eyJpdiI6InhXK2pjS2hoYVF1aTJPWjRKWjN4a2c9PSIsInZhbHVlIjoiKzlLQ2pGQXZUU2psbm1aYVo3cm11QT09IiwibWFjIjoiMGI4OWU5ZDlmZThiOGZkY2UxY2U4MTc3NTEwMTBmNGFiMmU0MTNkNDI3ODE2Y2U1ZmQxYzQxYjgyMWNkODU2ZSIsInRhZyI6IiJ9",
+        "product_state_code": "activo",
+        "hasCommunityCommission": "0",
+        "country_id": "48",
+        "city_id": "300",
+        "productADDRESS": "calle falsa 123",
+        "shipping_methods": [
+            {
+                "shipping_method_uuid": "eyJpdiI6IlpvbzBFOVoxNkVEWlZTNFdHMTZvRXc9PSIsInZhbHVlIjoiRU1RUFd1MXZUZU1qb0ZDQTRDSzdpZz09IiwibWFjIjoiNjhiNWEyMDYzYTA0NWZlODc3NjdkZmRiYjY2OTJlMGE0MWEwYjg2YWJiNTViNWYwNDM5Njc0ZWU2NjhhYzhmYSIsInRhZyI6IiJ9",
+                //si se va a actualizar el valor del envio del producto
+                //se marca el uuid que es el que hace referncia al precio asignado al envio
+                "price": {
+                    "priceVALUE": "10",
+                    "uuid":  "eyJpdiI6IlpvbzBFOVoxNkVEWlZTNFdHMTZvRXc9PSIsInZhbHVlIjoiRU1RUFd1MXZUZU1qb0ZDQTRDSzdpZz09IiwibWFjIjoiNjhiNWEyMDYzYTA0NWZlODc3NjdkZmRiYjY2OTJlMGE0MWEwYjg2YWJiNTViNWYwNDM5Njc0ZWU2NjhhYzhmYSIsInRhZyI6IiJ9"
+                }
+            }
+        ],
+        "user": {
+            "id": 1,
+            "name": "lmontoyacontreras@gmail.com",
+            "email": "lmontoyacontreras@gmail.com",
+            "sso_user_id": "4",
+            "main_user_id": "4"
+        }
+    }
+ */

@@ -1,0 +1,158 @@
+<div class="main animate__animated animate__fadeIn">
+
+    <div class="card-top">
+      <div class="ion-text-center">
+        <ion-label class="text-icon-top">{{'MYPROFIT' | translate}}</ion-label>
+        <i class="mdi mdi-information icon-card-top"></i>
+      </div>
+      <div class="ion-text-center">
+        <ion-label [ngClass]="{'text-card-top': valueProgressBar >= valuePercProgressBar, 'text-card-top-inactive': valueProgressBar < valuePercProgressBar}">€ {{commnunityMain.data.punto_recompensaGANANCIA | numberFormat}}</ion-label>
+        <i (click)="getInfoCommunityMain()" class="mdi mdi-refresh icon-refresh"></i>
+      </div>
+    </div>
+  
+    <div class="container">
+      <div id="card-slide" class="scroll main-card" scrollX="true">
+          <div class="line-item"></div>
+          <div *ngFor="let level of listMyLevel; index as i">
+            <div *ngIf="level.id < levelCommunityMain.id" class="item-card">
+              <div class="sub-item-card">
+                <div *ngIf="i === 0" class="first-line"></div>
+                <div class="line-item"></div>
+                <div class="body-card">
+                  <div class="icon-body-card">
+                    <i class="mdi mdi-check"></i>
+                  </div>
+                  <h2 class="ion-text-center">{{level.punto_recompensa_nivelTITULO | number}}</h2>
+                  <div class="text-rp">
+                    <ion-label color="light">{{level.punto_recompensa_nivelVOLUMENMIN | number}} PR</ion-label>
+                  </div>
+                  <div class="text-perc">
+                    <ion-label color="light">{{level.punto_recompensa_nivelPORCENTAJE | number}}%</ion-label>
+                  </div>
+                </div>
+                <div class="line-item"></div>
+              </div>
+            </div>
+
+            <div *ngIf="level.id === levelCommunityMain.id" class="item-card">
+              <div class="sub-item-card">
+                <div *ngIf="i === 0" class="first-line"></div>
+                <div class="line-item"></div>
+                <div class="body-card-active">
+                  <div class="icon-body-card-active">
+                    <i class="mdi mdi-check"></i>
+                  </div>
+                  <h1 class="ion-text-center">{{level.punto_recompensa_nivelTITULO | number}}</h1>
+                  <div class="text-rp" >
+                    <ion-label class="text-rp-active" color="light">{{level.punto_recompensa_nivelVOLUMENMIN | number}} PR</ion-label>
+                  </div>
+                  <div class="text-perc">
+                    <ion-label color="light" class="text-perc-active">{{level.punto_recompensa_nivelPORCENTAJE | number}}%</ion-label>
+                  </div>
+                </div>
+              
+                <div class="line-item"></div>
+                <div class="line-item"></div>
+                <div *ngIf="listMyLevel.length != i + 1" class="line-item line-item-active-right z-i-999">
+                  <div class="text-next-level">-{{singNextLevel | numberFormat}}</div>
+                </div>
+                <div *ngIf="listMyLevel.length != i + 1" class="line-item-inactive"></div>
+                <div *ngIf="listMyLevel.length != i + 1" class="line-item-inactive"></div>
+                <div *ngIf="listMyLevel.length === i + 1" class="line-item"></div>
+                
+              </div>
+            </div>
+
+            <div *ngIf="level.id > levelCommunityMain.id" class="item-card">
+              <div class="sub-item-card">
+                <div class="line-item-inactive"></div>
+                <div class="body-card-inactive">
+                  <h2 class="ion-text-center">{{level.punto_recompensa_nivelTITULO | number}}</h2>
+                  <div class="text-rp">
+                    <ion-label color="light">{{level.punto_recompensa_nivelVOLUMENMIN | number}} PR</ion-label>
+                  </div>
+                  <div class="text-perc">
+                    <ion-label color="light">{{level.punto_recompensa_nivelPORCENTAJE | number}}%</ion-label>
+                  </div>
+                </div>
+                <div class="line-item-inactive"></div>
+                <div *ngIf="listMyLevel.length === i + 1" class="last-line-inactive"></div>
+              </div>
+            </div>
+
+          </div>
+      </div>
+    </div>
+  
+    <!-- summary -->
+    <div class="card-summary">
+      <div class="ion-text-center">
+        <ion-label class="text-rp-summary">PR</ion-label>
+        <i (click)="showModal('PR')" class="mdi mdi-information icon-rp-summary"></i>
+      </div>
+      <div class="ion-text-center">
+        <ion-label class="value-rp-first">{{commnunityMain.data.punto_recompensaVOLUMEN | numberFormat}}</ion-label>
+      </div>
+  
+      <div class="card-progress-bar">
+        <div class="brand-bar" [style]="'margin-left: ' + (positionBrand) + 'px'"></div>
+        <ion-progress-bar id="progress-bar-pr" class="bar-progress" [value]="valueProgressBar"></ion-progress-bar>
+        <div class="card-brand-progress-bar">
+          <ion-label class="text-progress-bar" [style]="'margin-left: ' + (widthProgressBar === positionBrand ? positionBrand - 30 : positionBrand - 10) + 'px'">{{levelMinPay | number}} PR</ion-label>
+        </div>
+      </div>
+  
+      <div class="ion-text-center">
+        <ion-label class="text-cpr-summary">CRP</ion-label>
+        <i (click)="showModal('CRP')" class="mdi mdi-information icon-cpr-summary"></i>
+      </div>
+  
+      <div class="ion-text-center">
+        <ion-label class="text-value-cpr-summary">{{CRP | numberFormat}}</ion-label>
+      </div>
+  
+      <ion-row>
+        <ion-col size="1">
+        </ion-col>
+        <ion-col class="ion-text-center">
+          <div>
+            <ion-label class="text-social-summary">{{'MYFRIENDS' | translate}}</ion-label>
+          </div>
+          <ion-label class="text-value-social-summary">{{commnunityMain.data.cantidadAmigos}}</ion-label>
+        </ion-col>
+        <ion-col size="3">
+        </ion-col>
+        <ion-col class="ion-text-center">
+          <div>
+            <ion-label class="text-social-summary">{{'MYCOMMUNITY_COMMUNITY' | translate}}</ion-label>
+          </div>
+          <ion-label class="text-value-social-summary">{{commnunityMain.data.cantidadAmigosRed}}</ion-label>
+        </ion-col>
+        <ion-col size="1">
+        </ion-col>
+      </ion-row>
+      
+      <div class="container-buttons-months">
+        <ion-row class="scroll main-card display-i-b" scrollX="true" >
+          <ion-col size="2" *ngFor="let period of listPeriod; index as i">
+            <ion-button *ngIf="period.month == '01'" (click)="nroMonth = 1; getInfoListByPeriod()" [color]="nroMonth === 1 ? 'primary' : 'light'" class="btn-button-month">{{'MONTHS.GEN' | translate}}</ion-button>
+            <ion-button *ngIf="period.month == '02'" (click)="nroMonth = 2; getInfoListByPeriod()" [color]="nroMonth === 2 ? 'primary' : 'light'" class="btn-button-month">{{'MONTHS.FEB' | translate}}</ion-button>
+            <ion-button *ngIf="period.month == '03'" (click)="nroMonth = 3; getInfoListByPeriod()" [color]="nroMonth === 3 ? 'primary' : 'light'" class="btn-button-month">{{'MONTHS.MAR' | translate}}</ion-button>
+            <ion-button *ngIf="period.month == '04'" (click)="nroMonth = 4; getInfoListByPeriod()" [color]="nroMonth === 4 ? 'primary' : 'light'" class="btn-button-month">{{'MONTHS.APR' | translate}}</ion-button>
+            <ion-button *ngIf="period.month == '05'" (click)="nroMonth = 5; getInfoListByPeriod()" [color]="nroMonth === 5 ? 'primary' : 'light'" class="btn-button-month">{{'MONTHS.MAY' | translate}}</ion-button>
+            <ion-button *ngIf="period.month == '06'" (click)="nroMonth = 6; getInfoListByPeriod()" [color]="nroMonth === 6 ? 'primary' : 'light'" class="btn-button-month">{{'MONTHS.JUNE' | translate}}</ion-button>
+            <ion-button *ngIf="period.month == '07'" (click)="nroMonth = 7; getInfoListByPeriod()" [color]="nroMonth === 7 ? 'primary' : 'light'" class="btn-button-month">{{'MONTHS.JUL' | translate}}</ion-button>
+            <ion-button *ngIf="period.month == '08'" (click)="nroMonth = 8; getInfoListByPeriod()" [color]="nroMonth === 8 ? 'primary' : 'light'" class="btn-button-month">{{'MONTHS.AUG' | translate}}</ion-button>
+            <ion-button *ngIf="period.month == '09'" (click)="nroMonth = 9; getInfoListByPeriod()" [color]="nroMonth === 9 ? 'primary' : 'light'" class="btn-button-month">{{'MONTHS.SEP' | translate}}</ion-button>
+            <ion-button *ngIf="period.month == '10'" (click)="nroMonth = 10; getInfoListByPeriod()" [color]="nroMonth === 10 ? 'primary' : 'light'" class="btn-button-month">{{'MONTHS.OCT' | translate}}</ion-button>
+            <ion-button *ngIf="period.month == '11'" (click)="nroMonth = 11; getInfoListByPeriod()" [color]="nroMonth === 11 ? 'primary' : 'light'" class="btn-button-month">{{'MONTHS.NOV' | translate}}</ion-button>
+            <ion-button *ngIf="period.month == '12'" (click)="nroMonth = 12; getInfoListByPeriod()" [color]="nroMonth === 12 ? 'primary' : 'light'" class="btn-button-month">{{'MONTHS.DEC' | translate}}</ion-button>
+          </ion-col>
+        </ion-row>
+      </div>
+    </div>
+
+</div>
+
+  

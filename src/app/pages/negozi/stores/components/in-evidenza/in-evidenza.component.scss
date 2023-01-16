@@ -1,0 +1,90 @@
+ion-grid {
+    padding: 0px;
+    margin: 10px;
+    margin-left: 5px;
+    margin-top: 20px;
+}
+ion-col {
+    padding: 0px;
+}
+.labelEvidenza {
+    color: #000;
+    font-size: 16px;
+}
+.divContenedor {
+    overflow-y: hidden;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 5px;
+    padding-top: 10px;
+    padding-left: 0px;
+    display: -webkit-box;
+}
+.divStore {
+    width: 217px;
+    height: 323px;
+    border-radius: 10px;
+    background-color: white;
+    margin-right: 10px;
+}
+.imgStore {
+    margin-left: 11.5px;
+    margin-right: 11.5px;
+    margin-top: 14px;
+    width: 194px;
+    height: 170px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+.divTexto {
+    margin-left: 11.5px;
+    margin-right: 11.5px;
+    margin-top: 14px;
+    width: 194px;
+    position: relative;
+}
+.labelNombre {
+    font-size: 17px;
+    font-weight: 400;
+    color: #000;
+    position: absolute;
+    width: 140px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.labelCategoria {
+    font-size: 15px;
+    font-weight: 400;
+    color: #000;
+    margin-top: 8px;
+    position: absolute;
+}
+.labelPuntoRecompensa {
+    font-size: 13px;
+    font-weight: 400;
+    color: #000;
+}
+.labelCashback {
+    font-size: 13px;
+    font-weight: 400;
+    color: #000;
+    position: absolute;
+    right: 0px;
+}
+.divStore-next {
+    margin-right: 10px;
+    border-radius: 15px !important;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.icon-next {
+    font-size: 50px;
+    color: #000;
+}
+.icon-spinner {
+    --color: 50px;
+    zoom: 1.5;
+}

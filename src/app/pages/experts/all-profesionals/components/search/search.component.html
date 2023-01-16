@@ -1,0 +1,8 @@
+<div class="div-search">
+  <ion-icon name="search-outline" class="icon"></ion-icon>
+  <input
+    [(ngModel)]="inputSearch"
+    class="search" 
+    [placeholder]="'PLACEHOLDERSEARCH' | translate"
+    (input)="debounceSearch()"/>
+</div>

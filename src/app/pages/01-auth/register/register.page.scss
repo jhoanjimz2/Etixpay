@@ -1,0 +1,207 @@
+form {
+    width: 100%;
+    height: 100%;
+}
+ion-grid {
+    padding: 0px 27px;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ion-row { width: 100%; }
+ion-col { width: 100%; }
+.img-logo {
+    width: 151px;
+    height: 54px;
+    margin-bottom: 30px;
+}
+.div-grid {
+    display: grid;
+}
+.label-uno {
+    font-size: 21.75px;
+    font-weight: 100;
+    color: #393F45;
+}
+.label-dos {
+    font-size: 14.75px;
+    font-weight: 100;
+    color: #ABB3BB;
+    margin-top: 9px;
+    margin-bottom: 13px;
+}
+.p-r {
+    position: relative;
+}
+.inputs {
+    width: 100%;
+    height: 47px;
+    color: black;
+    font-weight: 500;
+    text-align: left;
+    border: 1px solid #9D9D9D;
+    background-color: white;
+    border-radius: 15px;
+    padding-left: 43px;
+    --placeholder-font-style: italic;
+    --placeholder-color: #9D9D9D;
+    --placeholder-opacity: 1;
+    --padding-start: 43px;
+    --padding-bottom: 0px;
+    --padding-end: 30px;
+    --padding-top: 0px;
+}
+.img-mail {
+    width: 18.28px;
+    height: 13.93px;
+    position: absolute;
+    left: 12.32px;
+    top: calc(50% - 7px);
+    z-index: 2;
+}
+.img-lock {
+    width: 14.08px;
+    height: 17.08px;
+    position: absolute;
+    left: 14.32px;
+    top: calc(50% - 9px);
+    z-index: 2;
+}
+.img-eyes {
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    right: 15.09px;
+    top: calc(50% - 12px);
+    z-index: 2;
+}
+.img-global {
+    width: 18.33px;
+    height: 18.33px;
+    position: absolute;
+    left: 12.32px;
+    top: calc(50% - 10px);
+    z-index: 2;
+}
+.img-code {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    left: 12.32px;
+    top: calc(50% - 12px);
+    z-index: 2;
+}
+.img-person {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 12.32px;
+    top: calc(50% - 10px);
+    z-index: 2;
+}
+.img-phone {
+    width: 18.33px;
+    height: 18.33px;
+    position: absolute;
+    left: 12.32px;
+    top: calc(50% - 7px);
+    z-index: 2;
+}
+.m-t-13 {
+    margin-top: 13px;
+    display: flex;
+}
+.w-5 {
+    flex: 0 0 calc(calc(5 / var(--ion-grid-columns, 12)) * 100%);
+    width: calc(calc(5 / var(--ion-grid-columns, 12)) * 100%);
+    max-width: calc(calc(5 / var(--ion-grid-columns, 12)) * 100%);
+}
+.w-7 {
+    flex: 0 0 calc(calc(7 / var(--ion-grid-columns, 12)) * 100% - 10px);
+    width: calc(calc(7 / var(--ion-grid-columns, 12)) * 100% - 10px);
+    max-width: calc(calc(7 / var(--ion-grid-columns, 12)) * 100% - 10px);
+    margin-left: 10px;
+}
+.col-terms {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.texto_errores {
+  font-size: 13px;
+  color: red;
+}
+ion-checkbox {
+    width: 21px;
+    height: 21px;
+    border-radius: 4px;
+    border: 1px solid #97969c;
+    --background: transparent;
+    --border-width: 0px !important;
+    --border-style: solid !important;
+    --checkmark-color: #97969c;
+    --background-checked: transparent;
+}
+.label-tres {
+    color: #ABB3BB;
+    font-size: 13px;
+    font-weight: 100;
+}
+.label-cuatro {
+    color: #664BC0;
+    font-size: 13px;
+    font-weight: 100;
+}
+.boton-sign-up {
+    margin-top: 26px;
+    width: 100%;
+    height: 49px;
+    --border-radius: 15px;
+    font-weight: bold;
+    color: white;
+    --background: #664BC0;
+    text-transform: capitalize;
+}
+.boton-scan-code {
+    width: 52px;
+    height: 47px;
+    --border-radius: 15px;
+    --background: #664BC0;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    z-index: 2;
+    margin: 0px;
+    --padding-bottom: 0px;
+    --padding-end: 0px;
+    --padding-start: 0px;
+    --padding-top: 0px;
+}
+.div-text-error {
+    text-align: left;
+}
+.d-f {
+    display: flex;
+}
+.img-qr {
+    width: 26.66px;
+    height: 26.66px;
+}
+.label-cinco {
+    color: #2945FF;
+    font-size: 13px;
+    font-weight: 100;
+}
+.label-seis {
+    color: #000;
+    font-size: 13px;
+    font-weight: 100;
+}
+.centrar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,34 @@
+.d-f {
+    display: flex;
+}
+.d-boton {
+    border: 1px solid #d3d3d3;
+    height: 80px;
+    padding: 10px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+.w-6 {
+  flex: 0 0 calc(calc(6 / var(--ion-grid-columns, 12)) * 100%);
+  width: calc(calc(6 / var(--ion-grid-columns, 12)) * 100%);
+  max-width: calc(calc(6 / var(--ion-grid-columns, 12)) * 100%);
+}
+.l-s {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.l-e {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.name {
+    color: #000;
+    font-size: 16px;
+    font-weight: 400;
+}
+.icon {
+    color: grey;
+    font-size: 25px;
+}

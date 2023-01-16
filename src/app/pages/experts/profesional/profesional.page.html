@@ -1,0 +1,32 @@
+<app-header-padre [page]="true" [color]="'#DF7000'"></app-header-padre>
+<ion-content>
+
+  <app-info-principal
+    [profesional]="profesional"
+    [editar]="editar"
+    (cargarInfoPrincipal)="cargarInfoPrincipal(true)"
+    [uuid]="uuid">
+  </app-info-principal>
+
+  <app-galeria
+    (cargarGalery)="cargarGalery(true)"
+    [profesional]="profesional"
+    [uuid]="uuid"
+    [editar]="editar">
+  </app-galeria>
+
+  <app-info-contacto [profesional]="profesional"> </app-info-contacto>
+
+  <app-info-extra [profesional]="profesional"> </app-info-extra>
+
+  <app-descripcion [profesional]="profesional"></app-descripcion>
+
+  <app-mapa [profesional]="profesional"> </app-mapa>
+  
+
+</ion-content>
+<ion-footer *ngIf="editar">
+  <ion-toolbar>
+    <ion-button class="buton-edit" (click)="abrirEdicion()">edit</ion-button>
+  </ion-toolbar>
+</ion-footer>

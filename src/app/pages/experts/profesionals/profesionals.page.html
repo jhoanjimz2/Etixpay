@@ -1,0 +1,14 @@
+<app-header-padre [page]="true" [color]="'#DF7000'"></app-header-padre>
+<ion-content>
+
+  <app-search 
+    (search)="buscar($event)">
+  </app-search>
+
+  <app-services-popular [palabra]="palabra"></app-services-popular>
+
+  <app-categories [palabra]="palabra"></app-categories>
+
+  <app-top-experts [palabra]="palabra"></app-top-experts>
+
+</ion-content>

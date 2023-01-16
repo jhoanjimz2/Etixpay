@@ -1,0 +1,138 @@
+ion-content {
+  --background: rgb(244, 244, 244);
+}
+.lineaclose {
+  width: 50px;
+  height: 5px;
+  border-radius: 15px;
+  background-color: rgb(227, 227, 227);
+  border: 1px solid rgb(227, 227, 227);
+  margin: auto;
+}
+.label_uno {
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+  text-shadow: 0px 0px 1px #d8dcdf;
+}
+.label_dos {
+  font-size: 16px;
+  font-weight: bold;
+  color: #000;
+  text-shadow: 0px 0px 1px #d8dcdf;
+}
+.boton {
+  width: 100%;
+  height: 50px;
+  border-radius: 10px;
+  background-color: #fff;
+  border: 1px solid #fff;
+  color: #664ac5;
+  font-size: 100%;
+  font-weight: bold;
+}
+.boton2 {
+  width: 100%;
+  height: 45px;
+  border-radius: 10px;
+  background-color: #664ac5;
+  border: 1px solid #664ac5;
+  color: #fff;
+  font-size: 100%;
+  font-weight: 400;
+}
+.toolbar {
+  height: 77px;
+  background-color: #fff;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
+}
+.padding {
+  padding: 15px;
+  position: relative;
+}
+.iconback {
+  position: absolute;
+  top: calc(50% - 10px);
+  left: 10px;
+  font-size: 20px;
+}
+.label2 {
+  font-size: 240%;
+  color: #000;
+  text-shadow: 0px 0px 1px #d8dcdf;
+}
+.div_confirmacion {
+  width: 100%;
+  height: 100%;
+}
+.label_tres {
+  font-size: 16px;
+  font-weight: 500;
+  color: #000;
+  text-shadow: 0px 0px 1px #d8dcdf;
+}
+.tolbar {
+  --background: #fff;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  width: 100%;
+}
+.boton_back_to_wallet {
+  width: 100%;
+  height: 45px;
+  border-radius: 10px;
+  background-color: #664ac5;
+  color: #fff;
+  font-weight: 400;
+  font-size: 17px;
+}
+.img_pay {
+  font-size: 200px;
+}
+.col_img_uno {
+  padding-top: 10px;
+  padding-bottom: 35px;
+}
+.col_boton_uno {
+  text-align: center;
+}
+.boton_succesfully {
+  width: 90%;
+  height: 40px;
+  border-radius: 8px;
+  color: #000;
+  background-color: rgb(168, 240, 187);
+  font-weight: 400;
+  font-size: 13px;
+}
+.car_info_transferencia {
+  border-radius: 10px;
+  box-shadow: none;
+  margin: 5px;
+  padding: 5px;
+}
+.label_cuatro {
+  color: #d2d4d6;
+  font-weight: 400;
+  font-size: 12px;
+}
+.label_cinco {
+  color: #000;
+  font-weight: 400;
+  font-size: 12px;
+  text-shadow: 0px 0px 1px #d8dcdf;
+}
+.lineado_col {
+  line-height: 3;
+}
+.label_transaction {
+  color: rgb(89, 148, 255);
+  font-weight: 400;
+  font-size: 13px;
+}

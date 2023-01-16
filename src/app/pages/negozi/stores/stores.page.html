@@ -1,0 +1,49 @@
+<app-header-padre [page]="true" [color]="'#3EBCE4'"></app-header-padre>
+<ion-content>
+
+  <app-top-pr
+    (next)="nextTop()"
+    [paginasTotalesT]="paginasTotalesT"
+    [paginaActualT]="paginaActualT"
+    [cargarTops]="cargarTops"
+    [topPr]="topPr">
+  </app-top-pr>
+
+  <app-in-evidenza
+    (next)="nextDestacadas()"
+    [paginasTotalesD]="paginasTotalesD"
+    [paginaActualD]="paginaActualD"
+    [cargarDestacadas]="cargarDestacadas"
+    [storesDestacadas]="storesDestacadas">
+  </app-in-evidenza>
+
+
+  <app-categories-stores
+    (selectCategory)="selectCategory($event)"
+    [categorySelect]="categorySelect"
+    [categoriesStores]="categoriesStores">
+  </app-categories-stores>
+  
+  <app-search
+    [cargando]="cargando"
+    [noEncontrado]="noEncontrado"
+    [lista]="listaSearch"
+    (search)="buscar($event)">
+  </app-search>
+
+  <div *ngIf="listaSearch.length == 0 && !noEncontrado">
+    <app-store
+      *ngFor="let store of stores"
+      [store]="store">
+    </app-store>
+    <div class="div-next">
+      <ion-icon name="arrow-down-outline" class="icon-next" (click)="nextCategory()" *ngIf="!cargar && paginaActual < paginasTotales"></ion-icon>
+      <ion-spinner name="circles"  class="icon-spinner"  *ngIf="cargar"></ion-spinner>
+    </div>
+  </div>
+
+  <div class="divInfoNula" *ngIf="stores.length <= 0 && listaSearch.length == 0">
+    <ion-label class="labelInfoNula">{{'NOSHOPSREGISTERED' | translate}}</ion-label>
+  </div>
+
+</ion-content>

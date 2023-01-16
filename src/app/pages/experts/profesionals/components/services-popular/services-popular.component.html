@@ -1,0 +1,16 @@
+<div class="d-c">
+  <div>
+    <ion-label class="label">{{'POPULARSERVICESP' | translate}}</ion-label>
+  </div>
+</div>
+<div class="d-c-2 ion-no-color-barra">
+  <div *ngFor="let service of servicios | experts : palabra : 'servicio'" (click)="serviceUno(service.id, service.service_name)">
+    <div class="d-s">
+      <div class="b-c">
+        <img  [src]="service.icon_profesion.black | image">
+      </div>
+    </div>
+    <br>
+    <ion-label class="label-nombre">{{service.service_name}}</ion-label>
+  </div>
+</div>

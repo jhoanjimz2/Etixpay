@@ -1,0 +1,22 @@
+ion-input {
+  border: 1px solid #f0f4f7ce;
+  width: 100%;
+  height: 45px;
+  border-radius: 10px;
+  background-color: #f0f4f7ce;
+  --placeholder-color: #d8dcdf;
+  --placeholder-opacity: 1;
+  font-size: 90%;
+  font-weight: bold;
+  text-align: center;
+}
+button {
+  margin-top: auto;
+  height: 35px !important;
+  width: 100%;
+  border: 1px solid #664bc4;
+  background-color: #664bc4;
+  border-radius: 30px;
+  font-size: 90%;
+  color: #ffffff;
+}

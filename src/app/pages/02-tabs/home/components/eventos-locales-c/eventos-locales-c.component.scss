@@ -1,0 +1,132 @@
+.grid {
+  padding: 0px;
+  margin: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  padding-top: 7px;
+}
+.textoEv {
+  font-size: 15px;
+  font-weight: bold;
+  color: #000;
+  text-shadow: 1px 1px 1px #d8dcdf;
+}
+.textoViEv {
+  font-size: 13px;
+  font-weight: bold;
+  color: #d8dcdf;
+}
+.eventosLocalesSlides {
+  width: 100%;
+}
+.cardEventos {
+  width: 100%;
+  height: 130px;
+  margin: 5px;
+  border-radius: 15px !important;
+  margin-bottom: 17px !important;
+  box-shadow: 0px 0px 9px -4px rgb(173, 173, 173);
+}
+.div_info_nula {
+  width: 100%;
+  height: 130px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.label_info_nula {
+  font-size: 16px;
+  font-weight: 400;
+  color: #000;
+}
+
+.rowimgEv {
+  max-height: 130px;
+}
+.colimgEv {
+  max-width: 115px;
+}
+.imgCardEventos {
+  height: 130px;
+  width: 100%;
+  object-fit: cover;
+}
+.coltextoEventos {
+  margin-left: 15px;
+  margin-top: 15px;
+  position: relative;
+}
+.div1 {
+  width: 100%;
+  height: 20px;
+  position: relative;
+}
+.div1 .uno{
+  font-size: 90%;
+  font-weight: bold;
+  color: #ec3759;
+  position: absolute;
+  top: 2.5px;
+  left: 0px;
+}
+.div1 .dos{
+  top: 0px;
+  right: 10px;
+  position: absolute;
+  width: 70px;
+  height: 18px;
+  font-size: 80%;
+  font-weight: 100;
+  color: #fff;
+  background-color: #664bc4;
+  border: 1px solid #664bc4;
+  border-radius: 2px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.div2 {
+  width: 100%;
+  height: 30px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  font-size: 90%;
+  font-weight: bold;
+  color: #000;
+  text-shadow: 1px 1px 1px #d8dcdf
+}
+.div3 {
+  width: 120px;
+  text-align: left !important;
+  height: auto;
+  font-size: 80%;
+  font-weight: 100;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: #000;
+}
+.div4 {
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 77px;
+  left: 0px;
+  font-size: 90%;
+  font-weight: bold;
+  color: #000;
+  text-shadow: 1px 1px 1px #d8dcdf;
+}
+.iconarrow {
+  top: 40px;
+  right: 0px;
+  position: absolute;
+  font-size: 150%;
+  font-weight: bold;
+  color: #d8dcdf;
+}
+.col_uno {
+  padding-bottom: 8px;
+}
+//  EVENTOS LOCALES ARRIBA

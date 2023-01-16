@@ -1,0 +1,52 @@
+.row-boton {
+  margin: 10px;
+  border-radius: 15px;
+  padding: 0px;
+  border: 1px solid #3EBCE4;
+}
+.boton-uno {
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+.boton-dos {
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+.borde-boton-uno {
+  border-right: 1px dotted  #3EBCE4 !important;
+}
+.borde-boton-dos {
+  border-left: 1px dotted  #3EBCE4 !important;
+}
+.botonto-cash {
+  border: 1px solid #3EBCE4;
+  background-color: #3EBCE4;
+  border-radius: 15px !important;
+  width: 100%;
+  height: 70px;
+  line-height: 1.2;
+}
+.botonto-cash-f {
+  background-color: #fff;
+  width: 100%;
+  height: 70px;
+  line-height: 1.2;
+}
+.botonto-cash ion-label {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 400;
+}
+.botonto-cash-f ion-label {
+  color: #3EBCE4;
+  font-size: 14px;
+  font-weight: 400;
+}
+.botonto-cash ion-icon {
+  width: 31px;
+  height: 32px;
+}
+.botonto-cash-f ion-icon {
+  width: 31px;
+  height: 32px;
+}

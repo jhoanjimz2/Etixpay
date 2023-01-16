@@ -1,0 +1,15 @@
+<form (ngSubmit)="cambiar_alias()" [formGroup]="formulario">
+  <ion-grid class="paddingDerechaIzquierdaSlide">
+    <ion-row>
+      <ion-col>
+        <ion-input placeholder="{{'ENTERALIASCARD' | translate}}" [formControl]="formulario.controls.alias" name="alias">
+        </ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <button type="submit" [disabled]="!formulario.valid">Ok</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</form>

@@ -1,0 +1,23 @@
+<ion-grid class="g-e-t">
+  <ion-row>
+    <ion-col size="4">
+      <div class="flex">
+        <img src="assets/negozi/email-line.svg" class="i-e">&nbsp;&nbsp;
+        <ion-label class="l-t-d">{{'EMAILN' | translate}}:</ion-label>
+      </div>
+      <div class="flex">
+        <img src="assets/negozi/phone.svg" class="i-t">&nbsp;&nbsp;
+        <ion-label class="l-t-d">{{'PHONE' | translate}}:</ion-label>
+      </div>
+      <div class="flex"  *ngIf="profesional.profesionalWEB">
+        <ion-icon name="link-outline"></ion-icon>&nbsp;&nbsp;
+        <ion-label class="l-t-d">{{'Url' | translate}}:</ion-label>
+      </div>
+    </ion-col>
+    <ion-col>
+      <div class="flex"><ion-label class="l-s-b">{{profesional.email_user}}</ion-label></div>
+      <div class="flex"><ion-label class="l-s-b">{{profesional.profesionalPHONE}}</ion-label></div>
+      <div class="flex" *ngIf="profesional.profesionalWEB"><a [href]="profesional.profesionalWEB">{{profesional.profesionalWEB}}</a></div>
+    </ion-col>
+  </ion-row>
+</ion-grid>

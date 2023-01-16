@@ -1,0 +1,22 @@
+<ion-content>
+  <div class="card">
+    <div class="ion-text-center">
+      <i class="mdi mdi-account-check icon"></i>
+    </div>
+    <div class="m2 ion-text-center">
+      <label>Ricorda che per aprire un account esperto devi essere il titolare</label>
+    </div>
+
+    <div class="p51">
+      <ion-row>
+        <ion-col>
+          <button class="b1" (click)="authorize(true)">Sono il titolare</button>
+        </ion-col>
+        <ion-col>
+          <button class="b2" (click)="authorize(false)">Annulla</button>
+        </ion-col>
+      </ion-row>
+    </div>
+
+  </div>
+</ion-content>

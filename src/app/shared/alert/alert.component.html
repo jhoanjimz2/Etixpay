@@ -1,0 +1,31 @@
+<ion-grid class="ion-padding">
+  <ion-row *ngIf="this.img === undefined" style="padding-top: 5%;">
+    <ion-col >
+    </ion-col>
+  </ion-row>
+  <ion-row *ngIf="this.img === true">
+    <ion-col class="ion-text-center">
+      <img  src="assets/alerta/icon-alert2.png " width="30%" height="auto" alt="">  
+    </ion-col>
+  </ion-row>
+  <ion-row *ngIf="this.img === false">
+    <ion-col class="ion-text-center">
+      <img  src="assets/alerta/exit-img.gif" width="50%" height="auto" alt="">  
+    </ion-col>
+  </ion-row>
+  <ion-row style="margin-bottom: 20px;">
+    <ion-col class="ion-text-center">
+      <ion-text>
+        {{this.texto}}  
+      </ion-text>
+    </ion-col>
+  </ion-row>
+  <ion-row > 
+    <ion-col class="ion-text-center">
+      <button class="botonOK" (click)="salirSinSeleccion()">
+        <ion-label style="color: #ffffff;">{{this.boton}}</ion-label>
+      </button>
+    </ion-col>    
+  </ion-row>
+</ion-grid>
+

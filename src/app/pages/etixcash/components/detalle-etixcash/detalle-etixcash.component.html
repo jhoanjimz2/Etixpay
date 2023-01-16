@@ -1,0 +1,31 @@
+<ion-grid>
+  <ion-row>
+    <ion-col class="ion-text-center">
+      <ion-label class="label_uno">{{movimiento.solicitud_en_empresaCANTIDADATM | formattNumber}} TIX</ion-label>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col class="col_uno">
+      <ion-label class="label_dos">{{'DATE3' | translate}}:</ion-label><br>
+      <ion-label class="label_tres">{{movimiento.created_at | dateTimeFormatFilter : "DD/MM/YYYY"}}</ion-label>
+    </ion-col>
+    <ion-col>
+      <ion-label class="label_dos">{{'HOUR7' | translate}}:</ion-label><br>
+      <ion-label class="label_tres">{{movimiento.created_at | dateTimeFormatFilter : "h:mm a"}}</ion-label>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-label class="label_dos">{{'LOCATION5' | translate}}:</ion-label><br>
+      <!-- <ion-label class="label_tres">calle Siempre viva 742 en Springfield</ion-label> -->
+    </ion-col>
+  </ion-row>
+  <ion-row class="linea">
+    <ion-col>
+      <ion-label  class="label_dos">{{'REASON' | translate}}:</ion-label><br>
+      <ion-label class="label_tres" *ngIf="tipo == 'INGRESO'">{{'RECHARGE2' | translate}}</ion-label>
+      <ion-label class="label_tres" *ngIf="tipo == 'RETIRO'">{{'WITHDRAWAL' | translate}}</ion-label>&nbsp;
+      <ion-label class="label_cuatro">{{movimiento.solicitud_en_empresaCODIGO}}</ion-label>
+    </ion-col>
+  </ion-row>
+</ion-grid>

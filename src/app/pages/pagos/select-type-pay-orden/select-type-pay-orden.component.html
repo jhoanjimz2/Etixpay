@@ -1,0 +1,13 @@
+<div class="contenedor">
+  <div class="centrar">
+    <ion-label class="l-3">{{'PAYWITH' | translate}}</ion-label>
+  </div>
+  <div class="centrar p">
+    <img src="assets/tabs/pagar/botones/ticket.png" class="img-button" (click)="ticket()">
+  </div>
+  <div class="centrar" (click)="show = !show">
+    <ion-label [hidden]="!show" class="l-3">{{ saldo_tix | formattNumber }}</ion-label>
+    <ion-label [hidden]="show" class="l-3">∗∗∗∗∗</ion-label>&nbsp;
+    <ion-label class="l-3">{{'TIXCC' | translate }}</ion-label> 
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-item>
+            <ion-label>TIX</ion-label>
+            <ion-toggle [checked]="informacionLocal.empresaRECIBETIX" mode="ios" (ionChange)="tix()"></ion-toggle>
+          </ion-item>
+        
+          <!-- <ion-item>
+            <ion-label>Euro</ion-label>
+            <ion-toggle [checked]="informacionLocal.empresaRECIBEEURO" mode="ios" (ionChange)="euro()"></ion-toggle>
+          </ion-item> -->
+        
+          <ion-item>
+            <ion-label>{{'ANIMALS' | translate}}</ion-label>
+            <ion-toggle [checked]="informacionLocal.empresaRECIBEMASCOSTAS" mode="ios" (ionChange)="pets()"></ion-toggle>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

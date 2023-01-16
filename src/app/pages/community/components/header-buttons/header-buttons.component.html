@@ -1,0 +1,42 @@
+<ion-row class="bg-main card-main animate__animated animate__fadeIn">
+  <ion-col size="3" class="ion-text-center col-item">
+    <ion-avatar (click)="go(1)" class="circle-main pointer" [ngClass]="{'bg-circle-main-active': nroButton === 1}">
+        <div class="circle-icon" [ngClass]="{'bg-circle-icon-active': nroButton === 1}">
+          <ion-text>
+            <i class="mdi mdi-cog-counterclockwise icon-button" [ngClass]="{'bg-icon-button-active': nroButton === 1}"></i>
+          </ion-text>
+        </div>
+        <ion-text class="ion-text-center text-icon" [ngClass]="{'color-text-icon-active': nroButton === 1}">{{'OVERVIEW' | translate}}</ion-text>
+    </ion-avatar>
+  </ion-col>
+  <ion-col size="3" class="ion-text-center col-item">
+    <ion-avatar (click)="go(2)" class="circle-main pointer" [ngClass]="{'bg-circle-main-active': nroButton === 2}">
+        <div class="circle-icon" [ngClass]="{'bg-circle-icon-active': nroButton === 2}">
+          <ion-text>
+            <i class="mdi mdi-account-group icon-button" [ngClass]="{'bg-icon-button-active': nroButton === 2}"></i>
+          </ion-text>
+        </div>
+        <ion-text class="ion-text-center text-icon" [ngClass]="{'color-text-icon-active': nroButton === 2}">{{'COMMUNITY' | translate}}</ion-text>
+    </ion-avatar>
+  </ion-col>
+  <ion-col size="3" class="ion-text-center col-item">
+    <ion-avatar (click)="go(3)" class="circle-main pointer" [ngClass]="{'bg-circle-main-active': nroButton === 3}">
+        <div class="circle-icon" [ngClass]="{'bg-circle-icon-active': nroButton === 3}">
+          <ion-text>
+            <i class="mdi mdi-play icon-button" [ngClass]="{'bg-icon-button-active': nroButton === 3}"></i>
+          </ion-text>
+        </div>
+        <ion-text class="ion-text-center text-icon" [ngClass]="{'color-text-icon-active': nroButton === 3}">{{'TUTORIAL_COMMUNITY' | translate}}</ion-text>
+    </ion-avatar>
+  </ion-col>
+  <ion-col size="3" class="ion-text-center col-item">
+    <ion-avatar (click)="go(4)" class="circle-main pointer" [ngClass]="{'bg-circle-main-active': nroButton === 4}">
+        <div class="circle-icon" [ngClass]="{'bg-circle-icon-active': nroButton === 4}">
+          <ion-text>
+            <i class="mdi mdi-chart-box-outline icon-button" [ngClass]="{'bg-icon-button-active': nroButton === 4}"></i>
+          </ion-text>
+        </div>
+        <ion-text class="ion-text-center text-icon" [ngClass]="{'color-text-icon-active': nroButton === 4}">{{'MOVEMENTS_COMMUNITY' | translate}}</ion-text>
+    </ion-avatar>
+  </ion-col>
+</ion-row>

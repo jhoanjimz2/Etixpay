@@ -1,0 +1,32 @@
+<ion-grid>
+    <ion-row>
+        <ion-col class="ion-text-center">
+            <br><br>
+            <ion-label class="label-uno">{{'CUSTOMERWALLET2' | translate}}</ion-label>
+            <br><br>
+            <form [formGroup]="formulario" (ngSubmit)="confirmPay()">
+                <input class="input-wallet" placeholder="{{'INSERTHERE' | translate}}"
+                [formControl]="formulario.controls.wallet" name="wallet">
+                <br><br>
+                <button class="button-confirm" [disabled]="!formulario.valid" type="submit">{{'CONFIRMWALLET'|translate}}</button>
+            </form>
+            <br><br>
+            <ion-label class="label-dos">{{'OR2' | translate}}</ion-label>
+            <br><br>
+            <ion-label class="label-tres">{{'CUSTOMERQRWALLET2' | translate}}</ion-label>
+            <br><br>
+            <button class="button-qr-wallet" (click)="lectorQr()" type="button">
+                <ion-icon src="assets/tabs/wallet/componentes/recibir_empresa/camera-icon.svg"></ion-icon>
+            </button>
+            <br><br>
+            <br><br>
+            <ion-label class="label-cuatro">{{'PAYMENT3' | translate}}</ion-label>
+            <div class="input">{{total | formattNumber}}<ion-label class="euro-icon">€</ion-label></div>
+            <br>
+            <ion-label class="label-cuatro">{{'PRGENERATED' | translate}}</ion-label>
+            <div class="input">{{0 | formattNumber}}</div>
+            <br><br>
+            <button class="button-cancel" (click)="cancelando()" type="button">{{'CANCEL' | translate}}</button>
+        </ion-col>
+    </ion-row>
+</ion-grid>

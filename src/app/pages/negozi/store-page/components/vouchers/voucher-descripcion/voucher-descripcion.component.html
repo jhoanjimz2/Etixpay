@@ -1,0 +1,64 @@
+<app-header-padre [page]="true"></app-header-padre>
+<ion-content>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="4">
+        <div class="div_img">
+          <img src="{{voucher.voucherIMAGENDESTACADA}}">
+        </div>
+      </ion-col>
+      <ion-col>
+        <div class="div_contenedor">
+          <div class="div_contenido">
+            <ion-label class="label_uno">{{'START7' | translate}}:</ion-label>&nbsp;<ion-label class="label_dos">{{voucher.voucherFECHAINICIO | dateTimeFormatFilter: 'DD/MM/YYYY  H:mm'}}</ion-label><br>
+            <ion-label class="label_uno">{{'END6' | translate}}:</ion-label>&nbsp;<ion-label class="label_dos">{{voucher.voucherFECHACADUCIDAD | dateTimeFormatFilter: 'DD/MM/YYYY  H:mm'}}</ion-label><br>
+            <ion-label class="label_uno">{{'VOUCHER2' | translate}}:</ion-label>&nbsp;<ion-label class="label_dos">{{voucher.voucherPRECIO | formattNumber}} €</ion-label><br>
+            <ion-label class="label_uno">{{'REWARDPOINTS5' | translate}}:</ion-label>&nbsp;<ion-label class="label_dos">{{punto_recompensa | number: '1.0'}}&nbsp;/&nbsp;10 €</ion-label>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <div class="linea"></div>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="4" class="line_col">
+        <ion-label class="label_tres">{{'SOLD' | translate}}</ion-label><br>
+        <ion-label class="label_cuatro">{{voucher.voucherCANTIDADVENDIDA}} / {{voucher.voucherCANTIDADLIMITADA}}</ion-label>
+      </ion-col>
+      <ion-col size="4" class="col_central line_col">
+        <ion-label class="label_tres">{{'USED' | translate}}</ion-label><br>
+        <ion-label class="label_cuatro">{{voucher.voucherUsed}} / {{voucher.voucherCANTIDADVENDIDA}}</ion-label>
+      </ion-col>
+      <ion-col size="4" class="line_col">
+        <ion-label class="label_tres">{{'BILLING' | translate}}</ion-label><br>
+        <ion-label class="label_cuatro">{{facturacion | formattNumber}} €</ion-label>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <div class="linea"></div>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col class="col_line_dos">
+        <ion-label class="label_tres">{{'CONTACTS6' | translate}}</ion-label><br>
+        <ion-label class="label_tres">+{{voucher.voucherable.empresaTELEFONO}}</ion-label><br>
+        <ion-icon name="location" class="icon_location"></ion-icon>
+        <ion-label class="label_cinco">{{voucher.voucherable.empresaDIRECCION}}</ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <img src="{{voucher.voucherIMAGENSECUNDARIA}}" class="imagen_portada">
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="col_line_dos">
+        <ion-label class="label_tres">{{'DESCRIPTION7' | translate}}</ion-label><br>
+        <ion-label class="label_seis">{{voucher.voucherDESCRIPCION}}</ion-label>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

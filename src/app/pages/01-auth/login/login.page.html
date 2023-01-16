@@ -1,0 +1,64 @@
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <form (ngSubmit)="login()" [formGroup]="formulario" autocomplete="off">
+          <img [src]="'assets/pages/auth/logo.png'" class="img-logo">
+  
+          <div class="div-grid">
+            <label class="label-uno">{{'WELCOMEBACK' | translate}}</label>
+            <label class="label-dos">{{'SIGNINTOCONTINUE' | translate}}</label>
+  
+            <div class="p-r">
+              <ion-input  [placeholder]="'EMAILADDRESS2' | translate" class="inputs" type="email"
+                          [formControl]="formulario.controls.email" name="email">
+              </ion-input>
+              <img [src]="'assets/pages/auth/mail.svg'" class="img-mail">
+            </div>
+  
+            <div class="m-t-26 p-r">
+              <ion-input  [placeholder]="'PASSWORD2' | translate" class="inputs" maxlength="6"
+                          [formControl]="formulario.controls.password" name="password"
+                          [type]="show ? 'text' : 'password'">
+              </ion-input>
+              <img [src]="'assets/pages/auth/lock.svg'" class="img-lock">
+              <img [src]="'assets/pages/auth/eyes.svg'" class="img-eyes" (click)="show = !show">
+            </div>
+  
+          </div>
+  
+          <div class="div-row-2">
+            <div class="col-remember">
+              <ion-checkbox mode="md" [formControl]="formulario.controls.remember" name="remember"></ion-checkbox>&nbsp;&nbsp;
+              <label class="label-tres">{{'REMEMBER2' | translate}}</label>
+            </div>
+            <div class="col-forgot">
+              <label class="label-cuatro" (click)="olvidoContrasena()">{{'FORGOTPASSWORD' | translate}}</label>
+            </div>
+          </div>
+  
+          <ion-button class="boton-sign-in" type="submit" [disabled]="!formulario.valid">{{'SIGNIN' | translate}}</ion-button>
+  
+  
+          <div class="div-row-3">
+            <div class="centrar">
+              <div class="linea"></div>
+            </div>
+            <div class="centrar">
+              <label class="label-cinco">{{'ORCONTINUE' | translate}}</label>
+            </div>
+            <div class="centrar">
+              <div class="linea"></div>
+            </div>
+          </div>
+  
+  
+          <div class="centrar m-t-42">
+            <label class="label-seis">{{'DONTHAVEANACCOUNT' | translate}}</label>&nbsp;
+            <label class="label-cuatro" (click)="registro()">{{'REGISTER' | translate}}</label>
+          </div>
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

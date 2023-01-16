@@ -1,0 +1,139 @@
+ion-grid {
+  padding: 10px;
+}
+ion-row {
+  padding-top: 2.5px;
+  padding-bottom: 2.5px;
+}
+ion-col {
+  position: relative;
+}
+.div_balance {
+  width: 100%;
+  height: 90px;
+  background-color: rgb(42, 192, 235);
+  border: 1px solid rgb(42, 192, 235);
+  position: relative;
+  border-radius: 12px;
+}
+.label_uno {
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  opacity: 0.5;
+  position: absolute;
+  left: 10px;
+  top: calc(50% - 12px);
+}
+.label_dos {
+  font-size: 28px;
+  font-weight: 400;
+  color: #fff;
+  position: absolute;
+  right: 10px;
+  top: 25.5px;
+}
+.label_tres {
+  font-size: 16px;
+  font-weight: 400;
+  color: #000;
+  text-shadow: 0px 0px 1px;
+}
+.input {
+  width: 100%;
+  height: 60px;
+  background-color: #fff;
+  border: 1px solid #d8dcdf;
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-right: 70px;
+  font-size: 28px;
+}
+.input::placeholder {
+  font-size: 20px;
+}
+.button_euro {
+  width: 60px;
+  height: 60px;
+  background-color: #d8dcdf;
+  border-radius: 10px;
+  border: 1px solid #d8dcdf;
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(24, 22, 81);
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+}
+.boton_select {
+  width: 110px;
+  height: 90px;
+  background-color: #fff;
+  border: 1px solid rgb(102, 75, 196);
+  border-radius: 15px;
+  font-size: 13px;
+  color: #000;
+  font-weight: 400;
+  position: relative;
+  line-height: 1.7;
+}
+.boton_select_f {
+  width: 110px;
+  height: 90px;
+  background-color: #fff;
+  border: 1px solid #d8dcdf;
+  border-radius: 15px;
+  font-size: 13px;
+  color: #000;
+  font-weight: 400;
+  line-height: 1.7;
+}
+.img {
+  width: 40px;
+  height: 40px;
+}
+.icon_select {
+  color: rgb(102, 75, 196);
+  font-size: 14px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+.linea {
+  width: 100%;
+  height: 2px;
+  background-color: rgb(247, 248, 249);
+}
+.confirm {
+  width: 100%;
+  height: 45px;
+  border: 1px dotted rgb(102, 75, 196);
+  background-color: rgb(102, 75, 196);
+  color: #fff;
+  border-radius: 10px;
+}
+.boton {
+  height: 40px !important;
+  width: 40px;
+  border: 1px solid #3ec0e8;
+  background-color: #3ec0e8;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.icon_qr {
+  font-size: 30px;
+  color: #fff;
+}
+.input_wallet {
+  font-weight: bold;
+  height: 40px !important;
+  border: 1px solid #d8dcdf;
+  width: 100%;
+  --placeholder-opacity: 1;
+  --placeholder-color: #d8dcdf;
+  --placeholder-font-weight: 100;
+  --padding-start: 5px;
+  border-radius: 10px;
+}

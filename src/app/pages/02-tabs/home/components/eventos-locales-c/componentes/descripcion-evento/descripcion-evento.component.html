@@ -1,0 +1,88 @@
+<app-header-padre [page]="true"></app-header-padre>
+<ion-content>  
+
+  <ion-grid class="grid">
+    <ion-row>
+      <ion-col>
+        <ion-label class="texto1rosa">{{evento.eventoTITULO}}</ion-label>
+      </ion-col>
+      <ion-col class="colicon">
+        <app-boton-like-eventos 
+        [evento]="evento" 
+        [eventos_all]="eventos_all"
+        [eventos_mios]="eventos_mios"
+        [eventos_likes]="eventos_likes" 
+        [bandera]="bandera"
+        class="botonlike"></app-boton-like-eventos>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-label class="texto2negro">
+          {{evento.eventoFECHAINICIO | dateTimeFormatFilter : "DD MMM, YYYY"}}&nbsp;&nbsp;|&nbsp;
+          {{evento.eventoFECHAINICIO | dateTimeFormatFilter : "hh:mm"}}</ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-label class="texto3negro">{{'TICKETPRICE2' | translate}}: </ion-label>
+        <ion-label class="texto2negro">{{voucher_standart_precio | formattNumber}} €</ion-label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <ion-label class="texto3negro">{{'REWARDPOINT' | translate}}:&nbsp;&nbsp;</ion-label>
+        <ion-label class="texto2negro">{{voucher_standart_punto_recompensa | number: '1.0' }} PR</ion-label>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <div class="linea2"></div>
+
+  <ion-grid class="grid">
+    <ion-row>
+      <ion-col class="coltexto">
+        <ion-label class="texto2negro">{{'CONTACTS2' | translate}}</ion-label><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <ion-label class="texto2negro">{{evento.eventoNUMEROTELEFONICO}}</ion-label>
+        <ion-label class="texto2negro" *ngIf="evento.eventoSEGUNDONUMERO != 'undefined'">, {{evento.eventoSEGUNDONUMERO}}</ion-label>
+        <br>
+        <ion-icon class="icon2rosa" name="location-sharp"></ion-icon>&nbsp;
+        <ion-label class="texto4gris">{{evento.eventoDIRECCION}}, {{evento.country.paisNOMBRE}}</ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-slides pager="true" [options]="option" #sliderRef >
+          <ion-slide *ngFor="let imagen of evento.events_image">
+            <ion-card class="cardimg">
+              <img src="{{imagen.evento_imagenLINK}}" class="img">
+            </ion-card>
+          </ion-slide>
+        </ion-slides>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <div class="linea2"></div>
+
+  <ion-grid class="grid">
+    <ion-row>
+      <ion-col>
+        <ion-label class="texto2negro">{{'DESCRIPTION2' | translate}}</ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="ion-text-justify">
+        <ion-label class="texto5negro">
+          {{evento.eventoDESCRIPCION}}
+        </ion-label>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <div class="linea2"></div>
+
+</ion-content>
+<ion-toolbar>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <button class="buyticket" (click)="comprar()">{{'BUYTICKET2' | translate}}</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-toolbar>

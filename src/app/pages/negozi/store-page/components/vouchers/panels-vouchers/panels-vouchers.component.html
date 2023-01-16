@@ -1,0 +1,23 @@
+<app-header-padre [page]="true"></app-header-padre>
+<ion-content>
+
+  <ion-list>
+    <div class="div_crear" (click)="crearVoucherTienda()">
+      <div>
+        <ion-icon name="add-circle" class="icon_uno"></ion-icon><br />
+        <ion-label class="label_uno">{{'CREATEVOUCHER3' | translate}}</ion-label>
+      </div>
+    </div>
+    <app-voucher-panel *ngFor="let voucher of vouchers" [voucher]="voucher"></app-voucher-panel>
+  </ion-list>
+
+</ion-content>
+<ion-toolbar>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="padding">
+        <button class="button_receive" (click)="lectorQr()">{{'RECEIVEVOUCHER2' | translate}}</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-toolbar>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="117px" height="117px" viewBox="0 0 117 117" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>successful</title>
+    <g id="Pay-with-etixpay" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Login-Copy-2" transform="translate(-661.000000, -147.000000)">
+            <g id="successful" transform="translate(661.000000, 147.000000)">
+                <path d="M117,58.5 C117,90.80175 90.80175,117 58.5,117 C26.19825,117 0,90.80175 0,58.5 C0,26.19825 26.19825,0 58.5,0 C90.80175,0 117,26.19825 117,58.5 Z" id="Stroke-1" fill="#00D56A"></path>
+                <polyline id="Stroke-3" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" points="88 40 54.853 88 30 68.8"></polyline>
+            </g>
+        </g>
+    </g>
+</svg>

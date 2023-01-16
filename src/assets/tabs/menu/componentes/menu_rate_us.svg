@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="22px" viewBox="0 0 24 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Rate us</title>
+    <defs>
+        <polygon id="path-1" points="0.000259455098 -0.0002 23.0309003 -0.0002 23.0309003 21.6208 0.000259455098 21.6208"></polygon>
+    </defs>
+    <g id="Menu" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="My-profile" transform="translate(-23.000000, -492.000000)">
+            <g id="Rate-us" transform="translate(23.000000, 492.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Clip-2"></g>
+                <path d="M19.5087,0.6511 C15.3637,-1.6189 11.5157,2.7731 11.5157,2.7731 C11.5157,2.7731 7.6667,-1.6189 3.5227,0.6511 C-0.4793,2.8431 -0.7203,7.6081 1.0547,10.6621 C3.0057,14.0141 11.5157,21.6211 11.5157,21.6211 C11.5157,21.6211 20.0257,14.0141 21.9757,10.6621 C23.7517,7.6081 23.5107,2.8431 19.5087,0.6511" id="Fill-1" fill="#B4BBCB" mask="url(#mask-2)"></path>
+            </g>
+        </g>
+    </g>
+</svg>

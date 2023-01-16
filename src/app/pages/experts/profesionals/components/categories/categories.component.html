@@ -1,0 +1,18 @@
+<div class="d-c">
+  <div class="d-f">
+    <div class="w-6">
+      <ion-label class="label">{{'CATEGORIESP' | translate}}</ion-label>
+    </div>
+    <div class="w-6 t-e" (click)="categories()">
+      <ion-label class="label-view">{{'VIEWALLP' | translate}}</ion-label>
+    </div>
+  </div>
+</div>
+<div class="d-c-2 ion-no-color-barra">
+  <div class="d-s" *ngFor="let category of categorias | experts : palabra : 'categorias'"  (click)="categorie(category.id, category.profession_name)">
+    <div class="b-c">
+      <img  [src]="category.profesionICONWHITE | image">
+    </div>
+    <ion-label class="label-name">{{category.profession_name}}</ion-label>
+  </div>
+</div>

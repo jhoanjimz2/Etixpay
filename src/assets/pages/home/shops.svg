@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64" height="65" viewBox="0 0 64 65">
+  <defs>
+    <clipPath id="clip-SHOPS">
+      <rect width="64" height="65"/>
+    </clipPath>
+  </defs>
+  <g id="SHOPS" clip-path="url(#clip-SHOPS)">
+    <path id="store" d="M57.988,17.356l-4-12a2,2,0,0,0-2-1.359H8.008a2,2,0,0,0-2,1.359l-4,12a2.379,2.379,0,0,0,0,.64v12a2,2,0,0,0,2,2h2V51.982h4V31.99H22V51.982H53.99V31.99h2a2,2,0,0,0,2-2V18a2.379,2.379,0,0,0,0-.64Zm-8,30.628H26V31.99h23.99Zm4-19.992h-8v-8h-4v8H32v-8H28v8H18v-8h-4v8h-8V18.316L9.448,8h41.1L53.99,18.316Z" transform="translate(1.6 5.001)" fill="#fff"/>
+  </g>
+</svg>

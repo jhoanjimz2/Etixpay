@@ -1,0 +1,156 @@
+.paddingGrid {
+  margin: 15px;
+  padding: 0px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.col_input {
+  position: relative;
+  padding: 0px;
+  margin: 5px;
+}
+.input_search {
+  --placeholder-color: #bdbdbd;
+  --clear-button-color: #bdbdbd;
+  --cancel-button-color: #bdbdbd;
+  --icon-color: #bdbdbd;
+  box-shadow: 0px 3px 8px -2px #bdbdbd;
+  --placeholder-font-weight: bold;
+  padding: 3px !important;
+  padding-left: 50px !important;
+  padding-right: 50px !important;
+  border-radius: 5px;
+  position: relative;
+}
+.boton_filtro {
+  background-color: rgb(234, 66, 106);
+  border-radius: 5px;
+  width: 45px;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.boton_filtro img {
+  width: 20px;
+  height: 20px;
+}
+.boton_filtro_dos {
+  background-color: #fff;
+  border-left: 1px solid rgb(222, 225, 232);
+  width: 45px;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.boton_filtro_dos img {
+  width: 20px;
+  height: 20px;
+}
+.textoSegmentNegrita {
+  color: #000;
+  font-size: 95%;
+  font-weight: bold;
+}
+.textoSegment {
+  color: #000;
+  font-size: 90%;
+}
+.iconheart {
+  color: #000;
+  font-size: 130%;
+}
+.colheart {
+  max-width: 50px;
+}
+.colrelative {
+  position: relative;
+}
+.puntomorado {
+  border: 1px solid #664bc4;
+  background-color: #664bc4;
+  width: 5px;
+  height: 5px;
+  border-radius: 2.5px;
+  position: absolute;
+  bottom: 0px;
+  left: calc(50% - 2.5px);
+}
+.labeltevent1 {
+  color: #000;
+  font-size: 100%;
+  font-weight: bold;
+}
+.labeltevent2 {
+  color: #664bc4;
+  font-size: 80%;
+  font-weight: bold;
+}
+.gridsortby {
+  position: relative !important;
+}
+.sortby {
+  width: 100%;
+  background: #fff;
+  position: absolute;
+  left: 0px;
+  top: 100%;
+  border-top: 1.5px solid #d8dcdf;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  z-index: 1;
+  padding: 5px;
+  box-shadow: 0px 211px 450px 37px #d8dcdf;
+}
+.colfiltro {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.filtro {
+  font-size: 100%;
+  font-weight: 400;
+  color: #000;
+}
+.icon_select {
+  zoom: 1.5;
+  position: absolute;
+  right: 5px;
+  color: #664bc4;
+  top: calc(50% - 8px);
+}
+.padding {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.button_receive {
+  background-color: rgb(42, 192, 235);
+  color: #fff;
+  width: 100%;
+  height: 45px;
+  border-radius: 10px;
+  font-size: 100%;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.div_info_nula {
+  width: 100%;
+  height: auto;
+  padding: 10px;
+  padding-bottom: 30px;
+  padding-top: 30px;
+}
+.label_info_nula {
+  font-size: 16px;
+  font-weight: 400;
+  color: #000;
+}

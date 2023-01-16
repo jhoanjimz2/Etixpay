@@ -1,0 +1,36 @@
+
+<ion-content>
+  <div class="div-img">
+    <img src="{{data.imagen}}"/>
+  </div>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="col-uno">
+        <ion-label class="label-nombre">{{data.nombre}}<br/>{{data.apellido}}</ion-label><br />
+        <ion-label class="label-wallet">{{data.wallet}}</ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="col-dos">
+        <rating 
+          readonly="false" 
+          size="default" 
+          [(ngModel)]="formulario.valoracion" name="valoracion">
+        </rating>
+        <ion-label class="label-uno">How is your experience?</ion-label>
+        <ion-label class="label-dos">Your feedback will help improve us</ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-textarea rows="3" cols="20" placeholder="Additional comments"
+        [(ngModel)]="formulario.mensaje" name="mensaje"></ion-textarea>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <button class="boton-submit-review" (click)="addComment()">Submit Review</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,72 @@
+
+<ion-content>
+  <app-modal-info-del-item *ngIf="modalDelete"
+    (setModalDelete)="getModalDelete($event)"
+    [modalDelete]="modalDelete"
+  ></app-modal-info-del-item>
+  <app-header-padre [page]="true"></app-header-padre>
+  
+  <ion-row>
+    <ion-col class="ion-text-center">
+      <ion-button (click)="editItem()" class="btn-edit">{{'EDITMP' | translate}}</ion-button>
+    </ion-col>
+    <ion-col class="ion-text-center">
+      <ion-button (click)="deleteItem()" class="btn-delete">{{'DELETEMP' | translate}}</ion-button>
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="p-l-r-5">
+    <ion-col class="ion-text-center">
+      <img class="card-image" [src]="mainImage">
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="p-l-r-5" *ngIf="product.gallery.length > 0">
+    <ion-col class="ion-text-center">
+      <img class="card-image-small" [src]="product.gallery[0].file.fileURL">
+    </ion-col>
+    <ion-col class="ion-text-center">
+      <img class="card-image-small" [src]="product.gallery[1].file.fileURL">
+    </ion-col>
+    <ion-col class="ion-text-center">
+      <img class="card-image-small" [src]="product.gallery[2].file.fileURL">
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="card-row">
+    <ion-col>
+      <ion-label class="text-title">{{product.productNAME}}</ion-label>
+      <div class="m-t-5">
+        <i class="mdi mdi-google-maps icon-address"></i>
+        <ion-label class="text-city">{{product.city.ciudadNOMBRE}}</ion-label>
+      </div>
+      <div class="text-addres">
+        <ion-label *ngIf="product.city.pais">{{product.city.pais.paisNOMBRE}}</ion-label>
+      </div>
+      <div class="text-addres">
+        <ion-label>{{product.productADDRESS}}</ion-label>
+      </div>
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="card-row">
+    <ion-col>
+      <ion-label class="text-price">€ {{product.current_price.priceVALUE | formattNumber}}</ion-label>
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="card-row">
+    <ion-col>
+      <ion-text class="text-description">
+        {{product.productDESCRIPTION}}
+      </ion-text>
+    </ion-col>
+  </ion-row>
+
+</ion-content>
+
+
+
+
+
+

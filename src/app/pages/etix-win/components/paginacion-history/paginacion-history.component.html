@@ -1,0 +1,11 @@
+<div class="div-slides">
+  <ion-icon name="chevron-back-sharp" class="icon-back" (click)="prev()"></ion-icon>
+  <ion-slides [options]="options" #slide>
+    <ion-slide></ion-slide>
+    <ion-slide *ngFor="let pagina of paginas; let i = index;" (click)="cambiar()">
+      <div [ngClass]="{'item-contenido-activo': paginaActual == (i+1), 'item-contenido': paginaActual != (i+1)}">{{i + 1}}</div>
+    </ion-slide>
+    <ion-slide></ion-slide>
+  </ion-slides>
+  <ion-icon name="chevron-forward-sharp" class="icon-next" (click)="next()"></ion-icon>
+</div>

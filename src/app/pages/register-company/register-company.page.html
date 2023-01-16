@@ -1,0 +1,88 @@
+<ion-content>
+
+  <!-- alert -->
+    <app-card-authorization *ngIf="modalAuthorization"
+      [stepNumber]="step"
+      [fromSummary]="fromSummary"
+      (nextStepNumber)="continue($event)"
+      (setModalAuthorization)="getModalAuthorization($event)"
+    ></app-card-authorization>
+  <!-- alert -->
+
+  <!-- Modal map -->
+    <app-map-reg-company *ngIf="modalMap.modal"
+      [modalMap]="modalMap"
+      (setModalMap)="getModalMap($event)"
+    ></app-map-reg-company>
+  <!-- Modal map -->
+
+  <!-- Header -->
+    <app-header-reg-company *ngIf="step < 6" 
+      [title]="title"
+      [stepNumber]="step"
+      (backStepNumber)="backStepNumber($event)"
+    >
+    </app-header-reg-company>
+  <!-- Header -->
+
+  <!-- Stetps -->
+    <app-steps [step]="step"></app-steps>
+  <!-- Stetps -->
+
+  <!-- Authorization -->
+    <app-authorization *ngIf="step === 1" 
+      [authorization]="authorization"
+      [stepNumber]="step"
+      [fromSummary]="fromSummary"
+      (setAuthorization)="getAuthorization($event)"
+      (setModalAuthorization)="getModalAuthorization($event)"
+    >
+    </app-authorization>
+  <!-- Authorization -->
+
+  <!-- Detail contact -->
+    <app-contact-detail *ngIf="step === 2"
+      [contactDetail]="contactDetail"
+      [stepNumber]="step"
+      [fromSummary]="fromSummary"
+      (nextStepNumber)="continue($event)"
+      (setContactDetail)="getContactDetail($event)"
+    ></app-contact-detail>
+  <!-- Detail contact -->
+
+  <!-- Data Tax and Reward -->
+    <app-data-fiscal-reward *ngIf="step === 3" 
+      [fiscalDataReward]="fiscalDataReward"
+      [stepNumber]="step"
+      [fromSummary]="fromSummary"
+      [summary]="summary"
+      (nextStepNumber)="continue($event)"
+      (setFiscalDataReward)="getFiscalDataReward($event)"
+      (setModalMap)="getModalMap($event)"
+    ></app-data-fiscal-reward>
+  <!-- Data Tax and Reward -->
+
+  <!-- Map-Description-Photo -->
+    <app-description *ngIf="step === 4"
+      [description]="description"
+      [stepNumber]="step"
+      [fromSummary]="fromSummary"
+      (nextStepNumber)="continue($event)"
+      (setDescription)="getDescription($event)"
+    ></app-description>
+  <!-- Map-Description-Photo -->
+
+  <!-- Summary -->
+    <app-summary *ngIf="step === 5"
+      [stepNumber]="step"
+      [summary]="summary"
+      (nextStepNumber)="continue($event)"
+      (fromSummary)="getFromSummary($event)"
+    ></app-summary>
+  <!-- Summary -->
+  
+  <!-- Reg-Completed -->
+    <app-reg-completed *ngIf="step === 6"></app-reg-completed>
+  <!-- Reg-Completed -->
+
+</ion-content>

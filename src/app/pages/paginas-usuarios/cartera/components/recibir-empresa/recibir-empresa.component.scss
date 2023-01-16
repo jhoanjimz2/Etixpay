@@ -1,0 +1,24 @@
+ion-grid {
+  padding: 0px;
+}
+ion-col {
+  padding: 10px;
+  padding-top: 30px;
+}
+button {
+  width: 100%;
+  height: 84px;
+  border: 3px solid #664bc4;
+  background-color: #fff;
+  border-radius: 22px;
+  line-height: 1.8;
+}
+button img {
+  width: 38.55px;
+  height: 35.94px;
+}
+button ion-label {
+  font-size: 14px;
+  font-weight: 400;
+  color: #664bc4;
+}

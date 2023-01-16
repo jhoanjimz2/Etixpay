@@ -1,0 +1,70 @@
+<ion-tabs #tabs (ionTabsDidChange)="tab = tabs.getSelected()">
+  <ion-tab-bar slot="bottom" class="ion-no-border">
+    <ion-fab>
+      <ion-fab-button (click)="opcion()">
+        <img src="assets/tabs/tabs/pay.png" />
+      </ion-fab-button>
+    </ion-fab>
+    <ion-label class="pay">Pay</ion-label>
+
+    <ion-tab-button tab="home" class="home">
+      <img
+        src="assets/tabs/tabs/home.png"
+        class="imgicon"
+        [hidden]="tab != 'home'"
+      />
+      <img
+        src="assets/tabs/tabs/homef.png"
+        class="imgicon"
+        [hidden]="tab == 'home'"
+      />
+    </ion-tab-button>
+
+    <ion-tab-button tab="comunidad" class="amigos">
+      <img
+        src="assets/tabs/tabs/comunidad.png"
+        class="imgicon2"
+        [hidden]="tab != 'comunidad'"
+      />
+      <img
+        src="assets/tabs/tabs/comunidadf.png"
+        class="imgicon2"
+        [hidden]="tab == 'comunidad'"
+      />
+    </ion-tab-button>
+
+    <svg
+      height="50"
+      viewBox="0 0 100 50"
+      width="100"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M100 0v50H0V0c.543 27.153 22.72 49 50 49S99.457 27.153 99.99 0h.01z"
+        fill="red"
+        fill-rule="evenodd"
+      ></path>
+    </svg>
+
+    <ion-tab-button tab="cartera" class="cuenta">
+      <img
+        src="assets/tabs/tabs/cartera.png"
+        class="imgicon_m"
+        [hidden]="tab != 'cartera'"
+      />
+      <img
+        src="assets/tabs/tabs/carteraf.png"
+        class="imgicon_m"
+        [hidden]="tab == 'cartera'"
+      />
+    </ion-tab-button>
+
+    <ion-tab-button class="cartera">
+      <div class="divimg" (click)="cuenta()">
+        <img [src]="imagen | image" />
+      </div>
+    </ion-tab-button>
+
+    <div class="lineabaja"></div>
+  </ion-tab-bar>
+</ion-tabs>

@@ -1,0 +1,87 @@
+ion-grid {
+    padding: 20px 17px;
+}
+.label-uno {
+    color: black;
+    font-size: 16px;
+    font-weight: 400;
+}
+.input-wallet {
+    width: 100%;
+    height: 47px;
+    border-radius: 11px;
+    background-color: white;
+    color: black;
+    font-size: 15px;
+    font-weight: 400;
+    border: 1px solid #d8dcdf;
+    text-align: center;
+}
+.button-confirm {
+    width: 100%;
+    height: 44px;
+    border-radius: 11px;
+    background-color: #664BC4;
+    border: 1px solid #664BC4;
+    color: white;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+}
+.label-dos {
+    color: black;
+    font-size: 16px;
+    font-weight: 300;
+}
+.label-tres {
+    color: black;
+    font-size: 17px;
+    font-weight: 300;
+}
+.button-qr-wallet {
+    width: 68.37px;
+    height: 46.01px;
+    border-radius: 9px;
+    background-color: #664BC4;
+    border: 1px solid #664BC4;
+    color: white;
+    font-size: 30px;
+    text-align: center;
+}
+.input {
+    border: 1px solid #fff;
+    background-color: #fff;
+    font-weight: 400;
+    font-size: 60px;
+    height: 78px;
+    width: 100%;
+    color: #000;
+    text-align: center !important;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.euro-icon {
+    position: absolute;
+    right: 0px;
+    top: calc(50% - 17.5px);
+    font-size: 30px;
+    color: #000;
+}
+.label-cuatro {
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+}
+.button-cancel {
+    width: 100%;
+    height: 44px;
+    border-radius: 11px;
+    background-color: #ec3759;
+    border: 1px solid #ec3759;
+    color: white;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+}

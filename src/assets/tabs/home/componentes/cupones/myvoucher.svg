@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="17px" height="17px" viewBox="0 0 17 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>My vouchers</title>
+    <g id="Home" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-26.000000, -117.000000)" fill="#FFFFFF" id="My-vouchers">
+            <g transform="translate(26.000000, 117.000000)">
+                <polygon id="Fill-1" points="0 3.8834 3.883 3.8834 3.883 0.0004 0 0.0004"></polygon>
+                <polygon id="Fill-2" points="0 16.3754 3.883 16.3754 3.883 12.4924 0 12.4924"></polygon>
+                <polygon id="Fill-3" points="12.492 16.3754 16.375 16.3754 16.375 12.4924 12.492 12.4924"></polygon>
+                <polygon id="Fill-4" points="12.492 3.8834 16.375 3.8834 16.375 0.0004 12.492 0.0004"></polygon>
+                <polygon id="Fill-5" points="6.246 10.1294 10.13 10.1294 10.13 6.2464 6.246 6.2464"></polygon>
+                <polygon id="Fill-6" points="6.246 16.3754 10.129 16.3754 10.129 12.4924 6.246 12.4924"></polygon>
+                <polygon id="Fill-7" points="12.492 10.1294 16.375 10.1294 16.375 6.2464 12.492 6.2464"></polygon>
+                <polygon id="Fill-8" points="0 10.1294 3.883 10.1294 3.883 6.2464 0 6.2464"></polygon>
+                <polygon id="Fill-9" points="6.246 3.8834 10.129 3.8834 10.129 0.0004 6.246 0.0004"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

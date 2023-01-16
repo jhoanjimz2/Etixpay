@@ -1,0 +1,123 @@
+.d-c-m {
+    padding-top: 14px;
+    padding-bottom: 29px;
+    width: 92%;
+    margin: auto;
+    background: #E8F0F6;
+}
+.m-b {
+    margin-bottom: 14px;
+}
+.d-c {
+    display: flex;
+    width: 100%;
+}
+.s-12 {
+    flex: 0 0 calc(calc(12 / var(--ion-grid-columns, 12)) * 100%);
+    width: calc(calc(12 / var(--ion-grid-columns, 12)) * 100%);
+    max-width: calc(calc(12 / var(--ion-grid-columns, 12)) * 100%);
+}
+.s-4 {
+    flex: 0 0 calc(calc(4 / var(--ion-grid-columns, 12)) * 100%);
+    width: calc(calc(4 / var(--ion-grid-columns, 12)) * 100%);
+    max-width: calc(calc(4 / var(--ion-grid-columns, 12)) * 100%);
+}
+.img {
+    width: 60px;
+    height: 52px;
+    border-radius: 11px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+.d-c-2 {
+    display: flex;
+    width: 100%;
+}
+.l-n {
+    font-size: 20px;
+    font-weight: bold;
+    color: #312F4A;
+}
+.w-50-70px {
+    width: calc(50% - 35px);
+}
+.sus {
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.l-b {
+    font-size: 13px;
+    font-weight: 300;
+    color: #9391AE;
+}
+.l-s {
+    font-size: 13px;
+    font-weight: 400;
+    color: #312F4A;
+}
+.l-tix {
+    font-size: 8px;
+    font-weight: 400;
+    color: #312F4A;
+}
+.left {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.end {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.centrar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.h-52 {
+    height: 52px;
+}
+.icon {
+    font-size: 14px;
+    font-weight: 400;
+    color: #0370FF;
+}
+.linea {
+    width: 100%;
+    height: 1px;
+    background-color: #C7CDD2;
+}
+.d-l-d {
+    width: 100%; 
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+.l-d {
+    font-size: 10px;
+    font-weight: 300;
+    color: #312F4A;
+}
+.l-ti {
+    font-size: 14px;
+    font-weight: 350;
+    color: #312F4A;
+}
+.l-nu {
+    font-size: 22px;
+    font-weight: bold;
+    color: #0370FF;
+}
+.l-h-1-4 {
+    line-height: 1.5;
+}
+.w-100 {
+    width: 100%;
+}
+.a-left {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}

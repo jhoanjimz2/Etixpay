@@ -1,0 +1,67 @@
+.padding-20 {
+    padding: 20px;
+}
+
+.f-z-b-32 {
+    font-size: 32px; 
+    font-weight: bold
+}
+
+.f-z-b-60 {
+    font-size: 60px; 
+    font-weight: bold
+}
+
+.center-items {
+    display: flex; 
+    justify-content: center; 
+    align-items: center
+}
+
+.card-info-text {
+    margin-top: 30px; 
+    margin-bottom: 30px
+}
+
+.card-info-text__col {
+    padding-left: 30px; 
+    padding-right: 30px
+}
+
+.f-z-b-16 {
+    font-size: 16px; 
+    font-weight: bold
+}
+
+.input-code {
+    border: solid 1px #00beff;
+    height: 62px;
+    border-radius: 13px;
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.btn-confir {
+    height: 56px;
+    width: 100%;
+    border-radius: 15px;
+    background-color: #00beff;
+    font-size: 16;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.btn-anul {
+    height: 56px;
+    width: 100%;
+    background-color: transparent;
+    font-size: 16;
+    color: #bf3c3c;
+    font-weight: bold;
+    text-align: center;
+}
+
+.btn-anul__text {
+    border-bottom: solid 1px #bf3c3c
+}

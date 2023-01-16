@@ -1,0 +1,105 @@
+.grid_uno {
+  width: 100%;
+  height: 120px;
+  background-color: rgb(102, 74, 197);
+  position: relative;
+}
+.padding {
+  padding-top: 15px;
+  padding-left: 15px;
+}
+.label_category {
+  font-size: 16px;
+  font-weight: 400;
+  color: #fff;
+}
+.div_info {
+  width: calc(100% - 30px);
+  border-radius: 15px;
+  border: 2px solid #d8dcdf;
+  background-color: #fff;
+  position: absolute;
+  left: 0px;
+  top: 65px;
+  margin-left: 15px;
+  margin-right: 15px;
+  padding-bottom: 20px;
+}
+.col_name {
+  text-align: center;
+  padding-top: 20px;
+}
+.label_name {
+  font-size: 25px;
+  font-weight: 400;
+  color: #000;
+  text-shadow: 0px 0px 1px #000;
+}
+.col_valor {
+  text-align: center;
+  padding-top: 25px;
+}
+.label_valor {
+  font-size: 40px;
+  font-weight: 400;
+  color: #000;
+  text-shadow: 0px 0px 1px #000;
+}
+.col_data {
+  text-align: left;
+  padding-top: 20px;
+  line-height: 2;
+}
+.label_uno {
+  font-size: 13px;
+  font-weight: bold;
+  color: rgb(207, 212, 222);
+}
+.label_dos {
+  font-size: 15px;
+  font-weight: bold;
+  color: #000;
+}
+.col_data_dos {
+  text-align: left;
+  padding-top: 10px;
+  line-height: 2;
+}
+.row_text_uno {
+  border-bottom: 3px dashed #d8dcdf;
+  padding-bottom: 15px;
+}
+.header_uno {
+  background: #fff;
+  position: relative;
+}
+.ios {
+  padding-top: 30px;
+  padding-bottom: 10px;
+}
+.col {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+}
+.icon_back {
+  zoom: 1.5;
+  color: #000000;
+  padding: 0px;
+}
+.titulo_header {
+  font-weight: bold;
+  font-size: 120%;
+  color: #000000;
+}
+.linea {
+  border-top: 1px solid #d8dcdf;
+  width: 100%;
+}
+.padding_top {
+  padding-top: 0px;
+}
+.padding_top_dos {
+  padding-top: 5px;
+}

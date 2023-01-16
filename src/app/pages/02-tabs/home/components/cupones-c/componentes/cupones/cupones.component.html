@@ -1,0 +1,110 @@
+<app-header-padre [page]="true"></app-header-padre>
+<ion-content [ngClass]="{'scroll_desactivado': activar_filtro}">
+
+
+
+  <div [ngClass]="{'div_contenedor_mayor': !activar_filtro, 'div_contenedor_mayor_f': activar_filtro}">
+
+
+    <ion-row>
+      <ion-col *ngFor="let categoria of categorias">
+        <div [ngClass]="{'div_segment': vouchers_mostrar == categoria.id,'div_segment_f': vouchers_mostrar != categoria.id}" (click)="vouchers_mostrar = categoria.id; activar_filtro = false; vouchers_mostrar_all = null">
+          {{categorias_titulos(categoria)}}<div class="punto" *ngIf="vouchers_mostrar == categoria.id"></div>      
+        </div>
+      </ion-col>
+    </ion-row>
+
+
+    <div class="div_contenedor">
+      <div [ngClass]="{'div_segment': vouchers_mostrar_all == null,'div_segment_f': vouchers_mostrar_all != null}" (click)="vouchers_mostrar_all = null; activar_filtro = false">
+        All<div class="punto" *ngIf="vouchers_mostrar_all == null"></div>      
+      </div>
+      <div [ngClass]="{'div_segment': vouchers_mostrar_all == 'used','div_segment_f': vouchers_mostrar_all != 'used'}" (click)="vouchers_mostrar_all = 'used'; activar_filtro = false" *ngIf="vouchers_mostrar == 1">
+        Used<div class="punto" *ngIf="vouchers_mostrar_all == 'used'"></div>      
+      </div>
+      <div *ngFor="let sub_categoria of sub_categorias"
+      [ngClass]="{'div_segment': vouchers_mostrar_all == sub_categoria.id,'div_segment_f': vouchers_mostrar_all != sub_categoria.id}" (click)="vouchers_mostrar_all = sub_categoria.id; activar_filtro = false">
+        {{categorias_titulos(sub_categoria)}}<div class="punto" *ngIf="vouchers_mostrar_all == sub_categoria.id"></div>      
+      </div>
+    </div>
+
+
+
+
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-label class="label_uno" *ngIf="vouchers_mostrar == 2">{{'LASTMINUTE' | translate}}</ion-label>
+          <ion-label class="label_uno" *ngIf="vouchers_mostrar != 2">{{'ONLYTHEBEST' | translate}}</ion-label>
+        </ion-col>
+        <ion-col class="ion-text-end" size="3">
+          <ion-label class="label_dos" (click)="activar_filtro = !activar_filtro">{{'SORTBY2' | translate}}</ion-label>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <div class="seguido"></div>
+    <div  class="list_filtro" [hidden]="!activar_filtro">
+      <ion-item lines="none" class="item_filtro" (click)="ordenamiento = 1; activar_filtro = !activar_filtro">
+        {{'DISTANCE' | translate}} <ion-icon name="checkmark-circle-outline" slot="end" *ngIf="ordenamiento == 1"></ion-icon>
+      </ion-item>  
+      <ion-item lines="none" class="item_filtro" (click)="ordenamiento = 2; activar_filtro = !activar_filtro">
+        {{'PRICELOWTO' | translate}} <ion-icon name="checkmark-circle-outline" slot="end" *ngIf="ordenamiento == 2"></ion-icon>
+      </ion-item> 
+      <ion-item lines="none" class="item_filtro" (click)="ordenamiento = 3; activar_filtro = !activar_filtro">
+        {{'PRICEHIGHTO' | translate}} <ion-icon name="checkmark-circle-outline" slot="end" *ngIf="ordenamiento == 3"></ion-icon>
+      </ion-item> 
+      <ion-item lines="none" class="item_filtro" (click)="ordenamiento = 4; activar_filtro = !activar_filtro">
+        {{'DATE' | translate}} <ion-icon name="checkmark-circle-outline" slot="end" *ngIf="ordenamiento == 4"></ion-icon>
+      </ion-item>
+      <div class="linea"  (click)="activar_filtro = !activar_filtro"></div>  
+    </div>
+  </div>
+  
+  
+   <ion-backdrop (click)="activar_filtro = !activar_filtro" class="back" 
+   [hidden]="!activar_filtro"
+   stopPropagation="false"
+   tappable="false"
+   visible="false"
+   ></ion-backdrop>
+
+  <div *ngIf="vouchers_mostrar == 1"  class="se_ponen_arriba">
+    <app-card-voucher-adquirido 
+    *ngFor="let voucher of vouchers_my | cupones: ordenamiento : vouchers_mostrar_all : 'my' "
+    [voucher]="voucher"
+    ></app-card-voucher-adquirido>
+  </div>
+  
+  <div *ngIf="vouchers_mostrar == 2" class="se_ponen_arriba">
+    <app-card-voucher-flash 
+    *ngFor="let voucher of vouchers_flash | cupones: ordenamiento : vouchers_mostrar_all : null"
+    [voucher]="voucher"
+    ></app-card-voucher-flash>
+  </div>
+  
+  <div *ngIf="vouchers_mostrar == 3" class="se_ponen_arriba">
+    <app-card-voucher-all
+    *ngFor="let voucher of vouchers_all | cupones: ordenamiento : vouchers_mostrar_all : null"
+    [voucher]="voucher"
+    ></app-card-voucher-all>
+  </div>
+  
+  <!-- <div [hidden]="!vouchers_types" class="se_ponen_arriba">
+    <app-card-voucher 
+    *ngFor="let voucher of vouchers | cupones: ordenamiento : segment : null"
+    [voucher]="voucher"
+    ></app-card-voucher>
+  </div> -->
+
+
+
+
+
+  
+
+
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="cargar_infinity_scroll($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="{{'LOADING' | translate}}">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

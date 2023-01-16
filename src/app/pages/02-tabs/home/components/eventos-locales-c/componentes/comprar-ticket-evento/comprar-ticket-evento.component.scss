@@ -1,0 +1,69 @@
+.rowpadding {
+  padding-top: 10px;
+}
+.textonegro1 {
+  font-size: 100%;
+  font-weight: bold;
+  color: #000;
+}
+.textonegro2 {
+  font-size: 170%;
+  font-weight: bold;
+  color: #000;
+}
+.buttonCantidad {
+  width: 26px;
+  height: 26px;
+  border-radius: 5px;
+  border: 1px solid #d8dcdf;
+  background-color: #fff;
+  color: #ef4567;
+  font-size: 130%;
+  font-weight: bold;
+  justify-content: center;
+  align-items: center;
+}
+.colbotones {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+.botontipoticket {
+  width: 100%;
+  height: 35px;
+  border-radius: 17.5px;
+  border: 1px solid #ef4567;
+  background-color: #ef4567;
+  color: #fff;
+  font-size: 100%;
+  font-weight: bold;
+}
+.botontipoticketf {
+  width: 100%;
+  height: 35px;
+  border-radius: 17.5px;
+  border: 1px solid #d8dcdf;
+  background-color: #fff;
+  color: #d8dcdf;
+  font-size: 100%;
+  font-weight: bold;
+}
+.textonegro3 {
+  font-size: 95%;
+  color: #000;
+}
+.textomorado1 {
+  font-size: 95%;
+  font-weight: bold;
+  color: #664bc4;
+}
+.botonconfirm {
+  width: 100%;
+  height: 45px;
+  border-radius: 10px;
+  border: 1px solid #ef4567;
+  background-color: #ef4567;
+  color: #fff;
+  font-size: 100%;
+  font-weight: bold;
+}

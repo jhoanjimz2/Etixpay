@@ -1,0 +1,141 @@
+.header {
+  z-index: 9;
+}
+ion-content {
+  --background: rgb(245, 246, 248);
+}
+.div_contenedor_mayor {
+  background-color: #fff;
+  padding-bottom: 15px;
+  position: relative;
+}
+.div_contenedor_mayor_f {
+  background-color: #fff;
+  padding-bottom: 15px;
+  position: relative;
+  z-index: 11;
+}
+.div_contenedor {
+  overflow-y: hidden;
+  overflow-x: auto;
+  white-space: nowrap;
+  background-color: #fff;
+  display: -webkit-box;
+  position: relative;
+}
+.div_segment {
+  width: auto;
+  height: 40px;
+  padding: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: bold;
+  color: #000;
+}
+.div_segment_f {
+  width: auto;
+  height: 40px;
+  padding: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 300;
+  color: #000;
+}
+.punto {
+  border: 1px solid #664bc4;
+  background-color: #664bc4;
+  width: 5px;
+  height: 5px;
+  border-radius: 2.5px;
+  position: absolute;
+  bottom: 0px;
+  left: calc(50% - 2.5px);
+}
+.label_uno {
+  font-size: 17px;
+  font-weight: bold;
+  color: #000;
+  text-shadow: 0px 0px 1px #d8dcdf;
+}
+.label_dos {
+  font-size: 13px;
+  font-weight: bold;
+  color: #664bc4;
+}
+.list_filtro {
+  width: 100%;
+  position: absolute;
+  top: 99%;
+  background-color: #fff;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  z-index: 9;
+  margin-bottom: 30px;
+}
+.seguido {
+  width: 100%;
+  position: absolute;
+  top: 99%;
+  background-color: #fff;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  z-index: 3;
+  height: 100px;
+}
+.se_ponen_arriba {
+  z-index: 9;
+  width: 100%;
+  height: auto;
+  position: sticky;
+}
+.item_filtro {
+  font-size: 15px;
+  font-weight: 400;
+  text-shadow: 0px 0px 1px #d8dcdf;
+  --background: transparent;
+  color: #000;
+  z-index: 9;
+}
+.item_filtro ion-icon {
+  color: #664bc4;
+}
+.back {
+  background-color: #000;
+  opacity: 0.5;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  z-index: 10;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  margin-top: 75px;
+}
+.linea {
+  width: 100px;
+  position: absolute;
+  bottom: -15px;
+  left: calc(50% - 50px);
+  background-color: #fff;
+  height: 5px;
+  border-radius: 10px;
+}
+.scroll_desactivado {
+  --overflow: hidden !important;
+}
+.div_prueba {
+  width: 100%;
+  height: 300px;
+  overflow: auto;
+}

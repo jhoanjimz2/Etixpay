@@ -1,0 +1,36 @@
+.izquierda {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.derecha {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.labelTitulosTres {
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+}
+.ion-edit {
+    color: #664BC4; 
+    zoom: 1.5;
+}
+.textDescripcion {
+    font-size: 14px;
+    font-weight: 300;
+    color: #000;
+    text-align: justify;
+    display: flex;
+}
+.toggle {
+    --background-checked: #2EBFEA;
+    --handle-background-checked: #fff;
+    --handle-background: #2EBFEA;
+}
+ion-textarea {
+    border: 1px solid #000;
+    border-radius: 10px;
+    --padding-start: 10px;
+}

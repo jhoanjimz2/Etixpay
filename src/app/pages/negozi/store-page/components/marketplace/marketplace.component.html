@@ -1,0 +1,47 @@
+<ion-grid>
+  <ion-row>
+    <ion-col>
+      <ion-label class="label-uno">Online shop</ion-label>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-input class="input-search" [(ngModel)]="search" mode="ios"></ion-input>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <div class="div-slide">
+        <ion-chip
+          (click)="selectCategoria('')"
+          [ngClass]="{'chip': chip != '', 'chip-active': chip == ''}">
+          {{'ALLCATEGORIES' | translate}}
+        </ion-chip>
+
+        <ion-chip 
+          (click)="selectCategoria(categoria.categoryCODE)"
+          *ngFor="let categoria of categories" 
+          [ngClass]="{'chip': chip != categoria.categoryCODE , 'chip-active': chip == categoria.categoryCODE}">
+          {{categoria.categoryNAME}}
+        </ion-chip>
+
+      </div>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <div class="div-slide">
+        <div class="div-producto" *ngFor="let producto of products | productsMarkeplace: search || chip" (click)="showDetail(producto.uuid)">
+          <img [src]="producto.main_image.file.fileURL" class="img-producto">
+          <div class="div-label">
+            <ion-label class="titulo-product">{{producto.productNAME}}</ion-label>
+          </div>
+          <div class="div-buttons">
+            <button class="button button-uno">€ {{producto.current_price.priceVALUE | numberFormat}} </button>
+            <button class="button button-dos">{{producto.reward_point | numberFormat}} RP</button>
+          </div>
+        </div>
+      </div>
+    </ion-col>
+  </ion-row>
+</ion-grid>

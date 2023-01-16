@@ -1,0 +1,156 @@
+.gridcard {
+  background-color: rgb(234, 66, 106);
+  border-radius: 10px;
+  margin: 15px;
+}
+.label1 {
+  font-size: 110%;
+  font-weight: 500;
+  color: #fff;
+}
+.padding1 {
+  margin-top: 15px;
+  margin-left: 15px;
+  padding-bottom: 0px;
+}
+.label2 {
+  font-size: 95%;
+  font-weight: 400;
+  color: rgb(249, 207, 217);
+}
+.padding2 {
+  margin-top: 15px;
+  margin-right: 10px;
+  padding-bottom: 0px;
+  max-width: 70px;
+  text-align: right;
+}
+.padding3 {
+  padding-top: 0px;
+  margin-top: 0px;
+  margin-left: 15px;
+  margin-bottom: 50px;
+}
+.label3 {
+  font-size: 90%;
+  font-weight: 400;
+  color: rgb(244, 167, 185);
+}
+.padding4 {
+  margin-bottom: 15px;
+  margin-left: 15px;
+  margin-top: 5px;
+  max-width: 120px;
+  border-right: 2px dashed #f4a7b9;
+}
+.label4 {
+  font-size: 60%;
+  font-weight: 400;
+  color: rgb(244, 167, 185);
+}
+.padding5 {
+  margin-bottom: 15px;
+  margin-left: 15px;
+  margin-top: 5px;
+}
+.label5 {
+  font-size: 95%;
+  font-weight: 400;
+  color: #fff;
+}
+.grid2 {
+  padding-top: 20px;
+  padding-left: 0px;
+  padding-right: 0px;
+  margin: 15px;
+}
+.paddingleft0 {
+  padding-left: 0px;
+}
+.label6 {
+  font-size: 100%;
+  font-weight: bold;
+  text-shadow: 1px 0px 0px #d8dcdf;
+  color: #000;
+}
+.input {
+  width: 100%;
+  height: 55px;
+  border-radius: 10px;
+  border: 1px solid #d8dcdf;
+  color: #000;
+  --placeholder-color: rgb(211, 215, 224);
+  --placeholder-font-weight: 400;
+  --placeholder-opacity: 1;
+  --padding-start: 20px;
+}
+.colboton {
+  max-width: 70px;
+  text-align: right;
+  padding-right: 0px;
+}
+.button {
+  width: 60px;
+  height: 55px;
+  border-radius: 10px;
+  border: 1px solid rgb(234, 66, 106);
+  color: rgb(234, 66, 106);
+  background-color: #fff;
+  font-size: 200%;
+}
+.paddingleft02 {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.input2 {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #d8dcdf;
+  color: #000;
+  --placeholder-color: rgb(211, 215, 224);
+  --placeholder-font-weight: 400;
+  --placeholder-opacity: 1;
+  --padding-start: 20px;
+}
+ion-item {
+  font-size: 90%;
+  font-weight: 400;
+  color: #000;
+  --padding-start: 0px;
+}
+ion-checkbox {
+  --background: #fff;
+  --border-width: 1px !important;
+  --border-style: solid !important;
+  --border-radius: 4px;
+  --border-color: rgb(186, 193, 208);
+  --checkmark-color: #ffffff;
+  --background-checked: rgb(102, 74, 197);
+  --border-color-checked: rgb(102, 74, 197);
+  --size: 23px;
+  --checkmark-width: 4;
+  --checkmark-height: 4;
+}
+.paddingtop {
+  padding-top: 20px;
+}
+.buttonsend {
+  width: 100%;
+  height: 50px;
+  border-radius: 12px;
+  font-size: 100%;
+  font-weight: 500;
+  border: 1px solid rgb(102, 74, 197);
+  background-color: rgb(102, 74, 197);
+  color: #fff;
+}
+.buttonsendf {
+  width: 100%;
+  height: 50px;
+  border-radius: 12px;
+  font-size: 100%;
+  font-weight: 500;
+  border: 1px solid rgb(102, 74, 197);
+  background-color: #fff;
+  color: rgb(102, 74, 197);
+}

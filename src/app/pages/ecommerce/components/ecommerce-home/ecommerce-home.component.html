@@ -1,0 +1,14 @@
+<div class="div-contenedor">
+  <div class="w-6 ion-text-left" (click)="irEcommerce()">
+    <ion-label class="l-1">{{'ECOMMERCEE' | translate}}</ion-label>
+  </div>
+  <div class="w-6 ion-text-end" (click)="irEcommerce()">
+    <ion-label class="l-2">{{'VIEWALL3' | translate}}</ion-label>
+  </div>
+</div>
+<div class="div-contenedor-dos ion-no-color-barra">
+  <div class="div-ecommerce" *ngFor="let shop of ecommerce" (click)="irSitioWeb(shop.empresaPAGINAWEB)">
+    <img src="{{shop.empresaFOTO}}" class="img-logo">
+    <div class="div-banner">{{shop.pr_base | formattNumber2}} PR/ 100€</div>
+  </div>
+</div>

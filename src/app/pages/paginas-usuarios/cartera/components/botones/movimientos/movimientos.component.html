@@ -1,0 +1,66 @@
+<app-header-padre [page]="true"></app-header-padre>
+<ion-content>
+
+
+  <ion-segment mode="md" value="All" (ionChange)="movimientos = $event.detail.value">
+    <ion-segment-button value="All">
+      <ion-label>{{'ALL' | translate}}</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="Received">
+      <ion-label>{{'RECEIVED' | translate}}</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="Paid">
+      <ion-label>{{'PAID' | translate}}</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="Pending">
+      <ion-label>{{'PENDING' | translate}}</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+
+  <form [formGroup]="fmFecha" [hidden]="movimientos != 'All'" class="formulario">
+    <ion-grid class="ion-text-center">
+      <ion-row>
+        <ion-col>
+          <button class="botonNoSeleccionado" [hidden]="filtroFecha" (click)="add()">+{{'ADDPERIOD' | translate}}</button>
+          <button class="botonNoSeleccionado" [hidden]="!filtroFecha" (click)="clear()">{{'CLEAR' | translate}}</button>
+        </ion-col>
+        <ion-col class="ion-text-left line_hi">
+          <ion-label [hidden]="!filtroFecha" class="label_uno">{{'FROM' | translate}}</ion-label><br>
+          <ion-datetime [hidden]="!filtroFecha" display-format="DD/MM/YYYY" mode="ios"(ionChange)="activarServicio()" placeholder="00/00/0000"
+          [formControl]="fmFecha.controls.fechaIni" name="fechaIni" cancelText="{{'CANCEL6' | translate}}" doneText="ok" max="{{fecha_limite}}"></ion-datetime>
+        </ion-col>
+        <ion-col class="ion-text-left line_hi">
+          <ion-label [hidden]="!filtroFecha" class="label_uno">{{'TO' | translate}}</ion-label><br>
+          <ion-datetime [hidden]="!filtroFecha" display-format="DD/MM/YYYY" mode="ios"(ionChange)="activarServicio()" placeholder="00/00/0000" 
+          [formControl]="fmFecha.controls.fechaFin" name="fechaFin" cancelText="{{'CANCEL6' | translate}}" doneText="ok" max="{{fecha_limite}}"></ion-datetime>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+
+  <ion-grid [hidden]="movimientos != 'All'">
+    <div class="linea"></div>
+    <app-movimiento *ngFor="let movimiento of movimientosAll" [movimiento]="movimiento"></app-movimiento>
+  </ion-grid>
+  <ion-grid [hidden]="movimientos != 'Received'">
+    <div class="linea"></div>
+    <app-movimiento *ngFor="let movimiento of movimientosIN" [movimiento]="movimiento"></app-movimiento>
+  </ion-grid>
+  <ion-grid [hidden]="movimientos != 'Paid'">
+    <div class="linea"></div>
+    <app-movimiento *ngFor="let movimiento of movimientosOUT" [movimiento]="movimiento"></app-movimiento>
+  </ion-grid>
+  <ion-grid [hidden]="movimientos != 'Pending'">
+    <div class="linea"></div>
+    <app-movimiento-pendiente *ngFor="let movimiento of movimientosPEN" [movimiento]="movimiento"></app-movimiento-pendiente>
+  </ion-grid>
+
+
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="cargaInfinitiScroll($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="{{'LOADING' | translate}}">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+
+</ion-content>

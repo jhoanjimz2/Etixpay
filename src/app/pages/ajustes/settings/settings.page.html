@@ -1,0 +1,49 @@
+<app-header-padre [tabs]="true"></app-header-padre>
+<ion-content>
+  
+  <div class="div-info-uno">
+    <div class="w-5 centrar">
+      <div class="div-img">
+        <img [src]="infoPersonal.imagen | image" class="imgperfil">
+        <img src="assets/tabs/menu/componentes/cuenta-menu/camera.svg" class="iconoadd" (click)="cargarCamara()">
+      </div>
+    </div>
+    <div class="w-7 left">
+      <div class="div-info-dos">
+        <ion-label class="label-name">{{infoPersonal.nombres}}</ion-label>
+        <ion-label class="label-dos">{{infoPersonal.iso}}&nbsp;&nbsp;&nbsp;&nbsp;+{{infoPersonal.telefono}}</ion-label>
+        <ion-label class="label-dos" (click)="copiar()"><ion-icon name="copy"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{wallet}}</ion-label>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="div-botones">
+
+    <ion-label class="label-subtitulo">{{'ACCOUNTSETTINGS' | translate}}</ion-label>
+    <button *ngIf="tipo_user != 4" (click)="informacion_personal()">{{'PERSONALINFORMATION' | translate}}</button>
+    <button *ngIf="tipo_user == 4" (click)="perfil_tienda()"> {{'PERSONALINFORMATION' | translate}}</button>
+    <button *ngIf="tipo_user != 4" (click)="seguridad()">{{'SECURITY' | translate}}</button>
+    <button *ngIf="tipo_user != 4">{{'PRIVACY' | translate}}</button>
+    <button (click)="metodos_de_pago()">{{'PAYMENTMETHODS' | translate}}</button>
+
+    <ion-label class="label-subtitulo">{{'APPSETTINGS' | translate}}</ion-label>
+    <ion-select [value]="idioma" okText="Ok" cancelText="Cancel" mode="ios" (ionChange)="changeLanguage($event)">
+      <ion-select-option value="it">
+        <img src="/assets/lenguaje/italia.png" width="20px" height="20px">&nbsp;{{'ITALIAN' | translate}}
+      </ion-select-option>
+      <ion-select-option value="en">
+        <img src="/assets/lenguaje/inglaterra.png" width="20px" height="20px">&nbsp;{{'ENGLISH' | translate}}
+      </ion-select-option>
+      <ion-select-option value="es">
+        <img src="/assets/lenguaje/españa.png" width="20px" height="20px">&nbsp;{{'SPANISH' | translate}}
+      </ion-select-option>
+      <ion-select-option value="ro">
+        <img src="/assets/lenguaje/rumania.png" width="20px" height="20px">&nbsp;{{'ROMANIAN' | translate}}
+      </ion-select-option>
+    </ion-select>
+    <button (click)="alerta_confirmar()">{{'LOGOUT' | translate}}</button>
+
+  </div>
+
+</ion-content>

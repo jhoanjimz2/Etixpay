@@ -1,0 +1,28 @@
+<div class="ion-text-center m-top">
+  <img src="assets/tabs/pagar/send.svg" class="img-send">
+  <div class="p-t-13 w-100">
+    <ion-label class="l-1">{{'YOUARESENDINGP' | translate}}</ion-label>
+  </div>
+  <div class="p-t-10 w-100">
+    <ion-label class="l-2">{{cantidad | formattNumber2}}</ion-label>
+    <ion-label class="l-3">€/TIX</ion-label>
+  </div>
+  <div class="p-t-13 w-100">
+    <ion-label class="l-4">{{'AP' | translate}}</ion-label>
+  </div>
+
+  <div class="d-c">
+    <div class="d-c-2">
+      <ion-label class="l-5">{{informacion.name}}</ion-label><br>
+      <ion-label class="l-6">{{informacion.address}}, {{informacion.city}}, {{informacion.coutry}}</ion-label>
+    </div>
+  </div>
+
+  <div class="p-t-10 w-100">
+    <ion-label class="l-4">{{'YOUWILLP' | translate}}</ion-label>
+  </div>
+  <div class="p-t-10 w-100 p-b-36">
+    <ion-label class="l-2">{{pr | formattNumber}} PR</ion-label>
+  </div>
+  <button class="b-p" (click)="paga()">{{'PAYP2' | translate}}</button>
+</div>

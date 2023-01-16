@@ -1,0 +1,67 @@
+.paddingTopToolbar{
+    padding-top: 16px;
+}
+.textoForgot{
+    color: black;
+    font-weight: bold; 
+    font-size: 130%;
+}
+.textoForgot2{
+    color: black;
+    line-height: 1.8;
+    font-size: 85%;
+}
+.paddingTopBottomIMG{
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+.tamañoIMG{
+    width: 55%;
+    height: auto;
+}
+.colInput{
+    display: flex;
+    justify-content: center;
+}
+.bordesItemInput{
+    border: solid 0.5px rgb(165, 175, 169);
+    border-radius: 5px; 
+    width: auto; 
+    height: 55px;
+}
+input.native-input.sc-ion-input-ios {
+    padding: 0px !important;
+}
+input.native-input.sc-ion-input-md {
+    padding: 0px !important;
+}
+.colTexto{
+    padding-top: 10%;
+    line-height: 1.8;
+}
+.texto1{
+    color: black;
+    font-size: 85%;
+}
+.texto2{
+    color: #3ec0e8;
+    font-size: 85%;
+}
+.texto3{
+    color: #3ec0e8;
+    font-size: 85%;
+    text-decoration: underline #3ec0e8;
+}
+.anchoBoton{
+    padding-top: 15%;
+    padding-left: 13%;
+    padding-right: 13%;
+}
+.botonVerify{
+    border: 1px solid #664bc4;
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    background-color: #664bc4;
+    color: #ffffff;
+}

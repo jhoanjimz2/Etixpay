@@ -1,0 +1,10 @@
+<div class="div_contenedor">
+  <div *ngFor="let categoria of categorias; let i = index" class="div_item" [ngClass]="{'linea_lateral': i == 0}" (click)="tipo_vista(categoria)">
+    <div class="boton" [ngStyle]="{'background-color': categoria.color , 'border': '1px solid ' + categoria.color}">
+      <img src="assets/tabs/home/componentes/cupones/{{categoria.icono}}" class="{{categoria.css_img}}">
+    </div>
+    <div class="div_name_label">
+      <ion-label [ngClass]="{'label2': i == 0, 'label3': i != 0}">{{categoria_(categoria)}}</ion-label>
+    </div>
+  </div>
+</div>

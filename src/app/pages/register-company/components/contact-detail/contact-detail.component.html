@@ -1,0 +1,138 @@
+<form ngNativeValidate #formContact="ngForm">
+  <ion-card-content>
+    <p>
+     <ion-label class="dark-label">{{'CONTACTEMAILNOTE' | translate}}</ion-label>
+    </p>
+    <ion-input  (ionChange)="validateEmail(contactDetail.email)" 
+                (keyup)="validateEmail(contactDetail.email)" 
+                (focusout)="validateEmail(contactDetail.email); validatedEmail()" 
+                type="email" [(ngModel)] = "contactDetail.email" 
+                name="email" class="input-text" 
+                [placeholder]="'INPUTEMAIL' | translate" 
+                required 
+                [disabled]="contactDetail.verifiedCode">
+    </ion-input>
+  </ion-card-content>
+  
+  <ion-card-content>
+    <p>
+      <ion-label class="dark-label">{{'SENDCODENOTE' | translate}}</ion-label>
+    </p>
+  
+    <ion-row>
+      <ion-col size="4" class="item-button-phone">
+        <select (change)="getContryISO()" [(ngModel)] = "contactDetail.codeCountry" name="codeCountry" class="input-select" required [disabled]="(verifying || contactDetail.verifiedCode)">
+          <option *ngFor="let country of countries" value = "{{country.id}}">{{country.paisNOMBRE + ' +' + country.paisINDICATIVO}}</option>
+        </select>  
+      </ion-col>
+      <ion-col class="ion-text-center">
+        <ion-input type="tel" [(ngModel)] = "contactDetail.phone" name="phone" class="input-text" [placeholder]="'INPUTPHONE' | translate" required [disabled]="(verifying || contactDetail.verifiedCode)"></ion-input>
+      </ion-col>
+    </ion-row>
+  
+    <ion-row *ngIf="formContact.form.valid && isEmail">
+      <ion-col></ion-col>
+      <ion-col size="6" class="ion-text-center">
+        <ion-button (click)="timeLeft()" color="primary" class="btn-button wth-90p" [disabled]="contactDetail.sendCode">
+          <ion-label class="txt-capitalize">
+            {{'SENDCODE' | translate}}
+          </ion-label>
+        </ion-button>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+  </ion-card-content>
+</form>
+
+<ion-card-content *ngIf="contactDetail.sendCode">
+  <p class="ion-text-center">
+    <ion-label class="dark-label">{{'INPUTCODEPROVIDED' | translate}}</ion-label>
+  </p>
+  <ion-row>
+    <ion-col class="ion-text-center">
+      <ion-input #input1 (ionChange)="codeRecived(1)" [(ngModel)] = "contactDetail.code.digit1" name="digit1" maxlength="1" type="tel" class="input-code" required [disabled]="(verifying || contactDetail.verifiedCode)"></ion-input>
+    </ion-col>
+    <ion-col  class="ion-text-center">
+      <ion-input #input2 (ionChange)="codeRecived(2)" [(ngModel)] = "contactDetail.code.digit2" name="digit2" maxlength="1" type="tel" class="input-code" required [disabled]="(verifying || contactDetail.verifiedCode)"></ion-input>
+    </ion-col>
+    <ion-col class="ion-text-center">
+      <ion-input #input3 (ionChange)="codeRecived(3)" [(ngModel)] = "contactDetail.code.digit3" name="digit3" maxlength="1" type="tel" class="input-code" required [disabled]="(verifying || contactDetail.verifiedCode)"></ion-input>
+    </ion-col>
+    <ion-col class="ion-text-center">
+      <ion-input #input4 (ionChange)="codeRecived(4)" [(ngModel)] = "contactDetail.code.digit4" name="digit4" maxlength="1" type="tel" class="input-code" required [disabled]="(verifying || contactDetail.verifiedCode)"></ion-input>
+    </ion-col>
+    <ion-col class="ion-text-center">
+      <ion-input #input5 (ionChange)="codeRecived(5)" [(ngModel)] = "contactDetail.code.digit5" name="digit5" maxlength="1" type="tel" class="input-code" required [disabled]="(verifying || contactDetail.verifiedCode)"></ion-input>
+    </ion-col>
+    <ion-col class="ion-text-center">
+      <ion-input #input6 (ionChange)="codeRecived(6)" [(ngModel)] = "contactDetail.code.digit6" name="digit6" maxlength="1" type="tel" class="input-code" required [disabled]="(verifying || contactDetail.verifiedCode)"></ion-input>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col class="ion-text-center">
+      <p>
+        <ion-label class="txt-capitalize f-z-50">
+          {{minutes}}:{{seconds}}
+        </ion-label>
+      </p>
+      <p>
+        <ion-label class="txt-capitalize">
+          {{'TIMELEFT' | translate}}
+        </ion-label>
+      </p>
+    </ion-col>
+  </ion-row>
+</ion-card-content>
+
+<ion-row class="p-t-50" *ngIf="contactDetail.sendCode && !receivedCode && !finalTime && !contactDetail.verifiedCode">
+  <ion-col class="ion-text-center">
+    <p>
+      <ion-label color="dark-label">{{'RECIVECODE' | translate}}</ion-label>
+    </p>
+    <p>
+      <ion-label color="primary" class="txt-contact">{{'CONTACTSUPPORT' | translate}}</ion-label>
+    </p>
+  </ion-col>
+</ion-row>
+<ion-row *ngIf="contactDetail.sendCode && !receivedCode && finalTime && !contactDetail.verifiedCode">
+  <ion-col class="ion-text-center">
+    <p>
+      <ion-label color="dark-label">{{'NOTVERIFYPHONE' | translate}}</ion-label>
+    </p>
+    <p>
+      <ion-label color="primary" class="txt-contact">{{'CONTACTSUPPORT' | translate}}</ion-label>
+    </p>
+  </ion-col>
+</ion-row>
+<ion-row *ngIf="contactDetail.sendCode && !receivedCode && finalTime && !contactDetail.verifiedCode">
+  <ion-col class="ion-text-center">
+    <ion-button (click)="timeLeft()" color="primary">
+      <i class="fa fa-refresh f-z-25"></i>
+      <ion-label color="light" class="txt-capitalize m-l-5">
+        {{'REQUESTNEWCODE' | translate}}
+      </ion-label>
+    </ion-button>
+  </ion-col>
+</ion-row>
+<ion-row *ngIf="contactDetail.verifiedCode">
+  <ion-col class="ion-text-center">
+    <i class="mdi mdi-check-all color-icon-check f-z-25"></i>
+    <p>
+      <ion-label class="txt-capitalize dark-label">
+        {{'VERIFIEDPHONE' | translate}}
+      </ion-label>
+    </p>
+  </ion-col>
+</ion-row>
+<ion-row class="p-t-25" *ngIf="contactDetail.verifiedCode">
+  <ion-col class="ion-text-center">
+  </ion-col>
+  <ion-col class="ion-text-center">
+    <ion-button (click)="continue()" color="primary" class="btn-button wth-90p">
+      <ion-label color="light" class="txt-capitalize">
+        {{'CONTINUE' | translate}}
+        <i class="mdi mdi-arrow-right m-l-15"></i>
+      </ion-label>
+    </ion-button>
+  </ion-col>
+</ion-row>

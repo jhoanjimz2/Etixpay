@@ -1,0 +1,37 @@
+<ion-grid class="g-i-s">
+  <ion-row>
+    <ion-col class="c-i">
+      <div class="pr">
+        <img  [src]="profesional.main_image" class="i-s"(click)="verImg(profesional.main_image)">
+        <div class="div-change" *ngIf="editar">
+          <ion-icon name="refresh-circle-outline" (click)="subirImg()"></ion-icon>
+        </div>
+      </div>
+    </ion-col>
+    <ion-col>
+      <div class="d-i">
+        <ion-label class="l-n">{{profesional.profesionalNAMEMAP}}</ion-label>
+      </div>
+      <div class="d-i">
+        <ion-label class="l-t">Category:</ion-label>&nbsp;
+        <ion-label class="l-s-b">{{profesional.proffesion_professional[0].profession}}</ion-label>
+      </div>
+      <div class="d-i">
+        <ion-label class="l-t">Service:</ion-label>&nbsp;
+        <p class=p-l>
+          <ion-label class="l-s-b-m" *ngFor="let service of profesional.proffesion_professional[0].services; let i = index">
+            {{service}}&nbsp;<label *ngIf="i < (profesional.proffesion_professional[0].services.length - 1)">,</label>
+          </ion-label>
+        </p>
+      </div>
+      <div class="d-i">
+        <ion-label class="l-t">Reward points:</ion-label>&nbsp;
+        <ion-label class="l-s">{{profesional.reward_point | formattNumber}} / 100€</ion-label>
+      </div>
+      <div class="d-i">
+        <ion-label class="l-t">Cashback: --</ion-label>&nbsp;
+        <!-- <ion-label class="l-s">{{profesional.cashback}}%</ion-label> -->
+      </div>
+    </ion-col>
+  </ion-row>
+</ion-grid>

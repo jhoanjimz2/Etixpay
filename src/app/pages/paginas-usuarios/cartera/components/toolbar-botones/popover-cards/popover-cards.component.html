@@ -1,0 +1,17 @@
+
+
+<ion-list class="list" *ngIf="!select_card">
+  <ion-item lines="none" (click)="lectorQr()">
+    <ion-label>{{'ADDCARDS' | translate}}</ion-label>
+  </ion-item>
+  <ion-item lines="none" (click)="select_card = true">
+    <ion-label>{{'SELECTCARD' | translate}}</ion-label>
+  </ion-item>
+</ion-list>
+
+
+<ion-list class="list" *ngIf="select_card">
+  <ion-item lines="none" *ngFor="let card of cards;" (click)="seleccion_card(card.cardNUMERO)">
+    <ion-label>{{card.cardALIAS}}</ion-label><ion-label>{{card.cardNUMERO}}</ion-label>
+  </ion-item>
+</ion-list>

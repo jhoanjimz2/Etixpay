@@ -1,0 +1,5 @@
+<ion-slides [options]="opciones_slide" *ngIf="publicidades.length > 0" [pager]="true">
+  <ion-slide  *ngFor="let publicidad of publicidades" [hidden]="!publicidad.adIMAGEN">   
+    <img [src]="publicidad.adIMAGEN">
+  </ion-slide>
+</ion-slides>

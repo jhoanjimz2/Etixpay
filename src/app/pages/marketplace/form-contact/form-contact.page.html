@@ -1,0 +1,54 @@
+<app-header-padre [page]="true"></app-header-padre>
+<ion-content>
+
+  <ion-row class="m-t-50">
+    <ion-col class="ion-text-center">
+      <ion-label class="text-contact">Contatta il venditore</ion-label>
+    </ion-col>
+  </ion-row>
+
+  <form ngNativeValidate #formItem="ngForm">
+    <ion-row class="card-row">
+      <ion-col>
+        <ion-label class="text-label">Il tuo nome</ion-label>
+        <ion-input class="text-input"></ion-input>
+      </ion-col>
+    </ion-row>
+  
+    <ion-row class="card-row">
+      <ion-col>
+        <ion-label class="text-label">Recapito telefonico</ion-label>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="card-row-phone">
+      <ion-col size="2" class="p-t-5">
+        <div class="card-code-phone">
+          <ion-label class="text-code-phone">+39</ion-label> 
+        </div>
+      </ion-col>
+      <ion-col size="10" class="p-0">
+        <ion-input class="input-phone"></ion-input>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="card-row-message">
+      <ion-label class="text-label">Il tuo messaggio</ion-label>
+    </ion-row>
+
+    <ion-row class="card-row">
+      <ion-col class="card-text-area">
+        <ion-textarea rows="7" class="input-text-area"></ion-textarea>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="card-row-btn">
+      <ion-col class="ion-text-center">
+       <ion-button (click)="save()" class="btn-save">Salva modifiche</ion-button>
+      </ion-col>
+    </ion-row>
+
+  </form>
+
+
+</ion-content>

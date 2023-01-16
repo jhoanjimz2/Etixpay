@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64" height="65" viewBox="0 0 64 65">
+  <defs>
+    <clipPath id="clip-ECOMMERCE">
+      <rect width="64" height="65"/>
+    </clipPath>
+  </defs>
+  <g id="ECOMMERCE" clip-path="url(#clip-ECOMMERCE)">
+    <g id="shopping-cart-line" transform="translate(6.567 9)">
+      <circle id="Ellisse_34" data-name="Ellisse 34" cx="3.272" cy="3.272" r="3.272" transform="translate(13.92 41.44)" fill="#fff"/>
+      <circle id="Ellisse_35" data-name="Ellisse 35" cx="3.272" cy="3.272" r="3.272" transform="translate(37.471 41.44)" fill="#fff"/>
+      <path id="Tracciato_59" data-name="Tracciato 59" d="M52.241,7.259a1.615,1.615,0,0,0-1.256-.62H17.034l1.06,3.352H48.849L44.5,30.1H20.034L12.582,5.851a1.653,1.653,0,0,0-1.076-1.089L4.82,2.65A1.63,1.63,0,0,0,2.773,3.765a1.692,1.692,0,0,0,1.084,2.1L9.712,7.712l7.485,24.3-2.674,2.246-.212.218a4.554,4.554,0,0,0-.13,5.681,4.433,4.433,0,0,0,3.685,1.676H45.082a1.677,1.677,0,0,0,0-3.352H17.6a1.089,1.089,0,0,1-.916-.574,1.15,1.15,0,0,1,0-1.1l3.93-3.352H45.8a1.64,1.64,0,0,0,1.631-1.307L52.6,8.684a1.71,1.71,0,0,0-.359-1.425Z" transform="translate(-2.7 -2.575)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

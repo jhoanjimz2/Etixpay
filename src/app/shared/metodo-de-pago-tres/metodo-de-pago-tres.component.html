@@ -1,0 +1,23 @@
+<ion-grid>
+  <ion-row *ngFor="let cuenta of cuentas" (click)="prev_select[0] = cuenta" class="row">
+    <ion-col size="3" class="col_img">
+      <div [ngClass]="{ 'div_img': prev_select[0].IBAN == cuenta.IBAN , 'div_img_f' : prev_select[0].IBAN != cuenta.IBAN }">
+        <img src="assets/tabs/componentes/banco_dos.png" class="img">
+        <ion-icon name="checkmark-circle" class="icon_uno" *ngIf="prev_select[0].IBAN == cuenta.IBAN"></ion-icon>
+      </div>
+    </ion-col>
+    <ion-col class="col_info">
+      <div class="div_info">
+        <ion-label class="label_uno">{{cuenta.SWIFT}}</ion-label><br>
+        <ion-label class="label_dos">•••••{{cuenta.IBAN.slice(-4)}}</ion-label><br>
+        <ion-label class="label_tres" *ngIf="prev_select[0].IBAN == cuenta.IBAN">{{'PREFERREDMETHOD' | translate}}</ion-label>
+        <ion-icon name="checkmark-circle" class="icon_dos" *ngIf="prev_select[0].IBAN == cuenta.IBAN"></ion-icon>
+      </div>    
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col class="ion-text-center paddingAdd" (click)="add_metodo_pago()">
+      <ion-label class="textoAdd">+ {{'ADDNEWBANK' | translate}}</ion-label>
+    </ion-col>
+  </ion-row>
+</ion-grid>

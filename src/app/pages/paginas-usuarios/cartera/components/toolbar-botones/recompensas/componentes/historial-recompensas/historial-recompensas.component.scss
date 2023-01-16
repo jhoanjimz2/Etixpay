@@ -1,0 +1,28 @@
+.formulario {
+  padding-top: 10px;
+}
+.botton_no_seleccionado {
+  height: 40px;
+  width: 100%;
+  border: 1px solid rgb(245, 247, 250);
+  background-color: rgb(245, 247, 250);
+  border-radius: 20px;
+  font-size: 85%;
+  font-weight: bold;
+  color: rgb(191, 197, 211);
+}
+ion-datetime {
+  color: #664bc4;
+  padding: 0px;
+}
+.label_uno {
+  font-size: 13px;
+  font-weight: 400;
+  color: #d8dcdf;
+}
+.row_datetime {
+  border-bottom: 2px solid #f5f7fa;
+  padding-bottom: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+}

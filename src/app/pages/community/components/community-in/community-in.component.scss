@@ -1,0 +1,109 @@
+.card-share {
+    padding-left: 10px; 
+    padding-right: 10px;
+}
+
+.text-share {
+    height: 55px; 
+    padding-top: 6px; 
+    border-bottom: solid 2px #0062DA;
+}
+
+.text-invite {
+    font-size: 25px; 
+    color: #0062DA;
+}
+
+.btn-share {
+    width: 52px; 
+    height: 44px; 
+    margin-top: -6px; 
+    margin-right: 1px; 
+    float: right;
+}
+
+.icon-share {
+    font-size: 30px; color: #FFFFFF;
+}
+
+.card-profile {
+    background-color: #F6F6F6; 
+    border-radius: 20px; 
+    margin-bottom: 45px;
+}
+
+.body-card-profile {
+    height: 68px;
+}
+
+.img-profile {
+    border-radius: 50%;
+    height: 78px; 
+    width: 78px; 
+    margin-top: 3px; 
+    position: absolute; 
+    margin-left: -35px;
+}
+
+.f-z-14 {
+    font-size: 14px;
+}
+
+.f-z-33 {
+    font-size: 33px;
+}
+
+.main-card-community {
+    margin-bottom: 100px;
+}
+
+.card-community {
+    height: 150px;
+    border-radius: 20px; 
+    background-color: #F6F6F6; 
+    padding-left: 15px; 
+    padding-right: 15px; 
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+    font-size: 14px;
+
+}
+
+.img-community {
+    border-radius: 50%;
+    height: 61px; 
+    width: 61px;
+}
+
+.item-community {
+    height: 20px; 
+    padding: 0%;
+}
+
+.color-text-dif-left {
+    color: #664BC4
+}
+
+.color-text-dif-right {
+    color: #EC3759
+}
+
+.line-div {
+    height: 2px; 
+    background-color: #FFFFFF; 
+    border-radius: 10px; 
+    margin-bottom: 5px;
+}
+
+ion-button {
+    --background: #0062DA;
+}
+
+.text-medium {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.text-medium-color {
+    color: #000000DE;
+}

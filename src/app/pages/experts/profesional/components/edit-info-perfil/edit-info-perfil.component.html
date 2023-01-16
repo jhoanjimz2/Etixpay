@@ -1,0 +1,96 @@
+<div>
+  <ion-header class="ion-no-border">
+    <ion-toolbar>
+      <ion-icon class="icon-close" (click)="salirSinActualizar()" name="close-circle-outline" slot="end"></ion-icon>
+      <ion-title>Edit</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <form ngNativeValidate #formProfeEdit="ngForm" (ngSubmit)="guardar()">
+    <p class="s-titule">Scegli la tua categoria</p>
+    <ion-select (ionChange)="getServiceByProfesions2();" required mode="ios"
+                placeholder="scegli dalla lista"
+                [(ngModel)]="editProfesional.proffesions[0].proffesionID" name="proffesionID" class="input-select">
+      <ion-select-option *ngFor="let profesion of profesions" [value]="profesion.id">{{profesion.profession_name}}</ion-select-option>
+    </ion-select>
+    <p class="s-titule">Scegli la subcategoria</p>
+    <ion-select required multiple="true" mode="ios"
+                placeholder="scegli dalla lista"
+                [(ngModel)]="editProfesional.proffesions[0].services" name="services" class="input-select">
+      <ion-select-option *ngFor="let service of services" [value]="service.id">{{service.service_name}}</ion-select-option>
+    </ion-select>
+    <p class="s-titule">Forma giuridica</p>
+    <ion-select required mode="ios"
+                placeholder="scegli dalla lista"
+                [(ngModel)]="editProfesional.legal_form_id" name="legal_form_id" class="input-select">
+      <ion-select-option *ngFor="let forma of formaJuridica" [value]="forma.id">{{forma.legal_form_name}}</ion-select-option>
+    </ion-select>
+    <p class="s-titule">Nome legale della tua attività</p>
+    <ion-input  class="input-select" type="text" required
+      [(ngModel)]="editProfesional.profesionalREPRESENTATIVENAME" name="profesionalREPRESENTATIVENAME">
+    </ion-input>
+    <p class="s-titule">Numero fiscale</p>
+    <ion-input  class="input-select" type="number" required (ionInput)="soloNumero()" 
+      [(ngModel)]="editProfesional.profesionalTAXNUMBER" name="profesionalTAXNUMBER">
+    </ion-input>
+    <p class="s-titule">Nome sulle mappe</p>
+    <ion-input  class="input-select" type="text" required
+      [(ngModel)]="editProfesional.profesionalNAMEMAP" name="profesionalNAMEMAP">
+    </ion-input>
+    <p class="s-titule">Descrizione attività</p>
+    <ion-textarea  class="input-textarea" type="text" required [rows]="4"
+      [(ngModel)]="editProfesional.profesionalDESRIPTION" name="profesionalDESRIPTION">
+    </ion-textarea>
+    <p class="s-titule">Utilizza una mail differente da quella personale</p>
+    <ion-input  class="input-select" type="email" required
+      [(ngModel)]="editProfesional.profesionalEMAIL" name="profesionalEMAIL">
+    </ion-input>
+    <p class="s-titule">Link website</p>
+    <ion-input  class="input-select" type="text"
+      [(ngModel)]="editProfesional.profesionalWEB" name="profesionalWEB">
+    </ion-input>
+    <p class="s-titule">Codice e numero di telefono</p>
+    <div class="mrlt">
+      <div class="size-4">
+        <ion-select required mode="ios"
+                    placeholder="scegli dalla lista"
+                    [(ngModel)]="editProfesional.country_id" name="country_id" class="input-select-telefono">
+          <ion-select-option *ngFor="let country of countries" [value]="country.id">{{ '+' + country.paisINDICATIVO + ' ' +country.paisNOMBRE}}</ion-select-option>
+        </ion-select>
+      </div>
+      <div class="size-8">
+        <ion-input  class="input-select-telefono" type="number" required (ionInput)="soloNumero2()" 
+          [(ngModel)]="editProfesional.profesionalPHONE" name="profesionalPHONE">
+        </ion-input>
+      </div>
+    </div>
+
+    <p class="s-titule">Indirizzo legale</p>
+    <ion-input  
+      type="text" [(ngModel)]="editProfesional.legalAddress.addressMAIN" 
+      name="addressMAIN" class="input-select pr50" readonly required>
+      <ion-icon  class="f-z-40 icon-locate" name="locate-outline" (click)="map(1)"></ion-icon>
+    </ion-input>
+
+    <p class="s-titule" *ngIf="!editProfesional.isLegalEqualsOperativeAddress">Indirizzo operativo se presente</p>
+    <ion-input  *ngIf="!editProfesional.isLegalEqualsOperativeAddress"
+      type="text" [(ngModel)]="direccionOperativa" 
+      name="direccionOperativa" class="input-select pr50" readonly>
+      <ion-icon  class="f-z-40 icon-locate" name="locate-outline" (click)="map(2)"></ion-icon>
+    </ion-input>
+
+    <div class="alineado">
+      <ion-checkbox (ionChange)="setearCheck(true, $event)" mode="md" [(ngModel)]="editProfesional.isLegalEqualsOperativeAddress" name="isLegalEqualsOperativeAddress"></ion-checkbox>&nbsp;&nbsp;
+      <ion-label class="subti lh8" (click)="setearCheck()">La sede legale è la stessa della sede operativa</ion-label>
+    </div>
+
+
+    <ion-button class="buton" type="submit" [disabled]="!formProfeEdit.form.valid">Conferma</ion-button>
+
+
+  </form>
+
+
+
+
+</div>

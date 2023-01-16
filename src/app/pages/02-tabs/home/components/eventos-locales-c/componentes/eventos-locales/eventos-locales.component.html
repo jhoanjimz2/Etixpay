@@ -1,0 +1,165 @@
+<app-header-padre [page]="true"></app-header-padre>
+<ion-content>
+
+
+
+  <ion-grid class="paddingGrid">
+    <ion-row>
+      <ion-col class="col_input">
+        <ion-input placeholder="Barcelona, spain" class="input_search" (ionChange)="buscar($event)" mode="md">
+        </ion-input>
+        <button class="boton_filtro" (click)="cancelar()">
+          <img src="assets/tabs/home/componentes/eventos-locales/filters.svg">
+        </button>
+        <button class="boton_filtro_dos" (click)="cancelar()">
+          <img src="assets/tabs/home/componentes/eventos-locales/localizar.svg">
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+  <ion-grid class="ion-text-center" [hidden]="mios">
+    <ion-row>
+      <ion-col (click)="segment = 1" class="colrelative">
+        <ion-label [ngClass]="{'textoSegmentNegrita': segment == 1, 'textoSegment': segment != 1}">{{'ALLEVENTS' | translate}}</ion-label>
+        <div class="puntomorado" [hidden]="segment != 1"></div>
+      </ion-col>
+      <ion-col (click)="segment = 2" class="colrelative">
+        <ion-label [ngClass]="{'textoSegmentNegrita': segment == 2, 'textoSegment': segment != 2}">{{'MYTICKETS' | translate}}</ion-label>
+        <div class="puntomorado" [hidden]="segment != 2"></div>
+      </ion-col>
+      <ion-col (click)="segment = 3" class="colrelative">
+        <ion-label [ngClass]="{'textoSegmentNegrita': segment == 3, 'textoSegment': segment != 3}">{{'MYEVENTS' | translate}}</ion-label>
+        <div class="puntomorado" [hidden]="segment != 3"></div>
+      </ion-col>
+      <ion-col (click)="segment = 4" class="colheart colrelative">
+        <ion-icon name="heart" [hidden]="segment != 4" class="iconheart"></ion-icon>
+        <ion-icon name="heart-outline" [hidden]="segment == 4" class="iconheart"></ion-icon>
+        <div class="puntomorado" [hidden]="segment != 4"></div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+
+  
+
+  <ion-grid class="gridsortby"  [hidden]="mios">
+    <ion-row>
+      <ion-col class="ion-text-left">
+        <ion-label class="labeltevent1">{{'UPCOMINGEVENTS' | translate}}</ion-label>
+      </ion-col>
+      <ion-col class="ion-text-end" (click)="mostrar_filtro.validacion = !mostrar_filtro.validacion">
+        <ion-label class="labeltevent2" >{{'SORTBY' | translate}}</ion-label>
+      </ion-col>
+    </ion-row>
+    <div class="sortby" [hidden]="!mostrar_filtro.validacion">
+      <ion-row *ngFor="let filtro of filtros" (click)="variable_filtro = filtro.codigo; mostrar_filtro.validacion = false">
+        <ion-col class="colfiltro">
+          <ion-label class="filtro">{{filtro.nombre | translate}}</ion-label>
+          <ion-icon name="checkmark-circle-outline" class="icon_select" [hidden]="variable_filtro != filtro.codigo"></ion-icon>
+        </ion-col>
+      </ion-row>
+    </div>
+  </ion-grid>
+
+  
+  <div [hidden]="segment != 1">
+    <ion-list>
+      <app-card-evento
+      *ngFor="let evento of eventos_all | filtro1Eventos: variable_filtro" [tipo]="1" 
+      [evento]="evento" 
+      [eventos_all]="eventos_all" 
+      [eventos_mios]="eventos_mios"
+      [eventos_likes]="eventos_likes"
+      [mostrar_filtro]="mostrar_filtro">
+      </app-card-evento> 
+    </ion-list>
+    <div class="div_info_nula" *ngIf="eventos_all.length <= 0">
+      <ion-label class="label_info_nula">{{'NOEVENTSAVAILABLE' | translate}}</ion-label>
+    </div>
+  </div>
+  <div [hidden]="segment != 2" >
+    <ion-list>
+      <app-card-ticket-comprado
+      *ngFor="let ticket of tickets_comprados | filtro2Eventos: variable_filtro"
+      [ticket]="ticket"
+      [hidden]="ticket.ticketESTADO != 'PENDIENTE'"
+      [tickets_comprados]="tickets_comprados"
+      [mostrar_filtro]="mostrar_filtro">
+      ></app-card-ticket-comprado>
+    </ion-list>
+    <div class="div_info_nula" *ngIf="tickets_comprados.length <= 0">
+      <ion-label class="label_info_nula">{{'THEREARENOVOUCHERS' | translate}}</ion-label>
+    </div>
+  </div>
+  <div [hidden]="segment != 3">
+    <ion-list>
+      <app-card-evento 
+      *ngFor="let evento of eventos_mios | filtro1Eventos: variable_filtro "  [tipo]="3"  
+      [evento]="evento" 
+      [eventos_all]="eventos_all" 
+      [eventos_mios]="eventos_mios"
+      [eventos_likes]="eventos_likes"
+      [mostrar_filtro]="mostrar_filtro">
+      </app-card-evento>
+    </ion-list>
+    <div class="div_info_nula" *ngIf="eventos_mios.length <= 0">
+      <ion-label class="label_info_nula">{{'YOUHAVENOT' | translate}}</ion-label>
+    </div>
+  </div>  
+  <div [hidden]="segment != 4" >
+    <ion-list>
+      <app-card-evento 
+      *ngFor="let evento of eventos_likes | filtro1Eventos: variable_filtro" [tipo]="1" 
+      [evento]="evento" 
+      [eventos_all]="eventos_all"  
+      [eventos_mios]="eventos_mios"
+      [eventos_likes]="eventos_likes"
+      [mostrar_filtro]="mostrar_filtro">
+      </app-card-evento>
+    </ion-list>
+    <div class="div_info_nula" *ngIf="eventos_likes.length <= 0">
+      <ion-label class="label_info_nula">{{'THEREARENOT' | translate}}</ion-label>
+    </div>
+  </div>
+
+
+
+  <div class="linea2"  [hidden]="segment != 2" ></div>
+  <ion-grid  [hidden]="segment != 2" >
+    <ion-row>
+      <ion-col class="ion-text-left">
+        <ion-label class="labeltevent1">{{'EXPIRED' | translate}}</ion-label>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <div [hidden]="segment != 2" >
+    <ion-list>
+      <app-card-ticket-comprado
+      *ngFor="let ticket of tickets_comprados_ejecutados"
+      [ticket]="ticket"
+      [mostrar_filtro]="mostrar_filtro">
+      ></app-card-ticket-comprado>
+    </ion-list>
+    <div class="div_info_nula" *ngIf="tickets_comprados_ejecutados.length <= 0">
+      <ion-label class="label_info_nula">{{'NOEVENTVOUCHERS' | translate}}</ion-label>
+    </div>
+  </div>
+  
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="cargaInfinitiScroll($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="{{'LOADING2' | translate}}">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+</ion-content>
+<ion-toolbar  [hidden]="!mios">
+  <ion-grid>
+    <ion-row>
+      <ion-col class="padding">
+        <button class="button_receive" (click)="lectorQr()">{{'RECEIVEVOUCHER' | translate}}</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-toolbar>

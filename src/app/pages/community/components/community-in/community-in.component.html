@@ -1,0 +1,111 @@
+
+<div class="animate__animated animate__fadeIn">
+    <div class="card-share">
+      <p class="text-share">
+        <ion-label class="text-invite">
+          {{'INVITEFRIENDS' | translate}}
+        </ion-label>
+        <ion-button (click)="toShare()" class="btn-share">
+          <i class="mdi mdi-share-variant icon-share"></i>
+        </ion-button>
+      </p>
+    </div>
+  
+    <div class="card-profile">
+      <ion-row class="body-card-profile">
+        <ion-col size="3" class="ion-text-center">
+         <img [src]="!profile.personaFOTO || !profile ? '../../../../../assets/img/no-image.jpg' : profile.personaFOTO" class="img-profile">
+        </ion-col>
+        <ion-col size="2.5" class="ion-text-center">
+          <div>
+            <ion-label class="f-z-14">{{'MYLEVEL' | translate}}</ion-label>
+          </div>
+          <div>
+            <ion-label class="f-z-33">{{level | number}}</ion-label>
+          </div>
+        </ion-col>
+        <ion-col size="2.5" class="ion-text-center">
+          <div>
+            <ion-label class="f-z-14">My %</ion-label>
+          </div>
+          <div>
+            <ion-label class="f-z-33">{{levelPerc | number}}%</ion-label>
+          </div>
+        </ion-col>
+        <ion-col class="ion-text-center">
+          <div>
+            <ion-label class="f-z-14">{{'MYEARNINGS' | translate}}</ion-label>
+          </div>
+          <div>
+            <ion-label class="f-z-33">{{myProfit | numberFormat}}</ion-label>
+          </div>
+        </ion-col>
+      </ion-row>
+    </div>
+  
+    <div class="main-card-community">
+      <div class="card-community" *ngFor="let network of communityNetwork.data">
+        <ion-row>
+          <ion-col size="2.5">
+            <img [src]="!network.user.persona || !network.user.persona.personaFOTO ? '../../../../../assets/img/no-image.jpg' : network.user.persona.personaFOTO" class="img-community">
+          </ion-col>
+          <ion-col>
+            <ion-row>
+              <ion-col class="item-community">
+                <ion-label class="f-z-14">{{network.user.email}}</ion-label>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col class="item-community">
+                <ion-label class="f-z-14">{{'FRIENDS_COMMNUNITY' | translate}}</ion-label>
+              </ion-col>
+              <ion-col class="item-community">
+                <ion-label class="f-z-14">{{network.cantidadAmigos}}</ion-label>
+              </ion-col>
+              <ion-col class="item-community">
+                <ion-label class="f-z-14">{{'COMMUNITY' | translate}}</ion-label>
+              </ion-col>
+              <ion-col class="ion-text-right item-community">
+                <ion-label class="f-z-14">{{network.cantidadAmigosRed}}</ion-label>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col class="item-community">
+                <ion-label class="f-z-14">{{network.user.fechaRegistro | date: 'dd/MM/yyyy'}}</ion-label>
+              </ion-col>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <div class="line-div"></div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="3" class="item-community">
+            <ion-label class="color-text-dif-left text-medium">{{network.level.punto_recompensa_nivelPORCENTAJE   | number}}%</ion-label>
+          </ion-col>
+          <ion-col class="ion-text-center item-community" size="6">
+            <ion-label class="f-z-14 text-medium-color">{{'LEVELDIFFERENCE' | translate}}</ion-label>
+          </ion-col>
+          <ion-col class="ion-text-right item-community" size="3">
+            <ion-label class="color-text-dif-right text-medium">{{((levelPerc) - (network.level.punto_recompensa_nivelPORCENTAJE * 1)) | number}}%</ion-label>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="3" class="item-community">
+            <ion-label class="color-text-dif-left text-medium">{{((network.punto_recompensaVOLUMEN * 1) + (network.punto_recompensaVOLUMENRED * 1)) | numberFormat}} CRP</ion-label>
+          </ion-col>
+          <ion-col class="ion-text-center item-community" size="6">
+            <ion-label class="f-z-14 text-medium-color">{{'EARNINGSDIFFERENCE' | translate}}</ion-label>
+          </ion-col>
+          <ion-col class="ion-text-right item-community" size="3">
+            <ion-label class="color-text-dif-right text-medium">{{(((network.punto_recompensaVOLUMEN * 1) + (network.punto_recompensaVOLUMENRED * 1)) * ((levelPerc) - (network.level.punto_recompensa_nivelPORCENTAJE * 1)) / 100) | numberFormat}}€</ion-label>
+          </ion-col>
+        </ion-row>
+      </div>
+    </div>
+
+</div>
+
+

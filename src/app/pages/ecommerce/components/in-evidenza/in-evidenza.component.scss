@@ -1,0 +1,79 @@
+ion-grid {
+    padding: 0px;
+    margin: 10px;
+    margin-left: 5px;
+    margin-top: 20px;
+}
+ion-padding {
+    padding: 0px;
+}
+ion-col {
+    padding: 0px;
+}
+.divContenedor {
+    overflow-y: hidden;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 5px;
+    padding-top: 10px;
+    padding-left: 0px;
+    display: -webkit-box;
+}
+.divShopping {
+    width: 284px;
+    height: 211px;
+    margin-right: 10px;
+    border-radius: 15px !important;
+    position: relative;
+}
+img {
+    border-radius: 15px !important;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.labelEvidenza {
+    color: #000;
+    font-size: 16px;
+}
+.divInfoNula {
+  width: 100%;
+  height: 130px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.labelInfoNula {
+  font-size: 16px;
+  font-weight: 400;
+  color: #000;
+}
+.divTexto {
+    width: 100%;
+    height: 32px;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    background-color: #fff;
+    opacity: 0.5;
+}
+.labelTitulo {
+    position: absolute;
+    bottom: 8px;
+    left: 5px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #000;
+    width: 120px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.labelTituloDos {
+    position: absolute;
+    bottom: 8px;
+    right: 5px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #000;
+}

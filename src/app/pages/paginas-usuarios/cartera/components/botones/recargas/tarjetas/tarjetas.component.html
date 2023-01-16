@@ -1,0 +1,31 @@
+<ion-slides [options]="option_tarjetas" #slide_tarjetas  class="slide_tarjetas" [pager]="true" >
+  <ion-slide  *ngFor=" let tarjeta of tarjetas" class="slide_tarjeta" [hidden]="!tarjetas.length"> 
+    <ion-grid>
+      <ion-row>
+        <ion-col size="3">
+          <button [ngClass]="{ 'boton_cuenta_select': tarjeta.seleccionado,  'boton_cuenta':  !tarjeta.seleccionado}" type="button">
+            <ion-icon name="checkmark-circle" class="check_icon" *ngIf="tarjeta.seleccionado"></ion-icon>
+            <img src="{{tarjeta.img}}" height="40px" width="">
+          </button>
+        </ion-col>
+        <ion-col class="col_text">
+          <div class="div_text">
+            <ion-label class="texto_titulo">{{tarjeta.nombre}}</ion-label><br>
+            <ion-label class="texto_subtitulo">{{tarjeta.texto}}</ion-label><br>
+            <ion-label class="texto_re_subtitulo"  *ngIf="tarjeta.seleccionado">{{'PREFERREDMETHOD' | translate}}</ion-label>
+            <ion-label class="texto_re_subtitulo"  *ngIf="!tarjeta.seleccionado" (click)="select_cuenta(tarjeta)">{{'SETASPREFERREDMETHOD' | translate}}</ion-label>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-slide>
+  <ion-slide *ngIf="!tarjetas.length">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-button class="button-add" (click)="add_metodo_pago()" mode="ios">+ {{'ADDNEWCARD' | translate}}</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-slide>
+</ion-slides>

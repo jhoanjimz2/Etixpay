@@ -1,0 +1,18 @@
+<ion-grid>
+  <ion-row>
+    <ion-col>
+      <img src="assets/negozi/location.svg" class="imgLocation">&nbsp;
+      <ion-label class="labelDireccion">{{profesional.legal_address.address}}</ion-label>
+      <br *ngIf="profesional.operative_address">
+      <div *ngIf="profesional.operative_address">
+        <img src="assets/negozi/location.svg" class="imgLocation">&nbsp;
+        <ion-label class="labelDireccion">{{profesional.operative_address.address}}</ion-label>
+      </div>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <div #map id="map"></div>
+    </ion-col>
+  </ion-row>
+</ion-grid>

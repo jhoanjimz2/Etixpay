@@ -1,0 +1,27 @@
+<div class="ion-text-center">
+  <div class="w-100 ion-text-center">
+    <img src="assets/tabs/pagar/successful.svg" class="img-succes">
+  </div>
+  <div class="p-t-35 w-100">
+    <ion-label class="l-1">{{'SUCCESSFULP' | translate}}</ion-label>
+  </div>
+  <div class="p-t-37 w-100">
+    <ion-label class="l-2">{{'SHOWTHISP' | translate}}</ion-label>
+  </div>
+  <div class="p-t-25 w-100">
+    <ion-label class="l-3">{{'YOUSENTP' | translate}}</ion-label>
+  </div>
+  <div class="p-t-10 w-100">
+    <ion-label class="l-4">{{cantidad | formattNumber2}}</ion-label>
+    <ion-label class="l-5">€/TIX</ion-label>
+  </div>
+  <div class="d-c">
+    <div class="d-c-2">
+      <ion-label class="l-6">{{informacion.name}}</ion-label><br>
+      <ion-label class="l-7">{{informacion.address}}, {{informacion.city}}, {{informacion.coutry}}</ion-label>
+    </div>
+  </div>
+  <div class="p-t-50 w-100">
+    <button class="b-p" (click)="home()">{{'BACKTOHOMEP' | translate}}</button>
+  </div>
+</div>

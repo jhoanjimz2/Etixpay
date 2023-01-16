@@ -1,0 +1,67 @@
+<app-header-padre [page]="true"></app-header-padre>
+<ion-content>
+
+  <ion-grid>
+    <ion-row class="rowpadding">
+      <ion-col class="ion-text-left">
+        <ion-label class="textonegro1">{{'QUANTITY' | translate}}</ion-label>
+      </ion-col>
+      <ion-col class="ion-text-left">
+        <ion-label class="textonegro1">{{'TICKETPRICE' | translate}}</ion-label>
+      </ion-col>
+      <ion-col class="ion-text-left" size="3">
+        <ion-label class="textonegro1">{{'PR' | translate}}</ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row class="rowpadding">
+      <ion-col class="colbotones">
+        <button class="buttonCantidad" (click)="restar_cantidad()" [disabled]="operacion.cantidad == 1">-</button>&nbsp;&nbsp;&nbsp;&nbsp;
+        <ion-label class="textonegro2">{{operacion.cantidad}}</ion-label>&nbsp;&nbsp;&nbsp;&nbsp;
+        <button class="buttonCantidad" (click)="sumar_canrtidad()"  [disabled]="operacion.cantidad == operacion.cantidad_restante">+</button>
+      </ion-col>
+      <ion-col class="ion-text-left">
+        <ion-label class="textonegro2">{{operacion.total | formattNumber}} €</ion-label>
+      </ion-col>
+      <ion-col class="ion-text-left" size="3">
+        <ion-label class="textonegro2">{{operacion.pr_total | number: '1.0'}}</ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row class="rowpadding">
+      <ion-col class="ion-text-left">
+        <ion-label class="textonegro1">{{'TICKETTYPE' | translate}}</ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row class="rowpadding">
+      <ion-col class="ion-text-center" *ngFor="let voucher of detalle_evento">
+        <button 
+          [ngClass]="{'botontipoticket': boton_seleccionado.event_ticket_category.id == voucher.event_ticket_category.id,
+                      'botontipoticketf': boton_seleccionado.event_ticket_category.id != voucher.event_ticket_category.id}"
+          (click)="boton_seleccionado = voucher; actualizar_operacion()">{{voucher.event_ticket_category.evento_ticket_categoriaNOMBRE}}
+        </button>
+      </ion-col>
+    </ion-row>
+    <ion-row class="rowpadding">
+      <ion-col class="ion-text-center">
+        <ion-label class="textonegro2">{{boton_seleccionado.evento_ticket_detalleNOTA}}</ion-label>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  
+  <ion-grid class="ion-no-padding" *ngIf="operacion.precio > 0">
+    <ion-list>
+      <app-metodo-de-pago [prev_select]="prev_select"></app-metodo-de-pago>
+    </ion-list>
+  </ion-grid>
+
+</ion-content>
+<ion-toolbar>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <button class="botonconfirm" (click)="tipo_de_pago()">{{'CONFIRM4' | translate}}</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-toolbar>
+

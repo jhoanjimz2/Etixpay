@@ -1,0 +1,108 @@
+ion-content {
+  --background: rgb(245, 247, 250);
+}
+.w-5 {
+  flex: 0 0 calc(calc(4 / var(--ion-grid-columns, 12)) * 100%);
+  width: calc(calc(4 / var(--ion-grid-columns, 12)) * 100%);
+  max-width: calc(calc(4 / var(--ion-grid-columns, 12)) * 100%);
+}
+.w-7 {
+  flex: 0 0 calc(calc(8 / var(--ion-grid-columns, 12)) * 100%);
+  width: calc(calc(8 / var(--ion-grid-columns, 12)) * 100%);
+  max-width: calc(calc(8 / var(--ion-grid-columns, 12)) * 100%);
+}
+.imgperfil {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.iconoadd {
+  width: 25px;
+  height: 25px;
+  object-fit: cover;
+  border-radius: 12.5px;
+  position: absolute;
+  right: 5px;
+  bottom: 0px;
+}
+.div-info-uno {
+  height: 132px;
+  position: relative;
+  display: flex;
+  padding-bottom: 20px;
+  background: white;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+.div-img {
+  position: relative;
+  width: 76px;
+  height: 76px;
+}
+.centrar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.left {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.div-info-dos {
+  display: grid;
+  line-height: 1.5;
+}
+.label-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+}
+.label-dos {
+  font-size: 16px;
+  font-weight: 400;
+  color: black;
+}
+.label-dos ion-icon {
+  color: #AEBABE;
+}
+.div-botones {
+  display: grid;
+  padding: 0px 13px;
+  text-align: left !important;
+}
+.label-subtitulo {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #7D7996;
+}
+button {
+  width: 100%;
+  height: 48px;
+  margin: 0px;
+  margin-top: 13px;
+  text-align: left !important;
+  background: white;
+  color: black;
+  border-radius: 12px;
+  padding: 0px;
+  padding-left: 21px;
+  font-size: 16px;
+}
+button.active, button:active{
+  background-color: #d8dcdf;
+}
+ion-select {
+  width: 100%;
+  height: 48px;
+  margin: 0px;
+  margin-top: 13px;
+  text-align: left !important;
+  background: white;
+  color: black;
+  border-radius: 12px;
+  padding: 0 21px 0px 21px;
+  font-size: 16px;
+}

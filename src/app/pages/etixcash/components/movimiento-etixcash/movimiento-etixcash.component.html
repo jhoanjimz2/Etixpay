@@ -1,0 +1,27 @@
+<ion-row (click)="detalle_movimiento(movimiento, tipo)">
+  <ion-col size="3" class="ion-text-center">
+    <ion-label class="label_uno">{{movimiento.created_at | dateTimeFormatFilter : "DD/MM"  }}</ion-label> <br>
+    <ion-label class="label_uno">{{movimiento.created_at | dateTimeFormatFilter : "h:mm a" }}</ion-label>    
+  </ion-col>
+  <ion-col>
+    <ion-label class="label_dos">{{movimiento.solicitud_en_empresaCODIGO}}</ion-label>&nbsp;<ion-label class="label_tres">{{'HASREQUESTED' | translate}}</ion-label><br>
+    <ion-label class="label_tres" *ngIf="tipo == 'INGRESO'">{{'TOCREDIT' | translate}}</ion-label>
+    <ion-label class="label_tres" *ngIf="tipo == 'RETIRO'">{{'WITHDRAWALOF' | translate}}</ion-label>&nbsp;
+    <ion-label class="label_cuatro">{{movimiento.solicitud_en_empresaCANTIDADATM| formattNumber}} TIX</ion-label>
+  </ion-col>
+</ion-row>
+<ion-row *ngIf="!tipo_dos">
+  <ion-col></ion-col>
+  <ion-col>
+    <button class="boton_accept" (click)="aprobar(movimiento.uuid)">{{'RECIVED' | translate}}</button>
+  </ion-col>
+  <ion-col>
+    <button class="boton_decline" (click)="denegar(movimiento.uuid, movimiento.solicitud_en_empresaCODIGO)">{{'CANCELED' | translate}}</button>
+  </ion-col>
+</ion-row>
+<ion-row *ngIf="tipo_dos">
+  <ion-col class="ion-text-end no_padding_top">
+    <ion-label class="label_cinco" *ngIf="movimiento.solicitud_en_empresaESTADO == 'NO APROBADO'">{{'DECLINED' | translate}}</ion-label>
+    <ion-label class="label_seis" *ngIf="movimiento.solicitud_en_empresaESTADO == 'APROBADO'">{{'ACCEPTED4' | translate}}</ion-label>
+  </ion-col>
+</ion-row>  

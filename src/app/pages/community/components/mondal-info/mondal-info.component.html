@@ -1,0 +1,49 @@
+<div class="main-div"></div>
+
+<ion-card class="card-info">
+  <ion-card-header class="ion-text-center">
+    <ion-text *ngIf="typeModalInfo === 'PR'"  class="text-title">PR</ion-text>
+    <ion-text *ngIf="typeModalInfo === 'CRP'" class="text-title">CRP</ion-text>
+  </ion-card-header>
+  <ion-card-content>
+      <p class="ion-text-center">
+        <ion-label *ngIf="typeModalInfo === 'PR'" class="dark-label">
+          {{'RP_INFO_1' | translate}} 
+        </ion-label>
+        <ion-label *ngIf="typeModalInfo === 'CRP'" class="dark-label">
+          {{'CRP_INFO_1' | translate}}
+        </ion-label>
+      </p>
+  </ion-card-content>
+  <ion-card-content>
+      <p class="ion-text-center">
+        <ion-label *ngIf="typeModalInfo === 'PR'" class="dark-label">
+          {{'RP_INFO_2' | translate}} 
+        </ion-label>
+        <ion-label *ngIf="typeModalInfo === 'CRP'" class="dark-label">
+          {{'CRP_INFO_2' | translate}}
+        </ion-label>
+      </p>
+      <div class="ion-text-center">
+        <ion-label *ngIf="typeModalInfo === 'PR'" class="text-charter">
+          {{'RP_INFO_3' | translate}} 
+        </ion-label>
+      </div>
+  </ion-card-content>
+  <ion-card-content class="m-b-40">
+    <ion-row >
+      <ion-col class="ion-text-center ">
+        <ion-button (click)="hideModal()" class="btn-button wth-90p">
+          <ion-label color="light">
+            OK
+          </ion-label>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-card-content>
+</ion-card>
+
+
+
+
+

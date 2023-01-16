@@ -1,0 +1,95 @@
+<app-header-padre [page]="true"></app-header-padre>
+<ion-content>
+  <ion-grid class="ion-text-center">
+    <ion-row>
+      <ion-col>
+        <ion-label class="label_uno">{{'SIMULATIONOFTHE' | translate}}</ion-label>
+      </ion-col>
+    </ion-row>
+
+    <ion-row >
+      <ion-col >
+        <ion-label class="label_uno">{{'CURRENCY' | translate}}</ion-label><br>
+        <input class="rectangulo" value="€" disabled>
+      </ion-col>
+      <ion-col>
+        <ion-label class="label_uno">{{'QUANTITY3' | translate}}</ion-label><br>
+        <form [formGroup]="formulario">
+          <input class="rectangulo" [formControl]="formulario.controls.cantidad" name="cantidad" 
+          type="text" mask="separator.5" thousandSeparator="." pattern="[0-9.,]+">
+        </form>
+      </ion-col>
+      <ion-col>
+        <ion-label class="label_uno">{{'TIXVALUE' | translate}}</ion-label><br>
+        <input class="rectangulo" value="{{ formulario.controls.cantidad.value | formattNumber}} TIX" disabled>
+      </ion-col>
+    </ion-row>
+
+    <ion-row >
+      <ion-col size="2">
+      </ion-col>
+      <ion-col>
+        <ion-label class="label_uno">% {{'BONUS' | translate}}</ion-label><br>
+        <input class="rectangulo" value="{{proyecto.fase_actual.proyectoBONOS | formattNumber}} %" disabled>
+      </ion-col>
+      <ion-col  size="2">
+      </ion-col>
+    </ion-row>
+
+    <ion-row >
+      <ion-col size="2">
+      </ion-col>
+      <ion-col>
+        <ion-label class="label_uno">{{'MONTHSOFBONUS' | translate}}</ion-label><br>
+        <input class="rectangulo" value="{{proyecto.fase_actual.proyectoPERIODOS | number:'1.0-4'}}" disabled>
+      </ion-col>
+      <ion-col  size="2">
+      </ion-col>
+    </ion-row>
+
+    <ion-row >
+      <ion-col size="2">
+      </ion-col>
+      <ion-col>
+        <ion-label class="label_uno">{{'MONTHLYBENEFIT2' | translate}}</ion-label><br>
+        <input class="rectangulo" value="{{beneficio_mensual | formattNumber}}  €" disabled>
+      </ion-col>
+      <ion-col  size="2">
+      </ion-col>
+    </ion-row>
+
+    <ion-row >
+      <ion-col>
+        <ion-label class="label_uno">{{'TOTALBENEFIT' | translate}}</ion-label><br>
+        <input class="rectangulo" value="{{beneficio_total | formattNumber}}  €" disabled>
+      </ion-col>
+    </ion-row>
+
+    <ion-row >
+      <ion-col>
+        <ion-label class="label_uno">{{'PURCHASE' | translate}}</ion-label><br>
+        <input class="rectangulo" value="{{formulario.controls.cantidad.value | formattNumber}}  €" disabled>
+      </ion-col>
+      <ion-col size="2">        
+      </ion-col>
+      <ion-col>
+        <ion-label class="label_uno">{{'BENEFIT' | translate}}</ion-label><br>
+        <input class="rectangulo" value="{{beneficio | formattNumber}}  €" disabled>
+      </ion-col>
+    </ion-row>
+
+    <ion-row >
+      <ion-col>
+        <ion-label class="label_uno">{{'TOTAL5' | translate}}</ion-label><br>
+        <input class="rectangulo" value="{{total | formattNumber}}  €" disabled>
+      </ion-col>
+    </ion-row>
+
+    <button class="button" (click)="salir_con_argumentos()">
+      <ion-icon name="cart"></ion-icon>&nbsp;
+      <ion-label>{{'BUYTICKET3' | translate}}</ion-label>      
+    </button>
+
+  </ion-grid>
+
+</ion-content>

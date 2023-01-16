@@ -1,0 +1,30 @@
+<div class="contenedor">
+  <div class="ion-text-center p-b-7">
+    <ion-label class="l-1">{{ informacion.name }}</ion-label>
+  </div>
+  <div class="ion-text-center p-b-23">
+    <ion-label class="l-2"
+      >{{ informacion.address }}, {{ informacion.city }},
+      {{ informacion.coutry }}</ion-label
+    >
+  </div>
+  <div class="ion-text-center p-b-19">
+    <ion-label class="l-3">{{ "PAYWITH" | translate }}</ion-label>
+  </div>
+  <div class="d-f">
+    <div class="ion-text-center w-50">
+      <img
+        src="assets/pages/icons/tix.svg"
+        class="img-button"
+        (click)="ticket()"
+      />
+    </div>
+    <div class="ion-text-center w-50">
+      <img
+        src="assets/pages/icons/cash.svg"
+        class="img-button"
+        (click)="cash()"
+      />
+    </div>
+  </div>
+</div>

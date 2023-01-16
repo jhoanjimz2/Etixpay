@@ -1,0 +1,209 @@
+.d-c {
+  overflow-y: hidden;
+  overflow-x: auto;
+  white-space: nowrap;
+  display: -webkit-box;
+}
+.m-l {
+  margin-left: 10px;
+}
+.d-c-2 {
+  width: 267px;
+  height: 391px;
+  border-radius: 15px;
+  background-color: white;
+  margin-right: 15px;
+}
+.d-c-i {
+  width: 227px;
+  height: 170px;
+  border-radius: 15px;
+  margin: 20px;
+  position: relative;
+}
+.img-i {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  object-fit: cover;
+}
+.l-f {
+  font-size: 16px;
+  font-weight: 400;
+  color: #272343;
+}
+.l-b {
+  font-size: 13px;
+  font-weight: 300;
+  color: #7D7996;
+}
+.l-p {
+  font-size: 15px;
+  font-weight: 400;
+  color: #3ECA76;
+}
+.d-c-3 {
+  margin: 0px 20px;
+}
+.d-c-4 {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 20px;
+}
+.d-b {
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  background-color: grey;
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.d-b img {
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+}
+.d-b ion-icon {
+  width: 18px;
+  height: 18px;
+  color: #395aff;
+  position: absolute;
+  right: -5px;
+  bottom: -5px;
+}
+.l-b-g {
+  font-size: 13px;
+  font-weight: 400;
+  color: #272343;
+}
+.linea {
+  background-color: #EEF0F7;
+  width: 100%;
+  height: 2px;
+}
+.d-c-5 {
+  display: flex;
+  margin: 10px;
+  margin-left: 20px;
+  margin-right: 0px;
+}
+.l-e {
+  color: #272343;
+  font-size: 16px;
+  font-weight: bold;
+}
+.l-p-q {
+  color: #7D7996;
+  font-size: 13px;
+  font-weight: 400;
+}
+.b-i-o {
+  width: 123px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: #1EC8FE;
+  color: white;
+  font-size: 15px;
+  font-weight: 400;
+  margin: auto;
+}
+.s-6 {
+  flex: 0 0 calc(calc(6 / var(--ion-grid-columns, 12)) * 100%);
+  width: calc(calc(6 / var(--ion-grid-columns, 12)) * 100%);
+  max-width: calc(calc(6 / var(--ion-grid-columns, 12)) * 100%);
+}
+.d-b-i {
+  width: 100%;
+  display: flex;
+}
+.r-h {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.grid {
+  padding: 0px;
+  margin: 10px;
+  border-radius: 10px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+.textoLo {
+  font-size: 15px;
+  font-weight: 400;
+  color: #000;
+}
+.textoViL {
+  font-size: 13px;
+  font-weight: 400;
+  color: #d8dcdf;
+}
+.localinvesmentsSlides {
+  width: 100%;
+  --bullet-background-active: white !important;
+}
+.cardInversiones {
+  width: 100%;
+  height: 140px;
+  margin: 5px;
+  box-shadow: none;
+  border-radius: 15px !important;
+  border: 0.5px solid #d8dcdf;
+}
+.divHeaderCardInversiones {
+  width: 100%;
+  height: 45px;
+  opacity: 0.7;
+  position: absolute;
+}
+.imgcardInversiones {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.text1ci {
+  color: #fff;
+  font-weight: bold;
+  font-size: 90%;
+  left: 15px;
+  top: 10px;
+  position: absolute;
+  text-shadow: 2px 2px 2px grey;
+}
+.text2ci {
+  color: #fff;
+  font-size: 80%;
+  font-weight: 100;
+  left: 15px;
+  top: 27px;
+  position: absolute;
+}
+.text3ci {
+  color: #fff;
+  font-weight: bold;
+  font-size: 90%;
+  right: 15px;
+  top: 12px;
+  position: absolute;
+  text-shadow: 2px 2px 2px grey;
+}
+.col_uno {
+  padding-bottom: 8px;
+}
+//  INVERSIONES LOCALES ARRIBA

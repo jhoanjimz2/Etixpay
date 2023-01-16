@@ -1,0 +1,76 @@
+<ion-content>
+  <ion-header class="ion-no-border">
+    <ion-toolbar class="paddingTopToolbar">
+      <ion-buttons slot="start" mode="md">
+        <ion-back-button defaultHref="" ></ion-back-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <ion-grid class="ion-text-center">
+    <ion-row>
+      <ion-col>
+        <ion-label class="textoForgot">{{'CHECKYOUREMAILNC' | translate}}</ion-label><br><br>
+        <ion-label class="textoForgot2">{{'WEVWSENTNC' | translate}} <br> {{'ADDRESSNC' | translate }}</ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row class="paddingTopBottomIMG">
+      <ion-col>
+        <img src="assets/inicio/cambio-de-password/check email.svg | image" class="tamañoIMG">
+      </ion-col>
+    </ion-row>
+    <form (ngSubmit)="adelante()" [formGroup]="fmForgotCodigo" >
+      <ion-row>
+        <ion-col class="colInput">
+          <div>
+            <ion-input class="bordesItemInput ion-text-center"  type="number"  maxlength="1" (ionChange)="input2.setFocus()"
+            [formControl]="fmForgotCodigo.controls.input1" name="input1" placeholder="-"  #input1></ion-input>
+          </div>
+        </ion-col>
+        <ion-col class="colInput">
+          <div>
+            <ion-input class="bordesItemInput ion-text-center" type="number" maxlength="1"  (ionChange)="input3.setFocus()"
+            [formControl]="fmForgotCodigo.controls.input2" name="input2" placeholder="-"  #input2></ion-input>
+          </div>
+        </ion-col>
+        <ion-col class="colInput">
+          <div>
+            <ion-input class="bordesItemInput ion-text-center" type="number" maxlength="1"   (ionChange)="input4.setFocus()"
+            [formControl]="fmForgotCodigo.controls.input3" name="input3" placeholder="-"  #input3></ion-input>
+          </div>
+        </ion-col>
+        <ion-col class="colInput">
+          <div>
+            <ion-input class="bordesItemInput ion-text-center"  type="number" maxlength="1"   (ionChange)="input5.setFocus()"
+            [formControl]="fmForgotCodigo.controls.input4" name="input4" placeholder="-"  #input4></ion-input>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div>
+            <ion-input class="bordesItemInput ion-text-center"  type="number" maxlength="1"   (ionChange)="input6.setFocus()"
+            [formControl]="fmForgotCodigo.controls.input5" name="input5" placeholder="-"  #input5></ion-input>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div>
+            <ion-input class="bordesItemInput ion-text-center"  type="number" maxlength="1"   (ionChange)="input6.clearOnEdit"
+            [formControl]="fmForgotCodigo.controls.input6" name="input6" placeholder="-"  #input6></ion-input>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="colTexto">
+          <ion-label class="texto1">{{'CODEEXPIRESNC' | translate}} <ion-label class="texto2">00:{{tiempo}}</ion-label></ion-label> <br>
+          <ion-label class="texto1">{{'DIDNTRECEIVENC' | translate}} <ion-label class="texto3" (click)="nuevoCodigo()">{{'RESENTCODENC' | translate}}</ion-label></ion-label> <br>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="anchoBoton">
+          <button class="botonVerify"  [disabled]="!fmForgotCodigo.valid" type="submit" >
+            {{'VERIFYNC' | translate}}
+          </button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-grid>
+
+</ion-content>

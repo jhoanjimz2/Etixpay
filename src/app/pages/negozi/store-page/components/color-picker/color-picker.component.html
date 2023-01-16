@@ -1,0 +1,23 @@
+<ion-grid>
+  <ion-row>
+    <ion-col class="ion-text-center">
+      <ion-label>Color pick</ion-label><br>
+      <div [style]="{'background-color': ConvertRGBtoHex}" class="div-color"></div><br>
+      <ion-item lines="none">
+        <ion-range min="0" max="255" [(ngModel)]="R" mode="ios" pin>
+          <ion-label slot="start">R</ion-label>
+        </ion-range>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-range min="0" max="255" [(ngModel)]="G" mode="ios" pin>
+          <ion-label slot="start">G</ion-label>
+        </ion-range>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-range min="0" max="255" [(ngModel)]="B" mode="ios" pin>
+          <ion-label slot="start">B</ion-label>
+        </ion-range>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+</ion-grid>

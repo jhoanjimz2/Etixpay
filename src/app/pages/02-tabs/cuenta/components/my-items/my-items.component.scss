@@ -1,0 +1,35 @@
+.grid {
+  margin: 10px;
+  background-color: #fff;
+  border-radius: 12px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 13px;
+}
+
+.col1 {
+  max-width: 50px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+.imgicon {
+  width: 20px;
+}
+.col2 {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  font-size: 100%;
+  font-weight: bold;
+  color: #000;
+}
+.col3 {
+  max-width: 70px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 150%;
+  font-weight: bold;
+  color: #d8dcdf;
+}

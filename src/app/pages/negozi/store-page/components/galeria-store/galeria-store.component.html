@@ -1,0 +1,17 @@
+<ion-grid>
+  <ion-row>
+    <ion-col class="ion-text-center">
+      <img src="{{imgRectangular}}" class="img-rec" (click)="opcionesImg(imgRectangular, 2)">
+    </ion-col>
+    <ion-col class="col-imgs">
+      <img src="{{imgCuadrada}}" class="img-cua" (click)="opcionesImg(imgCuadrada, 1)">
+      <br>
+      <div class="div-contenedor">
+        <div class="div-add-galeria" *ngIf="editar" (click)="subirImg(); opcion = 3">
+          <ion-icon name="add-outline" class="icon-add"></ion-icon>
+        </div>
+        <img *ngFor="let img of galery" src="{{img.empresa_imagenURL}}" class="img-galeria" (click)="verGaleria(galery, editar)">
+      </div>
+    </ion-col>
+  </ion-row>
+</ion-grid>

@@ -1,0 +1,110 @@
+ion-content {
+    background-color: #FFFFFF;
+    --offset-bottom: auto!important;
+    --overflow: hidden;
+    overflow: auto;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+}
+
+.title {
+    color: #2A2A2A; 
+    text-align: left; 
+    font-size: 20px; 
+    font-weight: 500;
+}
+
+
+.card-image {
+    box-shadow: none;
+    border-radius: 10px;
+    height: 325px;
+    width: 98%;
+}
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.btn-buy {
+    color: #2A2A2A;
+    font-size: 16px;
+    font-weight: 500;
+    height: 47px;
+    min-width: 196px;
+    text-transform: capitalize;
+    --border-radius: 10px;
+    --background: #F6F02D;
+    --box-shadow: none;
+}
+
+.btn-back {
+    color: #2A2A2A;
+}
+
+ion-content {
+    background-color: #FFFFFF;
+}
+
+.card-row {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.text-title {
+    color: #6D6D6D; 
+    font-size: 14px; 
+    font-weight: 500;
+}
+
+.icon-address {
+    color: #446CE5; 
+    font-weight: 500;
+}
+
+.text-address {
+    color: #446CE5; 
+    font-size: 14px; 
+    font-weight: 500;
+}
+
+.text-contact {
+    color: #43BEE5; 
+    font-size: 14px; 
+    font-weight: bold;
+}
+
+.text-price {
+    color: #2A2A2A; 
+    font-size: 25px; 
+    font-weight: bold;
+}
+
+.text-reward {
+    color: #664BC0
+}
+
+.text-rp {
+    color: #664BC0; 
+    font-size: 14px; 
+    font-weight: bold;
+}
+
+.text-description {
+    color: #000000; 
+    font-size: 12px; 
+    font-weight: 500;
+}
+.div-text-price {
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.padding-header {
+    padding-top: 45px;
+}
+
+

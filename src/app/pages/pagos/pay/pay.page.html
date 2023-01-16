@@ -1,0 +1,110 @@
+<app-header-padre [page]="true"></app-header-padre>
+<ion-content>
+  <ion-grid class="ion-text-center">
+    <ion-row class="padding_row_uno">
+      <ion-col>
+        <ion-label class="label_uno">{{'PAYMENT2' | translate}}</ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-label class="label_dos">{{'WITHDISCOUNT' | translate}}</ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-label class="label_tres">{{ data.cantidad_uno | formattNumber}} €</ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-label class="label_cuatro">+</ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-label class="label_dos">{{'WITHOUTDISCOUNT' | translate}}</ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-label class="label_tres">{{ data.cantidad_dos | formattNumber}} €</ion-label>
+      </ion-col>
+    </ion-row> 
+
+    <ion-row>
+      <ion-col>
+        <ion-label class="label_dos">{{'TOTALPAYMENT' | translate}}</ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-label class="label_tres">{{total | formattNumber}} €</ion-label>
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="pagar_verificado">
+      <ion-col class="ion-text-center">
+        <ion-label class="label_uno">{{'ENTERYOURPASSWORD' | translate}}</ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row  *ngIf="pagar_verificado">
+      <ion-col>
+        <form [formGroup]="formulario">
+          <ion-input class="inputs" [formControl]="formulario.controls.password" placeholder="{{'PASSWORD' | translate}}" name="password" type="password">
+          </ion-input>
+        </form>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-label class="label_uno">{{'FROM3' | translate}}</ion-label>&nbsp;
+        <ion-label class="label_cinco">{{data.tienda}}</ion-label>
+      </ion-col>
+    </ion-row> 
+
+
+
+  </ion-grid>
+
+
+</ion-content>
+
+<ion-toolbar *ngIf="verificar_pago && !pagar_verificado">
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <button class="button_confirm" (click)="pagar_verificado = true">{{'VERIFICAR' | translate}}</button>
+      </ion-col>
+      <ion-col>
+        <button class="button_reset" (click)="nuevo_pay()">{{'RESET3' | translate}}</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-toolbar>
+
+<ion-toolbar *ngIf="verificar_pago && pagar_verificado">
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <button class="button_confirm" (click)="pagar()" [disabled]="!formulario.valid">{{'PAY2' | translate}}</button>
+      </ion-col>
+      <ion-col>
+        <button class="button_reset" (click)="nuevo_pay()">{{'RESET3' | translate}}</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-toolbar>
+
+<ion-toolbar *ngIf="!verificar_pago && !pagar_verificado">
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <button class="button_confirm" (click)="pagar()">{{'PAY2' | translate}}</button>
+      </ion-col>
+      <ion-col>
+        <button class="button_reset" (click)="nuevo_pay()">{{'RESET3' | translate}}</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-toolbar>

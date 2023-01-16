@@ -1,0 +1,50 @@
+ion-grid {
+    padding: 40px 20px;
+}
+.icon-close {
+    color: grey;
+    font-size: 30px;
+    position: absolute;
+    z-index: 10;
+    top: 10px;
+    right: 10px;
+}
+.col-titulo {
+    text-align: center;
+}
+.label-titulo {
+    color: #41c3ea;
+    font-size: 30px;
+    font-weight: bold;
+}
+.label-sub-uno {
+    color: #000;
+    font-size: 18px;
+    font-weight: 300;
+}
+.label-sub-dos {
+    color: #000;
+    font-size: 20px;
+    font-weight: 400;
+}
+.col-boton {
+    text-align: center;
+    padding-bottom: 20px;
+}
+ion-input {
+    width: 100%;
+    height: 50px;
+    border: 1px solid #000;
+    border-radius: 15px;
+    --padding-start: 10px;
+    text-align: left;
+}
+button {
+    width: 60%;
+    height: 50px;
+    border-radius: 15px;
+    color: #fff;
+    background-color: #41c3ea;
+    font-size: 20px;
+    font-weight: 400;
+}

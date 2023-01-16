@@ -1,0 +1,124 @@
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <form (ngSubmit)="register()" [formGroup]="formulario" autocomplete="off">
+          <img [src]="'assets/pages/auth/logo.png'" class="img-logo">
+  
+          <div class="div-grid">
+            <label class="label-uno">{{'WELCOME' | translate}}</label>
+            <label class="label-dos">{{'SIGNUPTOCONTINUE' | translate}}</label>
+
+            <div class="p-r m-t-13">
+              <ion-input  [placeholder]="'NAMEANDSURNAME' | translate" class="inputs" type="text"
+                          [formControl]="formulario.controls.name" name="name">
+              </ion-input>
+              <img [src]="'assets/pages/auth/person.png'" class="img-person">
+            </div>
+  
+            <div class="p-r m-t-13">
+              <ion-input  [placeholder]="'EMAILADDRESS3' | translate" class="inputs" type="email"
+                          [formControl]="formulario.controls.email" name="email">
+              </ion-input>
+              <img [src]="'assets/pages/auth/mail.svg'" class="img-mail">
+            </div>
+            <div  *ngIf="campo_no_valido('email')" class="div-text-error">
+              <ion-label  class="texto_errores">*{{email_error_msg | translate}}</ion-label>
+            </div>
+  
+            <div class="m-t-13">
+              <div class="p-r w-5">
+                <ionic-selectable 
+                  [items]="pais" 
+                  class="inputs"
+                  itemValueField="id" 
+                  itemTextField="paisNOMBRE" 
+                  [canSearch]="true"
+                  [placeholder]="'COUNTRY7' | translate"
+                  [searchFailText]="'NOENCONTRADONR' | translate"
+                  [searchPlaceholder]="'BUSCARNR' | translate"
+                  [formControl]="formulario.controls.country"
+                  name="country"
+                  [hasInfiniteScroll]="true"
+                  (onInfiniteScroll)="obtenerPaises($event)"
+                  (onSearch)="buscarPais($event)">
+                  <ng-template ionicSelectableValueTemplate let-pais="value">{{pais.paisINDICATIVO}}</ng-template>                    
+                </ionic-selectable>
+                <img [src]="'assets/pages/auth/global.svg'" class="img-global">
+              </div>
+    
+              <div class="p-r w-7">
+                <ion-input  [placeholder]="'PHONENUMBER8' | translate" class="inputs" type="number"
+                            [formControl]="formulario.controls.number" name="number">
+                            <img [src]="'assets/pages/auth/phone.svg'" class="img-phone">
+                </ion-input>
+              </div>
+            </div>
+
+            <div *ngIf="campo_no_valido('number') || campo_no_valido('country')" class="d-f">
+              <div class="div-text-error w-5">
+                <ion-label class="texto_errores" *ngIf="campo_no_valido('country')">*{{pais_error_msg | translate}}</ion-label>
+              </div>
+              <div class="div-text-error w-7">
+                <ion-label class="texto_errores" *ngIf="campo_no_valido('number')">*{{telefono | translate}}</ion-label>
+              </div>
+            </div>
+  
+            <div class="p-r m-t-13">
+              <ion-input  [placeholder]="'PASSWORD3' | translate" class="inputs" maxlength="6" type="number"
+                          [formControl]="formulario.controls.password" name="password"
+                          [type]="show ? 'text' : 'password'">
+              </ion-input>
+              <img [src]="'assets/pages/auth/lock.svg'" class="img-lock">
+              <img [src]="'assets/pages/auth/eyes.svg'" class="img-eyes" (click)="show = !show">
+            </div>
+            <div  *ngIf="campo_no_valido('password')" class="div-text-error">
+              <ion-label class="texto_errores">*{{password | translate}}</ion-label>
+            </div>
+  
+            <div class="p-r m-t-13">
+              <ion-input  [placeholder]="'CONFIRMPASSWORD2' | translate" class="inputs" maxlength="6" type="number"
+                          [formControl]="formulario.controls.cPassword" name="cPassword"
+                          [type]="show2 ? 'text' : 'password'">
+              </ion-input>
+              <img [src]="'assets/pages/auth/lock.svg'" class="img-lock">
+              <img [src]="'assets/pages/auth/eyes.svg'" class="img-eyes" (click)="show2 = !show2">
+            </div>
+            <div  *ngIf="campo_no_valido('cPassword')" class="div-text-error">
+              <ion-label class="texto_errores">*{{c_password | translate}}</ion-label>
+            </div>
+  
+            <div class="p-r m-t-13">
+              <ion-input  [placeholder]="'COMMUNITYCODE3' | translate" class="inputs" type="text"
+                          [formControl]="formulario.controls.code" name="code">
+              </ion-input>
+              <img [src]="'assets/pages/auth/code.png'" class="img-code">
+              <!-- <ion-button class="boton-scan-code" type="button">
+                <img [src]="'assets/pages/auth/qr.svg'" class="img-qr">
+              </ion-button> -->
+            </div>
+
+            <div class="p-r m-t-13">
+              <div class="col-terms">
+                <ion-checkbox mode="md" [formControl]="formulario.controls.terms" name="terms"></ion-checkbox>&nbsp;&nbsp;
+                <label class="label-tres">{{'IHAVEREAD' | translate}} <label class="label-cuatro" (click)="terms()">{{'TERMSAND' | translate}}</label></label>
+              </div>
+            </div>
+
+
+            <ion-button class="boton-sign-up" type="submit">{{'SIGNUP' | translate}}</ion-button>
+
+
+            <div class="centrar m-t-13">
+              <label class="label-seis">{{'ALREADYHAVE' | translate}}</label>&nbsp;
+              <label class="label-cinco" (click)="login()">{{'LOGIN' |translate}}</label>
+            </div>
+  
+          </div>
+  
+
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

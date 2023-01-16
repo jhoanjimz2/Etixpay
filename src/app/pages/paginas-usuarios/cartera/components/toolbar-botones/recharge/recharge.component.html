@@ -1,0 +1,138 @@
+<ion-content [ngClass]="{'ioncontent': opcion != 5}">
+
+
+  <div [hidden]="opcion != 1">
+    <ion-grid class="ion-text-center">
+      <ion-row><ion-col><div class="lineaclose" (click)="salir_sin_argumentos()"></div></ion-col></ion-row>
+      <ion-row><ion-col class="padding"><ion-label class="label_uno">{{'SELECTAMOUNT3' | translate}}</ion-label></ion-col></ion-row>
+      <ion-row>
+        <ion-col *ngFor="let boton of botones" size="{{boton.size}}">
+          <button class="boton" (click)="cantidad = boton.valor; click(3)" type="button">€ {{boton.valor | formattNumber2}}</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+
+  <div [hidden]="opcion != 2">
+    <ion-grid class="ion-text-center">
+      <ion-row><ion-col><div class="lineaclose" (click)="salir_sin_argumentos()"></div></ion-col></ion-row>
+      <ion-row>
+        <ion-col class="padding">
+          <ion-icon name="chevron-back" class="iconback" (click)="click(1)"></ion-icon>
+          <ion-label class="label_uno">{{'CUSTOMYOURAMOUNT3' | translate}}</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row><ion-col><ion-label class="label2" (click)="cantidad_popover()">€ {{cantidad | formattNumber2}}</ion-label></ion-col></ion-row>
+    </ion-grid>
+  </div>
+
+  
+  <div [hidden]="opcion != 3">
+    <ion-grid class="ion-text-center">
+      <ion-row><ion-col><div class="lineaclose" (click)="salir_sin_argumentos()"></div></ion-col></ion-row>
+      <ion-row>
+        <ion-col class="padding">
+          <ion-icon name="chevron-back" class="iconback" (click)="click(1)"></ion-icon>
+          <ion-label class="label_uno">{{'SOURCEOFFUNDS' | translate}}</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <app-metodos-de-pago-cuatro [prev_select]="prev_select"></app-metodos-de-pago-cuatro>  
+        </ion-col>
+      </ion-row>
+      <ion-row><ion-col><ion-label class="label_tres">{{'TOTAL6' | translate}}: {{cantidad | formattNumber2}}€</ion-label></ion-col></ion-row>
+    </ion-grid>
+  </div>
+
+
+  
+
+  
+  <div [hidden]="opcion != 4" class="div_confirmacion">
+    <ion-grid class="ion-text-center">
+      <ion-row>
+        <ion-col class="padding">
+          <ion-label class="label_tres">{{'RECHARGECONFIRMATION' | translate}}</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="col_img_uno">
+          <ion-icon src="assets/tabs/wallet/componentes/botones/confirmation.svg" class="img_pay"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="col_boton_uno">
+          <button class="boton_succesfully">{{'SUCCESSFULLYRECHARGE' | translate}}</button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-card class="car_info_transferencia">
+            <ion-grid>
+              <ion-row>
+                <ion-col class="lineado_col ion-text-left">
+                  <ion-label class="label_cuatro">{{'PASSAPAROLACARD' | translate}}</ion-label><br> 
+                  <ion-label class="label_cuatro">{{'AMOUNT5' | translate}}</ion-label>                 
+                </ion-col>
+                <ion-col class="lineado_col ion-text-end">
+                  <ion-label class="label_cinco">{{wallet_card}}</ion-label><br>
+                  <ion-label class="label_cinco">{{cantidad | formattNumber2}} €</ion-label>                  
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  
+  <div [hidden]="opcion != 5">
+    <ion-grid class="grid_qr">
+      <ion-row>
+        <ion-col>
+          <ion-label class="label_tres">{{'SCANQR3' | translate}}</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="2">
+          <button  class="boton_qr" (click)="lectorQr()" type="button">
+            <ion-icon name="qr-code-outline" class="icon_qr"></ion-icon>  
+          </button>
+        </ion-col>
+        <ion-col>
+          <form [formGroup]="formulario_wallet" id="formulario_wallet" (ngSubmit)="recarga_con_tix()">
+            <ion-input class="input_wallet" placeholder="{{'INSERTWALLET4' | translate}}"
+            [formControl]="formulario_wallet.controls.wallet" name="wallet"></ion-input>  
+          </form>      
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-grid class="formulario_dos">
+      <ion-row>
+        <ion-col class="col_pay">
+          <ion-label class="label_uno_pay">{{'TOTAL6' | translate}}</ion-label><br><br>
+          <ion-label class="label_uno_cantidad">€ {{cantidad | formattNumber2}}</ion-label>          
+        </ion-col>
+        <ion-col class="ion-text-end">
+          <button class="boton_recharge" [disabled]="!formulario_wallet.valid" form="formulario_wallet" type="submit">{{'REQUESTRECHARGE2' | translate}}</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+</ion-content>
+<ion-grid class="toolbar" [hidden]="opcion != 1">
+  <ion-row><ion-col><button class="boton2" (click)="click(2); cantidad = 0" type="button">{{'CUSTOMYOURAMOUNT3' | translate}}</button></ion-col></ion-row>
+</ion-grid>
+<ion-grid class="toolbar" [hidden]="opcion != 2">
+  <ion-row><ion-col><button class="boton2" (click)="click(3)" [disabled]="cantidad == 0" type="button">{{'NEXT3' | translate}}</button></ion-col></ion-row>
+</ion-grid>
+<ion-grid class="toolbar_dos" [hidden]="opcion != 3">
+  <ion-row><ion-col><button class="boton2" (click)="recarga()" [disabled]="!prev_select[0].tipo" type="button">{{'RECHARGE3' | translate}}</button></ion-col></ion-row>
+</ion-grid>  
+<ion-grid class="toolbar_dos" [hidden]="opcion != 4">
+  <ion-row><ion-col><button class="boton2" (click)="salir_con_argumentos()" type="button">{{'GOBACK' | translate}}</button></ion-col></ion-row>
+</ion-grid> 

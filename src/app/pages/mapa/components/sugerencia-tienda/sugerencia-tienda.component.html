@@ -1,0 +1,208 @@
+
+<ion-content>
+  
+  <div class="div_mayor">
+
+    <div class="arriba">
+      <ion-header class="ion-no-border">
+        <ion-toolbar>
+          <ion-icon name="close-outline" (click)="salir_sin_argumentos()" class="icon_close" slot="start"></ion-icon>
+        </ion-toolbar>
+      </ion-header>
+    </div>
+    <div class="arriba">
+      <ion-grid class="grid">
+        <ion-row>
+          <ion-col class="col_botones">
+            <button class="boton_check">1</button><br>
+            <ion-label [ngClass]="{'label_no_boton': proceso != 1, 'label_boton': proceso == 1 }">{{'IMMAGINE' | translate}}</ion-label>
+          </ion-col>
+          <ion-col class="col_botones">
+            <button [ngClass]="{'boton_no_check': proceso == 1, 'boton_check': proceso == 2 || proceso == 3 || proceso == 4}">2</button><br>
+            <ion-label [ngClass]="{'label_no_boton': proceso != 2, 'label_boton': proceso == 2 }">{{'INFORMAZIONI' | translate}}</ion-label>
+          </ion-col>
+          <ion-col class="col_botones">
+            <button [ngClass]="{'boton_no_check': proceso == 1 || proceso == 2, 'boton_check': proceso == 3 || proceso == 4}">3</button><br>
+            <ion-label [ngClass]="{'label_no_boton': proceso != 3, 'label_boton': proceso == 3 }">{{'ETICA' | translate}}</ion-label>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+
+
+
+
+
+
+
+    
+    <div class="medio">
+
+      <img [src]="imagen | imageSanitizer" class="img"  *ngIf="proceso == 1">
+
+
+      <ion-grid *ngIf="proceso == 2">
+        <form  [formGroup]="formulario">
+          <ion-row>
+            <ion-col class="ion-text-center">
+              <ion-label class="label_uno">{{'INFORMAZIONI' | translate}}</ion-label><br>
+              <ion-label class="label_dos">{{'COMPILAICAMPI' | translate}}</ion-label>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col class="col_inputs">
+              <ion-input placeholder="{{'NOMENEGOZIO' | translate}}" class="input_formulario"
+              [formControl]="formulario.controls.nombre" name="nombre"></ion-input>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col class="col_inputs">
+              <ion-select placeholder="{{'CATEGORIA' | translate}}" class="input_formulario" okText="Okay" cancelText="Dismiss"
+              [formControl]="formulario.controls.categoria" name="categoria">
+                <ion-select-option *ngFor="let categoria of categorias" value="{{categoria.id}}">{{nombre_categoria(categoria)}}</ion-select-option>
+              </ion-select>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col class="col_inputs">
+              <input [formControl]="formulario.controls.direccion" name="direccion"
+              class="input_formulario" [placeholder]="'ADDRESSREGMAP' | translate" 
+              ngx-google-places-autocomplete #placesRef="ngx-places" (onAddressChange)="handleAddressChange($event)"/>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col class="col_labels">
+              <ion-label class="label_tres">
+                {{'HAIGIA' | translate}}&nbsp;
+                {{'DELLATTIVITA' | translate}}&nbsp;
+                {{'SESI' | translate}}
+              </ion-label>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col class="col_inputs">
+              <ion-input placeholder="{{'CONTATTO2' | translate}}" class="input_formulario"
+              [formControl]="formulario.controls.contacto" name="contacto" type="text"></ion-input>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col class="col_inputs">
+              <ion-input placeholder="{{'EMAIL6' | translate}}" class="input_formulario"
+              [formControl]="formulario.controls.email" name="email"></ion-input>
+            </ion-col>
+          </ion-row>
+        </form>
+      </ion-grid>
+
+
+
+      <ion-grid *ngIf="proceso == 3">
+        <form  [formGroup]="formulario_dos">
+          <ion-row>
+            <ion-col class="ion-text-center">
+              <ion-label class="label_uno">{{'ETICA' | translate}}</ion-label><br><br>
+              <ion-label class="label_dos">
+                {{'DESCRIVIINPOCHEPAROLE' | translate}}<br>
+                {{'PERCHEVUOI' | translate}}<br>
+                {{'ETIXECOSA' | translate}}
+              </ion-label>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col class="col_textarea">
+              <ion-textarea rows="12" placeholder="{{'SCRIVIQUI' | translate}}" class="input_formulario_textarea"
+              [formControl]="formulario_dos.controls.descripcion" name="descripcion">
+              <ion-label class="label_texto_area">{{formulario_dos.controls.descripcion.value.length}} / 250</ion-label>
+            </ion-textarea>
+            </ion-col>
+          </ion-row>
+        </form>
+      </ion-grid>
+
+
+      <ion-grid *ngIf="proceso == 4">
+        <form>
+          <ion-row>
+            <ion-col class="col_home_dos">
+              <ion-icon name="checkmark-circle" class="icon_true"></ion-icon>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col class="col_home">
+              <ion-label class="label_uno">{{'CONGRATULAZIONI' | translate}}</ion-label>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col class="col_home">
+              <ion-label class="label_dos">
+                {{'ABBIAMORICEVUTO' | translate}}<br>
+                {{'RINGRAZIAMOPERIL' | translate}}<br>
+                {{'RICORDIAMOCHESE' | translate}} {{formulario.controls.nombre.value}}<br>
+                {{'ENTRERAAFAR' | translate}}<br>
+                {{'RICOMPENSATOPER' | translate}}
+              </ion-label>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col class="col_home">
+              <button class="boton_home" (click)="salir_sin_argumentos()">{{'VAIALLAHOME' | translate}}</button>
+            </ion-col>
+          </ion-row>
+        </form>
+      </ion-grid>
+
+      
+
+    </div>
+
+
+
+    
+    <div class="abajo" *ngIf="proceso != 4">
+      <ion-grid class="grid_abajo">
+        <ion-row  *ngIf="proceso == 1">
+          <ion-col class="latua_foto">
+            <ion-label class="label_uno">{{'LATUAFOTOEPRONTA' | translate}}<br>{{'ESSERECARICATA' | translate}}</ion-label>
+          </ion-col>
+        </ion-row>
+        <ion-row  *ngIf="proceso == 1">
+          <ion-col class="ion-text-center">
+            <button class="boton_uno" (click)="cargar_camara()">{{'RIRPOVA' | translate}}</button>
+          </ion-col>
+          <ion-col class="ion-text-center">
+            <button class="boton_dos" (click)="avanzar(2)" [disabled]="!imagen">{{'CONFERMA' | translate}}</button>
+          </ion-col>
+        </ion-row>
+        <ion-row *ngIf="proceso == 2">
+          <ion-col class="ion-text-center">
+            <button class="boton_uno" (click)="retroceder(1)">{{'INDIETRO' | translate}}</button>
+          </ion-col>
+          <ion-col class="ion-text-center">
+            <button class="boton_dos" (click)="avanzar(3)" [disabled]="!formulario.valid">{{'AVANTI' | translate}}</button>
+          </ion-col>
+        </ion-row>
+        <ion-row *ngIf="proceso == 3">
+          <ion-col class="ion-text-center">
+            <button class="boton_uno" (click)="retroceder(2)">{{'INDIETRO' | translate}}</button>
+          </ion-col>
+          <ion-col class="ion-text-center">
+            <button class="boton_dos" (click)="avanzar(4)" [disabled]="!formulario_dos.valid">{{'AVANTI' | translate}}</button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+</ion-content>

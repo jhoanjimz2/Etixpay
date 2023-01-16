@@ -1,0 +1,16 @@
+<div class="grid">
+  <div>
+    <ion-label class="l-n-p">{{'NEWEXPERTS' | translate}}</ion-label>
+  </div>
+  <div class="d-c ion-no-color-barra">
+    <div *ngFor="let expert of profesionales; let i = index" class="d-i" (click)="profesionalProfile(expert.uuid)">
+      <div class="boton">
+        <img src="{{expert.main_image}}" *ngIf="expert.main_image">
+        <img src="assets/img_predefinidas/Bussines_cuadrada.png" *ngIf="!expert.main_image">
+      </div>
+      <div class="d-n-l">
+        <ion-label>{{expert.profesionalNAMEMAP}}</ion-label>
+      </div>
+    </div>
+  </div>
+</div>

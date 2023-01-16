@@ -1,0 +1,129 @@
+
+<div class="animate__animated animate__fadeIn">
+
+  <p class="ion-text-center">
+    <ion-label class="dark-label">
+      {{'INFODEV' | translate}}
+    </ion-label>
+  </p>
+
+  <ion-slide>        
+    <img src="../../../../../assets/img/developing.jpg">
+  </ion-slide>
+
+  <!-- <div class="card-top">
+    <ion-row class="card-top-body">
+      <ion-col class="text-info">
+        <ion-label class="text-left">{{'MONTHLYRP' | translate}}</ion-label>
+      </ion-col>
+      <ion-col size="4" class="ion-text-right">
+        <i (click)="presentPopover($event)" class="mdi mdi-information icon-info"></i>
+        <ion-label (click)="presentPopover($event)" class="text-info">6/25</ion-label>
+      </ion-col>
+    </ion-row>
+  </div> -->
+
+  <!-- <div class="p-10">
+    <ion-row>
+      <ion-col size="3" class="p-0">
+        <select class="select-year">
+          <option value = "2022">2022</option>
+          <option value = "2021">2021</option>
+          <option value = "2020">2020</option>
+          <option value = "2019">2019</option>
+          <option value = "2018">2018</option>
+        </select>  
+      </ion-col>
+      <ion-col class="container-buttons-months">
+          <ion-row class="scroll main-card-buttons" scrollX="true">
+            <ion-col size="2" class="item-month">
+              <ion-button (click)="nroMonth = 1; showModal()" [color]="nroMonth === 1 ? 'primary' : 'light'" class="btn-button-month">{{'MONTHS.GEN' | translate}}</ion-button>
+            </ion-col>
+            <ion-col size="2" class="item-month">
+              <ion-button (click)="nroMonth = 2; showModal()" [color]="nroMonth === 2 ? 'primary' : 'light'" class="btn-button-month">{{'MONTHS.FEB' | translate}}</ion-button>
+            </ion-col>
+            <ion-col size="2" class="item-month">
+              <ion-button (click)="nroMonth = 3; showModal()" [color]="nroMonth === 3 ? 'primary' : 'light'" class="btn-button-month">{{'MONTHS.MAR' | translate}}</ion-button>
+            </ion-col>
+            <ion-col size="2" class="item-month">
+              <ion-button (click)="nroMonth = 4; showModal()" [color]="nroMonth === 4 ? 'primary' : 'light'" class="btn-button-month">{{'MONTHS.APR' | translate}}</ion-button>
+            </ion-col>
+            <ion-col size="2" class="item-month">
+              <ion-button (click)="nroMonth = 5; showModal()" [color]="nroMonth === 5 ? 'primary' : 'light'" class="btn-button-month">{{'MONTHS.MAY' | translate}}</ion-button>
+            </ion-col>
+            <ion-col size="2" class="item-month">
+              <ion-button (click)="nroMonth = 6; showModal()" [color]="nroMonth === 6 ? 'primary' : 'light'" class="btn-button-month">{{'MONTHS.JUNE' | translate}}</ion-button>
+            </ion-col>
+            <ion-col size="2" class="item-month">
+              <ion-button (click)="nroMonth = 7; showModal()" [color]="nroMonth === 7 ? 'primary' : 'light'" class="btn-button-month">{{'MONTHS.JUL' | translate}}</ion-button>
+            </ion-col>
+            <ion-col size="2" class="item-month">
+              <ion-button (click)="nroMonth = 8; showModal()" [color]="nroMonth === 8 ? 'primary' : 'light'" class="btn-button-month">{{'MONTHS.AUG' | translate}}</ion-button>
+            </ion-col>
+            <ion-col size="2" class="item-month">
+              <ion-button (click)="nroMonth = 9; showModal()" [color]="nroMonth === 9 ? 'primary' : 'light'" class="btn-button-month">{{'MONTHS.SEP' | translate}}</ion-button>
+            </ion-col>
+            <ion-col size="2" class="item-month">
+              <ion-button (click)="nroMonth = 10; showModal()" [color]="nroMonth === 10 ? 'primary' : 'light'" class="btn-button-month">{{'MONTHS.OCT' | translate}}</ion-button>
+            </ion-col>
+            <ion-col size="2" class="item-month">
+              <ion-button (click)="nroMonth = 11; showModal()" [color]="nroMonth === 11 ? 'primary' : 'light'" class="btn-button-month">{{'MONTHS.NOV' | translate}}</ion-button>
+            </ion-col>
+            <ion-col size="2" class="item-month">
+              <ion-button (click)="nroMonth = 12; showModal()" [color]="nroMonth === 12 ? 'primary' : 'light'" class="btn-button-month">{{'MONTHS.DEC' | translate}}</ion-button>
+            </ion-col>
+          </ion-row>
+      </ion-col>
+    </ion-row>
+  </div> -->
+
+  <!-- <div class="main-card-info" (click)="showModal()">
+    <div class="card-info" *ngFor="let history of historys">
+      <ion-row>
+        <ion-col>
+          <ion-row>
+            <ion-col class="p-0">
+              <ion-label class="text-light">{{'DATE_MOV' | translate}}</ion-label>
+            </ion-col>
+            <ion-col class="p-0">
+              <ion-label class="text-dark">22/02/2022</ion-label>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col class="p-0">
+              <ion-label class="text-light">{{'PURCHASE_MOV' | translate}}</ion-label>
+            </ion-col>
+            <ion-col class="p-0">
+              <ion-label class="text-dark">55 €</ion-label>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col class="p-0">
+              <ion-label class="text-light">{{'COMPANY' | translate}}</ion-label>
+            </ion-col>
+            <ion-col class="p-0">
+              <ion-label class="text-dark">Soffuse</ion-label>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col class="p-0">
+              <ion-label class="text-light">{{'PAYMENT_MOV' | translate}}</ion-label>
+            </ion-col>
+            <ion-col class="p-0">
+              <ion-label class="text-dark">TIX</ion-label>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+        <ion-col clasS="ion-text-right">
+          <ion-button class="button-rp">
+            <ion-label>+2,5 RP</ion-label>
+          </ion-button>
+          <div class="text-light-small">
+            <ion-label>15:03</ion-label>
+          </div>
+        </ion-col>
+      </ion-row>
+    </div>
+  </div> -->
+
+</div>

@@ -1,0 +1,20 @@
+<form  [formGroup]="formulario" (ngSubmit)="agregarPropietario()">
+  <ion-grid>
+    <ion-row>
+      <ion-col class="col-titulo">
+        <ion-label class="label-titulo">{{'FINALMENTEETIX' | translate}}<br>{{'INITALY' | translate}}</ion-label>
+        <br><br>
+        <ion-label class="label-sub-uno">{{'ETIXUSERS' | translate}}</ion-label>
+        <br><br>
+        <ion-label class="label-sub-dos">{{'IFYOUARE' | translate}}</ion-label>
+        <br><br>
+        <ion-input placeholder="{{'YOURNAME' | translate}}" [formControl]="formulario.controls.nombre" name="nombre"></ion-input>
+        <br>
+        <ion-input placeholder="{{'YOURPHONENUMBER' | translate}}" [formControl]="formulario.controls.telefono" name="telefono"></ion-input>
+        <br>
+        <button type="submit" [disabled]="!formulario.valid">{{'SENDS' | translate}}</button>
+      </ion-col>
+    </ion-row>
+    <ion-icon name="close-outline" class="icon-close" (click)="salir()"></ion-icon>
+  </ion-grid>
+</form>

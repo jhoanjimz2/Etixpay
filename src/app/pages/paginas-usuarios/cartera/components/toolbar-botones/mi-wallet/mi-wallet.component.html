@@ -1,0 +1,68 @@
+<app-header-padre [page]="true"></app-header-padre>
+<ion-content>
+
+
+
+  <img  src="assets/tabs/menu/componentes/cuenta-menu/share.svg" class="img_share" (click)="share()">
+
+  
+  <ion-grid class="ion-text-center grid_qr">
+    <ion-row class="padding_segment_2">
+      <ion-card class="card">
+          <ion-row class="ion-padding">
+            <ion-col class="col_seg" (click)="seg_seleccionado = 1">
+              <img  src="assets/tabs/menu/componentes/cuenta-menu/promo_code.svg" class="img_seg" [hidden]="seg_seleccionado != 1">
+              <img  src="assets/tabs/menu/componentes/cuenta-menu/promo_code_f.svg" class="img_seg" [hidden]="seg_seleccionado == 1"><br>
+              <ion-label [ngClass]="{ 'label_uno_select': seg_seleccionado == 1 ,  'label_uno_no_select': seg_seleccionado != 1}">{{'YOURPROMOCODE' | translate}}</ion-label>
+            </ion-col>
+            <ion-col class="col_seg" (click)="seg_seleccionado = 2">
+              <img  src="assets/tabs/menu/componentes/cuenta-menu/account_code.svg" class="img_seg" [hidden]="seg_seleccionado != 2">
+              <img  src="assets/tabs/menu/componentes/cuenta-menu/account_code_f.svg" class="img_seg" [hidden]="seg_seleccionado == 2"><br>
+              <ion-label [ngClass]="{ 'label_uno_select': seg_seleccionado == 2 ,  'label_uno_no_select': seg_seleccionado != 2}">{{'ACCOUNTCODE' |translate}}</ion-label>
+            </ion-col>
+          </ion-row>
+      </ion-card>
+    </ion-row>
+
+    <ion-row>
+      <ion-card class="card_img_qr">
+        <img  src="{{qr_codes.uno}}" class="img_qr" [hidden]="seg_seleccionado != 1">
+        <img  src="{{qr_codes.dos}}" class="img_qr" [hidden]="seg_seleccionado != 2">
+      </ion-card>
+    </ion-row>
+
+    <ion-row class="padding_card_3">
+      <ion-card class="card_wallet_code_promo">
+          <ion-row>
+            <ion-col class="col_card_4">
+              <ion-label class="label_tres" *ngIf="seg_seleccionado == 1"> {{'COMMUNITYCODE' | translate}} : {{qr_codes.code_promo}}</ion-label>
+              <ion-label class="label_tres" *ngIf="seg_seleccionado == 2"> {{'CUENTA' | translate}}: {{qr_codes.wallet}}</ion-label>
+            </ion-col>
+            <ion-col class="col_card_5" size="2" (click)="copiar()">
+              <ion-icon name="copy-outline"></ion-icon>
+            </ion-col>
+            <ion-col class="col_card_5" size="2" (click)="share_text()">
+              <ion-icon name="share-outline"></ion-icon>
+            </ion-col>
+          </ion-row>
+      </ion-card>
+    </ion-row> 
+
+    <ion-row class="padding_card_3">
+      <ion-card class="card_tres">
+          <ion-row class="padding_row">
+            <ion-col size="2.5">
+              <img  src="assets/tabs/menu/componentes/cuenta-menu/info_button.svg" class="img_card_3">
+            </ion-col>
+            <ion-col class="col_card_3">
+              <ion-label class="label_dos" [hidden]="seg_seleccionado != 1">{{'SHOWTHISQRCODE' | translate}}</ion-label>
+              <ion-label class="label_dos" [hidden]="seg_seleccionado != 2">{{'RECIVEPAYMET' | translate}}</ion-label>
+            </ion-col>
+          </ion-row>
+      </ion-card>
+    </ion-row> 
+  </ion-grid>
+
+
+
+</ion-content>

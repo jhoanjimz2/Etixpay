@@ -1,0 +1,208 @@
+ion-content {
+  --background: #f8f8f8;
+}
+ion-toolbar {
+  padding-top: 35px !important;
+  padding-bottom: 10px !important;
+  padding-left: 10px !important;
+}
+.icon_close {
+  font-size: 30px;
+  color: #000;
+}
+.div_boton {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.boton_check {
+  width: 42px;
+  height: 42px;
+  border-radius: 21px;
+  background-color: #664bc4;
+  border: 1px solid #664bc4;
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: 400;
+}
+.boton_no_check {
+  width: 42px;
+  height: 42px;
+  border-radius: 21px;
+  background-color: #dfdfdf;
+  border: 1px solid #dfdfdf;
+  color: rgb(189, 189, 189);
+  font-size: 17px;
+  font-weight: 400;
+}
+.label_boton {
+  font-size: 13px;
+  font-weight: bold;
+  color: #000;
+}
+.label_no_boton {
+  font-size: 13px;
+  font-weight: 300;
+  color: #000;
+}
+.grid {
+  padding-top: 20px;
+}
+.col_botones {
+  text-align: center;
+  line-height: 1.3;
+}
+.boton_uno {
+  width: 60%;
+  height: 40px;
+  border-radius: 7px;
+  background-color: #dfdfdf;
+  border: 1px solid #dfdfdf;
+  color: rgb(189, 189, 189);
+  font-size: 14px;
+  font-weight: 400;
+}
+.boton_dos {
+  width: 60%;
+  height: 40px;
+  border-radius: 7px;
+  background-color: #664bc4;
+  border: 1px solid #664bc4;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 400;
+}
+.label_uno {
+  color: #664bc4;
+  font-size: 18px;
+  font-weight: bold;
+}
+.grid_abajo {
+  padding-top: 30px;
+  padding-bottom: 60px;
+}
+.img {
+  width: 280px;
+  height: 380px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+.div_mayor {
+  background: rgb(245, 246, 248);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+.arriba {
+  width: 100%;
+}
+.medio {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.abajo {
+  width: 100%;
+}
+.label_dos {
+  font-size: 13px;
+  font-weight: 300;
+  color: #000;
+}
+.input_formulario {
+  border: 1px solid #fff;
+  width: 80%;
+  height: 40px;
+  border-radius: 10px;
+  background-color: #fff;
+  font-size: 12px;
+  color: #000;
+  text-align: left;
+  --placeholder-font-style: italic;
+  --placeholder-color: #d8dcdf;
+  --placeholder-opacity: 1;
+  --padding-start: 25px;
+  --padding-end: 15px;
+  margin: auto;
+  margin-left: 10%;
+  margin-right: 10%;
+  padding-left: 25px;
+  padding-right: 15px;
+}
+.input_formulario_textarea {
+  border: 1px solid #fff;
+  width: auto;
+  border-radius: 10px;
+  background-color: #fff;
+  font-size: 12px;
+  color: #000;
+  text-align: left;
+  --placeholder-font-style: italic;
+  --placeholder-color: #d8dcdf;
+  --placeholder-opacity: 1;
+  --padding-start: 25px;
+  --padding-end: 15px;
+  --padding-top: 15px;
+  margin: auto;
+  margin-right: auto;
+  margin-left: auto;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+.col_inputs {
+  padding-top: 10px;
+}
+.col_textarea {
+  padding-top: 30px;
+}
+.col_labels {
+  padding-top: 10px;
+  padding-bottom: 5px;
+  text-align: justify !important;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+.label_tres {
+  font-size: 14px;
+  font-weight: 300;
+  color: #000;
+}
+.boton_home {
+  width: 40%;
+  height: 40px;
+  border-radius: 7px;
+  background-color: #664bc4;
+  border: 1px solid #664bc4;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 400;
+}
+.col_home {
+  text-align: center;
+  padding-top: 25px;
+}
+.col_home_dos {
+  text-align: center;
+}
+.icon_true {
+  color: #00d66a;
+  font-size: 90px;
+}
+.label_texto_area {
+  position: absolute;
+  z-index: 999;
+  bottom: 10px;
+  right: 10px;
+  color: #d8dcdf;
+  font-size: 15px;
+}
+.latua_foto {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  text-align: center;
+}

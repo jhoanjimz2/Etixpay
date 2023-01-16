@@ -1,0 +1,8 @@
+<ion-label class="labelSubTitulosBlue" *ngIf="!editar" (click)="llamarTelefonoAlternativo()">{{alternativo}}</ion-label>
+<ion-input 
+  [formControl]="formulario.controls.alternativoTel" 
+  name="alternativoTel" 
+  *ngIf="editar" 
+  type="number" 
+  (input)="debounceInput()">
+</ion-input>

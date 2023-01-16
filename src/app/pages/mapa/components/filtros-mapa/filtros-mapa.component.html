@@ -1,0 +1,54 @@
+<app-header-padre [page]="true"></app-header-padre>
+<ion-content>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-chip [ngClass]="{'filtro_uno_no_select': !verificar_seleccion_type('companies'), 'filtro_uno_select': verificar_seleccion_type('companies')}" (click)="seleccionar_type('companies')">{{'STORES3' | translate}}</ion-chip>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="verificar_seleccion_type('companies')">
+      <ion-col>
+        <div  class="div_horizontal ion-no-color-barra">
+
+          <ion-chip [ngClass]="{'filtro_uno_no_select': categorias_seleccionadas_prev.length > 0, 'filtro_uno_select': categorias_seleccionadas_prev.length == 0}" (click)="all_categorias();">
+            <ion-label class="label_chip">{{'ALL2' | translate}}</ion-label>
+          </ion-chip>
+
+          <ion-chip (click)="seleccionar(categoria.id)" *ngFor="let categoria of categorias"
+          [ngClass]="{'sub_categoria_no_select': !verificar_seleccion(categoria.id), 'sub_categoria_select': verificar_seleccion(categoria.id)}">
+          <ion-label class="label_chip">{{lenguaje(categoria)}}</ion-label>
+          </ion-chip>
+
+        </div>
+      </ion-col>
+    </ion-row>
+    <!-- <ion-row>
+      <ion-col>
+        <ion-chip [ngClass]="{'filtro_dos_no_select': !verificar_seleccion_type('events'), 'filtro_dos_select': verificar_seleccion_type('events')}" (click)="seleccionar_type('events')">{{'EVENTS3' | translate}}</ion-chip>
+      </ion-col>
+    </ion-row> -->
+    <ion-row>
+      <ion-col>
+        <ion-chip [ngClass]="{'filtro_tres_no_select': !verificar_seleccion_type('invest'), 'filtro_tres_select': verificar_seleccion_type('invest')}" (click)="seleccionar_type('invest')">{{'LOCALINVESTMENTS' | translate}}</ion-chip>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-chip [ngClass]="{'filtro_tres_no_select': !verificar_seleccion_type('suggestion'), 'filtro_tres_select': verificar_seleccion_type('suggestion')}" (click)="seleccionar_type('suggestion')">{{'SUGGESTIONS' | translate}}</ion-chip>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+  
+  
+  </ion-content>
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <button class="button_apply" (click)="salir_con_seleccion()">{{'APPLY3' | translate}}</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>

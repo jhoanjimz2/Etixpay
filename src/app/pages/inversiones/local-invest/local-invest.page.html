@@ -1,0 +1,39 @@
+<app-header-padre [page]="true"></app-header-padre>
+<ion-content>
+
+  <ion-grid class="paddingGrid">
+    <ion-row>
+      <ion-col class="col_input">
+        <ion-input placeholder="Name" class="input_search" (ionChange)="buscar($event)" mode="md">
+        </ion-input>
+        <button class="boton_filtro" (click)="boton_categorias = true">
+          <img src="assets/tabs/home/componentes/eventos-locales/filters.svg">
+        </button>
+        <button class="boton_filtro_dos"  (click)="filtro_de_busqueda_dos = '3'" *ngIf="!boton_categorias">
+          <img src="assets/tabs/home/componentes/eventos-locales/localizar.svg">
+        </button>
+        <button class="boton_cancelar" (click)="boton_categorias = false" *ngIf="boton_categorias">
+          <ion-icon name="close-circle-outline"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid *ngIf="boton_categorias">
+    <ion-row *ngFor="let filtro of filtros" (click)="boton_categorias = false; filtro_de_busqueda_dos = filtro.id">
+      <ion-col class="col_filtro">
+        <ion-label class="filtro_text" >{{filtro.texto | translate}}</ion-label>
+        <ion-icon name="checkmark-circle" *ngIf="filtro_de_busqueda_dos == filtro.id" class="icon_check"></ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <app-object-proyect 
+    *ngFor="let proyecto of proyectos | inversiones: filtro_de_busqueda: filtro_de_busqueda_dos" 
+    [proyecto]="proyecto" 
+    [hidden]="boton_categorias">
+  </app-object-proyect>
+
+
+</ion-content>
+

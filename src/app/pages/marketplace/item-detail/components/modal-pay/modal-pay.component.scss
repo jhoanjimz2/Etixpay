@@ -1,0 +1,243 @@
+.icon-close {
+    font-size: 50px; 
+    color: #43BEE5;
+}
+
+.card-line-clone {
+    width: 100px; 
+    height: 40px; 
+    position: absolute; 
+    z-index: 999; 
+    background-color: transparent;
+}
+
+.line-close {
+    border-radius: 20px; 
+    height: 4px; 
+    width: 85px; 
+    background-color: #6D6D6D; 
+    margin-top: 10px;
+}
+
+.p-t-30 {
+    padding-top: 30px;
+}
+
+.text-title {
+    font-size: 16px; 
+    font-weight: 500; 
+    color: #000000;
+}
+
+.m-t-20 {
+    margin-top: 20px;
+}
+
+.img-item {
+    width: 95px; 
+    height: 95px; 
+    border-radius: 10px; 
+    // border: solid 1px;
+}
+
+.m-t-5 {
+    margin-top: 5px;
+}
+
+.card-title-item {
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
+
+.w-title {
+    width: 181px;
+}
+
+.text-title {
+    color: #6D6D6D; 
+    font-size: 12px; 
+    font-weight: 500;
+}
+
+.card-payment {
+    margin-left: 15px; 
+    margin-right: 15px; 
+    border-radius: 10px; 
+    border: solid 1px #E8E8E8;
+    // background: #E8E8E8; 
+    margin-top: 10px;
+}
+
+.text-title-payment {
+    color: #2A2A2A; 
+    font-size: 16px; 
+    font-weight: bold;
+}
+
+.btn-recharge {
+    color: #43BEE5;
+    font-weight: 500;
+    font-size: 14px;
+    font-style: italic;
+    width: 101px;
+    height: 28px;
+    --border-radius: 10px;
+    --background: #FFFFFF;
+    --box-shadow: none;
+    --border-color: #43BEE5;
+}
+
+.btn-pay {
+    color: #6D6D6D;
+    font-weight: bold;
+    font-size: 16px;
+    width: 241px;
+    height: 42px;
+    --border-radius: 10px;
+    --background: #FFFFFF;
+    --box-shadow: none;
+    --border-color: #707070;
+    text-transform: capitalize;
+}
+
+.btn-pay-active {
+    color: #FFFFFF;
+    --background: #664BC0;
+    --box-shadow: none;
+}
+
+.card-ship-met {
+    width: 110px; 
+    height: 96px; 
+    border-radius: 10px;
+}
+
+.card-ship-met-active {
+    background-color: #43BEE5; 
+}
+
+.icon-address {
+    font-size: 50px; 
+    color: #9D9D9D;
+}
+
+.text-address {
+    font-size: 12px; 
+    color: #2A2A2A; 
+    font-weight: 500;
+}
+
+.m-t-m10{
+    margin-top: -10px;
+}
+
+.icon-address-active {
+    color: #FFFFFF;
+}
+
+.text-address-active {
+    color: #FFFFFF; 
+}
+
+.text-address-price {
+    color: #EC3759; 
+    font-size: 20px; 
+    font-weight: 500;
+}
+
+.text-address-price-active {
+    color: #FFFFFF; 
+}
+
+.text-withdraw-price {
+    color: #00BF06; 
+    font-size: 20px; 
+    font-weight: 500;
+}
+
+.text-withdraw-price-active {
+    color: #FFFFFF; 
+}
+
+.margin-l-r-15 {
+    margin-left: 15px; 
+    margin-right: 15px;
+}
+
+.m-t-15 {
+    margin-top: 15px;
+}
+
+.m-t-5 {
+    margin-top: 5px;
+}
+
+.m-t-m5 {
+    margin-top: -5px;
+}
+
+.text-summary {
+    font-size: 16px; 
+    color: #2A2A2A;
+}
+
+.text-summary-price {
+    font-size: 16px; 
+    color: #2A2A2A; 
+    font-weight: 500;
+}
+
+.text-tix {
+    font-size: 16px; 
+    color: #664BC0; 
+    font-weight: bold;
+}
+
+.text-credit {
+    font-size: 12px; 
+    color: #F50000; 
+    font-weight: 500; 
+    font-style: italic;
+}
+
+.card-btn-recharge {
+    border-bottom: solid 2px #E8E8E8;
+}
+
+.text-total {
+    font-size: 16px; 
+    color: #2A2A2A; 
+    font-weight: bold;
+}
+
+.text-totale-price {
+    font-size: 16px; 
+    color: #2A2A2A; 
+    font-weight: 500;
+}
+
+.text-buy {
+    font-size: 12px; 
+    font-weight: bold; 
+    color: #664BC0;
+}
+
+.text-rp {
+    font-size: 25px; 
+    font-weight: bold; 
+    color: #664BC0;
+}
+
+.icon-withdrawal {
+    width: 36px; 
+    height: 22.74px; 
+    margin-top: 15px; 
+    margin-bottom: 17px;
+}
+.div-text-price {
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}

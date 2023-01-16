@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64" height="65" viewBox="0 0 64 65">
+  <defs>
+    <clipPath id="clip-EXPERTS">
+      <rect width="64" height="65"/>
+    </clipPath>
+  </defs>
+  <g id="EXPERTS" clip-path="url(#clip-EXPERTS)">
+    <g id="profile" transform="translate(4.004 4.504)">
+      <path id="Tracciato_132" data-name="Tracciato 132" d="M32.361,17.68A10.18,10.18,0,1,1,22.18,7.5,10.18,10.18,0,0,1,32.361,17.68Zm-5.09,0a5.09,5.09,0,1,1-5.09-5.09A5.09,5.09,0,0,1,27.27,17.68Z" transform="translate(5.816 2.68)" fill="#fff" fill-rule="evenodd"/>
+      <path id="Tracciato_133" data-name="Tracciato 133" d="M29.5,1.5a28,28,0,1,0,28,28A28,28,0,0,0,29.5,1.5ZM6.59,29.5a22.814,22.814,0,0,0,4.856,14.1,22.911,22.911,0,0,1,36.266-.214A22.906,22.906,0,1,0,6.59,29.5ZM29.5,52.4A22.811,22.811,0,0,1,15.06,47.281a17.822,17.822,0,0,1,29.082-.173A22.814,22.814,0,0,1,29.5,52.4Z" transform="translate(-1.5 -1.5)" fill="#fff" fill-rule="evenodd"/>
+    </g>
+  </g>
+</svg>

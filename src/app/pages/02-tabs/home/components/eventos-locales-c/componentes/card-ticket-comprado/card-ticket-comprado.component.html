@@ -1,0 +1,23 @@
+<ion-card>
+  <ion-row class="rowimg">
+    <ion-col class="colimg ion-no-padding" (click)="descripcion_del_evento_comprado()">
+      <img src="{{ticket.ticketEVENTO.eventoIMAGENDESTACADA}}"
+      class="imagenEvento">
+    </ion-col>
+    <ion-col class="coltexto ion-text-left ion-no-padding">
+      <div class="divTextoEvento"> 
+        <ion-label class="nombretituloEvento" (click)="descripcion_del_evento_comprado()">{{ticket.ticketEVENTO.eventoTITULO}}</ion-label>
+        <ion-label class="descripcioncorta" (click)="descripcion_del_evento_comprado()">{{ticket.ticketEVENTO.eventoDESCRIPCION}}</ion-label>
+      </div>
+      <div class="divdireccion" (click)="descripcion_del_evento_comprado()">
+        <ion-icon name="location-sharp"></ion-icon>
+        <ion-label>{{ticket.ticketEVENTO.eventoDIRECCION}}</ion-label>        
+      </div>
+      <div class="divultimo" (click)="descripcion_del_evento_comprado()">
+        <ion-label>{{ticket.ticketEVENTO.eventoFECHAINICIO | dateTimeFormatFilter : "DD MMM hh:mm"}}</ion-label>
+        <div class="divprecio">{{ticket.ticketVOUCHER.voucherPRECIO | formattNumber}} €</div>
+      </div>
+      <ion-icon name="chevron-forward" class="iconarrow" (click)="descripcion_del_evento_comprado()"></ion-icon>
+    </ion-col>
+  </ion-row>
+</ion-card>

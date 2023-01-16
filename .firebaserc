@@ -1,0 +1,17 @@
+{
+  "projects": {
+    "default": "etixpay-f158e",
+    "etixpay-f158e": "etixpay-f158e",
+    "n": "etixpay-f158e"
+  },
+  "targets": {
+    "etixpaynotificaciones": {
+      "hosting": {
+        "app": [
+          "etixpaynotificaciones"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}

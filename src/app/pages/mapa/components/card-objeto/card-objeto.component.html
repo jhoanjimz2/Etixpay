@@ -1,0 +1,73 @@
+<ion-card *ngIf="objeto.tipo == 'invers'" class="card_inversiones">
+  <ion-row>
+    <ion-col class="col_uno_inversiones">
+      <img src="{{img_objeto(objeto.proyectoIMAGENPREVIA)}}" class="img_inversiones">
+    </ion-col>
+    <ion-col class="col_dos_inversiones">
+      <div class="div_contenedor_inversiones">
+        <div class="div_uno_inversiones">{{objeto.proyectoNOMBRE}}</div>
+        <div class="div_dos_inversiones">{{day}} : {{hours}} : {{minutes}} : {{seconds}}</div>
+        <div class="div_tres_inversiones">{{objeto.proyectoPRECIO | formattNumber}} €</div>
+        <button class="button_inversiones" (click)="comprar_ticket_proyecto(objeto)">
+          <img src="assets/tabs/home/componentes/mapa/shop.svg">
+        </button>
+      </div>
+    </ion-col>
+  </ion-row>      
+</ion-card>
+
+<ion-card *ngIf="objeto.tipo == 'evento'" class="card_eventos">
+  <ion-row>
+    <ion-col class="col_uno_eventos" (click)="descripcion_del_evento()">
+      <img src="{{img_objeto(objeto.eventoIMAGENDESTACADA)}}" class="img_eventos">
+    </ion-col>
+    <ion-col class="col_dos_eventos">
+      <div class="div_contenedor_eventos">
+        <div class="div_uno_eventos" (click)="descripcion_del_evento()">{{objeto.eventoTITULO}}</div>
+        <div class="div_dos_eventos" (click)="descripcion_del_evento()">{{objeto.eventoDESCRIPCION}}</div>
+        <div class="div_tres_eventos" (click)="descripcion_del_evento()">{{precio_standart | formattNumber}} €</div>
+        <button class="button_eventos" (click)="comprar_ticket_evento()">
+          <img src="assets/tabs/home/componentes/mapa/eventos.svg">
+        </button>
+      </div>
+    </ion-col>
+  </ion-row>  
+</ion-card>
+
+<ion-card *ngIf="objeto.tipo == 'tienda'" class="card_tiendas">
+  <ion-row>
+    <ion-col class="col_uno_tienda" (click)="irNegoziPage()">
+      <img src="{{img_objeto(objeto.empresa.empresaFOTOPRINCIPALCUADRADA)}}" class="img_tienda">
+    </ion-col>
+    <ion-col class="col_dos_tienda">
+      <div class="div_contenedor_tienda">
+        <div class="div_uno_tienda" (click)="irNegoziPage()">{{objeto.empresa.empresaNOMBREMAP}}</div>
+        <div class="div_dos_tienda" (click)="irNegoziPage()">{{'ACCEPT2' | translate}}: TIX</div>
+        <div class="div_tres_tienda" (click)="irNegoziPage()"> {{punto_recompensa | formattNumber}} {{'PR2' | translate}} / {{porcentaje}}€ </div>
+        <div class="div_cuatro_tienda" (click)="irNegoziPage()"> Cashback: {{objeto.empresa.cashbackCLIENTE | formattNumber}}% </div>
+        <div class="div_cinco_tienda" (click)="irNegoziPage()">
+          <img src="assets/tabs/home/componentes/mapa/botondirection.svg">
+        </div>
+      </div>
+    </ion-col>
+  </ion-row> 
+</ion-card>
+
+<ion-card *ngIf="objeto.tipo == 'suggestion'" class="card-sugerencia">
+  <ion-row>
+    <ion-col class="col-uno-sugerencia">
+      <img src="{{img_objeto(objeto.empresa_sugerenciaFOTO)}}" class="img-sugerencia">
+    </ion-col>
+    <ion-col class="col-dos-sugerencia">
+      <div class="div-contenedor-sugerencia">
+        <div class="div-uno-sugerencia">{{objeto.empresa_sugerenciaNOMBRE}}</div>
+        <div class="div-dos-sugerencia">{{objeto.empresa_sugerenciaDIRECCION}}</div>
+        <div class="div-tres-sugerencia" (click)="soyPropietario()" *ngIf="!objeto.empresa_sugerenciaPROPIETARIO">{{'AREYOUTHEOWNER' | translate}}</div>
+        <div class="div-cuatro-sugerencia">{{'UNDEREVALUATION' | translate}}</div>
+        <div [ngClass]="{'div-cinco-sugerencia': !vota, 'div-cinco-sugerencia-f': vota}" (click)="votar()">{{'IWANTIT' | translate}}</div>
+        <div class="div-seis-sugerencia">{{objeto.count_votes}}</div>
+      </div>
+    </ion-col>
+  </ion-row> 
+</ion-card>
+

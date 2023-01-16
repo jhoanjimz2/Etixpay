@@ -1,0 +1,86 @@
+.formulario {
+  background-color: #fff;
+  border-radius: 10px;
+  margin: 10px;
+  padding-top: 10px;
+}
+.col_input {
+  line-height: 2.5;
+}
+.label_subti {
+  font-weight: 400;
+  font-size: 15px;
+  color: grey;
+}
+input {
+  width: 100%;
+  height: 50px;
+  background-color: #f4f4f4;
+  border-radius: 15px;
+  border: 1px solid #f4f4f4;
+  padding-left: 15px;
+}
+ion-item {
+  font-size: 14px;
+  color: #000;
+  text-shadow: 0px 0px 1px #d8dcdf;
+  --padding-start: 2px;
+}
+ion-checkbox {
+  --background: #fff;
+  --border-width: 1px !important;
+  --border-style: solid !important;
+  --border-radius: 5px;
+  --border-color: rgb(186, 193, 208);
+  --checkmark-color: #ffffff;
+  --background-checked: #664ac5;
+  --border-color-checked: #664ac5;
+  --size: 24px;
+  --checkmark-width: 4;
+  --checkmark-height: 4;
+}
+.formulario_dos {
+  background-color: #fff;
+  margin-top: 10px;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 30px;
+}
+.col_pay {
+  line-height: 0.8;
+}
+.label_uno_pay {
+  font-size: 14px;
+  font-weight: 300;
+  color: rgb(159, 159, 159);
+  text-shadow: 0px 0px 1px rgb(159, 159, 159);
+}
+.label_uno_cantidad {
+  font-size: 18px;
+  font-weight: bold;
+  color: #000;
+  text-shadow: 0px 0px 1px #d8dcdf;
+}
+.boton_recharge {
+  width: 90%;
+  height: 45px;
+  border-radius: 9px;
+  background-color: #3ecd35;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 400;
+  border: 1px solid #3ecd35;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+}
+.img_icon {
+  height: 30px;
+}
+.col_pci {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+

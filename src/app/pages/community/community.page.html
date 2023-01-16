@@ -1,0 +1,69 @@
+<!-- Modal info DEV-->
+<app-modal-info-dev
+  *ngIf="modalInfoDev"
+  (setModalInfoDev)="getModalInfoDev($event)"
+></app-modal-info-dev>
+<!-- Modal info DEV -->
+
+<!-- Modal info PR-CPR -->
+  <app-mondal-info 
+    *ngIf="modalInfo"
+    [typeModalInfo]="typeModalInfo"
+    (setModalInfo)="getModalInfo($event)"
+    (setTypeModalInfo)="getTypeModalInfo($event)"
+  ></app-mondal-info>
+<!-- Modal info PR-CPR -->
+
+<!-- Modal-share -->
+  <app-modal-share 
+    *ngIf="share"
+    [codeUser]="codeUser"
+    (setShare)="getShare($event)"
+  ></app-modal-share>
+<!-- Modal-share -->
+
+<!-- Herader -->
+  <app-header-padre [tabs]="true"></app-header-padre>
+<!-- Herader -->
+
+<ion-content class="main">
+  <!-- Header buttons -->
+    <app-header-buttons 
+      [nroButton]="nroButton"
+      (setNroButton)="getNroButton($event)"
+      class="card-header-buttons"
+    ></app-header-buttons>
+  <!-- Header buttons -->
+  <div class="m-t-115">
+    <!-- Overview -->
+      <app-overview 
+        *ngIf="nroButton === 1"
+        (setModalInfo)="getModalInfo($event)"
+        (setTypeModalInfo)="getTypeModalInfo($event)"
+      ></app-overview>
+    <!-- Overview -->
+  
+    <!-- Community -->
+      <app-community-in 
+        *ngIf="nroButton === 2"
+        [share]="share"
+        [commnunityMain]="commnunityMain"
+        (setShare)="getShare($event)"
+      ></app-community-in>
+    <!-- Community -->
+  
+    <!-- Tutorial -->
+      <app-tutorial
+      *ngIf="nroButton === 3"
+      (setModalInfoDev)="getModalInfoDev($event)"
+      ></app-tutorial>
+    <!-- Tutorial -->
+  
+    <!-- Movements -->
+      <app-movements
+        *ngIf="nroButton === 4"
+        (setModalInfoDev)="getModalInfoDev($event)"
+      ></app-movements>
+    <!-- Movements -->
+  </div>
+</ion-content>

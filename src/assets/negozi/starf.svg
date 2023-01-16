@@ -1,0 +1,16 @@
+<svg id="yellow_star" data-name="yellow star" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="13" height="12" viewBox="0 0 13 12">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="Star" d="M9.741,4.2a.693.693,0,0,0,.188-.734.731.731,0,0,0-.6-.487L6.865,2.629a.148.148,0,0,1-.112-.078L5.65.4A.756.756,0,0,0,4.317.4l-1.1,2.152a.148.148,0,0,1-.112.078L.637,2.975a.731.731,0,0,0-.6.487A.693.693,0,0,0,.225,4.2L2.009,5.87A.14.14,0,0,1,2.052,6L1.63,8.363a.7.7,0,0,0,.3.7.761.761,0,0,0,.782.055L4.914,8a.154.154,0,0,1,.138,0L7.258,9.118A.776.776,0,0,0,7.6,9.2a.763.763,0,0,0,.436-.137.7.7,0,0,0,.3-.7L7.915,6a.14.14,0,0,1,.043-.127Z" transform="translate(0)"/>
+    </clipPath>
+  </defs>
+  <g id="icons_tabbar_Favorites" data-name="icons/tabbar/Favorites">
+    <rect id="Rectangle" width="13" height="12" fill="rgba(255,0,0,0)"/>
+    <path id="Star-2" data-name="Star" d="M9.741,4.2a.693.693,0,0,0,.188-.734.731.731,0,0,0-.6-.487L6.865,2.629a.148.148,0,0,1-.112-.078L5.65.4A.756.756,0,0,0,4.317.4l-1.1,2.152a.148.148,0,0,1-.112.078L.637,2.975a.731.731,0,0,0-.6.487A.693.693,0,0,0,.225,4.2L2.009,5.87A.14.14,0,0,1,2.052,6L1.63,8.363a.7.7,0,0,0,.3.7.761.761,0,0,0,.782.055L4.914,8a.154.154,0,0,1,.138,0L7.258,9.118A.776.776,0,0,0,7.6,9.2a.763.763,0,0,0,.436-.137.7.7,0,0,0,.3-.7L7.915,6a.14.14,0,0,1,.043-.127Z" transform="translate(1.733 1.2)"/>
+    <g id="icons_tabbar_Favorites-2" data-name="icons/tabbar/Favorites" transform="translate(1.733 1.2)" clip-path="url(#clip-path)">
+      <g id="color_primary" data-name="color/primary" transform="translate(-1.733 -1.2)">
+        <rect id="color_Title-text-light-gray" data-name="color/Title-text-light-gray" width="13" height="12" fill="#dad9e2"/>
+      </g>
+    </g>
+  </g>
+</svg>

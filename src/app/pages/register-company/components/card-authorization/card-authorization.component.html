@@ -1,0 +1,34 @@
+<div class="main-div"></div>
+
+<ion-card class="card-info">
+  <ion-card-header class="ion-text-center">
+    <ion-text color="primary">
+      <i class="mdi mdi-account-check f-z-150"></i>
+    </ion-text>
+  </ion-card-header>
+  <ion-card-content>
+      <p class="ion-text-justify">
+        <ion-label class="dark-label">
+          {{'NOTEAUTHORIZATION' | translate}}
+        </ion-label>
+      </p>
+  </ion-card-content>
+  <ion-card-content class="m-b-40">
+    <ion-row >
+      <ion-col class="ion-text-center ">
+        <ion-button (click)="authorize(true)" color="primary" class="btn-button wth-90p">
+          <ion-label color="light">
+            {{'AUTHORIZED' | translate}}
+          </ion-label>
+        </ion-button>
+      </ion-col>
+      <ion-col class="ion-text-center">
+        <ion-button (click)="authorize(false)" color="light" class="btn-button wth-90p">
+          <ion-label color="medium">
+            {{'CANCELAUTHORIZED' | translate}}
+          </ion-label>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-card-content>
+</ion-card>

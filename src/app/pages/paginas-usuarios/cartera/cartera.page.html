@@ -1,0 +1,33 @@
+<app-header-padre [tabs]="true"></app-header-padre>
+<ion-content>
+  <div class="div_mayor">
+    <div class="arriba">
+      <app-botones [saldo_tix]="saldo_tix" (actualizar)="actualizar()">
+      </app-botones>
+    </div>
+
+    <div class="abajo">
+      <ion-grid class="grid">
+        <app-mi-balance [saldo_tix]="saldo_tix" [saldo_tickets]="saldo_tickets">
+        </app-mi-balance>
+
+        <app-recibir-empresa *ngIf="tipo_user != 3" (actualizar)="actualizar()">
+        </app-recibir-empresa>
+
+        <app-toolbar-botones></app-toolbar-botones>
+
+        <!-- <app-grafica 
+          (actualizar)="actualizar()" 
+          [proyectos_grafica]="proyectos_grafica">
+        </app-grafica> -->
+
+        <app-object-proyect
+          *ngFor="let proyecto of proyectos"
+          [proyecto]="proyecto"
+          [home]="false"
+        >
+        </app-object-proyect>
+      </ion-grid>
+    </div>
+  </div>
+</ion-content>

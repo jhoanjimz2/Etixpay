@@ -1,0 +1,101 @@
+.label-reviews {
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+}
+.boton-write {
+    width: 106px;
+    height: 34px;
+    border-radius: 9px;
+    color: #664BC4;
+    border: 1px solid #664BC4;
+    background-color: #fff;
+}
+.col-left {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.col-left-dos {
+    padding-top: 0px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.div-contenedor {
+    overflow-y: hidden;
+    overflow-x: auto;
+    white-space: nowrap;
+    display: -webkit-box;
+}
+.div-comentario {
+    width: 160px;
+    height: 109px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px -5px #B4BBCB;
+    border-radius: 12px;
+    margin-right: 7.5px;
+    margin-left: 7.5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    position: relative;
+}
+.div-img-name {    
+    width: auto;
+    margin-top: 7px;
+    margin-left: 18px;
+    margin-right: 18px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.img-perfil {
+    width: 33px;
+    height: 33px;
+    border-radius: 16.5px;
+}
+.label-name {
+    font-size: 14px;
+    font-weight: bold;
+    color: #1E2432;
+    width: 70px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.div-coment {
+    margin-top: 9px;
+    margin-left: 18px;
+    margin-right: 18px;
+    height: 37px;
+    overflow-y: scroll;
+    white-space: normal;
+}
+.label-coment {
+    font-size: 14px;
+    font-weight: 300;
+    color: #000;
+}
+.div-star-coment {
+    margin-top: 2px;
+    margin-left: 18px;
+    margin-right: 18px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.icon-trash {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    z-index: 2;
+    color: #EC3759;
+}
+.zoom-ponderado {
+    zoom: 1.5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

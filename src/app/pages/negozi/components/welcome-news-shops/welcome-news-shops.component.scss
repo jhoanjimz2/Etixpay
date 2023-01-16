@@ -1,0 +1,61 @@
+.grid {
+  margin: 33px 6px 33px;
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 0px;
+  padding-top: 25px;
+  padding-bottom: 15px;
+}
+.padding-top {
+  padding-top: 0px;
+}
+.not-padding-lados {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.div-contenedor {
+  overflow-y: hidden;
+  overflow-x: auto;
+  white-space: nowrap;
+  display: -webkit-box;
+}
+.div-item {
+  text-align: center;   
+  width: 25%;
+  line-height: 1.5;
+}
+.boton {
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.boton img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.div-name-label {
+  width: 100%;
+  text-align: center;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin: auto;
+  font-size: 10px;
+  font-weight: 400;
+  color: #312F4A;
+}
+.label-titulo {
+  font-size: 14px;
+  font-weight: bold;
+  color: #9391AE;
+  margin-left: 10px;
+}
+.p-b {
+  padding-bottom: 10px;
+}

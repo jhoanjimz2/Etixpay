@@ -1,0 +1,86 @@
+.grid {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.label_uno {
+  font-size: 12px;
+  color: #000;
+}
+.label_dos {
+  font-weight: bold;
+  font-size: 17px;
+  color: #000;
+}
+.img_qr {
+  width: 200px;
+  height: 200px;
+}
+.col_code {
+  line-height: 2;
+  margin-left: 40px;
+  margin-right: 40px;
+  border-top: 3px dashed #d8dcdf;
+  border-bottom: 3px dashed #d8dcdf;
+}
+.label_tres {
+  font-weight: bold;
+  font-size: 24px;
+  color: #000;
+  letter-spacing: 6px;
+}
+.label_cuatro {
+  font-weight: bold;
+  font-size: 24px;
+  color: rgb(239, 69, 103);
+}
+.direction {
+  width: 100%;
+  height: 45px;
+  border: 1px dotted rgb(239, 69, 103);
+  background-color: rgb(239, 69, 103);
+  color: #fff;
+  border-radius: 10px;
+}
+.linea {
+  width: 100%;
+  height: 2px;
+  background-color: rgb(248, 250, 252);
+}
+.col_info_uno {
+  line-height: 1.5;
+}
+.col_info_dos {
+  line-height: 2;
+}
+.icon_rosa_location {
+  font-size: 100%;
+  color: rgb(239, 69, 103);
+}
+.label_cinco {
+  font-weight: bold;
+  font-size: 17px;
+  color: #d8dcdf;
+}
+.card_img {
+  width: 100%;
+  height: 250px;
+  box-shadow: none;
+  margin: 5px;
+  margin-bottom: 36px;
+}
+.img {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  object-fit: cover;
+}
+.label_seis {
+  font-size: 13px;
+  font-weight: 400;
+  color: #000;
+}
+.label_siete {
+  font-size: 15px;
+  font-weight: bold;
+  color: rgb(102, 75, 196);;
+}

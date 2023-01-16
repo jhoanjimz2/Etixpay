@@ -1,0 +1,78 @@
+.contenedorIMG {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  height: auto;
+}
+.centradoTextoimg {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  line-height: 1.6;
+}
+.textoIMG1 {
+  font-size: 120%;
+  color: #fff;
+}
+.textoIMG2 {
+  font-weight: bold;
+  font-size: 180%;
+  color: #fff;
+}
+.textoIMG3 {
+  font-size: 80%;
+  color: #f0f4f7ce;
+}
+.col1 {
+  padding-top: 5%;
+  padding-bottom: 5%;
+  text-align: center !important;
+}
+.label1 {
+  font-weight: bold;
+  font-size: 120%;
+  color: #000;
+}
+.col2 {
+  padding-bottom: 5%;
+  text-align: center !important;
+}
+.label2 {
+  font-weight: bold;
+  font-size: 125%;
+  color: #000;
+}
+.col3 {
+  padding-bottom: 5%;
+  text-align: center !important;
+}
+.label3 {
+  font-weight: bold;
+  font-size: 200%;
+  color: #000;
+}
+.col4 {
+  text-align: center !important;
+}
+.label4 {
+  font-weight: bold;
+  font-size: 135%;
+  color: #664bc4;
+}
+.col5 {
+  padding-left: 0%;
+  padding-right: 0%;
+  padding-bottom: 10%;
+}
+.boton {
+  height: 45px;
+  width: 100%;
+  border: 1px solid #3ec0e8;
+  background-color: #3ec0e8;
+  border-radius: 10px;
+  font-size: 110%;
+  color: white;
+}

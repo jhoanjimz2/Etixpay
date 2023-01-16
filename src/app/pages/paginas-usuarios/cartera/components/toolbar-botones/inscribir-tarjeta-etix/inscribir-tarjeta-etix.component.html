@@ -1,0 +1,45 @@
+<ion-content>
+
+  <div class="div_mayor">
+    
+    <div>
+        <ion-grid class="header">
+          <ion-row class="padding_top_cero">
+            <ion-col class="col_header">
+              <ion-icon name="close-outline" (click)="salir_sin_argumentos()" class="icon_close"></ion-icon>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <ion-label class="titulo">{{'MYCARDS3' | translate}}</ion-label>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+    </div>
+
+
+    <div class="div_img">
+      <img src="assets/tabs/wallet/componentes/tarjetas/link_card.png" class="img_card">
+    </div>
+
+    
+        
+    <div class="abajo">
+      <ion-grid>
+        <ion-row class="padding_top_cero">
+          <ion-col class="col_abajo ion-text-center line_heigth">
+            <ion-label class="label_uno">{{'LINKANEWPASSAPAROLACARD' | translate}}</ion-label><br>
+            <ion-label class="label_uno">{{'SCANCARDWITH' | translate}}</ion-label><br>
+            <ion-label class="label_uno">{{'ORYOURPHONE' | translate}}</ion-label>
+          </ion-col>
+        </ion-row>
+        <ion-row class="padding_top_cero">
+          <ion-col class="col_abajo">
+            <button class="button_card" (click)="lectorQr()">{{'LINKCARD' | translate}}</button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>  
+    </div>
+    
+  </div>
+
+
+
+</ion-content>

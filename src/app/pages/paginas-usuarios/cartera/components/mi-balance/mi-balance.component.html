@@ -1,0 +1,56 @@
+<ion-grid class="grid">
+  <ion-row>
+    <ion-col class="col_padding_abajo ion-text-center">
+      <ion-label class="textotitulos">{{
+        "MIBALANCECC" | translate
+      }}</ion-label>
+    </ion-col>
+    <!-- <ion-col class="col_padding_abajo">
+      <ion-label class="textotitulos">{{'MYINVESTMENTSCC' | translate}}</ion-label>
+    </ion-col> -->
+  </ion-row>
+  <ion-row>
+    <ion-col class="ion-text-center">
+      <ion-label [hidden]="!muestra" class="textovalores">{{
+        saldo_tix | formattNumber
+      }}</ion-label>
+      <ion-label [hidden]="muestra" class="textovalores">∗∗∗∗∗</ion-label>
+      <ion-label class="textovalores">{{ "TIXCC" | translate }}</ion-label>
+    </ion-col>
+    <!-- <ion-col>
+      <ion-label [hidden]="!muestra2" class="textovalores">{{ saldo_tickets | formattNumber }}</ion-label>
+      <ion-label [hidden]="muestra2" class="textovalores">∗∗∗∗∗</ion-label>
+      <ion-label class="textovalores">€</ion-label> 
+    </ion-col> -->
+  </ion-row>
+  <ion-row>
+    <ion-col class="ion-text-center">
+      <ion-label
+        [hidden]="muestra"
+        (click)="muestra = !muestra"
+        class="textfuncionalidad"
+        >{{ "SHOWCC" | translate }}</ion-label
+      >
+      <ion-label
+        [hidden]="!muestra"
+        (click)="muestra = !muestra"
+        class="textfuncionalidad"
+        >{{ "HIDECC" | translate }}</ion-label
+      >
+    </ion-col>
+    <!-- <ion-col>
+      <ion-label
+        [hidden]="muestra2"
+        (click)="muestra2 = !muestra2"
+        class="textfuncionalidad"
+        >{{ "SHOWCC" | translate }}</ion-label
+      >
+      <ion-label
+        [hidden]="!muestra2"
+        (click)="muestra2 = !muestra2"
+        class="textfuncionalidad"
+        >{{ "HIDECC" | translate }}</ion-label
+      >
+    </ion-col> -->
+  </ion-row>
+</ion-grid>

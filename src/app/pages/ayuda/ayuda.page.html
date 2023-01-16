@@ -1,0 +1,14 @@
+<app-header-padre [page]="true"></app-header-padre>
+<ion-content>
+
+  <ion-list>
+    <div *ngFor="let opcion of opciones">
+      <ion-item lines="none" class="item_uno">
+        <ion-label class="label_uno">{{opcion.titulo | translate}}</ion-label>
+        <ion-icon name="chevron-forward-outline" slot="end" class="icon" *ngIf="opcion.icono"></ion-icon>
+      </ion-item>
+      <app-accordion *ngFor="let op of opcion.sub_opcion" [titulo]="op.titulo" [text]="op.text"></app-accordion>
+    </div>
+  </ion-list>
+
+</ion-content>

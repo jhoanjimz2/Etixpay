@@ -1,0 +1,147 @@
+{
+    "shopping": [
+        {
+          "imagenPrincipal": "https://listadodeiglesias.com/argentina/wp-content/uploads/2021/05/AF1QipNuMLCjkibPjrscFSxdytwCik_vU5VnmRAzbJCLw408-h306-k-no.jpeg",
+          "nombreTienda": "Your House",
+          "puntosRecompensa": 5,
+          "uuid": 293912891849184812889,
+          "sitioWeb": "https://www.twitch.tv/yourhousegaming",
+          "direccionTienda": "carrera 23# 29c2-12, Santa marta, Colombia",
+          "cashbackTienda": 10
+        },
+        {
+          "imagenPrincipal": "https://e00-marca.uecdn.es/assets/multimedia/imagenes/2021/06/11/16234138112044.jpg",
+          "nombreTienda": "Your House Gaming",
+          "puntosRecompensa": 5,
+          "uuid": 293912891849184812889,
+          "sitioWeb": "https://www.twitch.tv/yourhousegaming",
+          "direccionTienda": "carrera 23# 29c2-12, Santa marta, Colombia",
+          "cashbackTienda": 10
+        },
+        {
+          "imagenPrincipal": "https://pbs.twimg.com/media/E1M0PYGXIAwzmoH.jpg",
+          "nombreTienda": "Your House Shop",
+          "puntosRecompensa": 5,
+          "uuid": 293912891849184812889,
+          "sitioWeb": "https://www.twitch.tv/yourhousegaming",
+          "direccionTienda": "carrera 23# 29c2-12, Santa marta, Colombia",
+          "cashbackTienda": 10
+        }
+    ],
+    "topPr": [
+        {
+          "imagenPrincipal": "https://pbs.twimg.com/media/E1M0PYGXIAwzmoH.jpg",
+          "puntosRecompensa": "7,3",
+          "sitioWeb": "https://www.twitch.tv/yourhousegaming",
+          "uuid": 293912891849184812889
+        },
+        {
+          "imagenPrincipal": "https://pbs.twimg.com/media/E1M0PYGXIAwzmoH.jpg",
+          "puntosRecompensa": "7,2",
+          "sitioWeb": "https://www.twitch.tv/yourhousegaming",
+          "uuid": 293912891849184812889
+        },
+        {
+          "imagenPrincipal": "https://pbs.twimg.com/media/E1M0PYGXIAwzmoH.jpg",
+          "puntosRecompensa": "7,1",
+          "sitioWeb": "https://www.twitch.tv/yourhousegaming",
+          "uuid": 293912891849184812889
+        },
+        {
+          "imagenPrincipal": "https://pbs.twimg.com/media/E1M0PYGXIAwzmoH.jpg",
+          "puntosRecompensa": "7,0",
+          "sitioWeb": "https://www.twitch.tv/yourhousegaming",
+          "uuid": 293912891849184812889
+        },
+        {
+          "imagenPrincipal": "https://pbs.twimg.com/media/E1M0PYGXIAwzmoH.jpg",
+          "puntosRecompensa": "6,9",
+          "sitioWeb": "https://www.twitch.tv/yourhousegaming",
+          "uuid": 293912891849184812889
+        },
+        {
+          "imagenPrincipal": "https://pbs.twimg.com/media/E1M0PYGXIAwzmoH.jpg",
+          "puntosRecompensa": "6,8",
+          "sitioWeb": "yourhouse.com",
+          "uuid": 293912891849184812889
+        },
+        {
+          "imagenPrincipal": "https://pbs.twimg.com/media/E1M0PYGXIAwzmoH.jpg",
+          "puntosRecompensa": "6,7",
+          "sitioWeb": "https://www.twitch.tv/yourhousegaming",
+          "uuid": 293912891849184812889
+        },
+        {
+          "imagenPrincipal": "https://pbs.twimg.com/media/E1M0PYGXIAwzmoH.jpg",
+          "puntosRecompensa": "6,6",
+          "sitioWeb": "https://www.twitch.tv/yourhousegaming",
+          "uuid": 293912891849184812889
+        },  
+        {
+          "imagenPrincipal": "https://pbs.twimg.com/media/E1M0PYGXIAwzmoH.jpg",
+          "puntosRecompensa": "6,5",
+          "sitioWeb": "https://www.twitch.tv/yourhousegaming",
+          "uuid": 293912891849184812889
+        }
+    ],
+    "categories": [
+        {
+          "nameCategory": "Tutti",
+          "id": 1
+        },
+        {
+          "nameCategory": "Ristoranti",
+          "id": 2
+        },
+        {
+          "nameCategory": "Bar",
+          "id": 3
+        },
+        {
+          "nameCategory": "Supermarket",
+          "id": 4
+        },
+        {
+          "nameCategory": "Alimentari",
+          "id": 5
+        },
+        {
+          "nameCategory": "Pet",
+          "id": 6
+        },
+        {
+          "nameCategory": "Wellness",
+          "id": 7
+        }
+      
+    ],
+    "shops": [
+        {
+          "imagenPrincipal": "https://listadodeiglesias.com/argentina/wp-content/uploads/2021/05/AF1QipNuMLCjkibPjrscFSxdytwCik_vU5VnmRAzbJCLw408-h306-k-no.jpeg",
+          "nombreTienda": "Your House",
+          "valoracionEstrellas": 5,
+          "cashbackTienda": 2,
+          "puntosRecompensa": 16,
+          "sitioWeb": "https://www.twitch.tv/yourhousegaming",
+          "uuid": 293912891849184812889
+        },
+        {
+          "imagenPrincipal": "https://e00-marca.uecdn.es/assets/multimedia/imagenes/2021/06/11/16234138112044.jpg",
+          "nombreTienda": "Your House Gaming",
+          "valoracionEstrellas": 5,
+          "cashbackTienda": 2,
+          "puntosRecompensa": 16,
+          "sitioWeb": "https://www.twitch.tv/yourhousegaming",
+          "uuid": 293912891849184812889
+        },
+        {
+          "imagenPrincipal": "https://pbs.twimg.com/media/E1M0PYGXIAwzmoH.jpg",
+          "nombreTienda": "Your House Shop",
+          "valoracionEstrellas": 5,
+          "cashbackTienda": 2,
+          "puntosRecompensa": 16,
+          "sitioWeb": "https://www.twitch.tv/yourhousegaming",
+          "uuid": 293912891849184812889
+        }
+    ]
+}

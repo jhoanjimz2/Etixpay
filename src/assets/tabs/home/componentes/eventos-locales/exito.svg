@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="85px" height="85px" viewBox="0 0 85 85" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>successful</title>
+    <g id="Tasti-home" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="receive-successfull" transform="translate(-137.000000, -188.000000)">
+            <g id="successful" transform="translate(137.000000, 188.000000)">
+                <path d="M85,42.5 C85,65.9670833 65.9670833,85 42.5,85 C19.0329167,85 0,65.9670833 0,42.5 C0,19.0329167 19.0329167,0 42.5,0 C65.9670833,0 85,19.0329167 85,42.5 Z" id="Stroke-1" fill="#40CC38"></path>
+                <polyline id="Stroke-3" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" points="64 29 39.997 64 22 50"></polyline>
+            </g>
+        </g>
+    </g>
+</svg>

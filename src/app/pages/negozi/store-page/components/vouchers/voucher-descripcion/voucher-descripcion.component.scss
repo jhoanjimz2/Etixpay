@@ -1,0 +1,84 @@
+.div_img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50px;
+  border: 1px solid #d8dcdf;
+}
+.div_img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.div_contenedor {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.div_contenido {
+  width: 100%;
+  height: auto;
+}
+.label_uno {
+  font-size: 14px;
+  font-weight: 300;
+  color: #000;
+}
+.label_dos {
+  font-size: 14px;
+  font-weight: bold;
+  color: #000;
+}
+.linea {
+  width: 100%;
+  height: 2px;
+  background-color: #d8dcdf;
+  opacity: 0.2;
+}
+.line_col {
+  line-height: 1.5;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.label_tres {
+  font-size: 15px;
+  font-weight: bold;
+  color: #000;
+}
+.label_cuatro {
+  font-size: 17px;
+  font-weight: bold;
+  color: #000;
+}
+.col_central {
+  border-left: 1px dashed #d8dcdf;
+  border-right: 1px dashed #d8dcdf;
+}
+.label_cinco {
+  font-size: 15px;
+  font-weight: bold;
+  color: #d8dcdf;
+}
+.icon_location {
+  font-size: 15px;
+  color: #664bc4;
+}
+.col_line_dos {
+  line-height: 1.5;
+}
+.label_seis {
+  font-size: 15px;
+  font-weight: 300;
+  color: #000;
+}
+.imagen_portada {
+  width: 100%;
+  height: 140px;
+  border: 1px solid #d8dcdf;
+  border-radius: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}

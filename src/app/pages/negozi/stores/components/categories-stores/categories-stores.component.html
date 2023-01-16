@@ -1,0 +1,8 @@
+<div class="divContenedor ion-no-color-barra">
+  <ion-chip 
+    (click)="selectCategoryClick(category.categoria_empresaCODIGO)"
+    [ngClass]="{'chipSelect': categorySelect == category.categoria_empresaCODIGO, 'chipNoSelect': categorySelect != category.categoria_empresaCODIGO}"
+    *ngFor="let category of categoriesStores">
+    <ion-label>{{category.categoria_empresaTITULO | translate}}</ion-label>
+  </ion-chip>
+</div>

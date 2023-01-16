@@ -1,0 +1,27 @@
+<app-header-padre [page]="true" [color]="'#DF7000'"></app-header-padre>
+<ion-content>
+
+  <!-- <app-search
+    (search)="buscar($event)">
+  </app-search> -->
+
+  <div class="d-c-max">
+
+    <ion-grid class="ion-no-padding">
+      <ion-row>
+        <ion-col 
+          [sizeLg]="3"
+          [sizeMd]="3"
+          [sizeXl]="6"
+          [sizeXs]="6"
+          class="ion-no-padding" 
+          *ngFor="let categoria of categorias | experts : palabra : 'categorias'">
+          <app-categoria [categoria]="categoria" >
+          </app-categoria>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+
+</ion-content>

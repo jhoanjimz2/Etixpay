@@ -1,0 +1,24 @@
+<ion-grid>
+  <ion-row class="row-boton">
+    <ion-col class="ion-no-padding">
+      <button
+        class="boton-uno"
+        (click)="seleccionar('ticket')"
+        [ngClass]="{'botonto-cash': tipo == 'ticket', 'botonto-cash-f': tipo != 'ticket', 'borde-boton-uno': tipo == null }">
+        <ion-icon src="assets/tabs/wallet/componentes/recibir_empresa/ticket.svg" *ngIf="tipo == 'ticket'"></ion-icon>
+        <ion-icon src="assets/tabs/wallet/componentes/recibir_empresa/ticket_f.svg" *ngIf="tipo != 'ticket'"></ion-icon><br>
+        <ion-label>{{'TICKET' | translate}}</ion-label>
+      </button>
+    </ion-col>
+    <ion-col class="ion-no-padding">
+      <button 
+        class="boton-dos"
+        (click)="seleccionar('cash')"
+        [ngClass]="{'botonto-cash': tipo == 'cash', 'botonto-cash-f': tipo != 'cash', 'borde-boton-dos': tipo == null}">
+        <ion-icon src="assets/tabs/wallet/componentes/recibir_empresa/cash.svg" *ngIf="tipo == 'cash'"></ion-icon>
+        <ion-icon src="assets/tabs/wallet/componentes/recibir_empresa/cash_f.svg" *ngIf="tipo != 'cash'"></ion-icon><br>
+        <ion-label>{{'CASH' | translate}}</ion-label>
+      </button>
+    </ion-col>
+  </ion-row>
+</ion-grid>

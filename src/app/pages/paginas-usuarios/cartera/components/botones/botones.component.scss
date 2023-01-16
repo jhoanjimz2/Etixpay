@@ -1,0 +1,18 @@
+.paddinggrid {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 5px;
+  padding-right: 5px;
+  width: 100%;
+  --bullet-background: grey;
+  --bullet-background-active: #664bc4;
+}
+.div_contenedor {
+  overflow-y: hidden;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: -webkit-box;
+}

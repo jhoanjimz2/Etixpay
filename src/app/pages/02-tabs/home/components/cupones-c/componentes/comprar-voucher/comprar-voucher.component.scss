@@ -1,0 +1,108 @@
+.col_img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.img {
+  height: 110px;
+  width: 120px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+.col_uno {
+  line-height: 1.5;
+}
+.label_cuatro {
+  font-size: 19px;
+  font-weight: bold;
+  color: #000;
+}
+.confirm {
+  width: 100%;
+  height: 45px;
+  border: 1px dotted rgb(102, 75, 196);
+  background-color: rgb(102, 75, 196);
+  color: #fff;
+  border-radius: 10px;
+}
+.div_titulo {
+  width: 140px;
+  overflow-y: hidden;
+  overflow-x: auto;
+  white-space: nowrap;
+  display: -webkit-box;
+}
+.div_direccion {
+  width: 140px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.label_cinco {
+  font-weight: bold;
+  font-size: 16px;
+  color: rgb(239, 69, 103);
+}
+.icon_location {
+  font-size: 11px;
+  color: rgb(102, 75, 196);
+}
+.label_seis {
+  font-weight: bold;
+  font-size: 11px;
+  color: #000;
+}
+.label_siete {
+  font-weight: 400;
+  font-size: 11px;
+  color: #000;
+}
+.label_ocho {
+  font-weight: bold;
+  font-size: 14px;
+  color: #000;
+}
+.div_reloj {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+  width: 80px;
+}
+.div_reloj div {
+  padding: 3px;
+  background-color: #000;
+  border-radius: 3px;
+  color: #fff !important;
+  font-size: 11px;
+  font-weight: 400;
+}
+.row_margin {
+  margin-top: 10px;
+}
+.col_del_medio {
+  border-left: 2px dashed #d8dcdf;
+  border-right: 2px dashed #d8dcdf;
+}
+.label_nueve {
+  font-size: 25px;
+  font-weight: 600;
+  color: #000;
+}
+.col_line {
+  text-align: center;
+  line-height: 1.5;
+}
+.button {
+  width: 25px;
+  height: 25px;
+  background-color: #fff;
+  border: 1px solid #d8dcdf;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(239, 69, 103);
+}
